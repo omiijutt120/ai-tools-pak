@@ -17,6 +17,7 @@ const products = [
   { name: "Ideogram AI Plus", category: "AI Images and Design", plan: "Plus plan", duration: "Flexible plan", access: "Private access", credits: "AI image design tools", price: 4200, initials: "ID", image: logo("ideogram.ai") }
 ];
 
+const productByName = new Map(products.map((product) => [product.name, product]));
 const productGrid = document.querySelector("#productGrid");
 const searchInput = document.querySelector("#searchInput");
 const cartCount = document.querySelector("#cartCount");
@@ -37,25 +38,31 @@ function productMessage(product, intent) {
     `Product: ${product.name}`,
     `Plan: ${product.plan}`,
     `Price: PKR ${formatter.format(product.price)}`,
-    `Duration: ${product.duration}`
+    `Duration: ${product.duration}`,
+    `Access: ${product.access}`,
+    `Credits / limits: ${product.credits}`
   ].join("\n");
 }
 
 function cartMessage() {
   const lines = cartItems.map((name, index) => `${index + 1}. ${name}`);
-  return [`Hi AI Tools Pak, I want to order these items:`, ...lines, `Total items: ${cartItems.length}`].join("\n");
+  const total = cartItems.reduce((sum, name) => sum + (productByName.get(name)?.price || 0), 0);
+  return [`Hi AI Tools Pak, I want to order these items:`, ...lines, `Total items: ${cartItems.length}`, `Estimated total: PKR ${formatter.format(total)}`].join("\n");
 }
 
 function loadCart() {
   try {
-    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+    const saved = JSON.parse(localStorage.getItem(CART_KEY));
+    return Array.isArray(saved) ? saved.filter((name) => productByName.has(name)) : [];
   } catch {
     return [];
   }
 }
 
 function saveCart() {
-  localStorage.setItem(CART_KEY, JSON.stringify(cartItems));
+  try {
+    localStorage.setItem(CART_KEY, JSON.stringify(cartItems));
+  } catch {}
   cartCount.textContent = cartItems.length;
 }
 
@@ -78,7 +85,8 @@ function productCard(product) {
       </div>
       <div class="price">PKR ${formatter.format(product.price)}</div>
       <div class="product-actions">
-        <button class="button secondary glass-panel" type="button" data-details="${product.name}">View Details</button>
+        <a class="button primary" target="_blank" rel="noopener" href="${whatsappLink(productMessage(product, "buy this plan"))}">Buy</a>
+        <button class="button secondary glass-panel" type="button" data-details="${product.name}">Details</button>
         <button class="mini-cart glass-panel" type="button" aria-label="Add ${product.name} to cart" data-add="${product.name}">
           <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 8.5a2 2 0 0 1-2 1.5H9a2 2 0 0 1-2-1.6L5 3H2"></path><path d="M9 21h.01M18 21h.01"></path></svg>
         </button>
@@ -113,6 +121,7 @@ function productDetails(product) {
     <dl class="detail-list">
       <div><dt>Price</dt><dd>PKR ${formatter.format(product.price)}</dd></div>
       <div><dt>Duration</dt><dd>${product.duration}</dd></div>
+      <div><dt>Access</dt><dd>${product.access}</dd></div>
       <div><dt>Credits / limits</dt><dd>${product.credits}</dd></div>
     </dl>
     <p class="dialog-note">Message us on WhatsApp to place your order.</p>
@@ -140,7 +149,7 @@ function cartDialog() {
 function renderProducts() {
   const query = searchInput.value.trim().toLowerCase();
   const filtered = products.filter((product) => {
-    const haystack = `${product.name} ${product.category} ${product.plan}`.toLowerCase();
+    const haystack = `${product.name} ${product.category} ${product.plan} ${product.duration} ${product.access} ${product.credits}`.toLowerCase();
     return (!query || haystack.includes(query)) && (!activeCategory || product.category === activeCategory);
   });
   productGrid.innerHTML = filtered.map(productCard).join("") || `<p class="notice glass-panel">No matching tools found.</p>`;
@@ -172,7 +181,8 @@ document.addEventListener("click", (event) => {
 
   const addButton = event.target.closest("[data-add]");
   if (addButton) {
-    const product = products.find((item) => item.name === addButton.dataset.add);
+    const product = productByName.get(addButton.dataset.add);
+    if (!product) return;
     cartItems.push(product.name);
     saveCart();
     openDialog(`<h3>Added to cart</h3><p>${product.name} is now in your cart.</p><div class="dialog-actions"><button class="button secondary glass-panel" type="button" data-cart>View cart</button></div>`);
@@ -180,7 +190,8 @@ document.addEventListener("click", (event) => {
 
   const detailsButton = event.target.closest("[data-details]");
   if (detailsButton) {
-    productDetails(products.find((item) => item.name === detailsButton.dataset.details));
+    const product = productByName.get(detailsButton.dataset.details);
+    if (product) productDetails(product);
   }
 
   if (event.target.closest("[data-cart]")) {
@@ -235,15 +246,18 @@ detailDialog.addEventListener("click", (event) => {
 
 searchInput.addEventListener("input", renderProducts);
 
+const initialQuery = new URLSearchParams(window.location.search).get("q");
+if (initialQuery) searchInput.value = initialQuery.slice(0, 80);
+
 document.querySelector("#finderForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(event.currentTarget);
   const need = data.get("need");
   const budget = Number(data.get("budget"));
-  const match = products.find((product) => {
+  const match = products.filter((product) => {
     const terms = `${product.category} ${product.plan} ${product.name}`.toLowerCase();
     return product.price <= budget && terms.includes(String(need));
-  });
+  }).sort((a, b) => a.price - b.price)[0];
   document.querySelector("#finderResult").textContent = match
     ? `${match.name} fits the budget. You can buy it on WhatsApp.`
     : "No match inside that budget. Raise the budget or contact support.";
@@ -251,5 +265,22 @@ document.querySelector("#finderForm").addEventListener("submit", (event) => {
 
 document.querySelector("[data-floating-whatsapp]").href = whatsappLink("Hi AI Tools Pak, I need help choosing an AI tool.");
 document.querySelector("[data-contact-whatsapp]").href = whatsappLink("Hi AI Tools Pak, I need help choosing an AI tool.");
+
+document.querySelector("#requestForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const input = document.querySelector("#requestInput");
+  const toolName = input.value.trim();
+  if (!toolName) return;
+  const message = [
+    "Hi AI Tools Pak, I'd like to request an AI tool that isn't listed on the site:",
+    "",
+    `Requested Tool: ${toolName}`,
+    "",
+    "Please check availability and pricing for me. Thanks!"
+  ].join("\n");
+  window.open(whatsappLink(message), "_blank", "noopener");
+  input.value = "";
+});
+
 saveCart();
 renderProducts();
