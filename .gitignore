@@ -6,6 +6,7 @@ desktop-check.png
 mobile-check.png
 desktop-cdp.png
 mobile-cdp.png
+logo-check.png
 *.log
 .env
 .env.*

@@ -100,6 +100,13 @@ svg {
   white-space: nowrap;
 }
 
+.brand-logo {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  border-radius: .55rem;
+}
+
 .brand-mark {
   width: 2rem;
   height: 2rem;
@@ -1248,6 +1255,11 @@ details p {
   .nav-shell {
     padding: .55rem .65rem;
     gap: .5rem;
+  }
+
+  .brand-logo {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   .brand-mark { display: none; }
