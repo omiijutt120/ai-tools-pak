@@ -14,9 +14,12 @@ social-runtime-*.html
 social-runtime-*.err
 home-runtime-*.html
 home-runtime-*.err
+seo-*-dom.html
+seo-runtime.err
 *.log
 .env
 .env.*
+!.env.example
 node_modules/
 .DS_Store
 Thumbs.db

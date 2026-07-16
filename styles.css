@@ -220,6 +220,23 @@ svg {
   text-transform: uppercase;
 }
 
+.breadcrumb {
+  width: min(76rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding-top: 1rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.breadcrumb a:hover { color: var(--ink); }
+.breadcrumb span { margin-left: .4rem; }
+
+.date-note {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
 .page-layout {
   width: min(76rem, calc(100% - 2rem));
   margin: 0 auto;
@@ -288,6 +305,70 @@ svg {
   display: block;
   margin-top: .35rem;
   font: 600 1.55rem "IBM Plex Mono", monospace;
+}
+
+.price-box small {
+  display: block;
+  margin-top: .45rem;
+  color: rgba(255,255,255,.7);
+  font-size: .82rem;
+}
+
+.direct-answer {
+  color: var(--ink);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.source-list {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+.source-list a,
+.page-card a {
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+
+.product-page-image {
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-wrap: anywhere;
+}
+
+.comparison-table caption {
+  text-align: left;
+  margin-bottom: .75rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border-bottom: 1px solid var(--line);
+  padding: .8rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.comparison-table th {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .link-grid {

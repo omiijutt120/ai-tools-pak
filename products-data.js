@@ -84,7 +84,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "GP",
-    "guideUrl": ""
+    "guideUrl": "gemini-pro-pakistan/"
   },
   {
     "productId": "elevenlabs-creator-private",
@@ -113,7 +113,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "EC",
-    "guideUrl": ""
+    "guideUrl": "elevenlabs-creator-pakistan/"
   },
   {
     "productId": "runway-ml-unlimited-generations",
@@ -142,7 +142,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "RM",
-    "guideUrl": ""
+    "guideUrl": "runway-ml-pakistan/"
   },
   {
     "productId": "leonardo-ai",
@@ -171,7 +171,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "LA",
-    "guideUrl": ""
+    "guideUrl": "leonardo-ai-pakistan/"
   },
   {
     "productId": "grammarly-pro",
@@ -200,7 +200,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "GP",
-    "guideUrl": ""
+    "guideUrl": "grammarly-premium-pakistan/"
   },
   {
     "productId": "quillbot",
@@ -229,7 +229,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "Q",
-    "guideUrl": ""
+    "guideUrl": "quillbot-premium-pakistan/"
   },
   {
     "productId": "lovable-ai-pro-private",
@@ -258,7 +258,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "LA",
-    "guideUrl": ""
+    "guideUrl": "lovable-ai-pro-pakistan/"
   },
   {
     "productId": "heygen-ai",
@@ -287,7 +287,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "HA",
-    "guideUrl": ""
+    "guideUrl": "heygen-ai-pakistan/"
   },
   {
     "productId": "ideogram-ai-plus-private",
@@ -316,7 +316,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "IA",
-    "guideUrl": ""
+    "guideUrl": "ideogram-ai-plus-pakistan/"
   },
   {
     "productId": "success-ai-starter-leads",
@@ -345,7 +345,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "SS",
-    "guideUrl": ""
+    "guideUrl": "success-ai-starter-pakistan/"
   },
   {
     "productId": "vidiq",
@@ -374,7 +374,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Confirm before ordering",
     "requiresSupplierConfirmation": true,
     "initials": "V",
-    "guideUrl": ""
+    "guideUrl": "vidiq-pakistan/"
   },
   {
     "productId": "playht",
@@ -403,7 +403,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Confirm before ordering",
     "requiresSupplierConfirmation": true,
     "initials": "P",
-    "guideUrl": ""
+    "guideUrl": "playht-pakistan/"
   },
   {
     "productId": "supergrok",
@@ -432,7 +432,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Confirm before ordering",
     "requiresSupplierConfirmation": true,
     "initials": "S",
-    "guideUrl": ""
+    "guideUrl": "supergrok-pakistan/"
   },
   {
     "productId": "wordai",
@@ -461,7 +461,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Confirm before ordering",
     "requiresSupplierConfirmation": true,
     "initials": "W",
-    "guideUrl": ""
+    "guideUrl": "wordai-pakistan/"
   },
   {
     "productId": "jasper-ai",
@@ -490,7 +490,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Confirm before ordering",
     "requiresSupplierConfirmation": true,
     "initials": "JA",
-    "guideUrl": ""
+    "guideUrl": "jasper-ai-pakistan/"
   },
   {
     "productId": "google-ai-ultra-plan",
@@ -519,7 +519,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Confirm before ordering",
     "requiresSupplierConfirmation": true,
     "initials": "GA",
-    "guideUrl": ""
+    "guideUrl": "google-ai-ultra-pakistan/"
   },
   {
     "productId": "hailuo-ai",
@@ -548,6 +548,6 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Confirm before ordering",
     "requiresSupplierConfirmation": true,
     "initials": "HA",
-    "guideUrl": ""
+    "guideUrl": "hailuo-ai-pakistan/"
   }
 ];

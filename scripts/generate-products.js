@@ -5,6 +5,52 @@ const root = path.resolve(__dirname, "..");
 const csvPath = path.join(root, "data", "products.csv");
 const dataPath = path.join(root, "products-data.js");
 const indexPath = path.join(root, "index.html");
+const sitemapPath = path.join(root, "sitemap.xml");
+const SITE_URL = "https://aitoolspak.tech";
+const LAST_VERIFIED = "2026-07-16";
+const DISPLAY_DATE = "July 16, 2026";
+const PRODUCT_ROUTE_BY_SLUG = {
+  "chatgpt-plus": "chatgpt-plus-pakistan/",
+  "claude-ai": "claude-pro-pakistan/",
+  "gemini-pro": "gemini-pro-pakistan/",
+  "elevenlabs-creator-private": "elevenlabs-creator-pakistan/",
+  "runway-ml-unlimited-generations": "runway-ml-pakistan/",
+  "leonardo-ai": "leonardo-ai-pakistan/",
+  "grammarly-pro": "grammarly-premium-pakistan/",
+  "quillbot": "quillbot-premium-pakistan/",
+  "lovable-ai-pro-private": "lovable-ai-pro-pakistan/",
+  "heygen-ai": "heygen-ai-pakistan/",
+  "ideogram-ai-plus-private": "ideogram-ai-plus-pakistan/",
+  "success-ai-starter-leads": "success-ai-starter-pakistan/",
+  "vidiq": "vidiq-pakistan/",
+  "playht": "playht-pakistan/",
+  "supergrok": "supergrok-pakistan/",
+  "wordai": "wordai-pakistan/",
+  "jasper-ai": "jasper-ai-pakistan/",
+  "google-ai-ultra-plan": "google-ai-ultra-pakistan/",
+  "hailuo-ai": "hailuo-ai-pakistan/"
+};
+const STATIC_SITEMAP_PATHS = [
+  "",
+  "canva-pro-pakistan/",
+  "veo-3-pakistan/",
+  "capcut-pro-pakistan/",
+  "grok-subscription-pakistan/",
+  "social-media-services/",
+  "about-us/",
+  "contact-us/",
+  "privacy-policy/",
+  "terms-and-conditions/",
+  "refund-policy/",
+  "delivery-policy/",
+  "frequently-asked-questions/",
+  "blog/chatgpt-plus-price-pakistan/",
+  "blog/claude-pro-vs-chatgpt-plus-pakistani-students/",
+  "blog/best-ai-tools-freelancers-pakistan/",
+  "blog/best-ai-video-tools-pakistani-content-creators/",
+  "blog/choose-ai-subscription-safely/",
+  "blog/free-vs-paid-ai-tools/"
+];
 
 const required = [
   "product_id",
@@ -95,10 +141,7 @@ function initials(name) {
 }
 
 function guideUrl(slug) {
-  return {
-    "chatgpt-plus": "chatgpt-plus-pakistan/",
-    "claude-ai": "claude-pro-pakistan/"
-  }[slug] || "";
+  return PRODUCT_ROUTE_BY_SLUG[slug] || `${slug}-pakistan/`;
 }
 
 function offer(product) {
@@ -111,7 +154,7 @@ function offer(product) {
       "@type": "Organization",
       name: "AI Tools Pak"
     },
-    url: `https://aitoolspak.tech/#product-${product.slug}`,
+    url: `${SITE_URL}/${product.guideUrl}`,
     itemCondition: "https://schema.org/NewCondition",
     hasMerchantReturnPolicy: {
       "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
@@ -144,6 +187,261 @@ function offer(product) {
       }
     }
   };
+}
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
+}
+
+function slugLabel(product) {
+  return `${product.sourceProductTitle || product.name} price in Pakistan`;
+}
+
+function categoryGuide(product) {
+  if (product.category === "AI Video") return "blog/best-ai-video-tools-pakistani-content-creators/";
+  if (product.category === "Marketing and Lead Generation") return "blog/best-ai-tools-freelancers-pakistan/";
+  if (product.category === "Writing and SEO") return "blog/free-vs-paid-ai-tools/";
+  return "blog/best-ai-tools-freelancers-pakistan/";
+}
+
+function audience(product) {
+  const map = {
+    "AI Assistants": "students, freelancers, researchers and small teams",
+    "AI Video": "content creators, video editors, agencies and short-video teams",
+    "AI Images and Design": "designers, creators, marketers and small businesses",
+    "AI Voice": "voiceover creators, educators, editors and media teams",
+    "Writing and SEO": "students, writers, bloggers, freelancers and SEO teams",
+    "Development and Coding": "developers, founders, builders and technical freelancers",
+    "Marketing and Lead Generation": "creators, marketers, agencies and sales teams"
+  };
+  return map[product.category] || "Pakistani buyers comparing AI subscriptions";
+}
+
+function featureList(product) {
+  return product.keyFeatures.split(";").map((feature) => feature.trim()).filter(Boolean);
+}
+
+function metaDescription(product) {
+  return `Check ${product.name} price in Pakistan, PKR ${product.sellingPricePkr.toLocaleString("en-PK")} listing, ${product.accessType.toLowerCase()}, ${product.subscriptionDuration.toLowerCase()} and safe WhatsApp activation details.`;
+}
+
+function productPageHtml(product, related) {
+  const title = `${product.name} Price in Pakistan | AI Tools Pak`;
+  const description = metaDescription(product);
+  const canonical = `${SITE_URL}/${product.guideUrl}`;
+  const price = product.sellingPricePkr.toLocaleString("en-PK");
+  const features = featureList(product);
+  const relatedLinks = related.map((item) => `<li><a href="../${item.guideUrl}">${escapeHtml(item.name)} price in Pakistan</a></li>`).join("");
+  const official = product.sourceProductUrl
+    ? `<p class="source-list">Official source: <a href="${escapeHtml(product.sourceProductUrl)}" target="_blank" rel="noopener">${escapeHtml(product.sourceProductTitle)}</a>. Checked on ${DISPLAY_DATE}.</p>`
+    : "";
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+          { "@type": "ListItem", position: 2, name: product.name, item: canonical }
+        ]
+      },
+      {
+        "@type": "Product",
+        name: `${product.name} Subscription Pakistan`,
+        description,
+        image: product.imageUrl,
+        brand: { "@type": "Brand", name: product.sourceProductTitle },
+        category: product.category,
+        url: canonical,
+        offers: {
+          "@type": "Offer",
+          price: product.sellingPricePkr,
+          priceCurrency: "PKR",
+          availability: product.requiresSupplierConfirmation ? "https://schema.org/LimitedAvailability" : "https://schema.org/InStock",
+          seller: { "@type": "Organization", name: "AI Tools Pak" },
+          url: canonical,
+          itemCondition: "https://schema.org/NewCondition"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `How much does ${product.name} cost in Pakistan?`,
+            acceptedAnswer: { "@type": "Answer", text: `${product.name} is listed at PKR ${price}. Confirm current availability, duration and access details on WhatsApp before payment. Last verified on ${DISPLAY_DATE}.` }
+          },
+          {
+            "@type": "Question",
+            name: `Is ${product.name} official or affiliated?`,
+            acceptedAnswer: { "@type": "Answer", text: "AI Tools Pak does not claim official partnership, authorization or reseller status unless written authorization exists. Product names belong to their respective owners." }
+          },
+          {
+            "@type": "Question",
+            name: "Do I need to share my email password?",
+            acceptedAnswer: { "@type": "Answer", text: "No. Do not share your email password. Confirm the activation method and only provide information agreed with support." }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        name: `How to order ${product.name} in Pakistan`,
+        step: [
+          { "@type": "HowToStep", name: "Confirm details", text: "Confirm price, duration, access model and support terms on WhatsApp." },
+          { "@type": "HowToStep", name: "Pay after confirmation", text: "Pay only after the plan details and refund condition are clear." },
+          { "@type": "HowToStep", name: "Receive activation", text: "Follow the agreed activation or delivery instructions without sharing your email password." }
+        ]
+      }
+    ]
+  };
+
+  return `<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${escapeHtml(title)}</title>
+    <meta name="description" content="${escapeHtml(description)}">
+    <meta name="author" content="AI Tools Pak Editorial">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="theme-color" content="#202a36">
+    <link rel="canonical" href="${canonical}">
+    <link rel="icon" href="../logo.svg" type="image/svg+xml">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="${canonical}">
+    <meta property="og:title" content="${escapeHtml(title)}">
+    <meta property="og:description" content="${escapeHtml(description)}">
+    <meta property="og:image" content="${escapeHtml(product.imageUrl)}">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="simple-header">
+      <nav class="simple-nav" aria-label="Primary navigation">
+        <a class="brand" href="../"><img class="brand-logo" src="../logo.svg" alt="AI Tools Pak" width="32" height="32"><span>AI Tools Pak</span></a>
+        <div class="simple-links">
+          <a href="../#catalog">AI tools</a>
+          <a href="../social-media-services/">Social services</a>
+          <a href="../blog/chatgpt-plus-price-pakistan/">Blog</a>
+          <a href="../about-us/">About</a>
+          <a href="../contact-us/">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><span>${escapeHtml(product.name)}</span></nav>
+      <section class="page-hero product-hero">
+        <p class="page-kicker">${escapeHtml(product.category)}</p>
+        <h1>${escapeHtml(slugLabel(product))}</h1>
+        <p class="hero-copy">${escapeHtml(description)}</p>
+        <p class="date-note">Published: July 14, 2026. Last updated: ${DISPLAY_DATE}. Last price verified: ${DISPLAY_DATE}.</p>
+      </section>
+      <section class="page-layout">
+        <div class="page-main">
+          <article class="glass-panel page-card direct-answer-card" aria-labelledby="price-answer">
+            <h2 id="price-answer">How much does ${escapeHtml(product.name)} cost in Pakistan?</h2>
+            <p class="direct-answer">${escapeHtml(product.name)} is listed by AI Tools Pak at <strong>PKR ${price}</strong>. It suits ${escapeHtml(audience(product))} who need ${escapeHtml(product.creditsOrUsageLimit.toLowerCase())}. Confirm current availability, ${escapeHtml(product.subscriptionDuration.toLowerCase())}, access model and support terms on WhatsApp before payment.</p>
+          </article>
+          <article class="glass-panel page-card">
+            <h2>Product overview</h2>
+            <p>${escapeHtml(product.fullDescription)}</p>
+            <p>${escapeHtml(product.name)} is shown with PKR pricing, access notes and safety checks for buyers in Pakistan. The page avoids official-partner claims and focuses on what a buyer should verify before paying.</p>
+            ${official}
+          </article>
+          <article class="glass-panel page-card">
+            <h2>Best for in Pakistan</h2>
+            <ul>
+              <li>${escapeHtml(audience(product))} comparing paid AI access.</li>
+              <li>Buyers who want the PKR price visible before starting a WhatsApp order.</li>
+              <li>Teams that need to confirm duration, access model and usage limits before payment.</li>
+            </ul>
+          </article>
+          <article class="glass-panel page-card">
+            <h2>What is included</h2>
+            <ul>
+              ${features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join("\n              ")}
+              <li>${escapeHtml(product.planTier)} details confirmed before payment.</li>
+              <li>${escapeHtml(product.deliveryMethod)} with support during the agreed window.</li>
+            </ul>
+          </article>
+          <article class="glass-panel page-card">
+            <h2>Plan, access and limitations</h2>
+            <p><strong>Plan:</strong> ${escapeHtml(product.planTier)}. <strong>Duration:</strong> ${escapeHtml(product.subscriptionDuration)}. <strong>Access:</strong> ${escapeHtml(product.accessType)}. <strong>Limits:</strong> ${escapeHtml(product.creditsOrUsageLimit)}.</p>
+            <p>Access, device behavior and usage limits can change by provider or plan. Confirm the final order details on WhatsApp before payment, especially for plans marked “confirm before ordering”.</p>
+          </article>
+          <article class="glass-panel page-card">
+            <h2>Activation and delivery process</h2>
+            <ol>
+              <li>Confirm the current PKR price, duration, access model and refund condition.</li>
+              <li>Pay only after the details are clear in writing.</li>
+              <li>Share only the agreed activation information. Do not share your email password.</li>
+              <li>Receive access or activation confirmation from support.</li>
+              <li>Contact support during the agreed warranty window if access needs checking.</li>
+            </ol>
+          </article>
+          <article class="glass-panel page-card">
+            <h2>Buyer safety checklist</h2>
+            <ul>
+              <li>Confirm the exact plan name, price and duration before payment.</li>
+              <li>Ask whether the access is private, shared, team-based or another model.</li>
+              <li>Check refund or replacement conditions before activation.</li>
+              <li>Do not accept “official partner” claims unless written proof exists.</li>
+            </ul>
+          </article>
+          <article class="glass-panel page-card faq">
+            <h2>FAQs about ${escapeHtml(product.name)}</h2>
+            <details open><summary>Can the PKR price change?</summary><p>Yes. The visible price is the listed AI Tools Pak price verified on ${DISPLAY_DATE}. Confirm the current quote on WhatsApp before payment.</p></details>
+            <details><summary>Is this access official?</summary><p>No official partnership or authorization is claimed unless written authorization exists. Product names and trademarks belong to their owners.</p></details>
+            <details><summary>What should I confirm before paying?</summary><p>Confirm price, duration, activation method, access model, usage limits, support window and refund condition.</p></details>
+          </article>
+          <article class="glass-panel page-card">
+            <h2>Related guides</h2>
+            <ul>
+              <li><a href="../${categoryGuide(product)}">Read a relevant AI tools guide</a></li>
+              <li><a href="../blog/choose-ai-subscription-safely/">How to choose an AI subscription safely</a></li>
+              ${relatedLinks}
+            </ul>
+          </article>
+        </div>
+        <aside class="page-side">
+          <img class="product-page-image glass-panel" src="${escapeHtml(product.imageUrl)}" alt="${escapeHtml(product.imageAltText)}" width="128" height="128">
+          <div class="price-box"><span>Current listed price</span><strong>PKR ${price}</strong><small>Last verified ${DISPLAY_DATE}</small></div>
+          <a class="button primary" target="_blank" rel="noopener" href="https://wa.me/923714549245?text=${encodeURIComponent(`Hi AI Tools Pak, I want to order ${product.name} in Pakistan. Price shown: PKR ${price}. Please confirm availability and activation details.`)}">Order on WhatsApp</a>
+          <div class="glass-panel page-card">
+            <h3>Non-affiliation note</h3>
+            <p>AI Tools Pak is not claiming official partnership or authorization unless written authorization exists.</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <footer class="footer" role="contentinfo">
+      <div>
+        <a class="brand" href="../"><img class="brand-logo" src="../logo.svg" alt="AI Tools Pak" width="32" height="32"><span>AI Tools Pak</span></a>
+        <p>Business name: AI Tools Pak<br>WhatsApp: +92 371 454 9245<br>Email: support@aitoolspak.com<br>Support: 11:00 AM - 11:00 PM Pakistan time</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../#catalog">AI tools</a>
+        <a href="../social-media-services/">Social media services</a>
+        <a href="../about-us/">About</a>
+        <a href="../contact-us/">Contact</a>
+        <a href="../privacy-policy/">Privacy</a>
+        <a href="../terms-and-conditions/">Terms</a>
+        <a href="../refund-policy/">Refunds</a>
+        <a href="../delivery-policy/">Delivery</a>
+        <a href="../frequently-asked-questions/">FAQ</a>
+      </nav>
+    </footer>
+    <a class="floating-whatsapp" href="https://wa.me/923714549245?text=Hi%20AI%20Tools%20Pak%2C%20I%20need%20help%20choosing%20an%20AI%20tool." target="_blank" rel="noopener" aria-label="Contact AI Tools Pak on WhatsApp"><span>WhatsApp</span></a>
+    <script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>
+  </body>
+</html>
+`;
 }
 
 function replaceJsonLd(html, predicate, value) {
@@ -227,6 +525,15 @@ const products = records.map((row) => {
 console.log(`valid products imported: ${products.length}`);
 if (products.length !== 19) throw new Error(`Expected 19 products, found ${products.length}`);
 
+for (const product of products) {
+  const dir = path.join(root, product.guideUrl);
+  fs.mkdirSync(dir, { recursive: true });
+  const related = products
+    .filter((item) => item.slug !== product.slug && item.category === product.category)
+    .slice(0, 3);
+  fs.writeFileSync(path.join(dir, "index.html"), productPageHtml(product, related), "utf8");
+}
+
 fs.writeFileSync(
   dataPath,
   `window.AI_TOOLS_PRODUCTS = ${JSON.stringify(products, null, 2)};\n`,
@@ -236,6 +543,15 @@ fs.writeFileSync(
 let index = fs.readFileSync(indexPath, "utf8");
 index = index.replace(/<span><strong[^>]*>[^<]+<\/strong>\s*tools listed<\/span>/, `<span><strong data-product-count>${products.length}</strong> AI tools listed</span>`);
 index = index.replace(/<ul class="noscript-products">[\s\S]*?<\/ul>/, `<ul class="noscript-products">\n${products.map((product) => `            <li>${product.name} - PKR ${product.sellingPricePkr.toLocaleString("en-PK")}</li>`).join("\n")}\n          </ul>`);
+index = index.replace(/<section class="section" id="product-guides"[\s\S]*?<\/section>/, `<section class="section" id="product-guides" aria-label="Main AI tool product pages">
+        <div class="section-heading">
+          <p class="eyebrow">Product pages</p>
+          <h2>Dedicated buying guides for every AI subscription.</h2>
+        </div>
+        <div class="link-grid">
+${products.map((product) => `          <a class="glass-panel link-card" href="${product.guideUrl}"><strong>${escapeHtml(product.name)} Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>`).join("\n")}
+        </div>
+      </section>`);
 
 const itemList = {
   "@context": "https://schema.org",
@@ -247,7 +563,7 @@ const itemList = {
     "@type": "ListItem",
     position: index + 1,
     name: product.name,
-    url: `https://aitoolspak.tech/#product-${product.slug}`
+    url: `${SITE_URL}/${product.guideUrl}`
   }))
 };
 
@@ -262,7 +578,7 @@ const productGraph = {
       name: product.sourceProductTitle
     },
     category: product.category,
-    url: `https://aitoolspak.tech/#product-${product.slug}`,
+    url: `${SITE_URL}/${product.guideUrl}`,
     offers: offer(product),
     image: product.imageUrl
   }))
@@ -271,3 +587,14 @@ const productGraph = {
 index = replaceJsonLd(index, (data) => data["@type"] === "ItemList", itemList);
 index = replaceJsonLd(index, (data) => Array.isArray(data["@graph"]) && data["@graph"].some((item) => item["@type"] === "Product"), productGraph);
 fs.writeFileSync(indexPath, index, "utf8");
+
+const sitemapPaths = [...new Set([...STATIC_SITEMAP_PATHS, ...products.map((product) => product.guideUrl)])].sort();
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapPaths.map((urlPath) => `  <url>
+    <loc>${SITE_URL}/${urlPath}</loc>
+    <lastmod>${LAST_VERIFIED}</lastmod>
+  </url>`).join("\n")}
+</urlset>
+`;
+fs.writeFileSync(sitemapPath, sitemap, "utf8");

@@ -109,6 +109,8 @@ for (const [slug, name, price] of missing) {
 }
 
 assert(!products.some((product) => !product.imageUrl || !product.imageAltText), "Product image data missing");
+assert(!products.some((product) => !product.guideUrl), "Every product must have a guide URL");
+assert(products.every((product) => fullCatalogHtml.includes(`href="${product.guideUrl}"`)), "Rendered product cards must link to guide pages");
 assert(new Set(products.map((product) => product.productId)).size === 19, "Duplicate product IDs");
 assert(new Set(products.map((product) => product.sku)).size === 19, "Duplicate SKUs");
 assert(new Set(products.map((product) => product.slug)).size === 19, "Duplicate slugs");

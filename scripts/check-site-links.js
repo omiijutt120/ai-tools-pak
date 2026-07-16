@@ -7,7 +7,7 @@ const skip = new Set([".git", ".deploy-ai-tools-pak", "node_modules"]);
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     if (skip.has(entry.name) || entry.name.startsWith(".chrome-")) return [];
-    if (/runtime-.*\.html$/.test(entry.name)) return [];
+    if (/-dom\.html$/.test(entry.name) || /runtime-.*\.html$/.test(entry.name)) return [];
     const full = path.join(dir, entry.name);
     return entry.isDirectory() ? walk(full) : (entry.name.endsWith(".html") ? [full] : []);
   });
