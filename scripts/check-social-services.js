@@ -16,10 +16,11 @@ const socialScript = fs.readFileSync(path.join(root, "social-media-services", "s
 const productData = fs.readFileSync(path.join(root, "products-data.js"), "utf8");
 
 assert(Array.isArray(services), "Social services data missing");
-assert(services.length === 354, `Expected 354 services, found ${services.length}`);
+assert(services.length === 487, `Expected 487 services, found ${services.length}`);
 assert(!services.some((service) => service.serviceName === "No service"), "No service placeholder was not excluded");
-assert(new Set(services.map((service) => service.catalogId)).size === 354, "Catalog IDs must be unique");
-assert(services.every((service) => service.matchStatus === "review" && service.sellingRatePkr === null), "Unverified services must not contain prices");
+assert(new Set(services.map((service) => service.catalogId)).size === services.length, "Catalog IDs must be unique");
+assert(services.every((service) => service.matchStatus === "exact" && service.sellingRatePkr > 0), "Every service must have an exact PKR price");
+assert(services.every((service) => service.minQuantity > 0 && service.maxQuantity >= service.minQuantity), "Every service must have valid min/max quantities");
 assert(!services.some((service) => String(service.sellingRatePkr) === service.providerId), "Service ID used as price");
 assert(services.some((service) => service.searchText.includes("tiktok")), "Search text does not include service names");
 assert(services.some((service) => service.platform === "Instagram"), "Instagram platform filter missing data");
@@ -32,4 +33,13 @@ assert(/25/.test(socialHtml) && /50/.test(socialHtml) && /100/.test(socialHtml),
 assert(/window\.AI_TOOLS_PRODUCTS = \[/.test(productData), "AI product data missing");
 assert((productData.match(/productId/g) || []).length === 19, "Existing AI products count changed");
 
-console.log("social services ok: 354 services, placeholder excluded, all prices require WhatsApp confirmation");
+const service = services[0];
+const fakeDocument = { querySelector() { return null; }, addEventListener() {} };
+Function("window", "document", socialScript)(global.window, fakeDocument);
+const utils = global.window.SOCIAL_SERVICES_UTILS;
+
+assert(utils.displayPrice(service).startsWith("PKR "), "Price display does not show PKR");
+assert(utils.calculateTotal(service, service.minQuantity) > 0, "Calculator did not produce a total");
+assert(utils.buildWhatsAppMessage(service, service.minQuantity, "https://example.com").includes("Estimated Total: PKR"), "WhatsApp message missing estimated total");
+
+console.log(`social services ok: ${services.length} priced services, min/max quantities valid, WhatsApp totals working`);

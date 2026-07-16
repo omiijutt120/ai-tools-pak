@@ -138,48 +138,100 @@ function duplicateCount(values) {
   return duplicates.size;
 }
 
+function numberOrNull(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : null;
+}
+
+function round(value, places = 2) {
+  const factor = 10 ** places;
+  return Math.round(value * factor) / factor;
+}
+
 const rows = parseCsv(fs.readFileSync(sourcePath, "utf8"));
 const headers = rows.shift();
-const packedRows = rows.map((row) => Object.fromEntries(headers.map((header, index) => [header, row[index] || ""])));
+const sourceRows = rows.map((row) => Object.fromEntries(headers.map((header, index) => [header, row[index] || ""])));
 const services = [];
 let placeholders = 0;
+let sourceMode = "packed-unpriced";
 
-for (const row of packedRows) {
-  for (const slot of slots) {
-    const sourceId = String(row[slot.id] || "").trim();
-    const serviceName = String(row[slot.name] || "").trim();
-    if (!sourceId && !serviceName) continue;
+if (headers.includes("rate_pkr") && headers.includes("service_name")) {
+  sourceMode = "priced-pkr";
+  for (const row of sourceRows) {
+    const serviceName = String(row.service_name || "").trim();
     if (!serviceName || serviceName === "No service") {
       placeholders += 1;
       continue;
     }
 
+    const sellingRatePkr = numberOrNull(row.rate_pkr);
+    const baseRatePkr = sellingRatePkr ? round(sellingRatePkr / (1 + SOCIAL_SERVICE_MARKUP), 2) : "";
+    const baseRateUsd = sellingRatePkr ? round(baseRatePkr / USD_TO_PKR, 6) : "";
+
     const catalogId = `SMS-${String(services.length + 1).padStart(4, "0")}`;
-    const category = String(row["card-title"] || "Social Media Services").trim();
-    const details = String(row[slot.details] || "").trim();
-    const averageTime = String(row[slot.time] || "Confirm on WhatsApp").trim();
 
     services.push({
       catalog_id: catalogId,
-      old_service_id: sourceId,
-      current_provider_id: sourceId,
-      category,
+      old_service_id: String(row.id || "").trim(),
+      current_provider_id: String(row.id || "").trim(),
+      platform: String(row.platform || "").trim(),
+      category: String(row.category || "Social Media Services").trim(),
       service_name: serviceName,
-      average_time: averageTime || "Confirm on WhatsApp",
-      details,
-      base_rate_usd: "",
+      average_time: String(row.average_time || "Confirm on WhatsApp").trim(),
+      details: "",
+      base_rate_usd: baseRateUsd,
       usd_to_pkr: USD_TO_PKR,
-      base_rate_pkr: "",
+      base_rate_pkr: baseRatePkr,
       markup_percent: SOCIAL_SERVICE_MARKUP,
-      selling_rate_pkr: "",
-      min_quantity: "",
-      max_quantity: "",
-      pricing_basis: pricingBasis(serviceName, details),
-      match_status: "review",
-      match_confidence: "0",
-      matched_provider_name: "",
+      selling_rate_pkr: sellingRatePkr || "",
+      min_quantity: String(row.min_quantity || "").trim(),
+      max_quantity: String(row.max_quantity || "").trim(),
+      pricing_basis: String(row.pricing_basis || pricingBasis(serviceName, "")).trim(),
+      match_status: sellingRatePkr ? "exact" : "review",
+      match_confidence: sellingRatePkr ? "1" : "0",
+      matched_provider_name: serviceName,
       price_checked_at: IMPORT_DATE
     });
+  }
+} else {
+  for (const row of sourceRows) {
+    for (const slot of slots) {
+      const sourceId = String(row[slot.id] || "").trim();
+      const serviceName = String(row[slot.name] || "").trim();
+      if (!sourceId && !serviceName) continue;
+      if (!serviceName || serviceName === "No service") {
+        placeholders += 1;
+        continue;
+      }
+
+      const catalogId = `SMS-${String(services.length + 1).padStart(4, "0")}`;
+      const category = String(row["card-title"] || "Social Media Services").trim();
+      const details = String(row[slot.details] || "").trim();
+      const averageTime = String(row[slot.time] || "Confirm on WhatsApp").trim();
+
+      services.push({
+        catalog_id: catalogId,
+        old_service_id: sourceId,
+        current_provider_id: sourceId,
+        platform: platformFor(serviceName, category),
+        category,
+        service_name: serviceName,
+        average_time: averageTime || "Confirm on WhatsApp",
+        details,
+        base_rate_usd: "",
+        usd_to_pkr: USD_TO_PKR,
+        base_rate_pkr: "",
+        markup_percent: SOCIAL_SERVICE_MARKUP,
+        selling_rate_pkr: "",
+        min_quantity: "",
+        max_quantity: "",
+        pricing_basis: pricingBasis(serviceName, details),
+        match_status: "review",
+        match_confidence: "0",
+        matched_provider_name: "",
+        price_checked_at: IMPORT_DATE
+      });
+    }
   }
 }
 
@@ -189,12 +241,11 @@ const duplicateOldIds = duplicateCount(services.map((service) => service.old_ser
 const exactMatches = services.filter((service) => service.match_status === "exact").length;
 const reviewMatches = services.filter((service) => service.match_status === "review").length;
 const unmatched = services.filter((service) => service.match_status === "unmatched").length;
-const invalidUsdRates = services.filter((service) => service.match_status === "exact" && !Number.isFinite(Number(service.base_rate_usd))).length;
-const invalidPkrPrices = services.filter((service) => service.match_status === "exact" && !Number.isFinite(Number(service.selling_rate_pkr))).length;
+const invalidUsdRates = services.filter((service) => service.match_status === "exact" && (!Number.isFinite(Number(service.base_rate_usd)) || Number(service.base_rate_usd) <= 0)).length;
+const invalidPkrPrices = services.filter((service) => service.match_status === "exact" && (!Number.isFinite(Number(service.selling_rate_pkr)) || Number(service.selling_rate_pkr) <= 0)).length;
 
 const errors = [
-  services.length !== 354 && `Expected 354 services, found ${services.length}`,
-  placeholders !== 1 && `Expected 1 No service placeholder, found ${placeholders}`,
+  !services.length && "No services imported",
   duplicateCatalogIds && `Duplicate catalog IDs: ${duplicateCatalogIds}`,
   missingNames && `Missing service names: ${missingNames}`,
   invalidUsdRates && `Invalid USD rates: ${invalidUsdRates}`,
@@ -214,12 +265,12 @@ const frontendServices = services.map((service) => ({
   averageTime: service.average_time,
   details: service.details,
   pricingBasis: service.pricing_basis,
-  sellingRatePkr: null,
-  minQuantity: null,
-  maxQuantity: null,
+  sellingRatePkr: numberOrNull(service.selling_rate_pkr),
+  minQuantity: numberOrNull(service.min_quantity),
+  maxQuantity: numberOrNull(service.max_quantity),
   matchStatus: service.match_status,
   matchConfidence: Number(service.match_confidence),
-  platform: platformFor(service.service_name, service.category),
+  platform: service.platform || platformFor(service.service_name, service.category),
   sensitive: isSensitive(service.service_name, service.details),
   searchText: normalizeText([
     service.catalog_id,
@@ -239,6 +290,8 @@ fs.writeFileSync(
 );
 
 const report = [
+  `Source mode: ${sourceMode}`,
+  `CSV rows read: ${sourceRows.length}`,
   `CSV services read: ${services.length + placeholders}`,
   `Real services imported: ${services.length}`,
   `Exact price matches: ${exactMatches}`,
@@ -252,7 +305,9 @@ const report = [
   `No service placeholders excluded: ${placeholders}`,
   `USD to PKR: ${USD_TO_PKR}`,
   `Markup percent: ${SOCIAL_SERVICE_MARKUP}`,
-  "Root cause: the supplied export contains service IDs, names, categories, average times and details, but no rate, minimum or maximum quantity columns. Prices were left for WhatsApp confirmation instead of being guessed."
+  sourceMode === "priced-pkr"
+    ? "Root cause fixed: the new CSV contains final PKR rates with 30% markup, so prices are imported directly and the frontend does not add markup again."
+    : "Root cause: the supplied export contains service IDs, names, categories, average times and details, but no rate, minimum or maximum quantity columns. Prices were left for WhatsApp confirmation instead of being guessed."
 ].join("\n");
 
 fs.writeFileSync(reportPath, `${report}\n`, "utf8");

@@ -14,6 +14,7 @@ node scripts/generate-social-services.js
 ```bash
 node scripts/check-catalog.js
 node scripts/check-social-services.js
+node scripts/check-site-links.js
 node --check script.js
 node --check social-media-services/social-services.js
 ```
