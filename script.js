@@ -7,8 +7,8 @@ const products = [
   { name: "Gemini Pro", category: "AI Assistants", plan: "Pro plan", duration: "18 months", access: "Private access", credits: "Google AI access", price: 720, initials: "GP", image: logo("gemini.google.com") },
   { name: "Runway ML", category: "AI Video", plan: "Video generation plan", duration: "Flexible plan", access: "Private access", credits: "Video generation tools", price: 2520, initials: "RM", image: logo("runwayml.com") },
   { name: "Leonardo AI", category: "AI Images and Design", plan: "Design plan", duration: "Flexible plan", access: "Private access", credits: "Image generation tools", price: 1200, initials: "LA", image: logo("leonardo.ai") },
-  { name: "ChatGPT Plus", category: "AI Assistants", plan: "Plus plan", duration: "Flexible plan", access: "Private access", credits: "Advanced AI assistant", price: 1200, initials: "CG", image: logo("chatgpt.com") },
-  { name: "Claude AI", category: "Development and Coding", plan: "AI assistant plan", duration: "Flexible plan", access: "Private access", credits: "Writing and coding assistant", price: 2399, initials: "CL", image: logo("claude.ai") },
+  { name: "ChatGPT Plus", category: "AI Assistants", plan: "Plus plan", duration: "Flexible plan", access: "Private access", credits: "Advanced AI assistant", price: 1200, initials: "CG", image: logo("chatgpt.com"), guideUrl: "chatgpt-plus-pakistan/" },
+  { name: "Claude AI", category: "Development and Coding", plan: "AI assistant plan", duration: "Flexible plan", access: "Private access", credits: "Writing and coding assistant", price: 2399, initials: "CL", image: logo("claude.ai"), guideUrl: "claude-pro-pakistan/" },
   { name: "Lovable AI Pro", category: "Development and Coding", plan: "Pro plan", duration: "Flexible plan", access: "Private access", credits: "Monthly and daily credits", price: 1644, initials: "LV", image: logo("lovable.dev") },
   { name: "Grammarly Premium", category: "Writing and SEO", plan: "Premium plan", duration: "Flexible plan", access: "Private access", credits: "Grammar and writing tools", price: 959, initials: "GR", image: logo("grammarly.com") },
   { name: "QuillBot", category: "Writing and SEO", plan: "Writing plan", duration: "Flexible plan", access: "Private access", credits: "Paraphrasing and writing tools", price: 479, initials: "QB", image: logo("quillbot.com") },
@@ -84,6 +84,7 @@ function productCard(product) {
         <span>${product.credits}</span>
       </div>
       <div class="price">PKR ${formatter.format(product.price)}</div>
+      ${product.guideUrl ? `<a class="product-guide-link" href="${product.guideUrl}">View buying guide</a>` : ""}
       <div class="product-actions">
         <a class="button primary" target="_blank" rel="noopener" href="${whatsappLink(productMessage(product, "buy this plan"))}">Buy</a>
         <button class="button secondary glass-panel" type="button" data-details="${product.name}">Details</button>
