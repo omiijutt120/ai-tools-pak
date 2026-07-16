@@ -7,6 +7,11 @@ mobile-check.png
 desktop-cdp.png
 mobile-cdp.png
 logo-check.png
+social-promotion-kit.md
+fetch_and_convert_social_services.py
+social_media_services_flat_355.csv
+social-runtime-*.html
+social-runtime-*.err
 *.log
 .env
 .env.*

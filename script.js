@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "923714549245";
+const WHATSAPP_NUMBER = window.AI_TOOLS_CONFIG?.whatsappNumber || "923714549245";
 const CART_KEY = "ai-tools-pak-cart";
 const products = window.AI_TOOLS_PRODUCTS || [];
 const productBySlug = new Map(products.map((product) => [product.slug, product]));

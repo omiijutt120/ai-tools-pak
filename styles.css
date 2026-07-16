@@ -1213,6 +1213,194 @@ details p {
   height: 1rem;
 }
 
+.social-promo { padding-top: 1rem; }
+
+.social-promo-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.social-promo-panel h2 {
+  margin: 0;
+  font-size: clamp(1.65rem, 3vw, 2.6rem);
+}
+
+.social-promo-panel p:not(.eyebrow) {
+  max-width: 42rem;
+  margin: .5rem 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.social-hero { padding-bottom: 1rem; }
+
+.social-proof {
+  justify-content: flex-start;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.social-catalog { padding-top: 2rem; }
+
+.social-controls {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.platform-filters,
+.social-selects,
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .65rem;
+}
+
+.platform-chip {
+  border: 0;
+  border-radius: 999px;
+  padding: .65rem .9rem;
+  color: var(--ink);
+  font-weight: 600;
+  transition: transform .18s ease-out, background .18s ease-out;
+}
+
+.platform-chip.is-active {
+  background: var(--dark);
+  color: #fff;
+}
+
+.select-control {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  border-radius: 999px;
+  padding: .55rem .7rem .55rem .9rem;
+  color: var(--muted);
+  font-size: .88rem;
+  font-weight: 600;
+}
+
+.select-control select {
+  min-width: 9rem;
+  border: 0;
+  outline: 0;
+  color: var(--ink);
+  background: transparent;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+
+.service-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  min-height: 24rem;
+  padding: 1rem;
+  border-radius: 1.35rem;
+}
+
+.service-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  align-items: center;
+}
+
+.service-id {
+  color: var(--muted);
+  font: 600 .78rem "IBM Plex Mono", monospace;
+}
+
+.service-card h3 {
+  margin: 0;
+  font-size: 1.03rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.service-price {
+  margin-top: auto;
+  color: var(--warning);
+  font-weight: 700;
+}
+
+.pagination-controls {
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.pagination-controls span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+  transform: none;
+}
+
+.service-dialog .dialog-product p { white-space: pre-line; }
+
+.service-order-form {
+  display: grid;
+  gap: .8rem;
+  margin-top: 1rem;
+}
+
+.service-order-form label {
+  display: grid;
+  gap: .35rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.service-order-form input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: .9rem;
+  padding: .8rem .9rem;
+  color: var(--ink);
+  background: rgba(255,255,255,.72);
+}
+
+.service-order-form output {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.form-error {
+  min-height: 1.25rem;
+  margin: 0;
+  color: var(--error);
+  font-size: .9rem;
+}
+
+.warning-note {
+  margin: .9rem 0;
+  color: var(--warning);
+  padding: .75rem;
+  border-radius: 1rem;
+}
+
 /* ==========================================
    TABLET - max-width: 1080px
    ========================================== */
@@ -1262,6 +1450,15 @@ details p {
     flex-direction: column;
     align-items: stretch;
     padding: 1.25rem;
+  }
+
+  .social-promo-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .page-layout {
@@ -1517,6 +1714,39 @@ details p {
     width: 100%;
     justify-content: center;
     padding: .65rem 1rem;
+  }
+
+  .social-promo-panel { padding: 1rem; }
+
+  .social-selects,
+  .social-selects .select-control {
+    width: 100%;
+  }
+
+  .select-control {
+    justify-content: space-between;
+  }
+
+  .select-control select {
+    min-width: 0;
+    max-width: 60%;
+  }
+
+  .platform-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: .25rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .platform-chip { white-space: nowrap; }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: auto;
   }
 }
 
