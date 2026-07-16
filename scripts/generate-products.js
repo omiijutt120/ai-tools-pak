@@ -268,35 +268,6 @@ function productPageHtml(product, related) {
           url: canonical,
           itemCondition: "https://schema.org/NewCondition"
         }
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: `How much does ${product.name} cost in Pakistan?`,
-            acceptedAnswer: { "@type": "Answer", text: `${product.name} is listed at PKR ${price}. Confirm current availability, duration and access details on WhatsApp before payment. Last verified on ${DISPLAY_DATE}.` }
-          },
-          {
-            "@type": "Question",
-            name: `Is ${product.name} official or affiliated?`,
-            acceptedAnswer: { "@type": "Answer", text: "AI Tools Pak does not claim official partnership, authorization or reseller status unless written authorization exists. Product names belong to their respective owners." }
-          },
-          {
-            "@type": "Question",
-            name: "Do I need to share my email password?",
-            acceptedAnswer: { "@type": "Answer", text: "No. Do not share your email password. Confirm the activation method and only provide information agreed with support." }
-          }
-        ]
-      },
-      {
-        "@type": "HowTo",
-        name: `How to order ${product.name} in Pakistan`,
-        step: [
-          { "@type": "HowToStep", name: "Confirm details", text: "Confirm price, duration, access model and support terms on WhatsApp." },
-          { "@type": "HowToStep", name: "Pay after confirmation", text: "Pay only after the plan details and refund condition are clear." },
-          { "@type": "HowToStep", name: "Receive activation", text: "Follow the agreed activation or delivery instructions without sharing your email password." }
-        ]
       }
     ]
   };

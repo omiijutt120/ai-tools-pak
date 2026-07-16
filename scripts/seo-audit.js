@@ -20,6 +20,10 @@ function first(html, pattern) {
   return html.match(pattern)?.[1]?.trim() || "";
 }
 
+function hasMeta(html, pattern) {
+  return pattern.test(html);
+}
+
 function record(type, value, file) {
   if (!value) return;
   const list = seen[type].get(value) || [];
@@ -47,8 +51,19 @@ for (const url of urls) {
   if (canonical && canonical !== url) errors.push(`Canonical mismatch: ${url} -> ${canonical}`);
   if (!h1) errors.push(`Missing H1: ${url}`);
   if (/noindex/i.test(robots)) errors.push(`Sitemap URL is noindex: ${url}`);
+  if (!hasMeta(html, /<meta property="og:title" content="[^"]+"/i)) errors.push(`Missing og:title: ${url}`);
+  if (!hasMeta(html, /<meta property="og:description" content="[^"]+"/i)) errors.push(`Missing og:description: ${url}`);
+  if (!hasMeta(html, /<meta property="og:image" content="[^"]+"/i)) errors.push(`Missing og:image: ${url}`);
+  if (!hasMeta(html, /<meta name="twitter:card" content="[^"]+"/i)) errors.push(`Missing twitter:card: ${url}`);
+  if (/"@type"\s*:\s*"(FAQPage|HowTo)"/i.test(html)) {
+    errors.push(`Outdated Google rich-result schema present: ${url}`);
+  }
   if (!html.includes('type="application/ld+json"') && !url.includes("/privacy-policy/") && !url.includes("/terms-and-conditions/")) {
     errors.push(`No JSON-LD on important page: ${url}`);
+  }
+
+  for (const image of html.matchAll(/<img\b[^>]*>/gi)) {
+    if (!/\salt="[^"]*"/i.test(image[0])) errors.push(`Image missing alt text: ${url}: ${image[0].slice(0, 120)}`);
   }
 
   for (const script of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {

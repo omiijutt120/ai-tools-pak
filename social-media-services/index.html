@@ -53,6 +53,9 @@
       </section>
 
       <section class="section social-catalog" aria-label="Social media services catalog">
+        <div class="notice glass-panel">
+          Service names come from the supplier catalog. Any wording about official status, safety, refill, lifetime support, speed or guarantees must be confirmed on WhatsApp before payment and is not independently guaranteed by AI Tools Pak.
+        </div>
         <div class="section-heading with-search">
           <div>
             <p class="eyebrow">Catalog</p>
@@ -126,54 +129,41 @@
       </button>
       <div id="serviceDialogContent"></div>
     </dialog>
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://aitoolspak.tech/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Social Media Services",
-      "item": "https://aitoolspak.tech/social-media-services/"
-    }
-  ]
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Are social media service prices final on this page?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Prices are imported from the latest PKR catalog file. Customers should confirm availability, quantity and final order details on WhatsApp before payment."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does AI Tools Pak collect passwords?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. The website does not collect account passwords or two-factor authentication codes."
-      }
-    }
-  ]
-}
-    </script>
     <script src="../site-config.js"></script>
     <script src="../social-services-data.js"></script>
     <script src="social-services.js"></script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Social Media Services",
+      "url": "https://aitoolspak.tech/social-media-services/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "AI Tools Pak",
+        "url": "https://aitoolspak.tech/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aitoolspak.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Social Media Services",
+          "item": "https://aitoolspak.tech/social-media-services/"
+        }
+      ]
+    }
+  ]
+}</script>
   </body>
 </html>
 
