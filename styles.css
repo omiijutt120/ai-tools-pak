@@ -782,6 +782,23 @@ h1 span + span {
   font: 600 1.35rem "IBM Plex Mono", monospace;
 }
 
+.price span {
+  display: block;
+}
+
+.compare-price {
+  color: var(--muted);
+  font-size: .9rem;
+  text-decoration: line-through;
+}
+
+.confirmation-note {
+  margin: 0;
+  color: var(--warning);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
 .product-guide-link {
   color: var(--ink);
   font-weight: 600;

@@ -99,7 +99,7 @@
           <a class="button secondary" href="#finder">Find My Tool</a>
         </div>
         <div class="hero-proof" aria-label="Store highlights">
-          <span><strong>12+</strong> tools listed</span>
+          <span><strong data-product-count>19</strong> AI tools listed</span>
           <span><strong>PKR</strong> local pricing</span>
           <span><strong>11 AM-11 PM</strong> support</span>
         </div>
@@ -173,15 +173,7 @@
           <p class="eyebrow">Shop by category</p>
           <h2>Find the tool by workflow.</h2>
         </div>
-        <div class="category-grid">
-          <button class="glass-panel category-card" type="button" data-category="AI Assistants">AI Assistants <span>Research, chat and reasoning</span></button>
-          <button class="glass-panel category-card" type="button" data-category="AI Video">AI Video <span>Editors, avatars and generation</span></button>
-          <button class="glass-panel category-card" type="button" data-category="AI Images and Design">AI Images and Design <span>Creative assets and visuals</span></button>
-          <button class="glass-panel category-card" type="button" data-category="AI Voice">AI Voice <span>Speech, dubbing and narration</span></button>
-          <button class="glass-panel category-card" type="button" data-category="Writing and SEO">Writing and SEO <span>Copy, grammar and ranking</span></button>
-          <button class="glass-panel category-card" type="button" data-category="Development and Coding">Development and Coding <span>Build, debug and ship faster</span></button>
-          <button class="glass-panel category-card" type="button" data-category="Marketing and Lead Generation">Marketing and Leads <span>Growth, outreach and channels</span></button>
-        </div>
+        <div class="category-grid" id="categoryGrid"></div>
       </section>
 
       <section class="section" id="catalog" aria-label="AI tools catalog with PKR pricing">
@@ -205,15 +197,22 @@
             <li>ChatGPT Plus - PKR 1,200</li>
             <li>Claude AI - PKR 2,399</li>
             <li>Gemini Pro - PKR 720</li>
-            <li>ElevenLabs Creator - PKR 3,000</li>
-            <li>Runway ML - PKR 2,520</li>
+            <li>ElevenLabs Creator - Private - PKR 3,000</li>
+            <li>Runway ML - Unlimited Generations - PKR 2,520</li>
             <li>Leonardo AI - PKR 1,200</li>
-            <li>Grammarly Premium - PKR 959</li>
+            <li>Grammarly Pro - PKR 959</li>
             <li>QuillBot - PKR 479</li>
-            <li>Lovable AI Pro - PKR 1,644</li>
+            <li>Lovable AI Pro - Private - PKR 1,644</li>
             <li>HeyGen AI - PKR 1,800</li>
-            <li>Ideogram AI Plus - PKR 4,200</li>
-            <li>Success.ai Starter - PKR 2,400</li>
+            <li>Ideogram AI Plus - Private - PKR 4,200</li>
+            <li>Success.ai Starter Leads - PKR 2,400</li>
+            <li>vidIQ - PKR 2,159</li>
+            <li>PlayHT - PKR 3,960</li>
+            <li>SuperGrok - PKR 1,800</li>
+            <li>WordAI - PKR 600</li>
+            <li>Jasper AI - PKR 600</li>
+            <li>Google AI Ultra Plan - PKR 1,764</li>
+            <li>Hailuo AI - PKR 2,040</li>
           </ul>
         </noscript>
       </section>
@@ -463,79 +462,121 @@
   "@type": "ItemList",
   "name": "AI tools available in Pakistan",
   "description": "Browse AI tool subscriptions available for purchase in Pakistan with PKR pricing.",
-  "numberOfItems": 12,
+  "numberOfItems": 19,
   "itemListElement": [
     {
       "@type": "ListItem",
       "position": 1,
       "name": "ChatGPT Plus",
-      "url": "https://aitoolspak.tech/#catalog"
+      "url": "https://aitoolspak.tech/#product-chatgpt-plus"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Claude AI",
-      "url": "https://aitoolspak.tech/#catalog"
+      "url": "https://aitoolspak.tech/#product-claude-ai"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Gemini Pro",
-      "url": "https://aitoolspak.tech/#catalog"
+      "url": "https://aitoolspak.tech/#product-gemini-pro"
     },
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "ElevenLabs Creator",
-      "url": "https://aitoolspak.tech/#catalog"
+      "name": "ElevenLabs Creator - Private",
+      "url": "https://aitoolspak.tech/#product-elevenlabs-creator-private"
     },
     {
       "@type": "ListItem",
       "position": 5,
-      "name": "Runway ML",
-      "url": "https://aitoolspak.tech/#catalog"
+      "name": "Runway ML - Unlimited Generations",
+      "url": "https://aitoolspak.tech/#product-runway-ml-unlimited-generations"
     },
     {
       "@type": "ListItem",
       "position": 6,
       "name": "Leonardo AI",
-      "url": "https://aitoolspak.tech/#catalog"
+      "url": "https://aitoolspak.tech/#product-leonardo-ai"
     },
     {
       "@type": "ListItem",
       "position": 7,
-      "name": "Grammarly Premium",
-      "url": "https://aitoolspak.tech/#catalog"
+      "name": "Grammarly Pro",
+      "url": "https://aitoolspak.tech/#product-grammarly-pro"
     },
     {
       "@type": "ListItem",
       "position": 8,
       "name": "QuillBot",
-      "url": "https://aitoolspak.tech/#catalog"
+      "url": "https://aitoolspak.tech/#product-quillbot"
     },
     {
       "@type": "ListItem",
       "position": 9,
-      "name": "Lovable AI Pro",
-      "url": "https://aitoolspak.tech/#catalog"
+      "name": "Lovable AI Pro - Private",
+      "url": "https://aitoolspak.tech/#product-lovable-ai-pro-private"
     },
     {
       "@type": "ListItem",
       "position": 10,
       "name": "HeyGen AI",
-      "url": "https://aitoolspak.tech/#catalog"
+      "url": "https://aitoolspak.tech/#product-heygen-ai"
     },
     {
       "@type": "ListItem",
       "position": 11,
-      "name": "Ideogram AI Plus",
-      "url": "https://aitoolspak.tech/#catalog"
+      "name": "Ideogram AI Plus - Private",
+      "url": "https://aitoolspak.tech/#product-ideogram-ai-plus-private"
     },
     {
       "@type": "ListItem",
       "position": 12,
-      "name": "Success.ai Starter",
-      "url": "https://aitoolspak.tech/#catalog"
+      "name": "Success.ai Starter Leads",
+      "url": "https://aitoolspak.tech/#product-success-ai-starter-leads"
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "name": "vidIQ",
+      "url": "https://aitoolspak.tech/#product-vidiq"
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "name": "PlayHT",
+      "url": "https://aitoolspak.tech/#product-playht"
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "name": "SuperGrok",
+      "url": "https://aitoolspak.tech/#product-supergrok"
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "name": "WordAI",
+      "url": "https://aitoolspak.tech/#product-wordai"
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "name": "Jasper AI",
+      "url": "https://aitoolspak.tech/#product-jasper-ai"
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "name": "Google AI Ultra Plan",
+      "url": "https://aitoolspak.tech/#product-google-ai-ultra-plan"
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "name": "Hailuo AI",
+      "url": "https://aitoolspak.tech/#product-hailuo-ai"
     }
   ]
 }
@@ -546,230 +587,14 @@
   "@graph": [
     {
       "@type": "Product",
-      "name": "ElevenLabs Creator Subscription Pakistan",
-      "description": "ElevenLabs Creator AI voice subscription with 300K+ credits, PKR pricing and WhatsApp ordering in Pakistan.",
-      "brand": {
-        "@type": "Brand",
-        "name": "ElevenLabs"
-      },
-      "category": "AI Voice",
-      "url": "https://aitoolspak.tech/#catalog",
-      "offers": {
-        "@type": "Offer",
-        "price": 3000,
-        "priceCurrency": "PKR",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "AI Tools Pak"
-        },
-        "url": "https://aitoolspak.tech/#catalog",
-        "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "PK"
-          },
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": 0,
-            "currency": "PKR"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 2,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 0,
-              "unitCode": "DAY"
-            }
-          }
-        }
-      },
-      "image": "https://aitoolspak.tech/og-image.png"
-    },
-    {
-      "@type": "Product",
-      "name": "Gemini Pro Subscription Pakistan",
-      "description": "Gemini Pro AI assistant subscription with 18-month private access, PKR pricing and WhatsApp ordering in Pakistan.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Google"
-      },
-      "category": "AI Assistants",
-      "url": "https://aitoolspak.tech/#catalog",
-      "offers": {
-        "@type": "Offer",
-        "price": 720,
-        "priceCurrency": "PKR",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "AI Tools Pak"
-        },
-        "url": "https://aitoolspak.tech/#catalog",
-        "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "PK"
-          },
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": 0,
-            "currency": "PKR"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 2,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 0,
-              "unitCode": "DAY"
-            }
-          }
-        }
-      },
-      "image": "https://aitoolspak.tech/og-image.png"
-    },
-    {
-      "@type": "Product",
-      "name": "Runway ML Subscription Pakistan",
-      "description": "Runway ML video generation subscription with private access, PKR pricing and WhatsApp ordering in Pakistan.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Runway"
-      },
-      "category": "AI Video",
-      "url": "https://aitoolspak.tech/#catalog",
-      "offers": {
-        "@type": "Offer",
-        "price": 2520,
-        "priceCurrency": "PKR",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "AI Tools Pak"
-        },
-        "url": "https://aitoolspak.tech/#catalog",
-        "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "PK"
-          },
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": 0,
-            "currency": "PKR"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 2,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 0,
-              "unitCode": "DAY"
-            }
-          }
-        }
-      },
-      "image": "https://aitoolspak.tech/og-image.png"
-    },
-    {
-      "@type": "Product",
-      "name": "Leonardo AI Subscription Pakistan",
-      "description": "Leonardo AI image and design tools subscription with private access, PKR pricing and WhatsApp ordering in Pakistan.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Leonardo AI"
-      },
-      "category": "AI Images and Design",
-      "url": "https://aitoolspak.tech/#catalog",
-      "offers": {
-        "@type": "Offer",
-        "price": 1200,
-        "priceCurrency": "PKR",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "AI Tools Pak"
-        },
-        "url": "https://aitoolspak.tech/#catalog",
-        "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "PK"
-          },
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": 0,
-            "currency": "PKR"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 2,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 0,
-              "unitCode": "DAY"
-            }
-          }
-        }
-      },
-      "image": "https://aitoolspak.tech/og-image.png"
-    },
-    {
-      "@type": "Product",
       "name": "ChatGPT Plus Subscription Pakistan",
-      "description": "ChatGPT Plus AI assistant subscription with private access, PKR pricing and WhatsApp ordering in Pakistan.",
+      "description": "All-round AI assistant for writing, study, coding and business work.",
       "brand": {
         "@type": "Brand",
-        "name": "OpenAI"
+        "name": "ChatGPT Plus"
       },
       "category": "AI Assistants",
-      "url": "https://aitoolspak.tech/#catalog",
+      "url": "https://aitoolspak.tech/#product-chatgpt-plus",
       "offers": {
         "@type": "Offer",
         "price": 1200,
@@ -779,7 +604,7 @@
           "@type": "Organization",
           "name": "AI Tools Pak"
         },
-        "url": "https://aitoolspak.tech/#catalog",
+        "url": "https://aitoolspak.tech/#product-chatgpt-plus",
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
@@ -812,18 +637,18 @@
           }
         }
       },
-      "image": "https://aitoolspak.tech/og-image.png"
+      "image": "https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128"
     },
     {
       "@type": "Product",
       "name": "Claude AI Subscription Pakistan",
-      "description": "Claude AI writing and coding assistant subscription with private access, PKR pricing and WhatsApp ordering in Pakistan.",
+      "description": "Careful AI assistant for long writing, research and coding support.",
       "brand": {
         "@type": "Brand",
-        "name": "Anthropic"
+        "name": "Claude Pro"
       },
       "category": "Development and Coding",
-      "url": "https://aitoolspak.tech/#catalog",
+      "url": "https://aitoolspak.tech/#product-claude-ai",
       "offers": {
         "@type": "Offer",
         "price": 2399,
@@ -833,7 +658,7 @@
           "@type": "Organization",
           "name": "AI Tools Pak"
         },
-        "url": "https://aitoolspak.tech/#catalog",
+        "url": "https://aitoolspak.tech/#product-claude-ai",
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
@@ -866,28 +691,28 @@
           }
         }
       },
-      "image": "https://aitoolspak.tech/og-image.png"
+      "image": "https://www.google.com/s2/favicons?domain=claude.ai&sz=128"
     },
     {
       "@type": "Product",
-      "name": "Lovable AI Pro Subscription Pakistan",
-      "description": "Lovable AI Pro coding subscription with monthly and daily credits, PKR pricing and WhatsApp ordering in Pakistan.",
+      "name": "Gemini Pro Subscription Pakistan",
+      "description": "Google AI assistant access with long duration plan details.",
       "brand": {
         "@type": "Brand",
-        "name": "Lovable"
+        "name": "Gemini Advanced"
       },
-      "category": "Development and Coding",
-      "url": "https://aitoolspak.tech/#catalog",
+      "category": "AI Assistants",
+      "url": "https://aitoolspak.tech/#product-gemini-pro",
       "offers": {
         "@type": "Offer",
-        "price": 1644,
+        "price": 720,
         "priceCurrency": "PKR",
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "Organization",
           "name": "AI Tools Pak"
         },
-        "url": "https://aitoolspak.tech/#catalog",
+        "url": "https://aitoolspak.tech/#product-gemini-pro",
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
@@ -920,18 +745,180 @@
           }
         }
       },
-      "image": "https://aitoolspak.tech/og-image.png"
+      "image": "https://www.google.com/s2/favicons?domain=gemini.google.com&sz=128"
     },
     {
       "@type": "Product",
-      "name": "Grammarly Premium Subscription Pakistan",
-      "description": "Grammarly Premium writing subscription with grammar tools, PKR pricing and WhatsApp ordering in Pakistan.",
+      "name": "ElevenLabs Creator - Private Subscription Pakistan",
+      "description": "AI voice subscription for narration, dubbing and creator audio workflows.",
       "brand": {
         "@type": "Brand",
-        "name": "Grammarly"
+        "name": "ElevenLabs Creator"
+      },
+      "category": "AI Voice",
+      "url": "https://aitoolspak.tech/#product-elevenlabs-creator-private",
+      "offers": {
+        "@type": "Offer",
+        "price": 3000,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-elevenlabs-creator-private",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "Runway ML - Unlimited Generations Subscription Pakistan",
+      "description": "AI video generation access for creator and agency workflows.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Runway ML"
+      },
+      "category": "AI Video",
+      "url": "https://aitoolspak.tech/#product-runway-ml-unlimited-generations",
+      "offers": {
+        "@type": "Offer",
+        "price": 2520,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-runway-ml-unlimited-generations",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=runwayml.com&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "Leonardo AI Subscription Pakistan",
+      "description": "AI image and design subscription for creative visual workflows.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Leonardo AI"
+      },
+      "category": "AI Images and Design",
+      "url": "https://aitoolspak.tech/#product-leonardo-ai",
+      "offers": {
+        "@type": "Offer",
+        "price": 1200,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-leonardo-ai",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=leonardo.ai&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "Grammarly Pro Subscription Pakistan",
+      "description": "Writing assistant for grammar, rewriting and clarity checks.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Grammarly Pro"
       },
       "category": "Writing and SEO",
-      "url": "https://aitoolspak.tech/#catalog",
+      "url": "https://aitoolspak.tech/#product-grammarly-pro",
       "offers": {
         "@type": "Offer",
         "price": 959,
@@ -941,7 +928,7 @@
           "@type": "Organization",
           "name": "AI Tools Pak"
         },
-        "url": "https://aitoolspak.tech/#catalog",
+        "url": "https://aitoolspak.tech/#product-grammarly-pro",
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
@@ -974,18 +961,18 @@
           }
         }
       },
-      "image": "https://aitoolspak.tech/og-image.png"
+      "image": "https://www.google.com/s2/favicons?domain=grammarly.com&sz=128"
     },
     {
       "@type": "Product",
       "name": "QuillBot Subscription Pakistan",
-      "description": "QuillBot writing and paraphrasing subscription with private access, PKR pricing and WhatsApp ordering in Pakistan.",
+      "description": "Paraphrasing and writing support for students and freelancers.",
       "brand": {
         "@type": "Brand",
         "name": "QuillBot"
       },
       "category": "Writing and SEO",
-      "url": "https://aitoolspak.tech/#catalog",
+      "url": "https://aitoolspak.tech/#product-quillbot",
       "offers": {
         "@type": "Offer",
         "price": 479,
@@ -995,7 +982,7 @@
           "@type": "Organization",
           "name": "AI Tools Pak"
         },
-        "url": "https://aitoolspak.tech/#catalog",
+        "url": "https://aitoolspak.tech/#product-quillbot",
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
@@ -1028,28 +1015,28 @@
           }
         }
       },
-      "image": "https://aitoolspak.tech/og-image.png"
+      "image": "https://www.google.com/s2/favicons?domain=quillbot.com&sz=128"
     },
     {
       "@type": "Product",
-      "name": "Success.ai Starter Subscription Pakistan",
-      "description": "Success.ai Starter lead generation subscription with 2,000 contacts, PKR pricing and WhatsApp ordering in Pakistan.",
+      "name": "Lovable AI Pro - Private Subscription Pakistan",
+      "description": "AI coding and app-building subscription for fast prototypes.",
       "brand": {
         "@type": "Brand",
-        "name": "Success.ai"
+        "name": "Lovable AI Pro"
       },
-      "category": "Marketing and Lead Generation",
-      "url": "https://aitoolspak.tech/#catalog",
+      "category": "Development and Coding",
+      "url": "https://aitoolspak.tech/#product-lovable-ai-pro-private",
       "offers": {
         "@type": "Offer",
-        "price": 2400,
+        "price": 1644,
         "priceCurrency": "PKR",
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "Organization",
           "name": "AI Tools Pak"
         },
-        "url": "https://aitoolspak.tech/#catalog",
+        "url": "https://aitoolspak.tech/#product-lovable-ai-pro-private",
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
@@ -1082,18 +1069,18 @@
           }
         }
       },
-      "image": "https://aitoolspak.tech/og-image.png"
+      "image": "https://www.google.com/s2/favicons?domain=lovable.dev&sz=128"
     },
     {
       "@type": "Product",
       "name": "HeyGen AI Subscription Pakistan",
-      "description": "HeyGen AI video subscription for avatars and text-to-video, PKR pricing and WhatsApp ordering in Pakistan.",
+      "description": "AI avatar and text-to-video tool for creator workflows.",
       "brand": {
         "@type": "Brand",
-        "name": "HeyGen"
+        "name": "HeyGen AI"
       },
       "category": "AI Video",
-      "url": "https://aitoolspak.tech/#catalog",
+      "url": "https://aitoolspak.tech/#product-heygen-ai",
       "offers": {
         "@type": "Offer",
         "price": 1800,
@@ -1103,7 +1090,7 @@
           "@type": "Organization",
           "name": "AI Tools Pak"
         },
-        "url": "https://aitoolspak.tech/#catalog",
+        "url": "https://aitoolspak.tech/#product-heygen-ai",
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
@@ -1136,18 +1123,18 @@
           }
         }
       },
-      "image": "https://aitoolspak.tech/og-image.png"
+      "image": "https://www.google.com/s2/favicons?domain=heygen.com&sz=128"
     },
     {
       "@type": "Product",
-      "name": "Ideogram AI Plus Subscription Pakistan",
-      "description": "Ideogram AI Plus image design subscription with private access, PKR pricing and WhatsApp ordering in Pakistan.",
+      "name": "Ideogram AI Plus - Private Subscription Pakistan",
+      "description": "AI image design access for creative visual work.",
       "brand": {
         "@type": "Brand",
-        "name": "Ideogram"
+        "name": "Ideogram AI Plus"
       },
       "category": "AI Images and Design",
-      "url": "https://aitoolspak.tech/#catalog",
+      "url": "https://aitoolspak.tech/#product-ideogram-ai-plus-private",
       "offers": {
         "@type": "Offer",
         "price": 4200,
@@ -1157,7 +1144,7 @@
           "@type": "Organization",
           "name": "AI Tools Pak"
         },
-        "url": "https://aitoolspak.tech/#catalog",
+        "url": "https://aitoolspak.tech/#product-ideogram-ai-plus-private",
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
@@ -1190,7 +1177,439 @@
           }
         }
       },
-      "image": "https://aitoolspak.tech/og-image.png"
+      "image": "https://www.google.com/s2/favicons?domain=ideogram.ai&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "Success.ai Starter Leads Subscription Pakistan",
+      "description": "Lead generation subscription for outreach and sales workflows.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Success.ai Starter"
+      },
+      "category": "Marketing and Lead Generation",
+      "url": "https://aitoolspak.tech/#product-success-ai-starter-leads",
+      "offers": {
+        "@type": "Offer",
+        "price": 2400,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-success-ai-starter-leads",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=success.ai&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "vidIQ Subscription Pakistan",
+      "description": "YouTube growth and SEO tool for creators in Pakistan.",
+      "brand": {
+        "@type": "Brand",
+        "name": "vidIQ"
+      },
+      "category": "Marketing and Lead Generation",
+      "url": "https://aitoolspak.tech/#product-vidiq",
+      "offers": {
+        "@type": "Offer",
+        "price": 2159,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/LimitedAvailability",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-vidiq",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=vidiq.com&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "PlayHT Subscription Pakistan",
+      "description": "AI voice generation tool for narration and audio content.",
+      "brand": {
+        "@type": "Brand",
+        "name": "PlayHT"
+      },
+      "category": "AI Voice",
+      "url": "https://aitoolspak.tech/#product-playht",
+      "offers": {
+        "@type": "Offer",
+        "price": 3960,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/LimitedAvailability",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-playht",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=play.ht&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "SuperGrok Subscription Pakistan",
+      "description": "Grok assistant access for current-topic and social workflows.",
+      "brand": {
+        "@type": "Brand",
+        "name": "SuperGrok"
+      },
+      "category": "AI Assistants",
+      "url": "https://aitoolspak.tech/#product-supergrok",
+      "offers": {
+        "@type": "Offer",
+        "price": 1800,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/LimitedAvailability",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-supergrok",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=x.ai&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "WordAI Subscription Pakistan",
+      "description": "AI rewriting tool for article and SEO content workflows.",
+      "brand": {
+        "@type": "Brand",
+        "name": "WordAI"
+      },
+      "category": "Writing and SEO",
+      "url": "https://aitoolspak.tech/#product-wordai",
+      "offers": {
+        "@type": "Offer",
+        "price": 600,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/LimitedAvailability",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-wordai",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=wordai.com&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "Jasper AI Subscription Pakistan",
+      "description": "AI copywriting tool for marketing and content workflows.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Jasper AI"
+      },
+      "category": "Writing and SEO",
+      "url": "https://aitoolspak.tech/#product-jasper-ai",
+      "offers": {
+        "@type": "Offer",
+        "price": 600,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/LimitedAvailability",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-jasper-ai",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=jasper.ai&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "Google AI Ultra Plan Subscription Pakistan",
+      "description": "Google AI Ultra access for advanced Google AI workflows.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Google AI Ultra"
+      },
+      "category": "AI Assistants",
+      "url": "https://aitoolspak.tech/#product-google-ai-ultra-plan",
+      "offers": {
+        "@type": "Offer",
+        "price": 1764,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/LimitedAvailability",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-google-ai-ultra-plan",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=one.google.com&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "Hailuo AI Subscription Pakistan",
+      "description": "AI video generation tool for creator experiments and clips.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Hailuo AI"
+      },
+      "category": "AI Video",
+      "url": "https://aitoolspak.tech/#product-hailuo-ai",
+      "offers": {
+        "@type": "Offer",
+        "price": 2040,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/LimitedAvailability",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/#product-hailuo-ai",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=hailuoai.video&sz=128"
     }
   ]
 }
@@ -1244,6 +1663,7 @@
 }
     </script>
 
+    <script src="products-data.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

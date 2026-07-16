@@ -1,24 +1,20 @@
 const WHATSAPP_NUMBER = "923714549245";
 const CART_KEY = "ai-tools-pak-cart";
-const logo = (domain) => `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
-
-const products = [
-  { name: "ElevenLabs Creator", category: "AI Voice", plan: "Creator plan", duration: "3 months", access: "Private access", credits: "300K+ credits", price: 3000, initials: "EL", image: logo("elevenlabs.io") },
-  { name: "Gemini Pro", category: "AI Assistants", plan: "Pro plan", duration: "18 months", access: "Private access", credits: "Google AI access", price: 720, initials: "GP", image: logo("gemini.google.com") },
-  { name: "Runway ML", category: "AI Video", plan: "Video generation plan", duration: "Flexible plan", access: "Private access", credits: "Video generation tools", price: 2520, initials: "RM", image: logo("runwayml.com") },
-  { name: "Leonardo AI", category: "AI Images and Design", plan: "Design plan", duration: "Flexible plan", access: "Private access", credits: "Image generation tools", price: 1200, initials: "LA", image: logo("leonardo.ai") },
-  { name: "ChatGPT Plus", category: "AI Assistants", plan: "Plus plan", duration: "Flexible plan", access: "Private access", credits: "Advanced AI assistant", price: 1200, initials: "CG", image: logo("chatgpt.com"), guideUrl: "chatgpt-plus-pakistan/" },
-  { name: "Claude AI", category: "Development and Coding", plan: "AI assistant plan", duration: "Flexible plan", access: "Private access", credits: "Writing and coding assistant", price: 2399, initials: "CL", image: logo("claude.ai"), guideUrl: "claude-pro-pakistan/" },
-  { name: "Lovable AI Pro", category: "Development and Coding", plan: "Pro plan", duration: "Flexible plan", access: "Private access", credits: "Monthly and daily credits", price: 1644, initials: "LV", image: logo("lovable.dev") },
-  { name: "Grammarly Premium", category: "Writing and SEO", plan: "Premium plan", duration: "Flexible plan", access: "Private access", credits: "Grammar and writing tools", price: 959, initials: "GR", image: logo("grammarly.com") },
-  { name: "QuillBot", category: "Writing and SEO", plan: "Writing plan", duration: "Flexible plan", access: "Private access", credits: "Paraphrasing and writing tools", price: 479, initials: "QB", image: logo("quillbot.com") },
-  { name: "Success.ai Starter", category: "Marketing and Lead Generation", plan: "Starter leads", duration: "Flexible plan", access: "Private access", credits: "2,000 contacts", price: 2400, initials: "SA", image: logo("success.ai") },
-  { name: "HeyGen AI", category: "AI Video", plan: "Video plan", duration: "Flexible plan", access: "Private access", credits: "Avatars and text-to-video", price: 1800, initials: "HG", image: logo("heygen.com") },
-  { name: "Ideogram AI Plus", category: "AI Images and Design", plan: "Plus plan", duration: "Flexible plan", access: "Private access", credits: "AI image design tools", price: 4200, initials: "ID", image: logo("ideogram.ai") }
-];
-
+const products = window.AI_TOOLS_PRODUCTS || [];
+const productBySlug = new Map(products.map((product) => [product.slug, product]));
 const productByName = new Map(products.map((product) => [product.name, product]));
+const categoryDescriptions = {
+  "AI Assistants": "Research, chat and reasoning",
+  "AI Video": "Editors, avatars and generation",
+  "AI Images and Design": "Creative assets and visuals",
+  "AI Voice": "Speech, dubbing and narration",
+  "Writing and SEO": "Copy, grammar and ranking",
+  "Development and Coding": "Build, debug and ship faster",
+  "Marketing and Lead Generation": "Growth, outreach and channels"
+};
+
 const productGrid = document.querySelector("#productGrid");
+const categoryGrid = document.querySelector("#categoryGrid");
 const searchInput = document.querySelector("#searchInput");
 const cartCount = document.querySelector("#cartCount");
 const detailDialog = document.querySelector("#detailDialog");
@@ -28,6 +24,16 @@ let cartItems = loadCart();
 let activeCategory = "";
 let lastWhatsAppClick = 0;
 
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
+}
+
 function whatsappLink(message) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
@@ -36,24 +42,32 @@ function productMessage(product, intent) {
   return [
     `Hi AI Tools Pak, I want to ${intent}:`,
     `Product: ${product.name}`,
-    `Plan: ${product.plan}`,
-    `Price: PKR ${formatter.format(product.price)}`,
-    `Duration: ${product.duration}`,
-    `Access: ${product.access}`,
-    `Credits / limits: ${product.credits}`
+    `SKU: ${product.sku}`,
+    `Plan: ${product.planTier}`,
+    `Price: PKR ${formatter.format(product.sellingPricePkr)}`,
+    `Duration: ${product.subscriptionDuration}`,
+    `Access: ${product.accessType}`,
+    `Delivery: ${product.deliveryMethod}`,
+    `Credits / limits: ${product.creditsOrUsageLimit}`
   ].join("\n");
 }
 
+function normalizeCartItem(item) {
+  if (productBySlug.has(item)) return item;
+  return productByName.get(item)?.slug || "";
+}
+
 function cartMessage() {
-  const lines = cartItems.map((name, index) => `${index + 1}. ${name}`);
-  const total = cartItems.reduce((sum, name) => sum + (productByName.get(name)?.price || 0), 0);
-  return [`Hi AI Tools Pak, I want to order these items:`, ...lines, `Total items: ${cartItems.length}`, `Estimated total: PKR ${formatter.format(total)}`].join("\n");
+  const selected = cartItems.map((slug) => productBySlug.get(slug)).filter(Boolean);
+  const lines = selected.map((product, index) => `${index + 1}. ${product.name} - PKR ${formatter.format(product.sellingPricePkr)}`);
+  const total = selected.reduce((sum, product) => sum + product.sellingPricePkr, 0);
+  return [`Hi AI Tools Pak, I want to order these items:`, ...lines, `Total items: ${selected.length}`, `Estimated total: PKR ${formatter.format(total)}`].join("\n");
 }
 
 function loadCart() {
   try {
     const saved = JSON.parse(localStorage.getItem(CART_KEY));
-    return Array.isArray(saved) ? saved.filter((name) => productByName.has(name)) : [];
+    return Array.isArray(saved) ? saved.map(normalizeCartItem).filter(Boolean) : [];
   } catch {
     return [];
   }
@@ -66,29 +80,42 @@ function saveCart() {
   cartCount.textContent = cartItems.length;
 }
 
+function priceHtml(product) {
+  const compare = Number(product.compareAtPricePkr);
+  const compareHtml = Number.isFinite(compare) && compare > product.sellingPricePkr
+    ? `<span class="compare-price">PKR ${formatter.format(compare)}</span>`
+    : "";
+  return `<div class="price">${compareHtml}<span>PKR ${formatter.format(product.sellingPricePkr)}</span></div>`;
+}
+
 function productCard(product) {
+  const confirmation = product.requiresSupplierConfirmation
+    ? `<p class="confirmation-note">Confirm details before ordering</p>`
+    : "";
   return `
-    <article class="glass-panel product-card">
+    <article class="glass-panel product-card" id="product-${escapeHtml(product.slug)}">
       <div class="product-top">
         <div class="logo-tile">
-          <img src="${product.image}" alt="${product.name} logo" loading="lazy" onerror="this.remove()">
-          <span aria-hidden="true">${product.initials}</span>
+          <img src="${escapeHtml(product.imageUrl)}" alt="${escapeHtml(product.imageAltText)}" loading="lazy" width="32" height="32" onerror="this.remove()">
+          <span aria-hidden="true">${escapeHtml(product.initials)}</span>
         </div>
-        <span class="glass-panel badge">Available</span>
+        <span class="glass-panel badge">${product.requiresSupplierConfirmation ? "Confirm" : "Available"}</span>
       </div>
-      <h3>${product.name}</h3>
-      <p>${product.plan}</p>
+      <h3>${escapeHtml(product.name)}</h3>
+      <p>${escapeHtml(product.shortDescription)}</p>
       <div class="meta-row">
-        <span>${product.duration}</span>
-        <span>${product.access}</span>
-        <span>${product.credits}</span>
+        <span>${escapeHtml(product.category)}</span>
+        <span>${escapeHtml(product.subscriptionDuration)}</span>
+        <span>${escapeHtml(product.accessType)}</span>
+        <span>${escapeHtml(product.creditsOrUsageLimit)}</span>
       </div>
-      <div class="price">PKR ${formatter.format(product.price)}</div>
-      ${product.guideUrl ? `<a class="product-guide-link" href="${product.guideUrl}">View buying guide</a>` : ""}
+      ${confirmation}
+      ${priceHtml(product)}
+      ${product.guideUrl ? `<a class="product-guide-link" href="${escapeHtml(product.guideUrl)}">View buying guide</a>` : ""}
       <div class="product-actions">
         <a class="button primary" target="_blank" rel="noopener" href="${whatsappLink(productMessage(product, "buy this plan"))}">Buy</a>
-        <button class="button secondary glass-panel" type="button" data-details="${product.name}">Details</button>
-        <button class="mini-cart glass-panel" type="button" aria-label="Add ${product.name} to cart" data-add="${product.name}">
+        <button class="button secondary glass-panel" type="button" data-details="${escapeHtml(product.slug)}">Details</button>
+        <button class="mini-cart glass-panel" type="button" aria-label="Add ${escapeHtml(product.name)} to cart" data-add="${escapeHtml(product.slug)}">
           <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 8.5a2 2 0 0 1-2 1.5H9a2 2 0 0 1-2-1.6L5 3H2"></path><path d="M9 21h.01M18 21h.01"></path></svg>
         </button>
       </div>
@@ -106,28 +133,33 @@ function openDialog(html) {
 }
 
 function productDetails(product) {
-  const intent = "buy this plan";
+  const confirmation = product.requiresSupplierConfirmation
+    ? `<p class="confirmation-note">Confirm details before ordering</p>`
+    : "";
   openDialog(`
     <div class="dialog-product">
       <div class="logo-tile">
-        <img src="${product.image}" alt="${product.name} logo" loading="lazy" onerror="this.remove()">
-        <span aria-hidden="true">${product.initials}</span>
+        <img src="${escapeHtml(product.imageUrl)}" alt="${escapeHtml(product.imageAltText)}" loading="lazy" width="32" height="32" onerror="this.remove()">
+        <span aria-hidden="true">${escapeHtml(product.initials)}</span>
       </div>
       <div>
-        <p class="eyebrow">${product.category}</p>
-        <h3>${product.name}</h3>
-        <p>${product.plan}</p>
+        <p class="eyebrow">${escapeHtml(product.category)}</p>
+        <h3>${escapeHtml(product.name)}</h3>
+        <p>${escapeHtml(product.planTier)}</p>
       </div>
     </div>
+    <p class="dialog-note">${escapeHtml(product.fullDescription)}</p>
+    ${confirmation}
     <dl class="detail-list">
-      <div><dt>Price</dt><dd>PKR ${formatter.format(product.price)}</dd></div>
-      <div><dt>Duration</dt><dd>${product.duration}</dd></div>
-      <div><dt>Access</dt><dd>${product.access}</dd></div>
-      <div><dt>Credits / limits</dt><dd>${product.credits}</dd></div>
+      <div><dt>Price</dt><dd>PKR ${formatter.format(product.sellingPricePkr)}</dd></div>
+      <div><dt>Base price</dt><dd>PKR ${formatter.format(product.basePricePkr)}</dd></div>
+      <div><dt>Duration</dt><dd>${escapeHtml(product.subscriptionDuration)}</dd></div>
+      <div><dt>Access</dt><dd>${escapeHtml(product.accessType)}</dd></div>
+      <div><dt>Delivery</dt><dd>${escapeHtml(product.deliveryMethod)}</dd></div>
+      <div><dt>Features</dt><dd>${escapeHtml(product.keyFeatures)}</dd></div>
     </dl>
-    <p class="dialog-note">Message us on WhatsApp to place your order.</p>
     <div class="dialog-actions">
-      <a class="button primary whatsapp-cta" target="_blank" rel="noopener" href="${whatsappLink(productMessage(product, intent))}">Buy on WhatsApp</a>
+      <a class="button primary whatsapp-cta" target="_blank" rel="noopener" href="${whatsappLink(productMessage(product, "buy this plan"))}">Buy on WhatsApp</a>
     </div>
   `);
 }
@@ -137,9 +169,13 @@ function cartDialog() {
     openDialog("<h3>Cart</h3><p>Your cart is empty.</p>");
     return;
   }
+  const items = cartItems.map((slug, index) => {
+    const product = productBySlug.get(slug);
+    return product ? `<li><span>${escapeHtml(product.name)}</span><button type="button" aria-label="Remove ${escapeHtml(product.name)}" data-remove-cart="${index}">Remove</button></li>` : "";
+  }).join("");
   openDialog(`
     <h3>Cart</h3>
-    <ul class="cart-list">${cartItems.map((item, index) => `<li><span>${item}</span><button type="button" aria-label="Remove ${item}" data-remove-cart="${index}">Remove</button></li>`).join("")}</ul>
+    <ul class="cart-list">${items}</ul>
     <div class="dialog-actions">
       <a class="button primary whatsapp-cta" target="_blank" rel="noopener" href="${whatsappLink(cartMessage())}">Send cart on WhatsApp</a>
       <button class="button secondary glass-panel" type="button" data-clear-cart>Clear cart</button>
@@ -147,10 +183,31 @@ function cartDialog() {
   `);
 }
 
+function renderCategories() {
+  if (!categoryGrid) return;
+  const categories = [...new Set(products.map((product) => product.category))];
+  categoryGrid.innerHTML = categories.map((category) => `
+    <button class="glass-panel category-card" type="button" data-category="${escapeHtml(category)}">
+      ${escapeHtml(category)}
+      <span>${escapeHtml(categoryDescriptions[category] || "AI tools and subscriptions")}</span>
+    </button>
+  `).join("");
+}
+
 function renderProducts() {
   const query = searchInput.value.trim().toLowerCase();
   const filtered = products.filter((product) => {
-    const haystack = `${product.name} ${product.category} ${product.plan} ${product.duration} ${product.access} ${product.credits}`.toLowerCase();
+    const haystack = [
+      product.name,
+      product.category,
+      product.planTier,
+      product.shortDescription,
+      product.keyFeatures,
+      product.fullDescription,
+      product.subscriptionDuration,
+      product.accessType,
+      product.creditsOrUsageLimit
+    ].join(" ").toLowerCase();
     return (!query || haystack.includes(query)) && (!activeCategory || product.category === activeCategory);
   });
   productGrid.innerHTML = filtered.map(productCard).join("") || `<p class="notice glass-panel">No matching tools found.</p>`;
@@ -182,16 +239,16 @@ document.addEventListener("click", (event) => {
 
   const addButton = event.target.closest("[data-add]");
   if (addButton) {
-    const product = productByName.get(addButton.dataset.add);
+    const product = productBySlug.get(addButton.dataset.add);
     if (!product) return;
-    cartItems.push(product.name);
+    cartItems.push(product.slug);
     saveCart();
-    openDialog(`<h3>Added to cart</h3><p>${product.name} is now in your cart.</p><div class="dialog-actions"><button class="button secondary glass-panel" type="button" data-cart>View cart</button></div>`);
+    openDialog(`<h3>Added to cart</h3><p>${escapeHtml(product.name)} is now in your cart.</p><div class="dialog-actions"><button class="button secondary glass-panel" type="button" data-cart>View cart</button></div>`);
   }
 
   const detailsButton = event.target.closest("[data-details]");
   if (detailsButton) {
-    const product = productByName.get(detailsButton.dataset.details);
+    const product = productBySlug.get(detailsButton.dataset.details);
     if (product) productDetails(product);
   }
 
@@ -253,14 +310,14 @@ if (initialQuery) searchInput.value = initialQuery.slice(0, 80);
 document.querySelector("#finderForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(event.currentTarget);
-  const need = data.get("need");
+  const need = String(data.get("need"));
   const budget = Number(data.get("budget"));
   const match = products.filter((product) => {
-    const terms = `${product.category} ${product.plan} ${product.name}`.toLowerCase();
-    return product.price <= budget && terms.includes(String(need));
-  }).sort((a, b) => a.price - b.price)[0];
+    const terms = `${product.category} ${product.planTier} ${product.name} ${product.shortDescription} ${product.keyFeatures}`.toLowerCase();
+    return product.sellingPricePkr <= budget && terms.includes(need);
+  }).sort((a, b) => a.sellingPricePkr - b.sellingPricePkr)[0];
   document.querySelector("#finderResult").textContent = match
-    ? `${match.name} fits the budget. You can buy it on WhatsApp.`
+    ? `${match.name} fits the budget at PKR ${formatter.format(match.sellingPricePkr)}. You can buy it on WhatsApp.`
     : "No match inside that budget. Raise the budget or contact support.";
 });
 
@@ -283,5 +340,7 @@ document.querySelector("#requestForm").addEventListener("submit", (event) => {
   input.value = "";
 });
 
+document.querySelector("[data-product-count]").textContent = products.length;
+renderCategories();
 saveCart();
 renderProducts();
