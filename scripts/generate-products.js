@@ -248,6 +248,24 @@ function productPageHtml(product, related) {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        name: "AI Tools Pak",
+        url: `${SITE_URL}/`,
+        inLanguage: "en-PK"
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${canonical}#webpage`,
+        url: canonical,
+        name: title,
+        description,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        reviewedBy: { "@type": "Organization", name: "AI Tools Pak" },
+        dateModified: LAST_VERIFIED,
+        inLanguage: "en-PK"
+      },
+      {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
@@ -256,12 +274,14 @@ function productPageHtml(product, related) {
       },
       {
         "@type": "Product",
+        "@id": `${canonical}#product`,
         name: `${product.name} Subscription Pakistan`,
         description,
         image: product.imageUrl,
         brand: { "@type": "Brand", name: product.sourceProductTitle },
         category: product.category,
         url: canonical,
+        mainEntityOfPage: { "@id": `${canonical}#webpage` },
         offers: {
           "@type": "Offer",
           price: product.sellingPricePkr,
@@ -287,7 +307,6 @@ function productPageHtml(product, related) {
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://www.gstatic.com; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#202a36">
-    <link rel="canonical" href="${canonical}">
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="48x48">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta property="og:type" content="product">
@@ -297,6 +316,7 @@ function productPageHtml(product, related) {
     <meta property="og:image" content="${escapeHtml(product.imageUrl)}">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="canonical" href="${canonical}">
   </head>
   <body>
     <header class="simple-header">
@@ -318,6 +338,7 @@ function productPageHtml(product, related) {
         <h1>${escapeHtml(slugLabel(product))}</h1>
         <p class="hero-copy">${escapeHtml(description)}</p>
         <p class="date-note">Published: July 14, 2026. Last updated: ${DISPLAY_DATE}. Last price verified: ${DISPLAY_DATE}.</p>
+        <p class="byline-note">Reviewed by AI Tools Pak support team using visible plan details, current PKR pricing and buyer questions collected from WhatsApp enquiries.</p>
       </section>
       <section class="page-layout">
         <div class="page-main">
@@ -329,6 +350,7 @@ function productPageHtml(product, related) {
             <h2>Product overview</h2>
             <p>${escapeHtml(product.fullDescription)}</p>
             <p>${escapeHtml(product.name)} is shown with PKR pricing, access notes and safety checks for buyers in Pakistan. The page avoids official-partner claims and focuses on what a buyer should verify before paying.</p>
+            <p>For buyers searching ${escapeHtml(product.name)} price in Pakistan, this guide keeps plan duration, device notes, delivery expectations and refund limits on one page so the comparison is easier before ordering.</p>
             ${official}
           </article>
           <article class="glass-panel page-card">

@@ -240,6 +240,19 @@ svg {
   font-size: .92rem;
 }
 
+.byline-note {
+  max-width: 48rem;
+  margin: .85rem auto 0;
+  color: var(--muted);
+  font-size: .93rem;
+  line-height: 1.6;
+}
+
+.product-hero .byline-note {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .page-layout {
   width: min(76rem, calc(100% - 2rem));
   margin: 0 auto;
