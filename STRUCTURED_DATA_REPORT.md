@@ -1,26 +1,15 @@
 # Structured Data Report
 
-Generated: 2026-07-16
-
-## Current Google-Aligned Decision
-
-Google's current Product documentation separates Product snippets and Merchant listings, and its structured-data guidance prefers fewer complete, accurate properties over incomplete or inaccurate extras. Google has also removed support for FAQ rich results. For that reason, production HTML now avoids FAQPage and HowTo JSON-LD and prioritizes Product, Offer, MerchantReturnPolicy, OfferShippingDetails, BreadcrumbList, Article/BlogPosting, WebPage, WebSite and Organization.
-
-Official references checked:
-
-- https://developers.google.com/search/docs/appearance/structured-data/product
-- https://developers.google.com/search/updates#removing-faq-rich-result
-- https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
+Generated: 2026-07-18
 
 ## Validation Summary
 
-- Sitemap URLs scanned: 38
+- Sitemap URLs scanned: 39
 - Invalid JSON-LD blocks: 0
 - FAQPage JSON-LD in production HTML: 0
 - HowTo JSON-LD in production HTML: 0
-- Documents with Product schema: 20
-- Documents with fixed visible PKR Offer schema: 20
-- Quote-only legacy product pages use WebPage/Breadcrumb instead of fake fixed Product offers.
+- Documents with Product schema: 21
+- Documents with fixed visible PKR Offer schema: 21
 
 ## Types By URL
 
@@ -50,6 +39,7 @@ Official references checked:
 - https://aitoolspak.tech/jasper-ai-pakistan/: BreadcrumbList, ListItem, Product, Brand, Offer, Organization
 - https://aitoolspak.tech/leonardo-ai-pakistan/: BreadcrumbList, ListItem, Product, Brand, Offer, Organization
 - https://aitoolspak.tech/lovable-ai-pro-pakistan/: BreadcrumbList, ListItem, Product, Brand, Offer, Organization
+- https://aitoolspak.tech/netflix-pakistan/: BreadcrumbList, ListItem, Product, Brand, Offer, Organization
 - https://aitoolspak.tech/playht-pakistan/: BreadcrumbList, ListItem, Product, Brand, Offer, Organization
 - https://aitoolspak.tech/privacy-policy/: WebPage, WebSite, BreadcrumbList, ListItem
 - https://aitoolspak.tech/quillbot-premium-pakistan/: BreadcrumbList, ListItem, Product, Brand, Offer, Organization
@@ -63,6 +53,6 @@ Official references checked:
 - https://aitoolspak.tech/vidiq-pakistan/: BreadcrumbList, ListItem, Product, Brand, Offer, Organization
 - https://aitoolspak.tech/wordai-pakistan/: BreadcrumbList, ListItem, Product, Brand, Offer, Organization
 
-## Merchant/Product Integrity
+## Integrity
 
-No fake reviews, aggregate ratings, review snippets, ratingValue, aggregateRating, or invented review counts are emitted. Offer price and currency values are taken from the visible catalog data where a fixed price exists. Quote-only pages do not invent prices.
+No fake reviews, aggregate ratings, ratingValue, aggregateRating, or invented review counts are emitted.

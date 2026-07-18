@@ -12,7 +12,8 @@
     <link rel="canonical" href="https://aitoolspak.tech/">
     <link rel="alternate" hreflang="en-PK" href="https://aitoolspak.tech/">
     <link rel="alternate" hreflang="x-default" href="https://aitoolspak.tech/">
-    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aitoolspak.tech/">
     <meta property="og:locale" content="en_PK">
@@ -38,7 +39,7 @@
     <header class="site-header">
       <nav class="glass-panel nav-shell" aria-label="Primary navigation">
         <a class="brand" href="#top" aria-label="AI Tools Pak home">
-          <img class="brand-logo" src="logo.svg" alt="AI Tools Pak" width="32" height="32">
+          <img class="brand-logo" src="logo.png" alt="AI Tools Pak" width="32" height="32">
           <span>AI Tools Pak</span>
         </a>
         <div class="nav-links">
@@ -101,7 +102,7 @@
           <a class="button secondary" href="#finder">Find My Tool</a>
         </div>
         <div class="hero-proof" aria-label="Store highlights">
-          <span><strong data-product-count>19</strong> AI tools listed</span>
+          <span><strong data-product-count>20</strong> AI tools listed</span>
           <span><strong>PKR</strong> local pricing</span>
           <span><strong>11 AM-11 PM</strong> support</span>
         </div>
@@ -114,6 +115,49 @@
           <span class="glass-panel category-pill">Code</span>
           <span class="glass-panel category-pill">Productivity</span>
         </div>
+      </section>
+
+
+      <section class="section" id="catalog" aria-label="AI tools catalog with PKR pricing">
+        <div class="section-heading with-search">
+          <div>
+            <p class="eyebrow">Catalog</p>
+            <h2>Popular AI tools with PKR pricing.</h2>
+          </div>
+          <label class="search-box glass-panel">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Tool, category, use case" aria-label="Search tools">
+          </label>
+        </div>
+        <div class="notice glass-panel">
+          Search, filter by workflow, then buy a single plan or send a cart on WhatsApp.
+        </div>
+        <button class="button secondary glass-panel clear-filter" type="button" data-clear-category hidden>Show all tools</button>
+        <div class="product-grid" id="productGrid"></div>
+        <noscript>
+          <ul class="noscript-products">
+            <li>ChatGPT Plus - PKR 2,200</li>
+            <li>Claude Pro - PKR 2,800</li>
+            <li>Gemini Pro - PKR 900</li>
+            <li>ElevenLabs Creator - Private - PKR 3,000</li>
+            <li>Runway ML - Unlimited Generations - PKR 2,520</li>
+            <li>Leonardo AI - PKR 1,200</li>
+            <li>Grammarly Pro - PKR 959</li>
+            <li>QuillBot - PKR 479</li>
+            <li>Lovable AI Pro - Private - PKR 1,644</li>
+            <li>HeyGen AI - PKR 1,800</li>
+            <li>Ideogram AI Plus - Private - PKR 4,200</li>
+            <li>Success.ai Starter Leads - PKR 2,400</li>
+            <li>vidIQ - PKR 2,159</li>
+            <li>PlayHT - PKR 3,960</li>
+            <li>SuperGrok - PKR 1,800</li>
+            <li>WordAI - PKR 600</li>
+            <li>Jasper AI - PKR 600</li>
+            <li>Google AI Ultra Plan - PKR 1,764</li>
+            <li>Hailuo AI - PKR 2,040</li>
+            <li>Netflix - PKR 400</li>
+          </ul>
+        </noscript>
       </section>
 
       <section class="trust-strip" aria-label="Store trust points">
@@ -158,7 +202,7 @@
         </div>
         <div class="link-grid">
           <a class="glass-panel link-card" href="chatgpt-plus-pakistan/"><strong>ChatGPT Plus Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>
-          <a class="glass-panel link-card" href="claude-pro-pakistan/"><strong>Claude AI Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>
+          <a class="glass-panel link-card" href="claude-pro-pakistan/"><strong>Claude Pro Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>
           <a class="glass-panel link-card" href="gemini-pro-pakistan/"><strong>Gemini Pro Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>
           <a class="glass-panel link-card" href="elevenlabs-creator-pakistan/"><strong>ElevenLabs Creator - Private Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>
           <a class="glass-panel link-card" href="runway-ml-pakistan/"><strong>Runway ML - Unlimited Generations Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>
@@ -176,6 +220,7 @@
           <a class="glass-panel link-card" href="jasper-ai-pakistan/"><strong>Jasper AI Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>
           <a class="glass-panel link-card" href="google-ai-ultra-pakistan/"><strong>Google AI Ultra Plan Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>
           <a class="glass-panel link-card" href="hailuo-ai-pakistan/"><strong>Hailuo AI Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>
+          <a class="glass-panel link-card" href="netflix-pakistan/"><strong>Netflix Pakistan</strong><span>Price, plan, activation, safety checks and FAQs.</span></a>
         </div>
       </section>
 
@@ -200,47 +245,6 @@
           <h2>Find the tool by workflow.</h2>
         </div>
         <div class="category-grid" id="categoryGrid"></div>
-      </section>
-
-      <section class="section" id="catalog" aria-label="AI tools catalog with PKR pricing">
-        <div class="section-heading with-search">
-          <div>
-            <p class="eyebrow">Catalog</p>
-            <h2>Popular AI tools with PKR pricing.</h2>
-          </div>
-          <label class="search-box glass-panel">
-            <span>Search</span>
-            <input id="searchInput" type="search" placeholder="Tool, category, use case" aria-label="Search tools">
-          </label>
-        </div>
-        <div class="notice glass-panel">
-          Search, filter by workflow, then buy a single plan or send a cart on WhatsApp.
-        </div>
-        <button class="button secondary glass-panel clear-filter" type="button" data-clear-category hidden>Show all tools</button>
-        <div class="product-grid" id="productGrid"></div>
-        <noscript>
-          <ul class="noscript-products">
-            <li>ChatGPT Plus - PKR 1,200</li>
-            <li>Claude AI - PKR 2,399</li>
-            <li>Gemini Pro - PKR 720</li>
-            <li>ElevenLabs Creator - Private - PKR 3,000</li>
-            <li>Runway ML - Unlimited Generations - PKR 2,520</li>
-            <li>Leonardo AI - PKR 1,200</li>
-            <li>Grammarly Pro - PKR 959</li>
-            <li>QuillBot - PKR 479</li>
-            <li>Lovable AI Pro - Private - PKR 1,644</li>
-            <li>HeyGen AI - PKR 1,800</li>
-            <li>Ideogram AI Plus - Private - PKR 4,200</li>
-            <li>Success.ai Starter Leads - PKR 2,400</li>
-            <li>vidIQ - PKR 2,159</li>
-            <li>PlayHT - PKR 3,960</li>
-            <li>SuperGrok - PKR 1,800</li>
-            <li>WordAI - PKR 600</li>
-            <li>Jasper AI - PKR 600</li>
-            <li>Google AI Ultra Plan - PKR 1,764</li>
-            <li>Hailuo AI - PKR 2,040</li>
-          </ul>
-        </noscript>
       </section>
 
       <section class="request-bar" id="request">
@@ -398,7 +402,7 @@
   "@id": "https://aitoolspak.tech/#organization",
   "name": "AI Tools Pak",
   "url": "https://aitoolspak.tech",
-  "logo": "https://aitoolspak.tech/logo.svg",
+  "logo": "https://aitoolspak.tech/logo.png",
   "description": "Buy AI tool subscriptions in Pakistan with PKR pricing and WhatsApp support.",
   "areaServed": {
     "@type": "Country",
@@ -489,7 +493,7 @@
   "@type": "ItemList",
   "name": "AI tools available in Pakistan",
   "description": "Browse AI tool subscriptions available for purchase in Pakistan with PKR pricing.",
-  "numberOfItems": 19,
+  "numberOfItems": 20,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -500,7 +504,7 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Claude AI",
+      "name": "Claude Pro",
       "url": "https://aitoolspak.tech/claude-pro-pakistan/"
     },
     {
@@ -604,6 +608,12 @@
       "position": 19,
       "name": "Hailuo AI",
       "url": "https://aitoolspak.tech/hailuo-ai-pakistan/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 20,
+      "name": "Netflix",
+      "url": "https://aitoolspak.tech/netflix-pakistan/"
     }
   ]
 }
@@ -624,7 +634,7 @@
       "url": "https://aitoolspak.tech/chatgpt-plus-pakistan/",
       "offers": {
         "@type": "Offer",
-        "price": 1200,
+        "price": 2200,
         "priceCurrency": "PKR",
         "availability": "https://schema.org/InStock",
         "seller": {
@@ -668,7 +678,7 @@
     },
     {
       "@type": "Product",
-      "name": "Claude AI Subscription Pakistan",
+      "name": "Claude Pro Subscription Pakistan",
       "description": "Careful AI assistant for long writing, research and coding support.",
       "brand": {
         "@type": "Brand",
@@ -678,7 +688,7 @@
       "url": "https://aitoolspak.tech/claude-pro-pakistan/",
       "offers": {
         "@type": "Offer",
-        "price": 2399,
+        "price": 2800,
         "priceCurrency": "PKR",
         "availability": "https://schema.org/InStock",
         "seller": {
@@ -732,7 +742,7 @@
       "url": "https://aitoolspak.tech/gemini-pro-pakistan/",
       "offers": {
         "@type": "Offer",
-        "price": 720,
+        "price": 900,
         "priceCurrency": "PKR",
         "availability": "https://schema.org/InStock",
         "seller": {
@@ -1637,6 +1647,60 @@
         }
       },
       "image": "https://www.google.com/s2/favicons?domain=hailuoai.video&sz=128"
+    },
+    {
+      "@type": "Product",
+      "name": "Netflix Subscription Pakistan",
+      "description": "Netflix 1 screen monthly access for entertainment.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Netflix 1 Screen"
+      },
+      "category": "Entertainment",
+      "url": "https://aitoolspak.tech/netflix-pakistan/",
+      "offers": {
+        "@type": "Offer",
+        "price": 400,
+        "priceCurrency": "PKR",
+        "availability": "https://schema.org/LimitedAvailability",
+        "seller": {
+          "@type": "Organization",
+          "name": "AI Tools Pak"
+        },
+        "url": "https://aitoolspak.tech/netflix-pakistan/",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://www.google.com/s2/favicons?domain=netflix.com&sz=128"
     }
   ]
 }

@@ -25,7 +25,9 @@ function localTarget(file, href) {
   if (!href || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:")) return null;
   const [rawPath, hash = ""] = href.split("#");
   const targetPath = rawPath || path.basename(file);
-  let resolved = path.resolve(path.dirname(file), targetPath);
+  let resolved = targetPath.startsWith("/")
+    ? path.join(root, targetPath.slice(1))
+    : path.resolve(path.dirname(file), targetPath);
   if (fs.existsSync(resolved) && fs.statSync(resolved).isDirectory()) resolved = path.join(resolved, "index.html");
   return { resolved, hash };
 }

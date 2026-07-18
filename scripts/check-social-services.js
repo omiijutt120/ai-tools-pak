@@ -13,6 +13,7 @@ const root = path.resolve(__dirname, "..");
 const services = window.SOCIAL_MEDIA_SERVICES;
 const socialHtml = fs.readFileSync(path.join(root, "social-media-services", "index.html"), "utf8");
 const socialScript = fs.readFileSync(path.join(root, "social-media-services", "social-services.js"), "utf8");
+const styles = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 const productData = fs.readFileSync(path.join(root, "products-data.js"), "utf8");
 
 assert(Array.isArray(services), "Social services data missing");
@@ -30,8 +31,10 @@ assert(!/type=["']password["']/i.test(socialHtml + socialScript), "Password fiel
 assert(window.AI_TOOLS_CONFIG.whatsappNumber === "923714549245", "Wrong WhatsApp number");
 assert(/wa\.me\/\$\{whatsappNumber\}/.test(socialScript), "WhatsApp link does not use central number");
 assert(/25/.test(socialHtml) && /50/.test(socialHtml) && /100/.test(socialHtml), "Pagination size controls missing");
+assert(/@media \(max-width: 640px\)[\s\S]*\.platform-filters[\s\S]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/.test(styles), "Mobile platform filters are not a clear 2-column grid");
+assert(/@media \(max-width: 640px\)[\s\S]*\.platform-chip[\s\S]*white-space: normal/.test(styles), "Mobile platform chips cannot wrap text");
 assert(/window\.AI_TOOLS_PRODUCTS = \[/.test(productData), "AI product data missing");
-assert((productData.match(/productId/g) || []).length === 19, "Existing AI products count changed");
+assert((productData.match(/productId/g) || []).length === 20, "Existing product count changed");
 
 const service = services[0];
 const fakeDocument = { querySelector() { return null; }, addEventListener() {} };

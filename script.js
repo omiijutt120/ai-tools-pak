@@ -10,7 +10,8 @@ const categoryDescriptions = {
   "AI Voice": "Speech, dubbing and narration",
   "Writing and SEO": "Copy, grammar and ranking",
   "Development and Coding": "Build, debug and ship faster",
-  "Marketing and Lead Generation": "Growth, outreach and channels"
+  "Marketing and Lead Generation": "Growth, outreach and channels",
+  "Entertainment": "Streaming and media access"
 };
 
 const productGrid = document.querySelector("#productGrid");

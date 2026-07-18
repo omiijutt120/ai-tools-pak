@@ -7,8 +7,8 @@ const dataPath = path.join(root, "products-data.js");
 const indexPath = path.join(root, "index.html");
 const sitemapPath = path.join(root, "sitemap.xml");
 const SITE_URL = "https://aitoolspak.tech";
-const LAST_VERIFIED = "2026-07-16";
-const DISPLAY_DATE = "July 16, 2026";
+const LAST_VERIFIED = "2026-07-18";
+const DISPLAY_DATE = "July 18, 2026";
 const PRODUCT_ROUTE_BY_SLUG = {
   "chatgpt-plus": "chatgpt-plus-pakistan/",
   "claude-ai": "claude-pro-pakistan/",
@@ -28,7 +28,8 @@ const PRODUCT_ROUTE_BY_SLUG = {
   "wordai": "wordai-pakistan/",
   "jasper-ai": "jasper-ai-pakistan/",
   "google-ai-ultra-plan": "google-ai-ultra-pakistan/",
-  "hailuo-ai": "hailuo-ai-pakistan/"
+  "hailuo-ai": "hailuo-ai-pakistan/",
+  "netflix": "netflix-pakistan/"
 };
 const STATIC_SITEMAP_PATHS = [
   "",
@@ -207,6 +208,7 @@ function categoryGuide(product) {
   if (product.category === "AI Video") return "blog/best-ai-video-tools-pakistani-content-creators/";
   if (product.category === "Marketing and Lead Generation") return "blog/best-ai-tools-freelancers-pakistan/";
   if (product.category === "Writing and SEO") return "blog/free-vs-paid-ai-tools/";
+  if (product.category === "Entertainment") return "blog/free-vs-paid-ai-tools/";
   return "blog/best-ai-tools-freelancers-pakistan/";
 }
 
@@ -218,7 +220,8 @@ function audience(product) {
     "AI Voice": "voiceover creators, educators, editors and media teams",
     "Writing and SEO": "students, writers, bloggers, freelancers and SEO teams",
     "Development and Coding": "developers, founders, builders and technical freelancers",
-    "Marketing and Lead Generation": "creators, marketers, agencies and sales teams"
+    "Marketing and Lead Generation": "creators, marketers, agencies and sales teams",
+    "Entertainment": "individual viewers and families"
   };
   return map[product.category] || "Pakistani buyers comparing AI subscriptions";
 }
@@ -283,7 +286,8 @@ function productPageHtml(product, related) {
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="theme-color" content="#202a36">
     <link rel="canonical" href="${canonical}">
-    <link rel="icon" href="../logo.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta property="og:type" content="product">
     <meta property="og:url" content="${canonical}">
     <meta property="og:title" content="${escapeHtml(title)}">
@@ -295,7 +299,7 @@ function productPageHtml(product, related) {
   <body>
     <header class="simple-header">
       <nav class="simple-nav" aria-label="Primary navigation">
-        <a class="brand" href="../"><img class="brand-logo" src="../logo.svg" alt="AI Tools Pak" width="32" height="32"><span>AI Tools Pak</span></a>
+        <a class="brand" href="../"><img class="brand-logo" src="../logo.png" alt="AI Tools Pak" width="32" height="32"><span>AI Tools Pak</span></a>
         <div class="simple-links">
           <a href="../#catalog">AI tools</a>
           <a href="../social-media-services/">Social services</a>
@@ -328,7 +332,7 @@ function productPageHtml(product, related) {
           <article class="glass-panel page-card">
             <h2>Best for in Pakistan</h2>
             <ul>
-              <li>${escapeHtml(audience(product))} comparing paid AI access.</li>
+              <li>${escapeHtml(audience(product))} comparing paid subscription access.</li>
               <li>Buyers who want the PKR price visible before starting a WhatsApp order.</li>
               <li>Teams that need to confirm duration, access model and usage limits before payment.</li>
             </ul>
@@ -344,7 +348,7 @@ function productPageHtml(product, related) {
           <article class="glass-panel page-card">
             <h2>Plan, access and limitations</h2>
             <p><strong>Plan:</strong> ${escapeHtml(product.planTier)}. <strong>Duration:</strong> ${escapeHtml(product.subscriptionDuration)}. <strong>Access:</strong> ${escapeHtml(product.accessType)}. <strong>Limits:</strong> ${escapeHtml(product.creditsOrUsageLimit)}.</p>
-            <p>Access, device behavior and usage limits can change by provider or plan. Confirm the final order details on WhatsApp before payment, especially for plans marked “confirm before ordering”.</p>
+            <p>Access, device behavior and usage limits can change by provider or plan. Confirm the final order details on WhatsApp before payment, especially for plans marked "confirm before ordering".</p>
           </article>
           <article class="glass-panel page-card">
             <h2>Activation and delivery process</h2>
@@ -362,7 +366,7 @@ function productPageHtml(product, related) {
               <li>Confirm the exact plan name, price and duration before payment.</li>
               <li>Ask whether the access is private, shared, team-based or another model.</li>
               <li>Check refund or replacement conditions before activation.</li>
-              <li>Do not accept “official partner” claims unless written proof exists.</li>
+              <li>Do not accept "official partner" claims unless written proof exists.</li>
             </ul>
           </article>
           <article class="glass-panel page-card faq">
@@ -393,7 +397,7 @@ function productPageHtml(product, related) {
     </main>
     <footer class="footer" role="contentinfo">
       <div>
-        <a class="brand" href="../"><img class="brand-logo" src="../logo.svg" alt="AI Tools Pak" width="32" height="32"><span>AI Tools Pak</span></a>
+        <a class="brand" href="../"><img class="brand-logo" src="../logo.png" alt="AI Tools Pak" width="32" height="32"><span>AI Tools Pak</span></a>
         <p>Business name: AI Tools Pak<br>WhatsApp: +92 371 454 9245<br>Email: support@aitoolspak.com<br>Support: 11:00 AM - 11:00 PM Pakistan time</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
@@ -494,7 +498,7 @@ const products = records.map((row) => {
 });
 
 console.log(`valid products imported: ${products.length}`);
-if (products.length !== 19) throw new Error(`Expected 19 products, found ${products.length}`);
+if (products.length !== 20) throw new Error(`Expected 20 products, found ${products.length}`);
 
 for (const product of products) {
   const dir = path.join(root, product.guideUrl);
@@ -512,7 +516,7 @@ fs.writeFileSync(
 );
 
 let index = fs.readFileSync(indexPath, "utf8");
-index = index.replace(/<span><strong[^>]*>[^<]+<\/strong>\s*tools listed<\/span>/, `<span><strong data-product-count>${products.length}</strong> AI tools listed</span>`);
+index = index.replace(/<span><strong[^>]*>[^<]+<\/strong>\s*(?:AI\s*)?tools listed<\/span>/, `<span><strong data-product-count>${products.length}</strong> AI tools listed</span>`);
 index = index.replace(/<ul class="noscript-products">[\s\S]*?<\/ul>/, `<ul class="noscript-products">\n${products.map((product) => `            <li>${product.name} - PKR ${product.sellingPricePkr.toLocaleString("en-PK")}</li>`).join("\n")}\n          </ul>`);
 index = index.replace(/<section class="section" id="product-guides"[\s\S]*?<\/section>/, `<section class="section" id="product-guides" aria-label="Main AI tool product pages">
         <div class="section-heading">
