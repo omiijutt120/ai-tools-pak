@@ -1,5 +1,7 @@
 global.window = { location: { search: "" }, open() {} };
 require("../products-data.js");
+const fs = require("fs");
+const path = require("path");
 
 const elements = new Map();
 function element() {
@@ -77,8 +79,8 @@ const productGrid = elements.get("#productGrid");
 const categoryGrid = elements.get("#categoryGrid");
 const searchInput = elements.get("#searchInput");
 const fullCatalogHtml = productGrid.innerHTML;
-const homeHtml = require("fs").readFileSync(require("path").join(__dirname, "..", "index.html"), "utf8");
-const stylesHtml = require("fs").readFileSync(require("path").join(__dirname, "..", "styles.css"), "utf8");
+const homeHtml = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
+const stylesHtml = fs.readFileSync(path.join(__dirname, "..", "styles.css"), "utf8");
 const expected = [
   ["chatgpt-plus", "ChatGPT Plus", 2200, "1 month"],
   ["claude-ai", "Claude Pro", 2800, "1 month"],
@@ -121,6 +123,11 @@ for (const [slug, name, price, duration] of expected) {
 }
 
 assert(!products.some((product) => !product.imageUrl || !product.imageAltText), "Product image data missing");
+for (const product of products) {
+  assert(product.imageUrl === `/assets/product-icons/${product.slug}.png`, `Product image must be self-hosted for ${product.slug}`);
+  assert(fs.existsSync(path.join(__dirname, "..", product.imageUrl.slice(1))), `Missing product image file for ${product.slug}`);
+  assert(fullCatalogHtml.includes(`src="${product.imageUrl}"`), `Rendered catalog missing image for ${product.slug}`);
+}
 assert(!products.some((product) => !product.guideUrl), "Every product must have a guide URL");
 assert(products.every((product) => fullCatalogHtml.includes(`href="${product.guideUrl}"`)), "Rendered product cards must link to guide pages");
 assert(new Set(products.map((product) => product.productId)).size === 20, "Duplicate product IDs");

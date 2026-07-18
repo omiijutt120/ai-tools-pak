@@ -75,6 +75,12 @@ for (const [file, html] of htmlCache) {
     if (target && !fs.existsSync(target.resolved)) errors.push(`${rel}: missing asset ${href}`);
   }
 
+  for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
+    const tagAttrs = attrs(match[0]);
+    const target = localTarget(file, tagAttrs.src);
+    if (target && !fs.existsSync(target.resolved)) errors.push(`${rel}: missing image ${tagAttrs.src}`);
+  }
+
   for (const match of html.matchAll(/<button\b[^>]*>([\s\S]*?)<\/button>/gi)) {
     const tagAttrs = attrs(match[0]);
     const label = tagAttrs["aria-label"] || stripTags(match[1]);

@@ -145,6 +145,11 @@ function guideUrl(slug) {
   return PRODUCT_ROUTE_BY_SLUG[slug] || `${slug}-pakistan/`;
 }
 
+function absoluteUrl(url) {
+  if (/^https?:\/\//i.test(url)) return url;
+  return `${SITE_URL}${url.startsWith("/") ? "" : "/"}${url}`;
+}
+
 function offer(product) {
   return {
     "@type": "Offer",
@@ -238,6 +243,7 @@ function productPageHtml(product, related) {
   const title = `${product.name} Price in Pakistan | AI Tools Pak`;
   const description = metaDescription(product);
   const canonical = `${SITE_URL}/${product.guideUrl}`;
+  const image = absoluteUrl(product.imageUrl);
   const price = product.sellingPricePkr.toLocaleString("en-PK");
   const features = featureList(product);
   const relatedLinks = related.map((item) => `<li><a href="../${item.guideUrl}">${escapeHtml(item.name)} price in Pakistan</a></li>`).join("");
@@ -277,7 +283,7 @@ function productPageHtml(product, related) {
         "@id": `${canonical}#product`,
         name: `${product.name} Subscription Pakistan`,
         description,
-        image: product.imageUrl,
+        image,
         brand: { "@type": "Brand", name: product.sourceProductTitle },
         category: product.category,
         url: canonical,
@@ -313,7 +319,7 @@ function productPageHtml(product, related) {
     <meta property="og:url" content="${canonical}">
     <meta property="og:title" content="${escapeHtml(title)}">
     <meta property="og:description" content="${escapeHtml(description)}">
-    <meta property="og:image" content="${escapeHtml(product.imageUrl)}">
+    <meta property="og:image" content="${escapeHtml(image)}">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="../styles.css">
     <link rel="canonical" href="${canonical}">
@@ -444,18 +450,22 @@ function productPageHtml(product, related) {
 `;
 }
 
-function replaceJsonLd(html, predicate, value) {
+function updateCatalogJsonLd(html, itemList, productGraph) {
   return html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (match, raw) => {
     try {
       const data = JSON.parse(raw);
-      return predicate(data) ? `<script type="application/ld+json">\n${JSON.stringify(value, null, 2)}\n    </script>` : match;
+      if (!Array.isArray(data["@graph"])) return match;
+      const hasCatalogSchema = data["@graph"].some((item) => item["@type"] === "ItemList" || item["@type"] === "Product");
+      if (!hasCatalogSchema) return match;
+      const graph = data["@graph"].filter((item) => item["@type"] !== "ItemList" && item["@type"] !== "Product");
+      return `<script type="application/ld+json">\n${JSON.stringify({ ...data, "@graph": [...graph, itemList, ...productGraph["@graph"]] }, null, 2)}\n    </script>`;
     } catch {
       return match;
     }
   });
 }
 
-const rows = parseCsv(fs.readFileSync(csvPath, "utf8"));
+const rows = parseCsv(fs.readFileSync(csvPath, "utf8").replace(/^\uFEFF/, ""));
 const headers = rows.shift();
 const missingHeaders = required.filter((field) => !headers.includes(field));
 if (missingHeaders.length) throw new Error(`Missing CSV headers: ${missingHeaders.join(", ")}`);
@@ -580,12 +590,11 @@ const productGraph = {
     category: product.category,
     url: `${SITE_URL}/${product.guideUrl}`,
     offers: offer(product),
-    image: product.imageUrl
+    image: absoluteUrl(product.imageUrl)
   }))
 };
 
-index = replaceJsonLd(index, (data) => data["@type"] === "ItemList", itemList);
-index = replaceJsonLd(index, (data) => Array.isArray(data["@graph"]) && data["@graph"].some((item) => item["@type"] === "Product"), productGraph);
+index = updateCatalogJsonLd(index, itemList, productGraph);
 fs.writeFileSync(indexPath, index, "utf8");
 
 const sitemapPaths = [...new Set([...STATIC_SITEMAP_PATHS, ...products.map((product) => product.guideUrl)])].sort();
