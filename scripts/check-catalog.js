@@ -78,6 +78,7 @@ const categoryGrid = elements.get("#categoryGrid");
 const searchInput = elements.get("#searchInput");
 const fullCatalogHtml = productGrid.innerHTML;
 const homeHtml = require("fs").readFileSync(require("path").join(__dirname, "..", "index.html"), "utf8");
+const stylesHtml = require("fs").readFileSync(require("path").join(__dirname, "..", "styles.css"), "utf8");
 const expected = [
   ["chatgpt-plus", "ChatGPT Plus", 2200, "1 month"],
   ["claude-ai", "Claude Pro", 2800, "1 month"],
@@ -100,7 +101,9 @@ function assert(condition, message) {
 assert(products.length === 20, `Expected 20 products, found ${products.length}`);
 assert((productGrid.innerHTML.match(/class="glass-panel product-card"/g) || []).length === 20, "Expected 20 rendered product cards");
 assert((categoryGrid.innerHTML.match(/class="glass-panel category-card"/g) || []).length === new Set(products.map((product) => product.category)).size, "Category buttons do not match CSV categories");
-assert(homeHtml.indexOf('id="catalog"') < homeHtml.indexOf('class="trust-strip"'), "Catalog section must appear directly after hero before info sections");
+assert(homeHtml.indexOf('id="social-media-services"') < homeHtml.indexOf('id="catalog"'), "Social media services promo must appear above tools catalog");
+assert(homeHtml.indexOf('id="catalog"') < homeHtml.indexOf('class="trust-strip"'), "Catalog section must appear before trust/info sections");
+assert(/\.nav-shell\s*\{[\s\S]*?overflow:\s*visible;/.test(stylesHtml), "Mobile menu is clipped because nav shell overflow is not visible");
 assert(!homeHtml.includes("logo.svg") && homeHtml.includes('src="logo.png"'), "Homepage logo image not updated");
 
 for (const [slug, name, price, duration] of expected) {
