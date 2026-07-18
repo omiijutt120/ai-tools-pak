@@ -219,7 +219,7 @@
           <p id="serviceError" class="form-error" aria-live="polite"></p>
         </div>
         <div class="dialog-actions">
-          <a class="button primary" target="_blank" rel="noopener" id="serviceWhatsApp">Buy on WhatsApp</a>
+          <a class="button primary" target="_blank" rel="noopener noreferrer" id="serviceWhatsApp">Buy on WhatsApp</a>
           <button class="button secondary glass-panel" type="button" data-close-service-dialog>Close</button>
         </div>
       </article>

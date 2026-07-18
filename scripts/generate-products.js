@@ -242,7 +242,7 @@ function productPageHtml(product, related) {
   const features = featureList(product);
   const relatedLinks = related.map((item) => `<li><a href="../${item.guideUrl}">${escapeHtml(item.name)} price in Pakistan</a></li>`).join("");
   const official = product.sourceProductUrl
-    ? `<p class="source-list">Official source: <a href="${escapeHtml(product.sourceProductUrl)}" target="_blank" rel="noopener">${escapeHtml(product.sourceProductTitle)}</a>. Checked on ${DISPLAY_DATE}.</p>`
+    ? `<p class="source-list">Official source: <a href="${escapeHtml(product.sourceProductUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(product.sourceProductTitle)}</a>. Checked on ${DISPLAY_DATE}.</p>`
     : "";
   const schema = {
     "@context": "https://schema.org",
@@ -284,6 +284,8 @@ function productPageHtml(product, related) {
     <meta name="description" content="${escapeHtml(description)}">
     <meta name="author" content="AI Tools Pak Editorial">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://www.gstatic.com; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#202a36">
     <link rel="canonical" href="${canonical}">
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="48x48">
@@ -387,7 +389,7 @@ function productPageHtml(product, related) {
         <aside class="page-side">
           <img class="product-page-image glass-panel" src="${escapeHtml(product.imageUrl)}" alt="${escapeHtml(product.imageAltText)}" width="128" height="128">
           <div class="price-box"><span>Current listed price</span><strong>PKR ${price}</strong><small>Last verified ${DISPLAY_DATE}</small></div>
-          <a class="button primary" target="_blank" rel="noopener" href="https://wa.me/923714549245?text=${encodeURIComponent(`Hi AI Tools Pak, I want to order ${product.name} in Pakistan. Price shown: PKR ${price}. Please confirm availability and activation details.`)}">Order on WhatsApp</a>
+          <a class="button primary" target="_blank" rel="noopener noreferrer" href="https://wa.me/923714549245?text=${encodeURIComponent(`Hi AI Tools Pak, I want to order ${product.name} in Pakistan. Price shown: PKR ${price}. Please confirm availability and activation details.`)}">Order on WhatsApp</a>
           <div class="glass-panel page-card">
             <h3>Non-affiliation note</h3>
             <p>AI Tools Pak is not claiming official partnership or authorization unless written authorization exists.</p>
@@ -412,7 +414,7 @@ function productPageHtml(product, related) {
         <a href="../frequently-asked-questions/">FAQ</a>
       </nav>
     </footer>
-    <a class="floating-whatsapp" href="https://wa.me/923714549245?text=Hi%20AI%20Tools%20Pak%2C%20I%20need%20help%20choosing%20an%20AI%20tool." target="_blank" rel="noopener" aria-label="Contact AI Tools Pak on WhatsApp"><span>WhatsApp</span></a>
+    <a class="floating-whatsapp" href="https://wa.me/923714549245?text=Hi%20AI%20Tools%20Pak%2C%20I%20need%20help%20choosing%20an%20AI%20tool." target="_blank" rel="noopener noreferrer" aria-label="Contact AI Tools Pak on WhatsApp"><span>WhatsApp</span></a>
     <script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>
   </body>
 </html>

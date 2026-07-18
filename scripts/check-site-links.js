@@ -39,9 +39,18 @@ const errors = [];
 for (const [file, html] of htmlCache) {
   const rel = path.relative(root, file);
 
+  if (!/<meta\s+http-equiv=["']Content-Security-Policy["']/i.test(html)) errors.push(`${rel}: missing Content-Security-Policy meta`);
+  if (!/<meta\s+name=["']referrer["']\s+content=["']strict-origin-when-cross-origin["']/i.test(html)) errors.push(`${rel}: missing strict referrer policy`);
+  if (/\son[a-z]+\s*=/i.test(html)) errors.push(`${rel}: inline event handler found`);
+
   for (const match of html.matchAll(/<a\b[^>]*>/gi)) {
-    const href = attrs(match[0]).href;
+    const tagAttrs = attrs(match[0]);
+    const href = tagAttrs.href;
     if (!href) errors.push(`${rel}: anchor without href`);
+    if ((tagAttrs.target || "").toLowerCase() === "_blank") {
+      const relTokens = new Set((tagAttrs.rel || "").toLowerCase().split(/\s+/).filter(Boolean));
+      if (!relTokens.has("noopener") || !relTokens.has("noreferrer")) errors.push(`${rel}: _blank link missing noopener noreferrer`);
+    }
     const target = localTarget(file, href);
     if (!target) continue;
     if (!fs.existsSync(target.resolved)) {
@@ -58,6 +67,9 @@ for (const [file, html] of htmlCache) {
 
   for (const match of html.matchAll(/<(script|link)\b[^>]*>/gi)) {
     const tagAttrs = attrs(match[0]);
+    if (match[1].toLowerCase() === "script" && !tagAttrs.src && (tagAttrs.type || "").toLowerCase() !== "application/ld+json") {
+      errors.push(`${rel}: inline executable script found`);
+    }
     const href = tagAttrs.src || (tagAttrs.rel === "stylesheet" || tagAttrs.rel === "icon" ? tagAttrs.href : "");
     const target = localTarget(file, href);
     if (target && !fs.existsSync(target.resolved)) errors.push(`${rel}: missing asset ${href}`);

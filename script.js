@@ -97,7 +97,7 @@ function productCard(product) {
     <article class="glass-panel product-card" id="product-${escapeHtml(product.slug)}">
       <div class="product-top">
         <div class="logo-tile">
-          <img src="${escapeHtml(product.imageUrl)}" alt="${escapeHtml(product.imageAltText)}" loading="lazy" width="32" height="32" onerror="this.remove()">
+          <img src="${escapeHtml(product.imageUrl)}" alt="${escapeHtml(product.imageAltText)}" loading="lazy" width="32" height="32">
           <span aria-hidden="true">${escapeHtml(product.initials)}</span>
         </div>
         <span class="glass-panel badge">${product.requiresSupplierConfirmation ? "Confirm" : "Available"}</span>
@@ -114,7 +114,7 @@ function productCard(product) {
       ${priceHtml(product)}
       ${product.guideUrl ? `<a class="product-guide-link" href="${escapeHtml(product.guideUrl)}">View buying guide</a>` : ""}
       <div class="product-actions">
-        <a class="button primary" target="_blank" rel="noopener" href="${whatsappLink(productMessage(product, "buy this plan"))}">Buy</a>
+        <a class="button primary" target="_blank" rel="noopener noreferrer" href="${whatsappLink(productMessage(product, "buy this plan"))}">Buy</a>
         <button class="button secondary glass-panel" type="button" data-details="${escapeHtml(product.slug)}">Details</button>
         <button class="mini-cart glass-panel" type="button" aria-label="Add ${escapeHtml(product.name)} to cart" data-add="${escapeHtml(product.slug)}">
           <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 8.5a2 2 0 0 1-2 1.5H9a2 2 0 0 1-2-1.6L5 3H2"></path><path d="M9 21h.01M18 21h.01"></path></svg>
@@ -140,7 +140,7 @@ function productDetails(product) {
   openDialog(`
     <div class="dialog-product">
       <div class="logo-tile">
-        <img src="${escapeHtml(product.imageUrl)}" alt="${escapeHtml(product.imageAltText)}" loading="lazy" width="32" height="32" onerror="this.remove()">
+        <img src="${escapeHtml(product.imageUrl)}" alt="${escapeHtml(product.imageAltText)}" loading="lazy" width="32" height="32">
         <span aria-hidden="true">${escapeHtml(product.initials)}</span>
       </div>
       <div>
@@ -160,7 +160,7 @@ function productDetails(product) {
       <div><dt>Features</dt><dd>${escapeHtml(product.keyFeatures)}</dd></div>
     </dl>
     <div class="dialog-actions">
-      <a class="button primary whatsapp-cta" target="_blank" rel="noopener" href="${whatsappLink(productMessage(product, "buy this plan"))}">Buy on WhatsApp</a>
+      <a class="button primary whatsapp-cta" target="_blank" rel="noopener noreferrer" href="${whatsappLink(productMessage(product, "buy this plan"))}">Buy on WhatsApp</a>
     </div>
   `);
 }
@@ -178,7 +178,7 @@ function cartDialog() {
     <h3>Cart</h3>
     <ul class="cart-list">${items}</ul>
     <div class="dialog-actions">
-      <a class="button primary whatsapp-cta" target="_blank" rel="noopener" href="${whatsappLink(cartMessage())}">Send cart on WhatsApp</a>
+      <a class="button primary whatsapp-cta" target="_blank" rel="noopener noreferrer" href="${whatsappLink(cartMessage())}">Send cart on WhatsApp</a>
       <button class="button secondary glass-panel" type="button" data-clear-cart>Clear cart</button>
     </div>
   `);
@@ -297,6 +297,10 @@ document.addEventListener("click", (event) => {
   }
 });
 
+document.addEventListener("error", (event) => {
+  if (event.target?.matches?.(".logo-tile img")) event.target.remove();
+}, true);
+
 detailDialog.addEventListener("click", (event) => {
   if (event.target === detailDialog) {
     detailDialog.close();
@@ -337,7 +341,7 @@ document.querySelector("#requestForm").addEventListener("submit", (event) => {
     "",
     "Please check availability and pricing for me. Thanks!"
   ].join("\n");
-  window.open(whatsappLink(message), "_blank", "noopener");
+  window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
   input.value = "";
 });
 

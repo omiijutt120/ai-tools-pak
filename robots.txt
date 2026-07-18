@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /scripts/
+Disallow: /data/
+Disallow: /*.csv$
+Disallow: /*.md$
+Disallow: /*.log$
 
 Sitemap: https://aitoolspak.tech/sitemap.xml
