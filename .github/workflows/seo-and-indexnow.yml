@@ -1,0 +1,50 @@
+name: SEO validation and IndexNow
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate catalogue and SEO
+        run: |
+          node scripts/check-catalog.js
+          node scripts/check-social-services.js
+          node scripts/check-site-links.js
+          node scripts/seo-audit.js
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          INDEXNOW_KEY: "39d0cb37d04da60c96bc37d9c78b6fe0"
+        run: |
+          python - <<'PY'
+          import json, os, xml.etree.ElementTree as ET
+          root = ET.parse('sitemap.xml').getroot()
+          ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          urls = [node.text.strip() for node in root.findall('s:url/s:loc', ns)]
+          key = os.environ['INDEXNOW_KEY']
+          payload = {
+              'host': 'aitoolspak.tech',
+              'key': key,
+              'keyLocation': f'https://aitoolspak.tech/{key}.txt',
+              'urlList': urls,
+          }
+          with open('indexnow-payload.json', 'w', encoding='utf-8') as f:
+              json.dump(payload, f)
+          print(f'Prepared {len(urls)} URLs for IndexNow')
+          PY
+          curl --fail-with-body --retry 2             -H "Content-Type: application/json; charset=utf-8"             -d @indexnow-payload.json             https://api.indexnow.org/indexnow

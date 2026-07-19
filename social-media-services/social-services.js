@@ -3,14 +3,28 @@
   const whatsappNumber = window.AI_TOOLS_CONFIG?.whatsappNumber || "923714549245";
   const formatter = new Intl.NumberFormat("en-PK");
   const platforms = ["All Services", "Instagram", "TikTok", "YouTube", "Facebook", "Telegram", "WhatsApp", "Twitter/X", "Spotify", "Other"];
+  const urlParams = new URLSearchParams(window.location?.search || "");
+  const requestedPlatform = platforms.find((platform) => platform.toLowerCase() === String(urlParams.get("platform") || "").toLowerCase());
   const state = {
-    query: "",
-    platform: "All Services",
-    category: "",
-    sort: "name",
+    query: urlParams.get("q") || "",
+    platform: requestedPlatform || "All Services",
+    category: urlParams.get("category") || "",
+    sort: ["name", "category", "price-asc", "price-desc"].includes(urlParams.get("sort")) ? urlParams.get("sort") : "name",
     page: 1,
-    perPage: 25
+    perPage: [25, 50, 100].includes(Number(urlParams.get("perPage"))) ? Number(urlParams.get("perPage")) : 25
   };
+
+  function updateUrl() {
+    if (!window.location || !window.history?.replaceState) return;
+    const params = new URLSearchParams();
+    if (state.platform !== "All Services") params.set("platform", state.platform);
+    if (state.query) params.set("q", state.query);
+    if (state.category) params.set("category", state.category);
+    if (state.sort !== "name") params.set("sort", state.sort);
+    if (state.perPage !== 25) params.set("perPage", String(state.perPage));
+    const next = `${window.location.pathname}${params.toString() ? `?${params}` : ""}`;
+    window.history.replaceState(null, "", next);
+  }
 
   function normalizeText(value) {
     return String(value || "")
@@ -251,13 +265,19 @@
   }
 
   count.textContent = formatter.format(services.length);
+  search.value = state.query;
+  sortSelect.value = state.sort;
+  perPageSelect.value = String(state.perPage);
   renderFilters();
+  if ([...categoryFilter.options].some((option) => option.value === state.category)) categoryFilter.value = state.category;
   render();
+  updateUrl();
 
   search.addEventListener("input", () => {
     state.query = search.value;
     state.page = 1;
     render();
+    updateUrl();
   });
 
   platformFilters.addEventListener("click", (event) => {
@@ -267,23 +287,27 @@
     state.page = 1;
     renderFilters();
     render();
+    updateUrl();
   });
 
   categoryFilter.addEventListener("change", () => {
     state.category = categoryFilter.value;
     state.page = 1;
     render();
+    updateUrl();
   });
 
   sortSelect.addEventListener("change", () => {
     state.sort = sortSelect.value;
     render();
+    updateUrl();
   });
 
   perPageSelect.addEventListener("change", () => {
     state.perPage = Number(perPageSelect.value);
     state.page = 1;
     render();
+    updateUrl();
   });
 
   pagination.addEventListener("click", (event) => {

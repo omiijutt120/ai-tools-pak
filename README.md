@@ -7,6 +7,8 @@ Static GitHub Pages website for `https://aitoolspak.tech/`.
 ```bash
 node scripts/generate-products.js
 node scripts/generate-social-services.js
+node scripts/apply-security-meta.js
+node scripts/remove-deprecated-rich-result-schema.js
 ```
 
 ## Checks

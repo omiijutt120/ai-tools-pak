@@ -23,7 +23,8 @@ function stripTags(html) {
 
 function localTarget(file, href) {
   if (!href || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:")) return null;
-  const [rawPath, hash = ""] = href.split("#");
+  const [beforeHash, hash = ""] = href.split("#", 2);
+  const rawPath = beforeHash.split("?", 1)[0];
   const targetPath = rawPath || path.basename(file);
   let resolved = targetPath.startsWith("/")
     ? path.join(root, targetPath.slice(1))
@@ -39,8 +40,11 @@ const errors = [];
 for (const [file, html] of htmlCache) {
   const rel = path.relative(root, file);
 
-  if (!/<meta\s+http-equiv=["']Content-Security-Policy["']/i.test(html)) errors.push(`${rel}: missing Content-Security-Policy meta`);
-  if (!/<meta\s+name=["']referrer["']\s+content=["']strict-origin-when-cross-origin["']/i.test(html)) errors.push(`${rel}: missing strict referrer policy`);
+  const metaTags = [...html.matchAll(/<meta\b[^>]*>/gi)].map((match) => attrs(match[0]));
+  const hasCsp = metaTags.some((tag) => (tag["http-equiv"] || "").toLowerCase() === "content-security-policy");
+  const hasReferrer = metaTags.some((tag) => (tag.name || "").toLowerCase() === "referrer" && (tag.content || "").toLowerCase() === "strict-origin-when-cross-origin");
+  if (!hasCsp) errors.push(`${rel}: missing Content-Security-Policy meta`);
+  if (!hasReferrer) errors.push(`${rel}: missing strict referrer policy`);
   if (/\son[a-z]+\s*=/i.test(html)) errors.push(`${rel}: inline event handler found`);
 
   for (const match of html.matchAll(/<a\b[^>]*>/gi)) {

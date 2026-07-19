@@ -24,6 +24,27 @@ function hasMeta(html, pattern) {
   return pattern.test(html);
 }
 
+function attrs(tag) {
+  return Object.fromEntries([...tag.matchAll(/\s([\w:-]+)(?:=(["'])(.*?)\2)?/g)].map((match) => [match[1].toLowerCase(), match[3] || ""]));
+}
+
+function metaContent(html, key, value) {
+  for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
+    const tag = attrs(match[0]);
+    if ((tag[key] || "").toLowerCase() === value.toLowerCase()) return tag.content || "";
+  }
+  return "";
+}
+
+function linkHref(html, relValue) {
+  for (const match of html.matchAll(/<link\b[^>]*>/gi)) {
+    const tag = attrs(match[0]);
+    const rels = new Set((tag.rel || "").toLowerCase().split(/\s+/).filter(Boolean));
+    if (rels.has(relValue.toLowerCase())) return tag.href || "";
+  }
+  return "";
+}
+
 function record(type, value, file) {
   if (!value) return;
   const list = seen[type].get(value) || [];
@@ -40,10 +61,10 @@ for (const url of urls) {
   }
   const html = fs.readFileSync(file, "utf8");
   const title = first(html, /<title>([\s\S]*?)<\/title>/i);
-  const description = first(html, /<meta name="description" content="([^"]+)"/i);
-  const canonical = first(html, /<link rel="canonical" href="([^"]+)"/i);
+  const description = metaContent(html, "name", "description");
+  const canonical = linkHref(html, "canonical");
   const h1 = first(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i).replace(/<[^>]+>/g, " ");
-  const robots = first(html, /<meta name="robots" content="([^"]+)"/i);
+  const robots = metaContent(html, "name", "robots");
 
   if (!title) errors.push(`Missing title: ${url}`);
   if (!description) errors.push(`Missing meta description: ${url}`);
@@ -51,13 +72,11 @@ for (const url of urls) {
   if (canonical && canonical !== url) errors.push(`Canonical mismatch: ${url} -> ${canonical}`);
   if (!h1) errors.push(`Missing H1: ${url}`);
   if (/noindex/i.test(robots)) errors.push(`Sitemap URL is noindex: ${url}`);
-  if (!hasMeta(html, /<meta property="og:title" content="[^"]+"/i)) errors.push(`Missing og:title: ${url}`);
-  if (!hasMeta(html, /<meta property="og:description" content="[^"]+"/i)) errors.push(`Missing og:description: ${url}`);
-  if (!hasMeta(html, /<meta property="og:image" content="[^"]+"/i)) errors.push(`Missing og:image: ${url}`);
-  if (!hasMeta(html, /<meta name="twitter:card" content="[^"]+"/i)) errors.push(`Missing twitter:card: ${url}`);
-  if (/"@type"\s*:\s*"(FAQPage|HowTo)"/i.test(html)) {
-    errors.push(`Outdated Google rich-result schema present: ${url}`);
-  }
+  if (!metaContent(html, "property", "og:title")) errors.push(`Missing og:title: ${url}`);
+  if (!metaContent(html, "property", "og:description")) errors.push(`Missing og:description: ${url}`);
+  if (!metaContent(html, "property", "og:image")) errors.push(`Missing og:image: ${url}`);
+  if (!metaContent(html, "name", "twitter:card")) errors.push(`Missing twitter:card: ${url}`);
+  if (/"@type"\s*:\s*"(FAQPage|HowTo)"/i.test(html)) errors.push(`Deprecated Google rich-result schema present: ${url}`);
   if (!html.includes('type="application/ld+json"') && !url.includes("/privacy-policy/") && !url.includes("/terms-and-conditions/")) {
     errors.push(`No JSON-LD on important page: ${url}`);
   }
