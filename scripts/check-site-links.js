@@ -40,11 +40,8 @@ const errors = [];
 for (const [file, html] of htmlCache) {
   const rel = path.relative(root, file);
 
-  const metaTags = [...html.matchAll(/<meta\b[^>]*>/gi)].map((match) => attrs(match[0]));
-  const hasCsp = metaTags.some((tag) => (tag["http-equiv"] || "").toLowerCase() === "content-security-policy");
-  const hasReferrer = metaTags.some((tag) => (tag.name || "").toLowerCase() === "referrer" && (tag.content || "").toLowerCase() === "strict-origin-when-cross-origin");
-  if (!hasCsp) errors.push(`${rel}: missing Content-Security-Policy meta`);
-  if (!hasReferrer) errors.push(`${rel}: missing strict referrer policy`);
+  if (!/<meta\s+http-equiv=["']Content-Security-Policy["']/i.test(html)) errors.push(`${rel}: missing Content-Security-Policy meta`);
+  if (!/<meta\s+name=["']referrer["']\s+content=["']strict-origin-when-cross-origin["']/i.test(html)) errors.push(`${rel}: missing strict referrer policy`);
   if (/\son[a-z]+\s*=/i.test(html)) errors.push(`${rel}: inline event handler found`);
 
   for (const match of html.matchAll(/<a\b[^>]*>/gi)) {

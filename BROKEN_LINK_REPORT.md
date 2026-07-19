@@ -1,15 +1,14 @@
 # Broken Link Report
 
-Generated: 2026-07-18
+Generated: 2026-07-19
 
 ## Result
 
 - Internal links and buttons: PASS
-- HTML files checked: 39
-- Sitemap URLs checked over local HTTP: 39
-- HTTP failures: 0
+- HTML files checked: 43
+- Sitemap URLs checked: 43
 - Broken internal links found: 0
 
-## Command Evidence
+## Command evidence
 
-`node scripts/check-site-links.js` returned: `site links/buttons ok: 39 HTML files checked`.
+`node scripts/check-site-links.js` returned: `site links/buttons ok: 43 HTML files checked`.

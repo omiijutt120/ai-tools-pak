@@ -7,8 +7,6 @@ Static GitHub Pages website for `https://aitoolspak.tech/`.
 ```bash
 node scripts/generate-products.js
 node scripts/generate-social-services.js
-node scripts/apply-security-meta.js
-node scripts/remove-deprecated-rich-result-schema.js
 ```
 
 ## Checks
@@ -23,3 +21,10 @@ node --check social-media-services/social-services.js
 ```
 
 The social media catalog is generated from `data/social-media-services-source.csv`. If the source file has no rate, minimum or maximum quantity columns, the public page must show `Confirm price on WhatsApp` instead of inventing prices.
+
+## SEO/GEO/AEO Handoff
+
+- Master strategy: `docs/MASTER_SEO_GEO_AEO_STRATEGY.md`
+- Codex deployment instructions: `docs/CODEX_HANDOFF.md`
+- Production sitemap: `sitemap.xml`
+- AI crawler summary: `llms.txt`

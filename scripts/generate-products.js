@@ -7,8 +7,8 @@ const dataPath = path.join(root, "products-data.js");
 const indexPath = path.join(root, "index.html");
 const sitemapPath = path.join(root, "sitemap.xml");
 const SITE_URL = "https://aitoolspak.tech";
-const LAST_VERIFIED = "2026-07-19";
-const DISPLAY_DATE = "July 19, 2026";
+const LAST_VERIFIED = "2026-07-18";
+const DISPLAY_DATE = "July 18, 2026";
 const PRODUCT_ROUTE_BY_SLUG = {
   "chatgpt-plus": "chatgpt-plus-pakistan/",
   "claude-ai": "claude-pro-pakistan/",
@@ -33,33 +33,24 @@ const PRODUCT_ROUTE_BY_SLUG = {
 };
 const STATIC_SITEMAP_PATHS = [
   "",
-  "blog/",
-  "blog/buy-ai-tools-pakistan/",
-  "blog/cheap-ai-tools-pakistan/",
-  "blog/ai-tools-for-students-pakistan/",
-  "blog/smm-services-pakistan/",
-  "blog/chatgpt-plus-price-pakistan/",
-  "blog/claude-pro-vs-chatgpt-plus-pakistani-students/",
-  "blog/best-ai-tools-freelancers-pakistan/",
-  "blog/best-ai-video-tools-pakistani-content-creators/",
-  "blog/choose-ai-subscription-safely/",
-  "blog/free-vs-paid-ai-tools/",
   "canva-pro-pakistan/",
   "veo-3-pakistan/",
   "capcut-pro-pakistan/",
   "grok-subscription-pakistan/",
   "social-media-services/",
-  "instagram-services-pakistan/",
-  "tiktok-services-pakistan/",
-  "youtube-services-pakistan/",
-  "facebook-services-pakistan/",
   "about-us/",
   "contact-us/",
   "privacy-policy/",
   "terms-and-conditions/",
   "refund-policy/",
   "delivery-policy/",
-  "frequently-asked-questions/"
+  "frequently-asked-questions/",
+  "blog/chatgpt-plus-price-pakistan/",
+  "blog/claude-pro-vs-chatgpt-plus-pakistani-students/",
+  "blog/best-ai-tools-freelancers-pakistan/",
+  "blog/best-ai-video-tools-pakistani-content-creators/",
+  "blog/choose-ai-subscription-safely/",
+  "blog/free-vs-paid-ai-tools/"
 ];
 
 const required = [
@@ -616,6 +607,3 @@ ${sitemapPaths.map((urlPath) => `  <url>
 </urlset>
 `;
 fs.writeFileSync(sitemapPath, sitemap, "utf8");
-
-// Rebuild product pages with unique decision content after the catalogue generator runs.
-require("./enhance-product-pages.js");
