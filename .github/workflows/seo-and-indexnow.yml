@@ -28,6 +28,7 @@ jobs:
           node scripts/seo-audit.js
 
       - name: Submit sitemap URLs to IndexNow
+        continue-on-error: true
         env:
           INDEXNOW_KEY: "39d0cb37d04da60c96bc37d9c78b6fe0"
         run: |
