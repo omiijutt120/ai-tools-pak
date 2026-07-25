@@ -147,6 +147,8 @@
 
   function serviceCard(service) {
     const details = service.details ? `<p>${escapeHtml(service.details).slice(0, 220)}${service.details.length > 220 ? "..." : ""}</p>` : "<p>Details will be confirmed on WhatsApp.</p>";
+    const defaultQuantity = service.pricingBasis === "per_item" ? 1 : 1000;
+    const orderUrl = whatsappUrl(buildWhatsAppMessage(service, defaultQuantity, ""));
     return `
       <article class="glass-panel service-card">
         <div class="service-card-top">
@@ -161,7 +163,7 @@
         </div>
         <div class="service-price">${escapeHtml(displayPrice(service))}</div>
         <div class="product-actions">
-          <button class="button primary" type="button" data-open-service="${escapeHtml(service.catalogId)}">Buy on WhatsApp</button>
+          <a class="button primary" target="_blank" rel="noopener noreferrer" href="${escapeHtml(orderUrl)}">Buy on WhatsApp</a>
           <button class="button secondary glass-panel" type="button" data-open-service="${escapeHtml(service.catalogId)}">Details</button>
         </div>
       </article>

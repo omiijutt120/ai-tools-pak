@@ -40,12 +40,17 @@ function whatsappLink(message) {
 }
 
 function productMessage(product, intent) {
+  const priceLines = Array.isArray(product.plans) && product.plans.length
+    ? product.plans.map((plan) => `- ${plan.label}: PKR ${formatter.format(plan.price)}`)
+    : [`Price: PKR ${formatter.format(product.sellingPricePkr)}`];
+  const priceHeader = Array.isArray(product.plans) && product.plans.length ? ["Available plans:"] : [];
   return [
     `Hi AI Tools Pak, I want to ${intent}:`,
     `Product: ${product.name}`,
     `SKU: ${product.sku}`,
     `Plan: ${product.planTier}`,
-    `Price: PKR ${formatter.format(product.sellingPricePkr)}`,
+    ...priceHeader,
+    ...priceLines,
     `Duration: ${product.subscriptionDuration}`,
     `Access: ${product.accessType}`,
     `Delivery: ${product.deliveryMethod}`,
@@ -82,6 +87,15 @@ function saveCart() {
 }
 
 function priceHtml(product) {
+  if (Array.isArray(product.plans) && product.plans.length) {
+    const rows = product.plans.map((plan) =>
+      `<li><span class="plan-label">${escapeHtml(plan.label)}</span><span class="plan-price">PKR ${formatter.format(plan.price)}</span></li>`
+    ).join("");
+    const note = product.planNotes
+      ? `<p class="plan-note">${escapeHtml(product.planNotes)}</p>`
+      : "";
+    return `<ul class="plans-list">${rows}</ul>${note}`;
+  }
   const compare = Number(product.compareAtPricePkr);
   const compareHtml = Number.isFinite(compare) && compare > product.sellingPricePkr
     ? `<span class="compare-price">PKR ${formatter.format(compare)}</span>`
@@ -152,8 +166,10 @@ function productDetails(product) {
     <p class="dialog-note">${escapeHtml(product.fullDescription)}</p>
     ${confirmation}
     <dl class="detail-list">
-      <div><dt>Price</dt><dd>PKR ${formatter.format(product.sellingPricePkr)}</dd></div>
-      <div><dt>Base price</dt><dd>PKR ${formatter.format(product.basePricePkr)}</dd></div>
+      ${Array.isArray(product.plans) && product.plans.length
+        ? `<div><dt>Plans</dt><dd><ul class="plans-list detail-plans">${product.plans.map((plan) => `<li><span class="plan-label">${escapeHtml(plan.label)}</span><span class="plan-price">PKR ${formatter.format(plan.price)}</span></li>`).join("")}</ul>${product.planNotes ? `<p class="plan-note">${escapeHtml(product.planNotes)}</p>` : ""}</dd></div>`
+        : `<div><dt>Price</dt><dd>PKR ${formatter.format(product.sellingPricePkr)}</dd></div>
+      <div><dt>Base price</dt><dd>PKR ${formatter.format(product.basePricePkr)}</dd></div>`}
       <div><dt>Duration</dt><dd>${escapeHtml(product.subscriptionDuration)}</dd></div>
       <div><dt>Access</dt><dd>${escapeHtml(product.accessType)}</dd></div>
       <div><dt>Delivery</dt><dd>${escapeHtml(product.deliveryMethod)}</dd></div>
