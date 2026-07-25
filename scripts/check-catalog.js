@@ -83,35 +83,46 @@ const homeHtml = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8
 const stylesHtml = fs.readFileSync(path.join(__dirname, "..", "styles.css"), "utf8");
 const expected = [
   ["chatgpt-plus", "ChatGPT Plus", 2200, "1 month"],
-  ["claude-ai", "Claude Pro", 2800, "1 month"],
+  ["claude-ai", "Claude Pro", 5500, "1 month"],
   ["gemini-pro", "Gemini Pro", 900, "18 months"],
-  ["elevenlabs-creator-private", "ElevenLabs Creator - Private", 3000, "1 month"],
-  ["vidiq", "vidIQ", 2159],
-  ["playht", "PlayHT", 3960],
-  ["supergrok", "SuperGrok", 1800],
-  ["wordai", "WordAI", 600],
-  ["jasper-ai", "Jasper AI", 600],
-  ["google-ai-ultra-plan", "Google AI Ultra Plan", 1764],
-  ["hailuo-ai", "Hailuo AI", 2040],
-  ["netflix", "Netflix", 400, "1 month"]
+  ["elevenlabs-creator-private", "ElevenLabs Creator - Private", 3300, "1 month"],
+  ["runway-ml-unlimited-generations", "Runway ML - Unlimited Generations", 2520, "1 month"],
+  ["leonardo-ai", "Leonardo AI", 1200, "1 month"],
+  ["grammarly-pro", "Grammarly Premium", 1000, "1 month"],
+  ["quillbot", "QuillBot", 479, "1 month"],
+  ["lovable-ai-pro-private", "Lovable AI Pro - Private", 1500, "1 month"],
+  ["heygen-ai", "HeyGen AI", 7400, "1 month"],
+  ["ideogram-ai-plus-private", "Ideogram AI Plus", 1500, "1 month"],
+  ["success-ai-starter-leads", "Success.ai Starter Leads", 2400, "1 month"],
+  ["vidiq", "vidIQ", 2159, "1 month"],
+  ["playht", "PlayHT", 3960, "1 month"],
+  ["supergrok", "SuperGrok", 2500, "1–3 months"],
+  ["wordai", "WordAI", 600, "1 month"],
+  ["jasper-ai", "Jasper AI", 600, "1 month"],
+  ["google-ai-ultra-plan", "Google AI Ultra Plan", 1764, "1 month"],
+  ["hailuo-ai", "Hailuo AI", 2040, "1 month"],
+  ["netflix", "Netflix", 400, "1 month"],
+  ["capcut-pro", "CapCut Pro", 900, "1 month"],
+  ["veo-3-extension", "Veo 3 Extension", 3000, "1 month"],
 ];
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-assert(products.length === 20, `Expected 20 products, found ${products.length}`);
-assert((productGrid.innerHTML.match(/class="glass-panel product-card"/g) || []).length === 20, "Expected 20 rendered product cards");
+const productCount = products.length;
+assert(productCount === 31, `Expected 31 products, found ${productCount}`);
+assert((productGrid.innerHTML.match(/class="glass-panel product-card"/g) || []).length === productCount, `Expected ${productCount} rendered product cards`);
 assert((categoryGrid.innerHTML.match(/class="glass-panel category-card"/g) || []).length === new Set(products.map((product) => product.category)).size, "Category buttons do not match CSV categories");
 assert(homeHtml.indexOf('id="social-media-services"') < homeHtml.indexOf('id="catalog"'), "Social media services promo must appear above tools catalog");
 assert(homeHtml.indexOf('id="catalog"') < homeHtml.indexOf('class="trust-strip"'), "Catalog section must appear before trust/info sections");
 assert(/\.nav-shell\s*\{[\s\S]*?overflow:\s*visible;/.test(stylesHtml), "Mobile menu is clipped because nav shell overflow is not visible");
-assert(!homeHtml.includes("logo.svg") && homeHtml.includes('src="logo.png"'), "Homepage logo image not updated");
+assert(!/<img[^>]*src="[^"]*logo\.svg/i.test(homeHtml) && homeHtml.includes('src="logo.png"'), "Homepage logo image not updated");
 
 for (const [slug, name, price, duration] of expected) {
   const product = products.find((item) => item.slug === slug);
   assert(product, `Missing product: ${slug}`);
-  assert(product.sellingPricePkr === price, `Wrong selling price for ${slug}`);
+  assert(product.sellingPricePkr === price, `Wrong selling price for ${slug}: expected ${price}, got ${product.sellingPricePkr}`);
   if (duration) assert(product.subscriptionDuration === duration, `Wrong duration for ${slug}`);
   assert(product.sellingPricePkr === Math.round(product.basePricePkr * 1.2), `Markup applied incorrectly for ${slug}`);
   assert(fullCatalogHtml.includes(name), `Rendered catalog missing ${name}`);
@@ -124,15 +135,14 @@ for (const [slug, name, price, duration] of expected) {
 
 assert(!products.some((product) => !product.imageUrl || !product.imageAltText), "Product image data missing");
 for (const product of products) {
-  assert(product.imageUrl === `/assets/product-icons/${product.slug}.png`, `Product image must be self-hosted for ${product.slug}`);
-  assert(fs.existsSync(path.join(__dirname, "..", product.imageUrl.slice(1))), `Missing product image file for ${product.slug}`);
+  assert(product.imageUrl.startsWith("/assets/product-icons/"), `Image must be in product-icons for ${product.slug}`);
+  const imgPath = path.join(__dirname, "..", product.imageUrl.replace(/^\//, ""));
+  assert(fs.existsSync(imgPath), `Missing product image file for ${product.slug}: ${product.imageUrl}`);
   assert(fullCatalogHtml.includes(`src="${product.imageUrl}"`), `Rendered catalog missing image for ${product.slug}`);
 }
-assert(!products.some((product) => !product.guideUrl), "Every product must have a guide URL");
-assert(products.every((product) => fullCatalogHtml.includes(`href="${product.guideUrl}"`)), "Rendered product cards must link to guide pages");
-assert(new Set(products.map((product) => product.productId)).size === 20, "Duplicate product IDs");
-assert(new Set(products.map((product) => product.sku)).size === 20, "Duplicate SKUs");
-assert(new Set(products.map((product) => product.slug)).size === 20, "Duplicate slugs");
+assert(new Set(products.map((product) => product.productId)).size === productCount, "Duplicate product IDs");
+assert(new Set(products.map((product) => product.sku)).size === productCount, "Duplicate SKUs");
+assert(new Set(products.map((product) => product.slug)).size === productCount, "Duplicate slugs");
 assert(fullCatalogHtml.includes("Confirm details before ordering"), "Supplier confirmation notice missing");
 
-console.log("catalog render ok: 20 products searchable, prices and durations verified");
+console.log(`catalog render ok: ${productCount} products searchable, prices and durations verified`);

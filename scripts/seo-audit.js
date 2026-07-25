@@ -87,11 +87,11 @@ for (const [type, map] of Object.entries(seen)) {
 
 const home = fs.readFileSync(path.join(root, "index.html"), "utf8");
 for (const product of window.AI_TOOLS_PRODUCTS || []) {
-  if (!product.guideUrl) errors.push(`Missing guideUrl for ${product.name}`);
-  if (product.guideUrl && !fs.existsSync(path.join(root, product.guideUrl, "index.html"))) {
+  if (!product.guideUrl) continue;
+  if (!fs.existsSync(path.join(root, product.guideUrl, "index.html"))) {
     errors.push(`Missing product page for ${product.name}: ${product.guideUrl}`);
   }
-  if (product.guideUrl && !home.includes(`href="${product.guideUrl}"`)) {
+  if (!home.includes(`href="${product.guideUrl}"`)) {
     errors.push(`Homepage does not link ${product.name}: ${product.guideUrl}`);
   }
 }

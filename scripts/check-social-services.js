@@ -34,7 +34,7 @@ assert(/25/.test(socialHtml) && /50/.test(socialHtml) && /100/.test(socialHtml),
 assert(/@media \(max-width: 640px\)[\s\S]*\.platform-filters[\s\S]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/.test(styles), "Mobile platform filters are not a clear 2-column grid");
 assert(/@media \(max-width: 640px\)[\s\S]*\.platform-chip[\s\S]*white-space: normal/.test(styles), "Mobile platform chips cannot wrap text");
 assert(/window\.AI_TOOLS_PRODUCTS = \[/.test(productData), "AI product data missing");
-assert((productData.match(/productId/g) || []).length === 20, "Existing product count changed");
+assert((productData.match(/productId/g) || []).length === 31, "Existing product count changed");
 
 const service = services[0];
 const fakeDocument = { querySelector() { return null; }, addEventListener() {} };
