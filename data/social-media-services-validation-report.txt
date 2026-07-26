@@ -1,0 +1,16 @@
+Source mode: priced-pkr
+CSV rows read: 487
+CSV services read: 487
+Real services imported: 487
+Exact price matches: 487
+Matches requiring review: 0
+Unmatched services: 0
+Duplicate catalog IDs: 0
+Duplicate old IDs: 0
+Missing service names: 0
+Invalid USD rates: 0
+Invalid PKR prices: 0
+No service placeholders excluded: 0
+USD to PKR: 278.025
+Markup percent: 0.3
+Root cause fixed: the new CSV contains final PKR rates with 30% markup, so prices are imported directly and the frontend does not add markup again.

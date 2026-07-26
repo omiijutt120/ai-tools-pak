@@ -1,0 +1,29 @@
+# AI Tools Pak
+
+AI Tools Pak is a Pakistan-focused catalog for AI tool subscriptions and social media services with PKR pricing, WhatsApp order support, buyer safety checks, refund terms and delivery information.
+
+## Core Pages
+
+- Home: https://aitoolspak.tech/
+- AI tools catalog: https://aitoolspak.tech/#catalog
+- Social media services: https://aitoolspak.tech/social-media-services/
+- About: https://aitoolspak.tech/about-us/
+- Contact: https://aitoolspak.tech/contact-us/
+- FAQ: https://aitoolspak.tech/frequently-asked-questions/
+- Refund policy: https://aitoolspak.tech/refund-policy/
+- Delivery policy: https://aitoolspak.tech/delivery-policy/
+
+## Main Guides
+
+- ChatGPT Plus price in Pakistan: https://aitoolspak.tech/chatgpt-plus-pakistan/
+- Claude Pro price in Pakistan: https://aitoolspak.tech/claude-pro-pakistan/
+- Gemini Pro price in Pakistan: https://aitoolspak.tech/gemini-pro-pakistan/
+- Grammarly Premium price in Pakistan: https://aitoolspak.tech/grammarly-premium-pakistan/
+- Best AI tools for freelancers in Pakistan: https://aitoolspak.tech/blog/best-ai-tools-freelancers-pakistan/
+- How to choose an AI subscription safely: https://aitoolspak.tech/blog/choose-ai-subscription-safely/
+
+## Contact
+
+WhatsApp support: +92 371 454 9245
+Email: support@aitoolspak.com
+Support hours: 11:00 AM to 11:00 PM Pakistan time
