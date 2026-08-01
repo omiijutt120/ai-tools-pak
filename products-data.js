@@ -251,11 +251,6 @@ window.AI_TOOLS_PRODUCTS = [
     "sellingPricePkr": 1500,
     "compareAtPricePkr": 2000,
     "discountPercent": 25,
-    "plans": [
-      {"label": "100 Credits", "price": 1500},
-      {"label": "200 Credits", "price": 2000},
-      {"label": "300 Credits", "price": 2500}
-    ],
     "imageUrl": "/assets/product-icons/lovable-ai-pro-private.png",
     "imageAltText": "Lovable AI Pro subscription plan available in Pakistan",
     "sourceProductUrl": "https://lovable.dev",
@@ -285,11 +280,6 @@ window.AI_TOOLS_PRODUCTS = [
     "sellingPricePkr": 7400,
     "compareAtPricePkr": 10000,
     "discountPercent": 26,
-    "plans": [
-      {"label": "Creator (600 credits)", "price": 7400},
-      {"label": "Pro (1000 credits)", "price": 12500},
-      {"label": "Pro Plus (2000 credits)", "price": 21000}
-    ],
     "imageUrl": "/assets/product-icons/heygen-ai.png",
     "imageAltText": "HeyGen AI subscription plan available in Pakistan",
     "sourceProductUrl": "https://heygen.com",
@@ -319,11 +309,6 @@ window.AI_TOOLS_PRODUCTS = [
     "sellingPricePkr": 1500,
     "compareAtPricePkr": 5000,
     "discountPercent": 70,
-    "plans": [
-      {"label": "Shared Access", "price": 1500},
-      {"label": "Private Access", "price": 3000}
-    ],
-    "planNotes": "Shared account means images may be visible to other users on that account.",
     "imageUrl": "/assets/product-icons/ideogram-ai-plus-private.png",
     "imageAltText": "Ideogram AI Plus subscription plan available in Pakistan",
     "sourceProductUrl": "https://ideogram.ai",
@@ -440,10 +425,6 @@ window.AI_TOOLS_PRODUCTS = [
     "sellingPricePkr": 2500,
     "compareAtPricePkr": 3500,
     "discountPercent": 29,
-    "plans": [
-      {"label": "1 Month", "price": 2500},
-      {"label": "3 Months", "price": 4500}
-    ],
     "imageUrl": "/assets/product-icons/supergrok.png",
     "imageAltText": "SuperGrok subscription plan available in Pakistan",
     "sourceProductUrl": "https://x.ai",
@@ -624,7 +605,7 @@ window.AI_TOOLS_PRODUCTS = [
     "sourceRatingCount": 0,
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
-    "initials": "CC",
+    "initials": "CP",
     "guideUrl": "capcut-pro-pakistan/"
   },
   {
@@ -654,7 +635,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "V3",
-    "guideUrl": "veo-3-pakistan/"
+    "guideUrl": "veo-3-extension-pakistan/"
   },
   {
     "productId": "claude-20x-max",
@@ -682,8 +663,8 @@ window.AI_TOOLS_PRODUCTS = [
     "sourceRatingCount": 0,
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
-    "initials": "CM",
-    "guideUrl": ""
+    "initials": "C2",
+    "guideUrl": "claude-20x-max-pakistan/"
   },
   {
     "productId": "veo-3-ultra",
@@ -705,19 +686,14 @@ window.AI_TOOLS_PRODUCTS = [
     "sellingPricePkr": 8500,
     "compareAtPricePkr": 12000,
     "discountPercent": 29,
-    "plans": [
-      {"label": "200 Credits", "price": 8500},
-      {"label": "500 Credits", "price": 13500},
-      {"label": "1000 Credits", "price": 25000}
-    ],
     "imageUrl": "/assets/product-icons/gemini-pro.png",
     "imageAltText": "Veo 3 Ultra official paid invite available in Pakistan",
     "sourceProductUrl": "https://deepmind.google/technologies/veo/",
     "sourceRatingCount": 0,
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
-    "initials": "VU",
-    "guideUrl": ""
+    "initials": "V3",
+    "guideUrl": "veo-3-ultra-pakistan/"
   },
   {
     "productId": "dzine-master",
@@ -745,8 +721,8 @@ window.AI_TOOLS_PRODUCTS = [
     "sourceRatingCount": 0,
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
-    "initials": "DZ",
-    "guideUrl": ""
+    "initials": "DM",
+    "guideUrl": "dzine-master-pakistan/"
   },
   {
     "productId": "storyblocks-unlimited",
@@ -774,8 +750,8 @@ window.AI_TOOLS_PRODUCTS = [
     "sourceRatingCount": 0,
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
-    "initials": "SB",
-    "guideUrl": ""
+    "initials": "SU",
+    "guideUrl": "storyblocks-unlimited-pakistan/"
   },
   {
     "productId": "prime-video",
@@ -804,7 +780,7 @@ window.AI_TOOLS_PRODUCTS = [
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
     "initials": "PV",
-    "guideUrl": ""
+    "guideUrl": "prime-video-pakistan/"
   },
   {
     "productId": "coursera-premium",
@@ -832,8 +808,8 @@ window.AI_TOOLS_PRODUCTS = [
     "sourceRatingCount": 0,
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
-    "initials": "C",
-    "guideUrl": ""
+    "initials": "CP",
+    "guideUrl": "coursera-premium-pakistan/"
   },
   {
     "productId": "helium-10-platinum",
@@ -861,8 +837,8 @@ window.AI_TOOLS_PRODUCTS = [
     "sourceRatingCount": 0,
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
-    "initials": "H10",
-    "guideUrl": ""
+    "initials": "H1",
+    "guideUrl": "helium-10-platinum-pakistan/"
   },
   {
     "productId": "helium-10-diamond",
@@ -890,8 +866,8 @@ window.AI_TOOLS_PRODUCTS = [
     "sourceRatingCount": 0,
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
-    "initials": "H10",
-    "guideUrl": ""
+    "initials": "H1",
+    "guideUrl": "helium-10-diamond-pakistan/"
   },
   {
     "productId": "semrush-pro",
@@ -919,7 +895,7 @@ window.AI_TOOLS_PRODUCTS = [
     "sourceRatingCount": 0,
     "dataVerificationStatus": "Verified",
     "requiresSupplierConfirmation": false,
-    "initials": "SE",
-    "guideUrl": ""
+    "initials": "SP",
+    "guideUrl": "semrush-pro-pakistan/"
   }
 ];

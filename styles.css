@@ -1969,6 +1969,28 @@ details p {
 }
 
 /* ==========================================
+   BLOG INDEX
+   ========================================== */
+.post-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: grid;
+  gap: .9rem;
+}
+.post-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .9rem;
+  padding: 1rem 1.25rem;
+}
+.post-card h3 { margin: 0 0 .4rem; font-size: 1.06rem; }
+.post-card h3 a { color: inherit; text-decoration: none; }
+.post-card h3 a:hover { text-decoration: underline; }
+.post-card p { margin: 0 0 .4rem; font-size: .95rem; color: var(--muted); }
+.post-card .date-note { margin: 0; font-size: .82rem; opacity: .7; }
+
+/* ==========================================
    REDUCED MOTION
    ========================================== */
 @media (prefers-reduced-motion: reduce) {

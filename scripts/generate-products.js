@@ -7,8 +7,8 @@ const dataPath = path.join(root, "products-data.js");
 const indexPath = path.join(root, "index.html");
 const sitemapPath = path.join(root, "sitemap.xml");
 const SITE_URL = "https://aitoolspak.tech";
-const LAST_VERIFIED = "2026-07-18";
-const DISPLAY_DATE = "July 18, 2026";
+const LAST_VERIFIED = "2026-07-26";
+const DISPLAY_DATE = "July 26, 2026";
 const PRODUCT_ROUTE_BY_SLUG = {
   "chatgpt-plus": "chatgpt-plus-pakistan/",
   "claude-ai": "claude-pro-pakistan/",
@@ -250,6 +250,33 @@ function productPageHtml(product, related) {
   const official = product.sourceProductUrl
     ? `<p class="source-list">Official source: <a href="${escapeHtml(product.sourceProductUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(product.sourceProductTitle)}</a>. Checked on ${DISPLAY_DATE}.</p>`
     : "";
+  const productFaqs = [
+    {
+      "@type": "Question",
+      name: "Can the PKR price change?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `Yes. The visible price is the listed AI Tools Pak price verified on ${DISPLAY_DATE}. Confirm the current quote on WhatsApp before payment.`
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Is this access official?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No official partnership or authorization is claimed unless written authorization exists. Product names and trademarks belong to their owners."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "What should I confirm before paying?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Confirm price, duration, activation method, access model, usage limits, support window and refund condition."
+      }
+    }
+  ];
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -297,6 +324,11 @@ function productPageHtml(product, related) {
           url: canonical,
           itemCondition: "https://schema.org/NewCondition"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${canonical}#faq`,
+        mainEntity: productFaqs
       }
     ]
   };
@@ -533,7 +565,7 @@ const products = records.map((row) => {
 });
 
 console.log(`valid products imported: ${products.length}`);
-if (products.length !== 20) throw new Error(`Expected 20 products, found ${products.length}`);
+if (products.length !== 31) throw new Error(`Expected 31 products, found ${products.length}`);
 
 for (const product of products) {
   const dir = path.join(root, product.guideUrl);

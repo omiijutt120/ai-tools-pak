@@ -12,15 +12,52 @@ AI Tools Pak is a Pakistan-focused catalog for AI tool subscriptions and social 
 - FAQ: https://aitoolspak.tech/frequently-asked-questions/
 - Refund policy: https://aitoolspak.tech/refund-policy/
 - Delivery policy: https://aitoolspak.tech/delivery-policy/
+- Blog index: https://aitoolspak.tech/blog/
+
+## Current PKR Prices
+
+Current selling prices in PKR from the AI Tools Pak catalog, per plan duration.
+
+- ChatGPT Plus: PKR 2,200 (1 month) - https://aitoolspak.tech/chatgpt-plus-pakistan/
+- Claude Pro: PKR 5,500 (1 month) - https://aitoolspak.tech/claude-pro-pakistan/
+- Gemini Pro: PKR 900 (18 months) - https://aitoolspak.tech/gemini-pro-pakistan/
+- ElevenLabs Creator - Private: PKR 3,300 (1 month) - https://aitoolspak.tech/elevenlabs-creator-pakistan/
+- Runway ML - Unlimited Generations: PKR 2,520 (1 month) - https://aitoolspak.tech/runway-ml-pakistan/
+- Leonardo AI: PKR 1,200 (1 month) - https://aitoolspak.tech/leonardo-ai-pakistan/
+- Grammarly Premium: PKR 1,000 (1 month) - https://aitoolspak.tech/grammarly-premium-pakistan/
+- QuillBot: PKR 479 (1 month) - https://aitoolspak.tech/quillbot-premium-pakistan/
+- Lovable AI Pro - Private: PKR 1,500 (1 month) - https://aitoolspak.tech/lovable-ai-pro-pakistan/
+- HeyGen AI: PKR 7,400 (1 month) - https://aitoolspak.tech/heygen-ai-pakistan/
+- Ideogram AI Plus: PKR 1,500 (1 month) - https://aitoolspak.tech/ideogram-ai-plus-pakistan/
+- Success.ai Starter Leads: PKR 2,400 (1 month) - https://aitoolspak.tech/success-ai-starter-pakistan/
+- vidIQ: PKR 2,159 (1 month) - https://aitoolspak.tech/vidiq-pakistan/
+- PlayHT: PKR 3,960 (1 month) - https://aitoolspak.tech/playht-pakistan/
+- SuperGrok: PKR 2,500 (1–3 months) - https://aitoolspak.tech/supergrok-pakistan/
+- WordAI: PKR 600 (1 month) - https://aitoolspak.tech/wordai-pakistan/
+- Jasper AI: PKR 600 (1 month) - https://aitoolspak.tech/jasper-ai-pakistan/
+- Google AI Ultra Plan: PKR 1,764 (1 month) - https://aitoolspak.tech/google-ai-ultra-pakistan/
+- Hailuo AI: PKR 2,040 (1 month) - https://aitoolspak.tech/hailuo-ai-pakistan/
+- Netflix: PKR 500 (1 month) - https://aitoolspak.tech/netflix-pakistan/
+- CapCut Pro: PKR 900 (1 month) - https://aitoolspak.tech/capcut-pro-pakistan/
+- Veo 3 Extension: PKR 3,000 (1 month) - https://aitoolspak.tech/veo-3-extension-pakistan/
+- Claude 20X Max Plan: PKR 45,000 (1 month) - https://aitoolspak.tech/claude-20x-max-pakistan/
+- Veo 3 Ultra – Official Paid Invite: PKR 8,500 (Credit-based) - https://aitoolspak.tech/veo-3-ultra-pakistan/
+- Dzine Master: PKR 5,000 (1 month) - https://aitoolspak.tech/dzine-master-pakistan/
+- Storyblocks Unlimited: PKR 4,000 (1 month) - https://aitoolspak.tech/storyblocks-unlimited-pakistan/
+- Prime Video: PKR 400 (1 month) - https://aitoolspak.tech/prime-video-pakistan/
+- Coursera Premium: PKR 1,000 (1 month) - https://aitoolspak.tech/coursera-premium-pakistan/
+- Helium 10 Platinum: PKR 2,500 (1 month) - https://aitoolspak.tech/helium-10-platinum-pakistan/
+- Helium 10 Diamond: PKR 4,500 (1 month) - https://aitoolspak.tech/helium-10-diamond-pakistan/
+- SEMrush Pro: PKR 1,500 (1 month) - https://aitoolspak.tech/semrush-pro-pakistan/
 
 ## Main Guides
 
-- ChatGPT Plus price in Pakistan: https://aitoolspak.tech/chatgpt-plus-pakistan/
-- Claude Pro price in Pakistan: https://aitoolspak.tech/claude-pro-pakistan/
-- Gemini Pro price in Pakistan: https://aitoolspak.tech/gemini-pro-pakistan/
-- Grammarly Premium price in Pakistan: https://aitoolspak.tech/grammarly-premium-pakistan/
+- ChatGPT Plus price in Pakistan: https://aitoolspak.tech/blog/chatgpt-plus-price-pakistan/
+- Claude Pro vs ChatGPT Plus for Pakistani students: https://aitoolspak.tech/blog/claude-pro-vs-chatgpt-plus-pakistani-students/
 - Best AI tools for freelancers in Pakistan: https://aitoolspak.tech/blog/best-ai-tools-freelancers-pakistan/
+- Best AI video tools for Pakistani content creators: https://aitoolspak.tech/blog/best-ai-video-tools-pakistani-content-creators/
 - How to choose an AI subscription safely: https://aitoolspak.tech/blog/choose-ai-subscription-safely/
+- Free vs paid AI tools: https://aitoolspak.tech/blog/free-vs-paid-ai-tools/
 
 ## Contact
 
