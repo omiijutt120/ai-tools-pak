@@ -45,4 +45,22 @@ assert(utils.displayPrice(service).startsWith("PKR "), "Price display does not s
 assert(utils.calculateTotal(service, service.minQuantity) > 0, "Calculator did not produce a total");
 assert(utils.buildWhatsAppMessage(service, service.minQuantity, "https://example.com").includes("Estimated Total: PKR"), "WhatsApp message missing estimated total");
 
+// Static price-index section must stay in sync with the catalog data (SEO/AEO layer)
+const staticPrices = {};
+let priceMatch;
+const priceRe = /data-platform="([^"]+)"[^>]*>PKR ([0-9,.]+)/g;
+while ((priceMatch = priceRe.exec(socialHtml))) {
+  staticPrices[priceMatch[1]] = parseFloat(priceMatch[2].replace(/,/g, ""));
+}
+const platforms = [...new Set(services.map((s) => s.platform))];
+const missingPlatforms = platforms.filter((p) => staticPrices[p] === undefined);
+assert(missingPlatforms.length === 0, `Static price index missing platform(s): ${missingPlatforms.join(", ")}`);
+for (const p of platforms) {
+  const minPkr = Math.min(...services.filter((s) => s.platform === p).map((s) => s.sellingRatePkr));
+  assert(Math.abs(staticPrices[p] - minPkr) < 0.005, `Static min price for ${p} out of sync: HTML PKR ${staticPrices[p]} vs data PKR ${minPkr}`);
+}
+assert(/FAQPage/.test(socialHtml), "FAQPage schema missing on social media services page");
+assert(/ItemList/.test(socialHtml), "ItemList schema missing on social media services page");
+assert(platforms.every((p) => socialHtml.includes(`id="platform-${p.toLowerCase()}"`)), "Platform anchor missing in price index");
+
 console.log(`social services ok: ${services.length} priced services, min/max quantities valid, WhatsApp totals working`);

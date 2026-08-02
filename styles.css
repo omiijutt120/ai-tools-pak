@@ -1991,6 +1991,25 @@ details p {
 .post-card .date-note { margin: 0; font-size: .82rem; opacity: .7; }
 
 /* ==========================================
+   SOCIAL PRICE INDEX
+   ========================================== */
+.platform-price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: .9rem;
+  margin: 1.2rem 0 0;
+}
+.platform-card {
+  padding: 1rem 1.25rem;
+}
+.platform-card h3 { margin: 0 0 .4rem; font-size: 1.02rem; }
+.platform-card h3 a { color: inherit; text-decoration: none; }
+.platform-card h3 a:hover { text-decoration: underline; }
+.platform-card p { margin: 0; font-size: .92rem; color: var(--muted); }
+.platform-card .platform-min-price { font-weight: 600; color: var(--ink); }
+.price-index-intro { max-width: 60rem; margin: .25rem 0 0; color: var(--muted); font-size: .97rem; }
+
+/* ==========================================
    REDUCED MOTION
    ========================================== */
 @media (prefers-reduced-motion: reduce) {

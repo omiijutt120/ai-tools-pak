@@ -134,6 +134,24 @@
   if (!grid) return;
 
   const count = document.querySelector("#socialServiceCount");
+  // Keep the static platform starting-price cards in sync with the live catalog.
+  // Guarded so non-DOM contexts (audit harness) and older browsers no-op safely.
+  const minPriceNodes = document.querySelectorAll ? document.querySelectorAll("[data-min-price-pkr]") : [];
+  if (minPriceNodes.length) {
+    const minByPlatform = new Map();
+    services.forEach((service) => {
+      const platform = service.platform;
+      if (!minByPlatform.has(platform) || service.sellingRatePkr < minByPlatform.get(platform)) {
+        minByPlatform.set(platform, service.sellingRatePkr);
+      }
+    });
+    minPriceNodes.forEach((node) => {
+      const pkr = minByPlatform.get(node.getAttribute("data-platform"));
+      if (pkr !== undefined) {
+        node.textContent = displayPrice({ sellingRatePkr: pkr, matchStatus: "exact" });
+      }
+    });
+  }
   const search = document.querySelector("#socialSearch");
   const platformFilters = document.querySelector("#platformFilters");
   const categoryFilter = document.querySelector("#categoryFilter");
