@@ -12,6 +12,7 @@ AI Tools Pak is a Pakistan-focused catalog for AI tool subscriptions and social 
 - FAQ: https://aitoolspak.tech/frequently-asked-questions/
 - Refund policy: https://aitoolspak.tech/refund-policy/
 - Delivery policy: https://aitoolspak.tech/delivery-policy/
+- Enterprise AI API credits: https://aitoolspak.tech/enterprise-ai-api-credits/
 - Blog index: https://aitoolspak.tech/blog/
 
 ## Current PKR Prices
@@ -53,6 +54,8 @@ Current selling prices in PKR from the AI Tools Pak catalog, per plan duration.
 ## Main Guides
 
 - ChatGPT Plus price in Pakistan: https://aitoolspak.tech/blog/chatgpt-plus-price-pakistan/
+- Cheap AI subscriptions in Pakistan (PKR prices): https://aitoolspak.tech/blog/find-cheap-ai-subscriptions-pakistan/
+- Where to buy AI tools in Pakistan (safe sellers): https://aitoolspak.tech/blog/where-to-buy-ai-tools-pakistan/
 - Claude Pro vs ChatGPT Plus for Pakistani students: https://aitoolspak.tech/blog/claude-pro-vs-chatgpt-plus-pakistani-students/
 - Best AI tools for freelancers in Pakistan: https://aitoolspak.tech/blog/best-ai-tools-freelancers-pakistan/
 - Best AI video tools for Pakistani content creators: https://aitoolspak.tech/blog/best-ai-video-tools-pakistani-content-creators/
