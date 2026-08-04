@@ -85,6 +85,11 @@ lines.push(`- Best AI tools for freelancers in Pakistan: ${SITE_URL}/blog/best-a
 lines.push(`- Best AI video tools for Pakistani content creators: ${SITE_URL}/blog/best-ai-video-tools-pakistani-content-creators/`);
 lines.push(`- How to choose an AI subscription safely: ${SITE_URL}/blog/choose-ai-subscription-safely/`);
 lines.push(`- Free vs paid AI tools: ${SITE_URL}/blog/free-vs-paid-ai-tools/`);
+lines.push(`- Canva Pro price in Pakistan: ${SITE_URL}/blog/canva-pro-price-pakistan/`);
+lines.push("");
+lines.push("## Full documentation");
+lines.push("");
+lines.push(`Full site text for AI models: ${SITE_URL}/llms-full.txt`);
 lines.push("");
 lines.push("## Contact");
 lines.push("");

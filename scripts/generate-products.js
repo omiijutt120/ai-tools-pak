@@ -45,12 +45,16 @@ const STATIC_SITEMAP_PATHS = [
   "refund-policy/",
   "delivery-policy/",
   "frequently-asked-questions/",
+  "enterprise-ai-api-credits/",
   "blog/chatgpt-plus-price-pakistan/",
+  "blog/canva-pro-price-pakistan/",
   "blog/claude-pro-vs-chatgpt-plus-pakistani-students/",
   "blog/best-ai-tools-freelancers-pakistan/",
   "blog/best-ai-video-tools-pakistani-content-creators/",
   "blog/choose-ai-subscription-safely/",
-  "blog/free-vs-paid-ai-tools/"
+  "blog/free-vs-paid-ai-tools/",
+  "blog/find-cheap-ai-subscriptions-pakistan/",
+  "blog/where-to-buy-ai-tools-pakistan/"
 ];
 
 const required = [
