@@ -1529,6 +1529,32 @@ details p {
 
 .service-dialog .dialog-product p { white-space: pre-line; }
 
+/* Social-services "Details" dialog: the service form injects the full
+   detail-list, order form and actions inside .dialog-product, which is a
+   horizontal flex by default. Force it into a clean vertical layout:
+   logo beside the title on the first row, everything else full-width below. */
+.service-dialog .dialog-product {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  row-gap: .75rem;
+  align-items: start;
+  grid-template-areas:
+    "logo title"
+    ".    desc"
+    ".    warn"
+    ".    list"
+    ".    form"
+    ".    actions";
+}
+.service-dialog .dialog-product .logo-tile { grid-area: logo; }
+.service-dialog .dialog-product h3 { grid-area: title; align-self: center; }
+.service-dialog .dialog-product > p { grid-area: desc; }
+.service-dialog .dialog-product .notice { grid-area: warn; }
+.service-dialog .dialog-product .detail-list { grid-area: list; }
+.service-dialog .dialog-product .service-order-form { grid-area: form; }
+.service-dialog .dialog-product .dialog-actions { grid-area: actions; }
+
 .service-order-form {
   display: grid;
   gap: .8rem;
