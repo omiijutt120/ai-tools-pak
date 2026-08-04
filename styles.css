@@ -639,6 +639,15 @@ h1 span + span {
 
 .button:active, .icon-button:active, .cart-button:active, .menu-button:active { transform: scale(.97); }
 
+.use-case-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  list-style: none;
+  padding: 0;
+  margin: .5rem 0 0;
+}
+
 .category-strip {
   position: relative;
   z-index: 1;

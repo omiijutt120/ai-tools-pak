@@ -82,7 +82,8 @@ const STATIC_SITEMAP_PATHS = [
   "blog/chatgpt-plus-vs-gemini-pro/",
   "blog/best-ai-tools-students-pakistan/",
   "blog/how-to-redeem-ai-subscription-pakistan/",
-  "blog/ai-tools-affiliate-program/"
+  "blog/ai-tools-affiliate-program/",
+  "blog/how-to-buy-ai-api-credits-pakistan/"
 ];
 
 const required = [

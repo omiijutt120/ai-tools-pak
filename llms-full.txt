@@ -308,9 +308,9 @@ SKU: ATP-GEMINI-PRO · Pro plan · Verified
 
 - Credits / usage: Google AI access
 
-- Key features: Google AI; writing; productivity; research
+- Key features: Google AI; writing; productivity; research; budget Google AI tier (vs Google AI Ultra)
 
-- Good for: Gemini Pro is listed for buyers who want Google AI access with PKR pricing, private access notes and WhatsApp order support in Pakistan.
+- Good for: Gemini Pro is the standard Google AI assistant plan with PKR pricing, private access and WhatsApp order support in Pakistan. It is the budget Google AI tier (priced below Google AI Ultra). Use Gemini Pro for everyday writing, research, productivity and brainstorming. If you need Google's higher-tier access with more advanced model limits, see the separate Google AI Ultra listing on this site.
 
 - Official source: gemini.google.com
 
@@ -337,9 +337,9 @@ SKU: ATP-GOOGLE-AI-ULTRA · Ultra plan · Confirm before ordering
 
 - Credits / usage: Google AI Ultra access
 
-- Key features: Google AI; advanced models; productivity; research
+- Key features: Google AI; advanced models; productivity; research; premium tier above Gemini Pro
 
-- Good for: Google AI Ultra Plan is listed for buyers who want advanced Google AI access. Confirm current availability, access method and limits before ordering.
+- Good for: Google AI Ultra Plan delivers the higher Google AI tier for advanced workflows, above the standard Gemini Pro plan, with PKR pricing and WhatsApp order support in Pakistan. Confirm current availability, access method and limits before ordering. If the standard Gemini Pro tier meets your needs, the separate Gemini Pro listing is the cheaper option.
 
 - Official source: one.google.com/about/google-ai-plans
 
@@ -360,31 +360,7 @@ SKU: ATP-CHATGPT-PLUS · Plus plan · Verified
 
 - Price: PKR 2,200 PKR 3,000 (20% off) · base PKR 1,833
 
-- Duration: 1 month (1 month)
-
-- Access & delivery: Private access · WhatsApp activation
-
-- Credits / usage: Advanced AI assistant
-
-- Key features: Writing; research; coding help; brainstorming
-
-- Good for: ChatGPT Plus is useful for students, freelancers and teams that need one flexible assistant for daily writing, research, coding support and planning.
-
-- Official source: chatgpt.com
-
-
-
-                  View full details & buy
-                  Order ChatGPT Plus on WhatsApp
-
-
-
--
-
-### SuperGrok
-
-
-SKU: ATP-SUPERGROK · SuperGrok plan · Confirm bef
+- Duration: 1 month 
 [...]
 
 Source: https://aitoolspak.tech/blog/ai-tools-pakistan-complete-guide/
