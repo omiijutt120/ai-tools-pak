@@ -87,6 +87,18 @@ lines.push(`- How to choose an AI subscription safely: ${SITE_URL}/blog/choose-a
 lines.push(`- Free vs paid AI tools: ${SITE_URL}/blog/free-vs-paid-ai-tools/`);
 lines.push(`- Canva Pro price in Pakistan: ${SITE_URL}/blog/canva-pro-price-pakistan/`);
 lines.push(`- Complete AI tools directory in Pakistan (all PKR prices + API credits): ${SITE_URL}/blog/ai-tools-pakistan-complete-guide/`);
+lines.push(`- Best AI writing tools in Pakistan (PKR guide): ${SITE_URL}/blog/ai-writing-tools-pakistan/`);
+lines.push(`- SEO & marketing tools in Pakistan (PKR guide): ${SITE_URL}/blog/seo-marketing-tools-pakistan/`);
+lines.push(`- AI app builders & developer tools in Pakistan: ${SITE_URL}/blog/ai-app-builder-tools-pakistan/`);
+lines.push(`- Entertainment subscriptions in Pakistan (PKR): ${SITE_URL}/blog/entertainment-subscriptions-pakistan/`);
+lines.push(`- ChatGPT vs Gemini in Pakistan: ${SITE_URL}/blog/chatgpt-vs-gemini-pakistan/`);
+lines.push(`- Claude Pro price in Pakistan (PKR): ${SITE_URL}/blog/claude-pro-price-pakistan/`);
+lines.push(`- Veo 3 vs Runway ML vs Sora (AI video): ${SITE_URL}/blog/veo-3-vs-runway-vs-sora/`);
+lines.push(`- Best AI video generator 2026 for Pakistan: ${SITE_URL}/blog/best-ai-video-generator-2026/`);
+lines.push(`- Best AI voice generator in Pakistan (PKR): ${SITE_URL}/blog/best-ai-voice-generator-pakistan/`);
+lines.push(`- Semrush vs Ahrefs for Pakistani marketers: ${SITE_URL}/blog/semrush-vs-ahrefs/`);
+lines.push(`- Best AI tools for students in Pakistan (PKR): ${SITE_URL}/blog/best-ai-tools-students-pakistan/`);
+lines.push(`- How to pay for AI tools with a debit card in Pakistan: ${SITE_URL}/blog/pay-ai-tools-debit-card-pakistan/`);
 lines.push("");
 lines.push("## Full documentation");
 lines.push("");

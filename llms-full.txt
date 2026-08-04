@@ -39,8 +39,8 @@ Support hours: 11:00 AM to 11:00 PM Pakistan time
 ### Gemini Pro
 - Price: PKR 900 (18 months), was PKR 1,500
 - Category: AI Assistants | Access: Private access | Delivery: WhatsApp activation
-- Key features: Google AI; writing; productivity; research
-- Description: Google AI assistant access with long duration plan details. Gemini Pro is listed for buyers who want Google AI access with PKR pricing, private access notes and WhatsApp order support in Pakistan.
+- Key features: Google AI; writing; productivity; research; budget Google AI tier (vs Google AI Ultra)
+- Description: Google AI assistant access with long duration plan details. Gemini Pro is the standard Google AI assistant plan with PKR pricing, private access and WhatsApp order support in Pakistan. It is the budget Google AI tier (priced below Google AI Ultra). Use Gemini Pro for everyday writing, research, productivity and brainstorming. If you need Google's higher-tier access with more advanced model limits, see the separate Google AI Ultra listing on this site.
 - URL: https://aitoolspak.tech/gemini-pro-pakistan/
 
 ### ElevenLabs Creator - Private
@@ -144,8 +144,8 @@ Support hours: 11:00 AM to 11:00 PM Pakistan time
 ### Google AI Ultra Plan
 - Price: PKR 1,764 (1 month), was PKR 2,400
 - Category: AI Assistants | Access: Private access | Delivery: WhatsApp activation
-- Key features: Google AI; advanced models; productivity; research
-- Description: Google AI Ultra access for advanced Google AI workflows. Google AI Ultra Plan is listed for buyers who want advanced Google AI access. Confirm current availability, access method and limits before ordering.
+- Key features: Google AI; advanced models; productivity; research; premium tier above Gemini Pro
+- Description: Google AI Ultra access for advanced Google AI workflows. Google AI Ultra Plan delivers the higher Google AI tier for advanced workflows, above the standard Gemini Pro plan, with PKR pricing and WhatsApp order support in Pakistan. Confirm current availability, access method and limits before ordering. If the standard Gemini Pro tier meets your needs, the separate Gemini Pro listing is the cheaper option.
 - URL: https://aitoolspak.tech/google-ai-ultra-pakistan/
 
 ### Hailuo AI
@@ -158,8 +158,8 @@ Support hours: 11:00 AM to 11:00 PM Pakistan time
 ### Netflix
 - Price: PKR 500 (1 month), was PKR 700
 - Category: Entertainment | Access: Private access | Delivery: WhatsApp activation
-- Key features: Streaming; movies; series; entertainment
-- Description: Netflix 1 screen monthly access for entertainment. Netflix 1 screen is listed for buyers in Pakistan who want monthly entertainment access with clear price, duration and WhatsApp order support.
+- Key features: Streaming; movies; series; entertainment; not an AI tool
+- Description: Netflix 1 screen monthly access for entertainment. Netflix 1 screen is listed for buyers in Pakistan who want monthly entertainment access with a clear price, duration and WhatsApp order support. Note: Netflix is a streaming service, not an AI tool. If you are also shopping for AI subscriptions (AI assistants, writing, video or design), browse the AI product pages on this site alongside your entertainment plan.
 - URL: https://aitoolspak.tech/netflix-pakistan/
 
 ### CapCut Pro
@@ -200,15 +200,15 @@ Support hours: 11:00 AM to 11:00 PM Pakistan time
 ### Storyblocks Unlimited
 - Price: PKR 4,000 (1 month), was PKR 6,000
 - Category: AI Video | Access: Private access | Delivery: WhatsApp activation
-- Key features: Stock video; stock audio; templates; unlimited downloads
-- Description: Unlimited stock video, audio and template downloads for creators. Storyblocks Unlimited gives access to a massive library of royalty-free stock video, audio, images and templates with unlimited downloads for content creation.
+- Key features: Stock video; stock audio; templates; unlimited downloads; stock media (not AI generation)
+- Description: Unlimited stock video, audio and template downloads for creators. Storyblocks Unlimited gives access to a massive library of royalty-free stock video, audio, images and templates with unlimited downloads for content creation. Note: Storyblocks is a stock media library, not an AI video generator. It is different from AI tools such as Veo 3 or Runway ML that create video from text prompts. Use Storyblocks for ready-made clips, sound and templates to speed up editing; use an AI video generator when you need to create original footage from ideas.
 - URL: https://aitoolspak.tech/storyblocks-unlimited-pakistan/
 
 ### Prime Video
 - Price: PKR 400 (1 month), was PKR 700
 - Category: Entertainment | Access: Private access | Delivery: WhatsApp activation
-- Key features: Streaming; movies; series; Amazon originals
-- Description: Amazon Prime Video streaming access for movies and series. Prime Video provides access to Amazon's streaming library including original series, movies and exclusive content with monthly subscription in Pakistan.
+- Key features: Streaming; movies; series; Amazon originals; not an AI tool
+- Description: Amazon Prime Video streaming access for movies and series. Prime Video provides access to Amazon's streaming library including original series, movies and exclusive content with a monthly subscription in Pakistan. Note: Prime Video is a streaming service, not an AI tool. AI Tools Pak also lists AI subscriptions if you need AI software for work or study.
 - URL: https://aitoolspak.tech/prime-video-pakistan/
 
 ### Coursera Premium
@@ -242,12 +242,15 @@ Support hours: 11:00 AM to 11:00 PM Pakistan time
 ## Blog Guides (Full Text)
 
 ### ai tools pakistan complete guide
-Complete directory
+Home/Blog/Complete AI tools directory
+
+
+Complete directory · 31 tools · 8 categories
 
 # AI Tools in Pakistan 2026: Full Directory of All Subscriptions, PKR Prices & API Credits
 
 
-Every AI subscription sold by AI Tools Pak in one place, with current PKR prices, features and direct buy links &#8212; plus a complete guide to AI API credits for businesses and developers.
+Every AI subscription sold by AI Tools Pak in one place — 31 tools across 8 categories, with full descriptions, current PKR prices (PKR 400 to PKR 45,000, average PKR 3,881), comparison tables, a complete price index and direct buy links — plus a large guide to AI API credits for businesses and developers.
 
 Published: August 4, 2026. Last updated: August 4, 2026. Reviewed by AI Tools Pak Editorial.
 
@@ -255,35 +258,37 @@ Published: August 4, 2026. Last updated: August 4, 2026. Reviewed by AI Tools Pa
 
 
 
-## Browse all AI tools with PKR prices
+## What is on this page
 
 
-Every tool below is orderable in Pakistan at a confirmed PKR price by WhatsApp. Open any product page for full plan details, safety checks and FAQs, or order directly from the list.
-
-
-
-## AI Assistants
+This is the single largest reference for AI tools in Pakistan on this site. It contains: (1) the complete product directory with every tool's full details, (2) category overviews, (3) an AI assistants comparison table, (4) the full price index of all 31 tools, (5) a step-by-step buying guide for Pakistan, (6) a complete guide to AI API credits, (7) a glossary of AI terms, and (8) a 25-question FAQ. Every price is in PKR and every tool links to its product page and WhatsApp order button.
 
 
 
--
-
-### ChatGPT Plus
+## Categories at a glance
 
 
 
-- Price: PKR 2,200 (was PKR 3,000, 20% off) 1 month
+- AI Assistants5 tools · PKR 900–PKR 45,000
 
-- Access: Private access · Delivery: WhatsApp activation
+- AI Images and Design3 tools · PKR 1,200–PKR 5,000
 
-- Features: Writing; research; coding help; brainstorming
+- AI Video7 tools · PKR 900–PKR 8,500
 
-- About: All-round AI assistant for writing, study, coding and business work.
+- AI Voice2 tools · PKR 3,300–PKR 3,960
+
+- Development and Coding2 tools · PKR 1,500–PKR 5,500
+
+- Entertainment2 tools · PKR 400–PKR 500
+
+- Marketing and Lead Generation5 tools · PKR 1,500–PKR 4,500
+
+- Writing and SEO5 tools · PKR 479–PKR 1,000
 
 
 
-                  View details & buy
-                  Order on WhatsApp
+
+## AI Assistants (5 tools)
 
 
 
@@ -292,40 +297,27 @@ Every tool below is orderable in Pakistan at a confirmed PKR price by WhatsApp. 
 ### Gemini Pro
 
 
-
-- Price: PKR 900 (was PKR 1,500, 28% off) 18 months
-
-- Access: Private access · Delivery: WhatsApp activation
-
-- Features: Google AI; writing; productivity; research
-
-- About: Google AI assistant access with long duration plan details.
+SKU: ATP-GEMINI-PRO · Pro plan · Verified
 
 
+- Price: PKR 900 PKR 1,500 (28% off) · base PKR 750
 
-                  View details & buy
-                  Order on WhatsApp
+- Duration: 18 months (18 months)
 
+- Access & delivery: Private access · WhatsApp activation
 
+- Credits / usage: Google AI access
 
--
+- Key features: Google AI; writing; productivity; research
 
-### SuperGrok
+- Good for: Gemini Pro is listed for buyers who want Google AI access with PKR pricing, private access notes and WhatsApp order support in Pakistan.
+
+- Official source: gemini.google.com
 
 
 
-- Price: PKR 2,500 (was PKR 3,500, 29% off) 1–3 months
-
-- Access: Private access · Delivery: WhatsApp activation
-
-- Features: AI assistant; research; social workflows; current topics
-
-- About: Grok assistant access for current-topic and social workflows.
-
-
-
-                  View details & buy
-                  Order on WhatsApp
+                  View full details & buy
+                  Order Gemini Pro on WhatsApp
 
 
 
@@ -334,117 +326,65 @@ Every tool below is orderable in Pakistan at a confirmed PKR price by WhatsApp. 
 ### Google AI Ultra Plan
 
 
-
-- Price: PKR 1,764 (was PKR 2,400, 27% off) 1 month
-
-- Access: Private access · Delivery: WhatsApp activation
-
-- Features: Google AI; advanced models; productivity; research
-
-- About: Google AI Ultra access for advanced Google AI workflows.
+SKU: ATP-GOOGLE-AI-ULTRA · Ultra plan · Confirm before ordering
 
 
+- Price: PKR 1,764 PKR 2,400 (27% off) · base PKR 1,470
 
-                  View details & buy
-                  Order on WhatsApp
+- Duration: 1 month (1 month)
 
+- Access & delivery: Private access · WhatsApp activation
 
+- Credits / usage: Google AI Ultra access
 
--
+- Key features: Google AI; advanced models; productivity; research
 
-### Claude 20X Max Plan
+- Good for: Google AI Ultra Plan is listed for buyers who want advanced Google AI access. Confirm current availability, access method and limits before ordering.
+
+- Official source: one.google.com/about/google-ai-plans
 
 
 
-- Price: PKR 45,000 (was PKR 57,000, 30% off) 1 month
-
-- Access: Private access · Delivery: WhatsApp activation
-
-- Features: Claude AI; 20x usage; coding; research; long writing
-
-- About: Claude Max plan with 20x usage for heavy AI workloads.
-
-
-
-                  View details & buy
-                  Order on WhatsApp
-
-
-
-
-
-
-## Development and Coding
+                  View full details & buy
+                  Order Google AI Ultra Plan on WhatsApp
 
 
 
 -
 
-### Claude Pro
+### ChatGPT Plus
+
+
+SKU: ATP-CHATGPT-PLUS · Plus plan · Verified
+
+
+- Price: PKR 2,200 PKR 3,000 (20% off) · base PKR 1,833
+
+- Duration: 1 month (1 month)
+
+- Access & delivery: Private access · WhatsApp activation
+
+- Credits / usage: Advanced AI assistant
+
+- Key features: Writing; research; coding help; brainstorming
+
+- Good for: ChatGPT Plus is useful for students, freelancers and teams that need one flexible assistant for daily writing, research, coding support and planning.
+
+- Official source: chatgpt.com
 
 
 
-- Price: PKR 5,500 (was PKR 7,000, 21% off) 1 month
-
-- Access: Private access · Delivery: WhatsApp activation
-
-- Features: Long writing; research; code review; summaries
-
-- About: Careful AI assistant for long writing, research and coding support.
-
-
-
-                  View details & buy
-                  Order on WhatsApp
-
-
-
--
-
-### Lovable AI Pro - Private
-
-
-
-- Price: PKR 1,500 (was PKR 2,000, 25% off) 1 month
-
-- Access: Private access · Delivery: WhatsApp activation
-
-- Features: AI coding; app building; prototyping; development
-
-- About: AI coding and app-building subscription for fast prototypes.
-
-
-
-                  View details & buy
-                  Order on WhatsApp
-
-
-
-
-
-
-## AI Voice
+                  View full details & buy
+                  Order ChatGPT Plus on WhatsApp
 
 
 
 -
 
-### ElevenLabs Creator - Private
+### SuperGrok
 
 
-
-- Price: PKR 3,300 (was PKR 3,600, 8% off) 1 month
-
-- Access: Private access · Delivery: WhatsApp activation
-
-- Features: AI voice; narration; dubbing; speech
-
-- About: AI voice subscription for narration, dubbing and creator audio workflows.
-
-
-
-                  View details & buy
-                  Order on Wha
+SKU: ATP-SUPERGROK · SuperGrok plan · Confirm bef
 [...]
 
 Source: https://aitoolspak.tech/blog/ai-tools-pakistan-complete-guide/
