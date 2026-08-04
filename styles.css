@@ -2068,3 +2068,53 @@ details p {
 }
 .button.accent:hover { background: #116b41; }
 
+.tool-count {
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.tool-sku {
+  margin: .15rem 0 .5rem;
+  font-size: .8rem;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+}
+.tool-facts li { margin: 0; }
+.tool-facts strong { color: var(--ink); font-weight: 600; }
+
+/* Category chips */
+.cat-grid {
+  list-style: none;
+  margin: .8rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: .6rem;
+}
+.cat-chip {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: .75rem .9rem;
+  background: rgba(255, 255, 255, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+.cat-chip strong { color: var(--ink); }
+.cat-chip span { font-size: .85rem; color: var(--muted); }
+
+/* Glossary */
+.gloss-list {
+  margin: .6rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: .4rem;
+}
+.gloss-item {
+  font-size: .94rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.gloss-item strong { color: var(--ink); font-weight: 600; }
+
