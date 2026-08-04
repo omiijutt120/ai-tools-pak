@@ -62,6 +62,7 @@ Current selling prices in PKR from the AI Tools Pak catalog, per plan duration.
 - How to choose an AI subscription safely: https://aitoolspak.tech/blog/choose-ai-subscription-safely/
 - Free vs paid AI tools: https://aitoolspak.tech/blog/free-vs-paid-ai-tools/
 - Canva Pro price in Pakistan: https://aitoolspak.tech/blog/canva-pro-price-pakistan/
+- Complete AI tools directory in Pakistan (all PKR prices + API credits): https://aitoolspak.tech/blog/ai-tools-pakistan-complete-guide/
 
 ## Full documentation
 

@@ -2020,3 +2020,51 @@ details p {
     transition-duration: .01ms !important;
   }
 }
+
+/* ==========================================
+   BLOG TOOLS DIRECTORY (ai-tools-pakistan-complete-guide)
+   ========================================== */
+.tool-directory {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .9rem;
+}
+.tool-entry {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1.15rem;
+  background: rgba(255, 255, 255, 0.55);
+}
+.tool-entry h3 { margin: 0 0 .45rem; font-size: 1.06rem; }
+.tool-entry h3 a { color: inherit; text-decoration: none; }
+.tool-entry h3 a:hover { text-decoration: underline; }
+.tool-facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .3rem;
+  font-size: .93rem;
+  color: var(--muted);
+}
+.tool-facts li { margin: 0; }
+.tool-facts strong { color: var(--ink); font-weight: 600; }
+.tool-buy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: .75rem 0 0;
+}
+.button.small {
+  min-height: 2.1rem;
+  padding: .35rem .85rem;
+  font-size: .88rem;
+}
+.button.accent {
+  color: white;
+  background: var(--success);
+}
+.button.accent:hover { background: #116b41; }
+

@@ -86,6 +86,7 @@ lines.push(`- Best AI video tools for Pakistani content creators: ${SITE_URL}/bl
 lines.push(`- How to choose an AI subscription safely: ${SITE_URL}/blog/choose-ai-subscription-safely/`);
 lines.push(`- Free vs paid AI tools: ${SITE_URL}/blog/free-vs-paid-ai-tools/`);
 lines.push(`- Canva Pro price in Pakistan: ${SITE_URL}/blog/canva-pro-price-pakistan/`);
+lines.push(`- Complete AI tools directory in Pakistan (all PKR prices + API credits): ${SITE_URL}/blog/ai-tools-pakistan-complete-guide/`);
 lines.push("");
 lines.push("## Full documentation");
 lines.push("");

@@ -113,6 +113,7 @@ for (const p of products) {
 out.push("## Blog Guides (Full Text)");
 out.push("");
 const blogPosts = [
+  "blog/ai-tools-pakistan-complete-guide/index.html",
   "blog/canva-pro-price-pakistan/index.html",
   "blog/chatgpt-plus-price-pakistan/index.html",
   "blog/claude-pro-vs-chatgpt-plus-pakistani-students/index.html",

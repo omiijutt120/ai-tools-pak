@@ -54,7 +54,8 @@ const STATIC_SITEMAP_PATHS = [
   "blog/choose-ai-subscription-safely/",
   "blog/free-vs-paid-ai-tools/",
   "blog/find-cheap-ai-subscriptions-pakistan/",
-  "blog/where-to-buy-ai-tools-pakistan/"
+  "blog/where-to-buy-ai-tools-pakistan/",
+  "blog/ai-tools-pakistan-complete-guide/"
 ];
 
 const required = [
