@@ -64,6 +64,7 @@ const STATIC_SITEMAP_PATHS = [
   "blog/chatgpt-team-plan-pakistan/",
   "blog/claude-20x-vs-claude-pro/",
   "blog/claude-pro-price-pakistan/",
+  "blog/coursera-premium-price-pakistan/",
   "blog/grok-vs-chatgpt-vs-gemini/",
   "blog/quillbot-vs-grammarly-vs-wordai/",
   "blog/grammarly-premium-price-pakistan/",
