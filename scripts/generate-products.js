@@ -84,7 +84,23 @@ const STATIC_SITEMAP_PATHS = [
   "blog/best-ai-tools-students-pakistan/",
   "blog/how-to-redeem-ai-subscription-pakistan/",
   "blog/ai-tools-affiliate-program/",
-  "blog/how-to-buy-ai-api-credits-pakistan/"
+  "blog/how-to-buy-ai-api-credits-pakistan/",
+  "ai-automation-services/",
+  "blog/grok-price-pakistan/",
+  "blog/gemini-pro-price-pakistan/",
+  "blog/chatgpt-free-vs-plus-pakistan/",
+  "blog/cursor-vs-copilot-pakistan/",
+  "blog/best-ai-coding-tools-pakistan/",
+  "blog/vidiq-vs-tubebuddy/",
+  "blog/best-ai-tools-youtube-pakistan/",
+  "blog/best-ai-image-generators-pakistan/",
+  "blog/veo-3-price-pakistan/",
+  "blog/capcut-pro-price-pakistan/",
+  "blog/ai-tools-for-businesses-pakistan/",
+  "blog/cheap-ai-api-credits-pakistan/",
+  "blog/claude-api-credits-pakistan/",
+  "blog/claude-vs-gemini-pakistan/",
+  "blog/ai-automation-for-small-business-pakistan/"
 ];
 
 const required = [

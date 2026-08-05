@@ -123,6 +123,21 @@ const blogPosts = [
   "blog/best-ai-video-tools-pakistani-content-creators/index.html",
   "blog/choose-ai-subscription-safely/index.html",
   "blog/free-vs-paid-ai-tools/index.html",
+  "blog/grok-price-pakistan/index.html",
+  "blog/gemini-pro-price-pakistan/index.html",
+  "blog/chatgpt-free-vs-plus-pakistan/index.html",
+  "blog/cursor-vs-copilot-pakistan/index.html",
+  "blog/best-ai-coding-tools-pakistan/index.html",
+  "blog/vidiq-vs-tubebuddy/index.html",
+  "blog/best-ai-tools-youtube-pakistan/index.html",
+  "blog/best-ai-image-generators-pakistan/index.html",
+  "blog/veo-3-price-pakistan/index.html",
+  "blog/capcut-pro-price-pakistan/index.html",
+  "blog/ai-tools-for-businesses-pakistan/index.html",
+  "blog/cheap-ai-api-credits-pakistan/index.html",
+  "blog/claude-api-credits-pakistan/index.html",
+  "blog/claude-vs-gemini-pakistan/index.html",
+  "blog/ai-automation-for-small-business-pakistan/index.html",
 ];
 for (const rel of blogPosts) {
   if (!fs.existsSync(path.join(root, rel))) continue;
