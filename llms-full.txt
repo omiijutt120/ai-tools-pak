@@ -3396,7 +3396,7 @@ Many Pakistani designers keep both tools: Ideogram for text-heavy design work an
 
 Ideogram has a free plan, with paid tiers starting around USD 8 per month with annual billing — check ideogram.ai for current prices. Midjourney's official plans are Basic USD 10 per month (approximately PKR 2,800), Standard USD 30 (approximately PKR 8,400), Pro USD 60 (approximately PKR 16,800) and Mega USD 120 (approximately PKR 33,600) at the approximate PKR 280 per USD rate.
 
-Both platforms bill in foreign currency, so most Pakistani buyers order locally in PKR. See the Ideogram product page and the Midjourney product page for local order details, and confirm the PKR amount on WhatsApp before paying.
+Both platforms bill in foreign currency, so most Pakistani buyers order locally in PKR. See the Ideogram product page and the Midjourney price guide for local order details, and confirm the PKR amount on WhatsApp before paying.
 
 ## Which tasks suit which tool
 
@@ -3411,7 +3411,7 @@ Designers who want image generation wired into bigger campaigns can pair either 
 ## Which image generator should you pick?
 
 
-Choose Ideogram for anything with text: posters, ads, social posts and logo drafts. Choose Midjourney when the goal is a beautiful image with no text requirement. For client work that mixes both, having access to both tools covers every brief. Start with one tool, master
+Choose Ideogram for anything with text: posters, ads, social posts and logo drafts. Choose Midjourney when the goal is a beautiful image with no text requirement. For client work that mixes both, having access to both tools covers every brief. Start with one tool, master 
 [...]
 
 Source: https://aitoolspak.tech/blog/ideogram-vs-midjourney/
