@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — AI Income Lab</title>
+<meta name="description" content="What AI Income Lab is, who writes it, and why every guide is practical first.">
+<link rel="canonical" href="https://aitoolspak.tech/ai-income-lab/about.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="container nav">
+  <a class="logo" href="/ai-income-lab/">AI Income <em>Lab</em></a>
+  <nav class="nav-links"><a href="/ai-income-lab/">Home</a><a href="/ai-income-lab/#topics">Topics</a><a href="/ai-income-lab/about.html">About</a><a href="/ai-income-lab/contact.html">Contact</a><button id="themeToggle" onclick="toggleTheme()">🌙</button></nav>
+</div></header>
+
+<div class="container simple">
+  <h1>About AI Income Lab</h1>
+  <p>AI Income Lab publishes practical guides on making money with AI: side hustles, automation agencies, AI voice agents, freelancing and tools that genuinely save businesses money.</p>
+  <p>Every guide is written by practitioners who build AI systems for real businesses — voice agents, WhatsApp bots, automations — not by course sellers. That means the numbers are real, the steps are testable, and the hype is minimal.</p>
+  <h2>What we believe</h2>
+  <ul>
+    <li>AI income comes from <strong>services and outcomes</strong>, not passive schemes.</li>
+    <li>Free tools are enough to start — most guides here assume a $0 budget.</li>
+    <li>Honest numbers beat inflated expectations. We show realistic timelines and ceilings.</li>
+  </ul>
+  <h2>Contact</h2>
+  <p>Questions or corrections? Reach us via the <a href="contact.html">contact page</a> — we read everything.</p>
+</div>
+
+<footer><div class="container">
+  <div class="foot"><div>© 2026 AI Income Lab</div><div><a href="about.html">About</a> · <a href="privacy-policy.html">Privacy</a> · <a href="contact.html">Contact</a></div></div>
+</div></footer>
+<script>
+function toggleTheme(){const t=document.documentElement;const d=t.getAttribute('data-theme')==='dark';t.setAttribute('data-theme',d?'light':'dark');document.getElementById('themeToggle').textContent=d?'🌙':'☀️';localStorage.setItem('ail-theme',d?'light':'dark')}
+if(localStorage.getItem('ail-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('themeToggle').textContent='☀️'}
+</script>
+</body>
+</html>
