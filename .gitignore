@@ -35,3 +35,4 @@ AiTools-fixed-v3-*.zip
 seo-*-dom.html
 home-runtime-*
 claude-seo/
+__pycache__/

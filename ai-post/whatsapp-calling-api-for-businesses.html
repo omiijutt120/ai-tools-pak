@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Launches Calling API for Businesses: Inbound Calls Free, AI Agents Ready</title>
+<meta name="description" content="Meta&#x27;s Calling API lets businesses accept and make WhatsApp calls programmatically — user-initiated calls are free, and AI voice agents can answer automatically.">
+<link rel="canonical" href="https://aitoolspak.tech/ai-post/whatsapp-calling-api-for-businesses.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WhatsApp Launches Calling API for Businesses: Inbound Calls Free, AI Agents Ready">
+<meta property="og:description" content="Meta&#x27;s Calling API lets businesses accept and make WhatsApp calls programmatically — user-initiated calls are free, and AI voice agents can answer automatically.">
+<meta property="og:url" content="https://aitoolspak.tech/ai-post/whatsapp-calling-api-for-businesses.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WhatsApp Launches Calling API for Businesses: Inbound Calls Free, AI Agents Ready">
+<meta name="twitter:description" content="Meta&#x27;s Calling API lets businesses accept and make WhatsApp calls programmatically — user-initiated calls are free, and AI voice agents can answer automatically.">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700;8..60,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://aitoolspak.tech/ai-post/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "WhatsApp Launches Calling API for Businesses: Inbound Calls Free, AI Agents Ready", "description": "Meta's Calling API lets businesses accept and make WhatsApp calls programmatically — user-initiated calls are free, and AI voice agents can answer automatically.", "datePublished": "2026-08-06T09:00:00+05:00", "dateModified": "2026-08-06T09:00:00+05:00", "mainEntityOfPage": "https://aitoolspak.tech/ai-post/whatsapp-calling-api-for-businesses.html", "author": {"@type": "Person", "name": "The AI Post Staff"}, "publisher": {"@type": "Organization", "name": "The AI Post", "url": "https://aitoolspak.tech/ai-post"}, "articleSection": "AI News", "wordCount": 1080}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://aitoolspak.tech/ai-post/"}, {"@type": "ListItem", "position": 2, "name": "AI News", "item": "https://aitoolspak.tech/ai-post/ai-news/"}, {"@type": "ListItem", "position": 3, "name": "WhatsApp Launches Calling API for Businesses: Inbound Calls Free, AI Agents Ready", "item": "https://aitoolspak.tech/ai-post/whatsapp-calling-api-for-businesses.html"}]}]</script>
+</head>
+<body>
+<header><div class="container nav">
+  <a class="logo" href="https://aitoolspak.tech/ai-post/"><span class="dot"></span>The AI Post</a>
+  <nav class="nav-links"><a href="https://aitoolspak.tech/ai-post/ai-news/" class="on">📰 AI News</a><a href="https://aitoolspak.tech/ai-post/tutorials/">🎓 Tutorials</a><a href="https://aitoolspak.tech/ai-post/comparisons/">⚖️ Comparisons</a><a href="https://aitoolspak.tech/ai-post/reviews/">⭐ Reviews</a><a href="https://aitoolspak.tech/ai-post/free-ai-tools/">🧰 Free AI Tools</a><a href="https://aitoolspak.tech/ai-post/prompt-library/">💡 Prompt Library</a></nav>
+  <div class="nav-right">
+    <button id="searchBtn">🔍 <span style="color:var(--muted)">Search…</span></button>
+    <button id="themeToggle" title="Dark mode">🌙</button>
+  </div>
+</div>
+<div id="searchOverlay"><div class="search-box">
+  <input id="searchInput" placeholder="Search articles… (press Esc to close)">
+  <div class="search-results" id="searchResults"><div style="padding:14px;color:var(--muted);font-size:14px">Type to search articles…</div></div>
+</div></div></header>
+<article class="post">
+  <span class="tag">📰 AI News</span>
+  <h1>WhatsApp Launches Calling API for Businesses: Inbound Calls Free, AI Agents Ready</h1>
+  <div class="meta">📅 2026-08-06 · <span id="readTime"></span> · By The AI Post Staff</div>
+  <div class="cover">📞</div>
+  <div class="toc" id="toc"></div>
+  <h2 id="what-happened">What happened</h2>
+<p>Meta has rolled out the WhatsApp Business Calling API, giving businesses full programmatic control over phone calls on WhatsApp. The documentation now covers business-initiated calls, user-initiated calls, call recording, and call transcription.</p>
+<p>The important part for small businesses: a customer who calls your WhatsApp number can be answered automatically by software. No human needed on the other end — an AI agent can pick up, answer questions, take bookings, and confirm orders.</p>
+<h2 id="how-the-pricing-works">How the pricing works</h2>
+<ul><li>User-initiated calls (customers calling you): FREE — no per-minute charge.</li><li>Business-initiated calls (you calling customers): paid per minute, billed in 6-second increments, with volume-tiered pricing by country.</li><li>Call transcription and recording: currently free on both call types.</li><li>Outbound calling requires a valid payment method on the account.</li></ul>
+<h2 id="what-this-means-for-ai-voice-agents">What this means for AI voice agents</h2>
+<p>Until now, building an AI receptionist meant routing through telephony providers. With the Calling API, a business&#x27;s own WhatsApp number becomes the phone line. The flow works via WebRTC: the call arrives as an SDP offer, your server accepts it, and audio streams straight to your AI stack (speech-to-text, LLM, text-to-speech).</p>
+<p>This is the missing piece for AI receptionist services on WhatsApp: inbound calls cost nothing, and the bot runs on your existing infrastructure.</p>
+<h2 id="what-s-still-required">What&#x27;s still required</h2>
+<ul><li>The business phone number must be registered on the WhatsApp Business Platform (Cloud API).</li><li>The calls webhook must be subscribed and the Calling API enabled on the number.</li><li>App Review is needed for the WhatsApp Business management and messaging permissions.</li><li>Callers must grant call permission for business-initiated calls.</li></ul>
+<blockquote>Takeaway: inbound WhatsApp calls are now free and automatable — the cheapest possible phone line an AI agent can answer.</blockquote>
+<div class="cta-box"><h3>🤖 Get it built for your business</h3><p>Need an AI voice agent that answers your WhatsApp calls? We build and deploy them in days.</p><a href="https://wa.me/923714549245?text=Hi!%20I%20want%20an%20AI%20voice%20agent%20for%20my%20business" target="_blank" rel="noopener">💬 Chat on WhatsApp</a></div>
+  <div class="share">
+    <button id="copyLink">🔗 Copy link</button>
+    <button id="twShare">🐦 Share on X</button>
+  </div>
+  <div class="author"><div class="av">AI</div><div><b>The AI Post Staff</b><p>Independent coverage of AI news, tools and tutorials. We build AI systems for real businesses and write about what we learn.</p></div></div>
+  <h3 style="font-family:var(--serif);font-size:21px">📚 Related reading</h3>
+  <div class="related"><a class="card" href="https://aitoolspak.tech/ai-post/deepseek-v4-free-api-for-developers.html"><div class="body"><h3>DeepSeek V4&#x27;s Free API Tier Is Real — and Developers Are Building With It</h3><span class="meta">2026-08-06 · 4 min</span></div></a><a class="card" href="https://aitoolspak.tech/ai-post/how-to-make-money-with-ai-2026.html"><div class="body"><h3>How to Make Money with AI in 2026: 9 Real Income Paths, Ranked</h3><span class="meta">2026-08-05 · 12 min</span></div></a><a class="card" href="https://aitoolspak.tech/ai-post/start-ai-automation-agency.html"><div class="body"><h3>How to Start an AI Automation Agency: The 4-Week Playbook</h3><span class="meta">2026-08-05 · 9 min</span></div></a></div>
+</article>
+<footer><div class="container">
+  <div class="foot">
+    <div class="brand">The AI Post</div>
+    <div><a href="https://aitoolspak.tech/ai-post/about.html">About</a> · <a href="https://aitoolspak.tech/ai-post/editorial-policy.html">Editorial Policy</a> · <a href="https://aitoolspak.tech/ai-post/terms.html">Terms</a> · <a href="https://aitoolspak.tech/ai-post/privacy-policy.html">Privacy</a> · <a href="https://aitoolspak.tech/ai-post/cookie-policy.html">Cookies</a> · <a href="https://aitoolspak.tech/ai-post/contact.html">Contact</a></div>
+  </div>
+  <p class="disc">© 2026 The AI Post. Independent AI &amp; technology publication. Content is educational — not financial advice. Advertising may appear on this site; ads are clearly labelled.</p>
+</div></footer>
+<div id="bmBar"><button id="bmBtn" title="Bookmark">🔖</button></div>
+<script src="https://aitoolspak.tech/ai-post/assets/app.js"></script></body></html>
