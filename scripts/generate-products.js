@@ -115,7 +115,22 @@ const STATIC_SITEMAP_PATHS = [
   "blog/deepseek-api-price-pakistan/",
   "blog/github-copilot-price-pakistan/",
   "blog/how-to-build-n8n-automations-pakistan/",
-  "blog/how-to-earn-money-with-ai-pakistan/"
+  "blog/how-to-earn-money-with-ai-pakistan/",
+  "blog/buy-openai-api-credits-pakistan/",
+  "blog/api-credits-wholesale-pakistan/",
+  "blog/elevenlabs-vs-playht/",
+  "blog/heygen-vs-synthesia/",
+  "blog/ideogram-vs-midjourney/",
+  "blog/best-free-ai-tools-pakistan/",
+  "blog/best-ai-tools-for-social-media-pakistan/",
+  "blog/best-ai-design-tools-2026/",
+  "blog/best-ai-tools-for-whatsapp-business-pakistan/",
+  "blog/gemini-pro-vs-google-ai-ultra/",
+  "blog/elevenlabs-price-pakistan/",
+  "blog/jasper-price-pakistan/",
+  "blog/perplexity-pro-price-pakistan/",
+  "blog/quillbot-premium-price-pakistan/",
+  "blog/how-to-automate-whatsapp-with-ai-pakistan/"
 ];
 
 const required = [

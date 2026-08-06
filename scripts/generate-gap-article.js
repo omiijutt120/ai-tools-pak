@@ -12,8 +12,8 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const SITE_URL = "https://aitoolspak.tech";
-const TODAY = "August 5, 2026";
-const TODAY_ISO = "2026-08-05";
+const TODAY = "August 6, 2026";
+const TODAY_ISO = "2026-08-06";
 
 const HEAD = (a) => `<!doctype html>
 <html lang="en" dir="ltr">

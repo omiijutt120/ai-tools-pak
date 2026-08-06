@@ -107,6 +107,21 @@ Current selling prices in PKR from the AI Tools Pak catalog, per plan duration.
 - GitHub Copilot price in Pakistan (PKR): https://aitoolspak.tech/blog/github-copilot-price-pakistan/
 - How to build AI automations with n8n: https://aitoolspak.tech/blog/how-to-build-n8n-automations-pakistan/
 - How to earn money with AI tools in Pakistan: https://aitoolspak.tech/blog/how-to-earn-money-with-ai-pakistan/
+- How to buy OpenAI API credits in Pakistan: https://aitoolspak.tech/blog/buy-openai-api-credits-pakistan/
+- API credits wholesale in Pakistan (bulk OpenAI & Claude): https://aitoolspak.tech/blog/api-credits-wholesale-pakistan/
+- ElevenLabs vs PlayHT (AI voice): https://aitoolspak.tech/blog/elevenlabs-vs-playht/
+- HeyGen vs Synthesia (AI avatar video): https://aitoolspak.tech/blog/heygen-vs-synthesia/
+- Ideogram vs Midjourney (AI images): https://aitoolspak.tech/blog/ideogram-vs-midjourney/
+- Best free AI tools in Pakistan: https://aitoolspak.tech/blog/best-free-ai-tools-pakistan/
+- Best AI tools for social media marketing in Pakistan: https://aitoolspak.tech/blog/best-ai-tools-for-social-media-pakistan/
+- Best AI design tools in 2026: https://aitoolspak.tech/blog/best-ai-design-tools-2026/
+- Best AI tools for WhatsApp Business in Pakistan: https://aitoolspak.tech/blog/best-ai-tools-for-whatsapp-business-pakistan/
+- Gemini Pro vs Google AI Ultra (plans): https://aitoolspak.tech/blog/gemini-pro-vs-google-ai-ultra/
+- ElevenLabs price in Pakistan (PKR): https://aitoolspak.tech/blog/elevenlabs-price-pakistan/
+- Jasper AI price in Pakistan (PKR): https://aitoolspak.tech/blog/jasper-price-pakistan/
+- Perplexity Pro price in Pakistan (PKR): https://aitoolspak.tech/blog/perplexity-pro-price-pakistan/
+- QuillBot Premium price in Pakistan (PKR): https://aitoolspak.tech/blog/quillbot-premium-price-pakistan/
+- How to automate WhatsApp with AI in Pakistan: https://aitoolspak.tech/blog/how-to-automate-whatsapp-with-ai-pakistan/
 
 ## Full documentation
 
