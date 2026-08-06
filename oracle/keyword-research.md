@@ -2,6 +2,27 @@
 
 Daily research log of high-value search phrases for Pakistani searchers, with intent and the target page (existing or gap). API-credits keywords are the site's orders focus (see `oracle/api-credits-growth-strategy.md`) and are flagged **[API]** — gaps in this cluster get first priority in the content backlog.
 
+## 2026-08-06
+
+| # | Keyword | Intent | Target (existing page or gap) |
+|---|---------|--------|-------------------------------|
+| 1 | chatgpt plus price in pakistan | Transactional | `/blog/chatgpt-plus-price-pakistan/` + `/chatgpt-plus-pakistan/` |
+| 2 | canva pro cost pkr | Transactional | `/blog/canva-pro-price-pakistan/` + `/canva-pro-pakistan/` |
+| 3 | best ai tools pakistan | Informational | `/blog/ai-tools-pakistan-complete-guide/` |
+| 4 | veo 3 price in pakistan | Transactional | `/blog/veo-3-price-pakistan/` + `/veo-3-pakistan/` |
+| 5 | buy openai api credits pakistan | Transactional | **gap**: `blog/buy-openai-api-credits-pakistan` **[API]** — added to backlog 2026-08-06 |
+| 6 | claude api credits pakistan | Transactional | `/blog/claude-api-credits-pakistan/` **[API]** |
+| 7 | api credits wholesale pakistan | Transactional | **gap**: `blog/api-credits-wholesale-pakistan` **[API]** — added to backlog 2026-08-06 (partially served by `/enterprise-ai-api-credits/`) |
+| 8 | netflix price in pakistan | Transactional | **gap**: `blog/netflix-price-pakistan` (product `/netflix-pakistan/` exists; no PKR price guide) |
+| 9 | elevenlabs price in pakistan | Transactional | **gap**: `blog/elevenlabs-price-pakistan` (product `/elevenlabs-creator-pakistan/` exists; no PKR price guide) |
+| 10 | ai subscription debit card pakistan | Informational | `/blog/pay-ai-tools-debit-card-pakistan/` |
+
+Notes:
+- 3 of 10 keywords are API-credits cluster **[API]** (orders focus per `oracle/api-credits-growth-strategy.md`). Daily backlog cap (2) used entirely on API gaps: `buy-openai-api-credits-pakistan`, `api-credits-wholesale-pakistan`.
+- Gaps #8 and #9 recorded for future backlog days (non-API, lower priority than API gaps).
+- `veo 3 price in pakistan` now maps to a published page (was a gap on 2026-08-05).
+- Existing mapped pages verified against `sitemap.xml` and `blog/` on 2026-08-06.
+
 ## 2026-08-05
 
 | # | Keyword | Intent | Target (existing page or gap) |
