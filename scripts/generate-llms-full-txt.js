@@ -138,6 +138,21 @@ const blogPosts = [
   "blog/claude-api-credits-pakistan/index.html",
   "blog/claude-vs-gemini-pakistan/index.html",
   "blog/ai-automation-for-small-business-pakistan/index.html",
+  "blog/gemini-vs-gpt-5/index.html",
+  "blog/deepseek-vs-chatgpt/index.html",
+  "blog/perplexity-vs-chatgpt-search/index.html",
+  "blog/midjourney-vs-dalle/index.html",
+  "blog/gpt-5-vs-claude-sonnet/index.html",
+  "blog/top-20-ai-tools-2026/index.html",
+  "blog/best-ai-chatbots-for-students/index.html",
+  "blog/best-ai-agents-2026/index.html",
+  "blog/best-ai-tools-for-teachers-pakistan/index.html",
+  "blog/best-ai-tools-for-ecommerce-pakistan/index.html",
+  "blog/midjourney-price-pakistan/index.html",
+  "blog/deepseek-api-price-pakistan/index.html",
+  "blog/github-copilot-price-pakistan/index.html",
+  "blog/how-to-build-n8n-automations-pakistan/index.html",
+  "blog/how-to-earn-money-with-ai-pakistan/index.html",
 ];
 for (const rel of blogPosts) {
   if (!fs.existsSync(path.join(root, rel))) continue;
