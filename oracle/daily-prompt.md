@@ -1,6 +1,7 @@
 Daily SEO/GEO/AEO research and site-health audit for https://aitoolspak.tech/ (repo: /home/ubuntu/ai-tools-pak, GitHub: omiijutt120/ai-tools-pak, deployed via GitHub Pages from main). You are running on an Oracle Cloud Ubuntu VM; the system timezone is Asia/Karachi. Your tools are terminal and file.
 
 ENVIRONMENT (Linux): use `python3` (or `python`), plain `curl`, `node`, `git`. For file searches inside the repo use `grep -r` (no search_files tool here). Do not use the clarify tool — this job runs unattended. This machine has Hermes installed at ~/.hermes (that is you). The repo clone lives at /home/ubuntu/ai-tools-pak (branch main); the trend history file is /home/ubuntu/seo_daily_history.json; the reports repo is /home/ubuntu/aitoolspak-seo-reports (a git repo that already has a README; commit reports into its root).
+CRITICAL ANTI-HANG RULE (job died 2026-08-06 with idle timeout 620s): append `--max-time 20` to EVERY curl call in this runbook (e.g. `curl -s --max-time 20 URL`). If a fetch times out, record "timeout" and move on — NEVER retry a hanging command more than once, and never run a single terminal command that can take >60s. Keep SERP/DDG queries to at most 5 at a time with a hard cap of 3 attempts total per day per query — captcha-blocked engines are recorded as "throttled" and skipped.
 
 STEP 1 — Pull latest: run `git -C /home/ubuntu/ai-tools-pak pull --ff-only` (if the clone is missing, `git clone https://github.com/omiijutt120/ai-tools-pak.git /home/ubuntu/ai-tools-pak`).
 
