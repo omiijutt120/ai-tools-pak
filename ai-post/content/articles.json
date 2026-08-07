@@ -250,6 +250,84 @@
         {"quote": "The difference between a generic prompt and a working prompt is usually one line: the never-invent-information constraint."},
         {"cta": "Want these prompts wired into a live AI agent for your business? We build it in days."}
       ]
+    },
+    {
+      "slug": "build-whatsapp-ai-chatbot-business",
+      "title": "How to Build a WhatsApp AI Chatbot for Your Business (Step-by-Step)",
+      "category": "tutorials",
+      "date": "2026-08-07",
+      "readMins": 9,
+      "excerpt": "A no-hype walkthrough of the four parts of a WhatsApp chatbot: the free Cloud API path, the AI brain, the knowledge base, and the guardrails that stop the bot embarrassing you.",
+      "cover": "🤖",
+      "body": [
+        {"h2": "Why WhatsApp instead of an app"},
+        {"p": "Your customers already live in WhatsApp. A chatbot there needs no download, no login, no new habit — it sits inside the app they use for family, work and shopping. For most small businesses, a WhatsApp bot delivers more value per rupee than a custom app ever will."},
+        {"p": "The technical path changed too. Meta's Cloud API and the newer Calling API mean you can automate messages and even calls on a real business number without buying expensive telephony or hosting a server farm."},
+        {"h2": "The four parts of a WhatsApp chatbot"},
+        {"table": {"head": ["Part", "Job", "Free option"], "rows": [
+          ["Gateway", "Sends and receives messages on your number", "Meta WhatsApp Cloud API (1,000 free service conversations/month)"],
+          ["Brain", "Understands the message and writes the reply", "DeepSeek, Gemini or Groq free tiers"],
+          ["Knowledge", "Your FAQ, prices and policies, in one place", "A Google Sheet or a text file the brain reads"],
+          ["Orchestrator", "Glues it together and logs every chat", "n8n community edition or a small script"]]
+        }},
+        {"h2": "Step 1 — Get your number on the Cloud API"},
+        {"ol": ["Create a Meta developer account and an app in the developer console.", "Add the WhatsApp product and generate a test number — instant, no approval needed.", "Verify your real business number (a call or SMS code) and attach it to the app.", "Subscribe to the messages webhook so your server hears every incoming message."]},
+        {"p": "The free tier covers the first 1,000 service conversations per month — enough for most small shops. Utility conversations like OTPs and delivery alerts are billed per conversation under the current model, so keep those separate and minimal."},
+        {"h2": "Step 2 — Build the brain with one system prompt"},
+        {"p": "For most businesses the whole knowledge base fits on one page. Write it as plain text and paste it into the system prompt:"},
+        {"quote": "You are the WhatsApp assistant for [business]. Answer only from the knowledge base below. If the answer is not there, say you will connect a human. Never invent prices, discounts or policies."},
+        {"p": "The knowledge base lists: opening hours, location, price list, delivery areas, return policy, and the three most common questions your staff answer daily. When this grows past a few pages, move it to a Google Sheet and add a search step — the brain reads only the matching rows."},
+        {"h2": "Step 3 — Connect it with n8n or plain code"},
+        {"ol": ["Webhook in: Meta posts each incoming message to your n8n webhook URL.", "Parse: pull out the phone number, name and message text.", "Think: send the text plus the system prompt to the LLM and get a reply.", "Reply: POST the answer back through the Cloud API messages endpoint.", "Log: write the exchange to a Google Sheet so you can review every conversation."]},
+        {"p": "n8n community edition does all five steps with drag-and-drop nodes. If you prefer code, a single Node.js or Python script using the Cloud API SDK does the same thing in about 200 lines."},
+        {"h2": "The guardrails that matter"},
+        {"ul": ["Always offer a human handoff — the bot says it and the message lands in a real staff inbox.", "Never let the bot invent prices: hard-code the rule that unknown prices mean 'I will check and get back to you.'", "Add a blocklist of topics (refunds, complaints, legal) that always escalate to a human.", "Reply within two seconds — WhatsApp users expect instant answers.", "Store phone numbers only for active conversations and delete them on request."]},
+        {"h2": "What it costs"},
+        {"table": {"head": ["Item", "Cost", "Note"], "rows": [
+          ["Cloud API", "$0", "First 1,000 service conversations per month"],
+          ["LLM brain", "$0", "Free tiers: DeepSeek, Gemini, Groq"],
+          ["n8n", "$0", "Self-hosted community edition"],
+          ["Total", "$0/month", "Until you pass 1,000 conversations or hit rate limits"]]
+        }},
+        {"quote": "A WhatsApp bot is not a replacement for your staff. It is a filter that answers the repetitive 80% so humans only handle the 20% that actually needs them."},
+        {"cta": "Want a WhatsApp AI assistant live on your business number? We build, host and maintain it for you."}
+      ]
+    },
+    {
+      "slug": "free-ai-tools-that-are-actually-free-2026",
+      "title": "13 Free AI Tools That Are Actually Free in 2026 (No Card Required)",
+      "category": "free-ai-tools",
+      "date": "2026-08-07",
+      "readMins": 7,
+      "excerpt": "Free tiers keep shrinking. These thirteen tools still deliver genuinely useful AI at $0 — no credit card, no trial-countdown panic, no sales call.",
+      "cover": "🧰",
+      "body": [
+        {"h2": "How we define free"},
+        {"p": "A tool made this list only if it passed all three tests: no credit card at signup, a free allowance that is actually useful for real work, and no silent auto-charge when the trial ends. We re-checked every entry in August 2026 — but free tiers change often, so verify before you build a business on any of them."},
+        {"h2": "The 13 that passed"},
+        {"table": {"head": ["Tool", "What you get at $0", "Best for"], "rows": [
+          ["DeepSeek API", "deepseek-v4-flash chat completions, OpenAI-compatible", "AI agents and automation brains"],
+          ["Google Gemini", "Free tier in AI Studio plus the Gemini app", "Everyday assistant and image understanding"],
+          ["Groq", "Fast inference on open models", "Low-latency chat and voice pipelines"],
+          ["ChatGPT", "Free tier with strong models, rate-limited", "General writing and brainstorming"],
+          ["Claude", "Free tier with a daily message cap", "Long-form writing and coding"],
+          ["Hugging Face", "Hosted inference and Spaces", "Running open models without a GPU"],
+          ["Whisper (local)", "Unlimited speech-to-text on your own machine", "Transcribing calls and meetings"],
+          ["Edge TTS", "Natural neural voices, no cost", "Text-to-speech for agents and videos"],
+          ["n8n community", "Self-hosted automation platform", "AI workflows and integrations"],
+          ["Google Apps Script", "Free scripting for Gmail, Sheets and Drive", "Automating office grunt work"],
+          ["Canva", "Generous free plan with AI design features", "Social graphics and quick edits"],
+          ["Notion AI", "A limited number of free AI actions", "Notes, docs and knowledge bases"],
+          ["Perplexity", "Free AI search with citations", "Research and fact-checking"]]
+        }},
+        {"h2": "The fake-free traps to skip"},
+        {"ul": ["'Free trial' that silently converts to a paid plan — always check the billing page twice.", "'Free forever' that requires a call with a salesperson to actually get access.", "Tools that gate the only useful feature behind a paywall and call the rest free.", "Credit-gated APIs: if a card is required at signup, it is not a free tier."]},
+        {"h2": "Build a $0 AI stack from this list"},
+        {"ol": ["Brain: DeepSeek or Groq free tier for the LLM.", "Voice in: run Whisper locally for speech-to-text.", "Voice out: Edge TTS for natural replies.", "Orchestration: n8n community edition to connect everything.", "Storage: Google Sheets for logs and knowledge."]},
+        {"p": "That is a complete AI voice agent — speech in, thinking, speech out — for zero model cost. We run exactly this pattern in production; the only bill is the server you already have."},
+        {"quote": "Free tiers are not charity; they are the top of the funnel. Use them like a professional: build, validate, and only pay when volume genuinely demands it."},
+        {"cta": "Want a production AI system running on a $0 model stack? We assemble and host the whole thing for your business."}
+      ]
     }
   ]
 }
