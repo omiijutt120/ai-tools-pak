@@ -43,7 +43,7 @@ def footer():
 <div id="bmBar"><button id="bmBtn" title="Bookmark">🔖</button></div>
 <script src="{BASE}/assets/app.js"></script></body></html>"""
 
-def head(title, desc, url, schema=None, canonical=None):
+def head(title, desc, url, schema=None, canonical=None, og_img=None):
     s = f"""<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -56,9 +56,11 @@ def head(title, desc, url, schema=None, canonical=None):
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{esc(url)}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{esc(og_img) if og_img else ''}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(desc)}">
+<meta name="twitter:image" content="{esc(og_img) if og_img else ''}">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700;8..60,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{BASE}/assets/style.css">
 """
@@ -68,10 +70,23 @@ def head(title, desc, url, schema=None, canonical=None):
 def card(a, big=False):
     c = CAT_BY_KEY.get(a["category"], {"label":"Article","icon":"📄"})
     cls = "card big-card" if big else "card"
+    img = cover_img(a)
     return f"""<a class="{cls}" href="{BASE}/{a['slug']}.html">
-  <div class="thumb"><span class="tag">{c['icon']} {c['label']}</span>{a['cover']}</div>
+  <div class="thumb"><span class="tag">{c['icon']} {c['label']}</span>{img}</div>
   <div class="body"><h3>{esc(a['title'])}</h3><p>{esc(a['excerpt'])}</p>
   <span class="meta">📅 {a['date']} · 📖 {a['readMins']} min</span></div></a>"""
+
+import os as _os
+def cover_img(a, alt=None):
+    """Prefer generated JPG cover; fall back to SVG art; else emoji."""
+    jpg = _os.path.join(POST, "covers", a["slug"] + ".jpg")
+    svg = _os.path.join(POST, "covers", a["slug"] + ".svg")
+    alt = alt or a["title"]
+    if _os.path.exists(jpg):
+        return f'<img class="timg" src="{BASE}/covers/{a["slug"]}.jpg" alt="{esc(alt)}" loading="lazy">'
+    if _os.path.exists(svg):
+        return f'<img class="timg" src="{BASE}/covers/{a["slug"]}.svg" alt="{esc(alt)}" loading="lazy">'
+    return f'<span style="font-size:52px">{a["cover"]}</span>'
 
 def body_blocks(a):
     out = []
@@ -116,12 +131,12 @@ def article_page(a):
         {"@type": "ListItem", "position": 1, "name": "Home", "item": BASE + "/"},
         {"@type": "ListItem", "position": 2, "name": c["label"], "item": f'{BASE}/{c["key"]}/'},
         {"@type": "ListItem", "position": 3, "name": a["title"], "item": url}]}
-    pg = head(a["title"], a["excerpt"], url, [schema, bread]) + header(c["key"]) + f"""
+    pg = head(a["title"], a["excerpt"], url, [schema, bread], og_img=f"{BASE}/covers/{a['slug']}.jpg") + header(c["key"]) + f"""
 <article class="post">
   <span class="tag">{c['icon']} {c['label']}</span>
   <h1>{esc(a['title'])}</h1>
   <div class="meta">📅 {a['date']} · <span id="readTime"></span> · By The AI Post Staff</div>
-  <div class="cover">{a['cover']}</div>
+  <div class="cover">{cover_img(a)}</div>
   {toc}
   {body_blocks(a)}
   <div class="share">
