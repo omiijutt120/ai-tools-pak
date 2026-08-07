@@ -433,6 +433,33 @@ svg {
   line-height: 1.55;
 }
 
+.link-card .card-price {
+  margin-top: .55rem;
+  font: 600 1.02rem "IBM Plex Mono", monospace;
+  color: var(--ink);
+}
+
+.link-card .card-price del {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: .85rem;
+  text-decoration: line-through;
+  text-decoration-color: rgba(255,120,120,.8);
+  margin-right: .35rem;
+}
+
+.link-card .card-off {
+  display: inline-block;
+  margin-left: .35rem;
+  padding: .05rem .45rem;
+  border-radius: .3rem;
+  background: #16a34a;
+  color: #fff;
+  font: 600 .75rem "IBM Plex Mono", monospace;
+  font-style: normal;
+  vertical-align: middle;
+}
+
 .brand-copy {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
