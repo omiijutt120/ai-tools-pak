@@ -208,17 +208,25 @@ def main_sitemap_and_llms():
     repo = os.path.dirname(POST)
     sm = os.path.join(repo, "sitemap.xml")
     urls = [BASE + "/"] + [f"{BASE}/{c['key']}/" for c in CATS] + [f"{BASE}/{a['slug']}.html" for a in ARTS] + [
-        f"{BASE}/about.html", f"{BASE}/contact.html", f"{BASE}/privacy-policy.html", f"{BASE}/terms.html",
-        f"{BASE}/cookie-policy.html", f"{BASE}/editorial-policy.html"]
+        f"{BASE}/about.html", f"{BASE}/contact.html", f"{BASE}/privacy-policy.html",
+        f"{BASE}/terms.html", f"{BASE}/cookie-policy.html", f"{BASE}/editorial-policy.html"]
+    urls_xml = "".join(f'\n  <url>\n    <loc>{u}</loc>\n    <lastmod>2026-08-07</lastmod>\n  </url>' for u in urls)
     s = open(sm).read()
-    if "ai-post/" not in s:
-        add = "".join(f'\n  <url>\n    <loc>{u}</loc>\n    <lastmod>2026-08-06</lastmod>\n  </url>' for u in urls)
-        open(sm, "w").write(s.replace("</urlset>", add + "\n</urlset>"))
+    marker = "https://aitoolspak.tech/ai-post/"
+    i = s.find(marker)
+    if i == -1:
+        s = s.replace("</urlset>", urls_xml + "\n</urlset>")
+    else:
+        block_start = s.rfind("  <url>", 0, i)
+        s = s[:block_start].rstrip() + "\n" + urls_xml + "\n</urlset>"
+    open(sm, "w").write(s)
     ll = os.path.join(repo, "llms.txt")
     l = open(ll).read()
-    if "The AI Post" not in l:
-        l += "\n\n## The AI Post (AI publication)\n\nThe AI Post covers AI news, tutorials, comparisons, reviews and free tools. Articles are original and practical.\n\n- Home: " + BASE + "/\n" + "".join(f"- {a['title']}: {BASE}/{a['slug']}.html\n" for a in ARTS)
-        open(ll, "w").write(l)
+    section = "\n\n## The AI Post (AI publication)\n\nThe AI Post covers AI news, tutorials, comparisons, reviews and free tools. Articles are original and practical.\n\n- Home: " + BASE + "/\n" + "".join(f"- {a['title']}: {BASE}/{a['slug']}.html\n" for a in ARTS)
+    if "## The AI Post (AI publication)" in l:
+        l = l[:l.find("## The AI Post (AI publication)")].rstrip() + "\n"
+    l += section
+    open(ll, "w").write(l)
 
 if __name__ == "__main__":
     built = []
