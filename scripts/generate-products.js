@@ -15,6 +15,7 @@ const PRODUCT_ROUTE_BY_SLUG = {
   "gemini-pro": "gemini-pro-pakistan/",
   "elevenlabs-creator-private": "elevenlabs-creator-pakistan/",
   "runway-ml-unlimited-generations": "runway-ml-pakistan/",
+  "runway-ml-max": "runway-ml-max-pakistan/",
   "leonardo-ai": "leonardo-ai-pakistan/",
   "grammarly-pro": "grammarly-premium-pakistan/",
   "quillbot": "quillbot-premium-pakistan/",
@@ -325,6 +326,8 @@ function productPageHtml(product, related) {
   const canonical = `${SITE_URL}/${product.guideUrl}`;
   const image = absoluteUrl(product.imageUrl);
   const price = product.sellingPricePkr.toLocaleString("en-PK");
+  const compareAt = product.compareAtPricePkr ? product.compareAtPricePkr.toLocaleString("en-PK") : null;
+  const discount = product.discountPercent ? `${product.discountPercent}%` : null;
   const features = featureList(product);
   const relatedLinks = related.map((item) => `<li><a href="../${item.guideUrl}">${escapeHtml(item.name)} price in Pakistan</a></li>`).join("");
   const official = product.sourceProductUrl
@@ -463,7 +466,7 @@ function productPageHtml(product, related) {
         <div class="page-main">
           <article class="glass-panel page-card direct-answer-card" aria-labelledby="price-answer">
             <h2 id="price-answer">How much does ${escapeHtml(product.name)} cost in Pakistan?</h2>
-            <p class="direct-answer">${escapeHtml(product.name)} is listed by AI Tools Pak at <strong>PKR ${price}</strong>. It suits ${escapeHtml(audience(product))} who need ${escapeHtml(product.creditsOrUsageLimit.toLowerCase())}. Confirm current availability, ${escapeHtml(product.subscriptionDuration.toLowerCase())}, access model and support terms on WhatsApp before payment.</p>
+            <p class="direct-answer">${escapeHtml(product.name)} is listed by AI Tools Pak at <strong>PKR ${price}</strong>${compareAt ? ` (original price <del>PKR ${compareAt}</del>, ${discount} off)` : ""}. It suits ${escapeHtml(audience(product))} who need ${escapeHtml(product.creditsOrUsageLimit.toLowerCase())}. Confirm current availability, ${escapeHtml(product.subscriptionDuration.toLowerCase())}, access model and support terms on WhatsApp before payment.</p>
           </article>
           <article class="glass-panel page-card">
             <h2>Product overview</h2>
@@ -529,7 +532,7 @@ function productPageHtml(product, related) {
         </div>
         <aside class="page-side">
           <img class="product-page-image glass-panel" src="${escapeHtml(product.imageUrl)}" alt="${escapeHtml(product.imageAltText)}" width="128" height="128">
-          <div class="price-box"><span>Current listed price</span><strong>PKR ${price}</strong><small>Last verified ${DISPLAY_DATE}</small></div>
+          <div class="price-box"><span>Current listed price</span>${compareAt ? `<del class="price-original">PKR ${compareAt}</del>` : ""}<strong>PKR ${price}</strong>${discount ? `<span class="price-off">${discount} OFF</span>` : ""}<small>Last verified ${DISPLAY_DATE}</small></div>
           <a class="button primary" target="_blank" rel="noopener noreferrer" href="https://wa.me/923714549245?text=${encodeURIComponent(`Hi AI Tools Pak, I want to order ${product.name} in Pakistan. Price shown: PKR ${price}. Please confirm availability and activation details.`)}">Order on WhatsApp</a>
           <div class="glass-panel page-card">
             <h3>Non-affiliation note</h3>
@@ -645,7 +648,7 @@ const products = records.map((row) => {
 });
 
 console.log(`valid products imported: ${products.length}`);
-if (products.length !== 31) throw new Error(`Expected 31 products, found ${products.length}`);
+if (products.length !== 32) throw new Error(`Expected 32 products, found ${products.length}`);
 
 for (const product of products) {
   const dir = path.join(root, product.guideUrl);

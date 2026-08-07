@@ -317,6 +317,27 @@ svg {
   font-size: .85rem;
 }
 
+.price-box .price-original {
+  display: inline-block;
+  margin-top: .35rem;
+  color: rgba(255,255,255,.55);
+  font-size: .95rem;
+  text-decoration: line-through;
+  text-decoration-color: rgba(255,120,120,.8);
+  text-decoration-thickness: 2px;
+}
+
+.price-box .price-off {
+  display: inline-block;
+  margin-left: .5rem;
+  padding: .1rem .5rem;
+  border-radius: .35rem;
+  background: #16a34a;
+  color: #fff;
+  font: 600 .78rem "IBM Plex Mono", monospace;
+  vertical-align: middle;
+}
+
 .price-box strong {
   display: block;
   margin-top: .35rem;
