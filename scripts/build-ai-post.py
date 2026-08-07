@@ -82,10 +82,13 @@ def cover_img(a, alt=None):
     jpg = _os.path.join(POST, "covers", a["slug"] + ".jpg")
     svg = _os.path.join(POST, "covers", a["slug"] + ".svg")
     alt = alt or a["title"]
+    # Explicit dimensions prevent CLS (layout shift) while images load.
     if _os.path.exists(jpg):
-        return f'<img class="timg" src="{BASE}/covers/{a["slug"]}.jpg" alt="{esc(alt)}" loading="lazy">'
+        return (f'<img class="timg" src="{BASE}/covers/{a["slug"]}.jpg" '
+                f'alt="{esc(alt)}" width="1024" height="576" loading="lazy">')
     if _os.path.exists(svg):
-        return f'<img class="timg" src="{BASE}/covers/{a["slug"]}.svg" alt="{esc(alt)}" loading="lazy">'
+        return (f'<img class="timg" src="{BASE}/covers/{a["slug"]}.svg" '
+                f'alt="{esc(alt)}" width="1200" height="630" loading="lazy">')
     return f'<span style="font-size:52px">{a["cover"]}</span>'
 
 def body_blocks(a):
