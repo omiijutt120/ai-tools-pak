@@ -328,6 +328,58 @@
         {"quote": "Free tiers are not charity; they are the top of the funnel. Use them like a professional: build, validate, and only pay when volume genuinely demands it."},
         {"cta": "Want a production AI system running on a $0 model stack? We assemble and host the whole thing for your business."}
       ]
+    },
+    {
+      "slug": "amd-acquires-taalas-inference-silicon",
+      "title": "AMD Acquires Taalas to Bake AI Models Into Silicon — Inference Gets a Hardware Reset",
+      "category": "ai-news",
+      "date": "2026-08-07",
+      "readMins": 5,
+      "excerpt": "AMD has signed a definitive agreement to acquire Taalas, the Toronto startup whose chips etch model weights directly into silicon. The bet: inference, not training, is where the AI hardware war will be won.",
+      "cover": "⚡",
+      "body": [
+        {"h2": "What happened"},
+        {"p": "On August 6, 2026, AMD announced a definitive agreement to acquire Taalas, a Toronto-based startup founded in 2023 that builds specialized AI inference silicon. The unusual part of the technology: Taalas bakes model weights directly into the hardware, so a model runs from the chip itself instead of being streamed from memory on every request."},
+        {"p": "AMD says Taalas' technology will be integrated into its accelerator roadmap and combined with the rest of the stack — Instinct GPUs, EPYC CPUs, Helios rackscale systems and ROCm software. Financial terms were not disclosed, and the deal is subject to customary closing conditions and regulatory approvals."},
+        {"h2": "Why building the hardware around the model matters"},
+        {"p": "General-purpose GPUs run any model by pulling weights out of memory for every token. That memory traffic is the bottleneck: it costs power, adds latency and caps throughput. Taalas' approach optimizes the inference dataflow around a specific model, removing most of that traffic. Reporting around the announcement described the promise as inference performance an order of magnitude or more beyond general-purpose parts."},
+        {"ul": ["Weight-in-silicon chips skip most memory traffic — the model lives in the hardware.", "Lower latency and power per token make real-time, high-volume inference affordable.", "The trade-off: a chip built around one model cannot easily switch models. Hardware and model are locked together.", "That is why AMD plans system-level solutions with Instinct GPUs rather than a standalone chip."]},
+        {"h2": "What both sides said"},
+        {"quote": "'We founded Taalas to rethink AI inference from the ground up by building the hardware around the model.' — Ljubisa Bajic, Taalas co-founder and CEO."},
+        {"p": "AMD's SVP of the AI Group, Vamsi Boppana, said the deal strengthens AMD's AI portfolio with 'differentiated inference performance and efficiency' as AI moves into more real-time, high-volume applications."},
+        {"h2": "What it means for builders"},
+        {"p": "For people building AI agents and applications, the direction matters more than the deal itself: inference is becoming a specialized hardware problem, not just a GPU-count problem. Cheaper, faster inference is what makes always-on agents — voice receptionists, document processors, real-time pipelines — economically sane."},
+        {"ul": ["Expect continued downward pressure on per-token inference prices as specialized silicon scales.", "Model-specific chips reward a smaller set of dominant open weights that hardware can be built around.", "On-device inference gets more viable every quarter — the same logic that powers this deal."]},
+        {"quote": "Takeaway: the model is becoming the hardware. The inference war just got a new front, and AMD just placed its bet."},
+        {"cta": "Building an AI agent and want near-zero inference costs today? We assemble free-tier stacks and production systems for businesses."}
+      ]
+    },
+    {
+      "slug": "cloud-llm-api-vs-local-inference",
+      "title": "Cloud LLM APIs vs Local Inference in 2026: Which One Should Your Agent Run On?",
+      "category": "comparisons",
+      "date": "2026-08-07",
+      "readMins": 7,
+      "excerpt": "Every AI project hits the same fork: hosted API or your own hardware. A practical decision guide built on four variables — volume, latency, privacy and ops — plus the hybrid pattern we actually run.",
+      "cover": "☁️",
+      "body": [
+        {"h2": "The fork in the road"},
+        {"p": "Every AI project eventually asks the same question: call a hosted API (DeepSeek, OpenAI, Gemini, Groq) or run a model on hardware you control? The answer is rarely 'always cloud' or 'always local'. It depends on four variables: volume, latency, privacy and your appetite for operations. Here is how to decide with real numbers, not benchmarks."},
+        {"h2": "The four variables"},
+        {"table": {"head": ["Variable", "Cloud API", "Local inference"], "rows": [["Cost at low volume", "$0 — free tiers cover prototyping", "Free software, but hardware costs real money"], ["Cost at high volume", "Per-token bills grow with usage", "Hardware amortizes — cheap per token after the buy"], ["Latency", "200–800 ms typical round trip", "10–100 ms on a dedicated box"], ["Privacy", "Data leaves your network", "Data never leaves the machine"], ["Setup effort", "API key in minutes", "Days of setup, tuning and maintenance"], ["Model access", "Whatever the provider serves", "Whatever fits your hardware"]]}},
+        {"h2": "When the cloud wins"},
+        {"ul": ["You are prototyping — an API key beats a GPU build every time.", "Volume is low or spiky: free tiers and pay-per-token mean zero idle cost.", "You need frontier intelligence: the biggest models are only available hosted.", "You do not want to be on call at 2 AM when the driver breaks."]},
+        {"h2": "When local wins"},
+        {"ul": ["You process sensitive data — health, legal, customer PII — that should not leave your network.", "Volume is high and steady: a dedicated machine pays for itself in a few months.", "You need low, predictable latency: voice agents and real-time pipelines.", "Your workload is repetitive (transcription, classification, extraction) and fits a small open model.", "New inference silicon keeps making this cheaper — hardware built around a model is the whole point of deals like AMD's Taalas acquisition."]},
+        {"h2": "The hybrid pattern we actually run"},
+        {"p": "In production we run both: a free hosted LLM for conversational brain work, and local models for anything repetitive or sensitive. The pattern:"},
+        {"ol": ["Classify first: route simple, repeatable jobs to local; hard reasoning to the cloud.", "Cache aggressively: store common answers (FAQs, order lookups) so neither side pays twice.", "Fail over: local offline falls back to cloud; cloud rate-limited falls back to local. Retry logic on both.", "Measure: log cost per request for a week, then move whatever is expensive and repetitive to local."]},
+        {"h2": "The cost sanity check"},
+        {"p": "Rough rules that hold in practice: if your monthly API bill is under $20, do not build local — the hardware will never pay for itself. If it is over $200 and climbing with usage, start planning a dedicated box or a fixed-price inference service. In between, stay hybrid. Free tiers and hardware prices change quarterly, so re-evaluate on a schedule, not on a whim."},
+        {"quote": "The cheapest token is the one you never pay for twice: cache the repeatable, route the rest, and buy hardware only when the bill justifies it."},
+        {"cta": "Not sure which side your workload belongs on? We audit, build and host the right stack for your business."}
+      ]
     }
+
   ]
 }
