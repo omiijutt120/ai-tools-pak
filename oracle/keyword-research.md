@@ -2,6 +2,26 @@
 
 Daily research log of high-value search phrases for Pakistani searchers, with intent and the target page (existing or gap). API-credits keywords are the site's orders focus (see `oracle/api-credits-growth-strategy.md`) and are flagged **[API]** — gaps in this cluster get first priority in the content backlog.
 
+## 2026-08-08
+
+| # | Keyword | Intent | Target (existing page or gap) |
+|---|---------|--------|-------------------------------|
+| 1 | gemini api credits pakistan | Transactional | **gap**: `blog/gemini-api-credits-pakistan` **[API]** — added to backlog 2026-08-08 (highest-priority API gap; no Gemini API credits page exists) |
+| 2 | openai api credits price pakistan | Transactional | `/blog/buy-openai-api-credits-pakistan/` + `/blog/ai-api-pricing-pakistan/` **[API]** |
+| 3 | ai api key pakistan | Transactional | `/enterprise-ai-api-credits/` + `/blog/how-to-buy-ai-api-credits-pakistan/` **[API]** |
+| 4 | chatgpt plus price in pakistan | Transactional | `/blog/chatgpt-plus-price-pakistan/` + `/chatgpt-plus-pakistan/` |
+| 5 | canva pro cost pkr | Transactional | `/blog/canva-pro-price-pakistan/` + `/canva-pro-pakistan/` |
+| 6 | best ai tools pakistan | Informational | `/blog/ai-tools-pakistan-complete-guide/` |
+| 7 | veo 3 price | Transactional | `/blog/veo-3-price-pakistan/` + `/veo-3-pakistan/` |
+| 8 | ai subscription debit card pakistan | Informational | `/blog/pay-ai-tools-debit-card-pakistan/` |
+| 9 | netflix price in pakistan | Transactional | **gap**: `blog/netflix-price-pakistan` (recorded 2026-08-06, still open; product `/netflix-pakistan/` exists) — added to backlog 2026-08-08 |
+| 10 | grok price pakistan | Transactional | `/blog/grok-price-pakistan/` + `/grok-subscription-pakistan/` + `/supergrok-pakistan/` |
+
+Notes:
+- 3 of 10 keywords are API-credits cluster **[API]** (orders focus per `oracle/api-credits-growth-strategy.md`). Daily backlog cap (2): API gap `gemini-api-credits-pakistan` first, then `netflix-price-pakistan`.
+- `elevenlabs price in pakistan` gap (2026-08-06) is now served by published `/blog/elevenlabs-price-pakistan/`; `veo 3 price` maps to a published page.
+- Existing mapped pages verified against `sitemap.xml` and `blog/` on 2026-08-08.
+
 ## 2026-08-06
 
 | # | Keyword | Intent | Target (existing page or gap) |
