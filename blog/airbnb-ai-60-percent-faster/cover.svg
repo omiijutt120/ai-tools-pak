@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Airbnb says AI cut launch time by 60% as it finally starts testing AI search</title>
+  <desc id="desc">AI Tools Pak — AI news for Pakistan</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#202a36"/>
+      <stop offset="1" stop-color="#0f1722"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.10">
+    <path d="M0 126H1200M0 252H1200M0 378H1200M0 504H1200" stroke="#ffffff" stroke-width="1"/>
+    <path d="M150 0V630M300 0V630M450 0V630M600 0V630M750 0V630M900 0V630M1050 0V630" stroke="#ffffff" stroke-width="1"/>
+  </g>
+  <circle cx="1050" cy="120" r="160" fill="#f59e0b" opacity="0.12"/>
+  <circle cx="1080" cy="150" r="90" fill="#16a34a" opacity="0.10"/>
+  <rect x="80" y="84" width="150" height="10" rx="5" fill="url(#bar)"/>
+  <text x="80" y="150" fill="#16a34a" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="4">AI NEWS</text>
+  <text x="80" y="250" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-1"><tspan x="80" dy="0">Airbnb says AI cut launch time by</tspan><tspan x="80" dy="38">60% as it finally starts testing</tspan><tspan x="80" dy="38">AI search</tspan></text>
+  <text x="80" y="520" fill="#8b949e" font-family="Inter, Arial, sans-serif" font-size="24">AI TOOLS PAK</text>
+  <text x="80" y="556" fill="#5b6570" font-family="Inter, Arial, sans-serif" font-size="20">AI news, tools and prices for Pakistan · aitoolspak.tech</text>
+</svg>

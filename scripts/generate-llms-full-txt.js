@@ -168,6 +168,21 @@ const blogPosts = [
   "blog/perplexity-pro-price-pakistan/index.html",
   "blog/quillbot-premium-price-pakistan/index.html",
   "blog/how-to-automate-whatsapp-with-ai-pakistan/index.html",
+  "blog/chatgpt-unlimited-free-text-chats/index.html",
+  "blog/openai-astra-security-pause/index.html",
+  "blog/openai-smart-speaker-price/index.html",
+  "blog/cloudflare-kitesurf-ai-browser/index.html",
+  "blog/google-maps-agentic-ordering/index.html",
+  "blog/meta-muse-code/index.html",
+  "blog/suno-audio-watermarking/index.html",
+  "blog/rippling-ai-spend-console/index.html",
+  "blog/airbnb-ai-60-percent-faster/index.html",
+  "blog/malachyte-spotify-ai-ecommerce/index.html",
+  "blog/mirendil-google-cloud-100m/index.html",
+  "blog/omilia-67m-voice-support/index.html",
+  "blog/deepseek-v4-flash-0731/index.html",
+  "blog/doe-genesis-open-models/index.html",
+  "blog/oracle-bans-ai-code-openjdk/index.html",
 ];
 for (const rel of blogPosts) {
   if (!fs.existsSync(path.join(root, rel))) continue;
