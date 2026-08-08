@@ -113,6 +113,12 @@ def body_blocks(a):
                 out.append(f'<table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>')
             elif k == "cta":
                 out.append(f'<div class="cta-box"><h3>🤖 Get it built for your business</h3><p>{esc(v)}</p><a href="{WA}" target="_blank" rel="noopener">💬 Chat on WhatsApp</a></div>')
+            elif k == "faq":
+                items = "".join(
+                    f'<details><summary>{esc(q)}</summary><p>{esc(ans)}</p></details>'
+                    for q, ans in v
+                )
+                out.append(f'<h2 id="faq">Frequently asked questions</h2><div class="faq">{items}</div>')
     return "\n".join(out)
 
 def article_page(a):
@@ -123,13 +129,22 @@ def article_page(a):
     related = [x for x in ARTS if x["slug"] != a["slug"]]
     related = sorted(related, key=lambda x: (x["category"] == a["category"], x["date"]), reverse=True)[:3]
     rel = '<div class="related">' + "".join(f'<a class="card" href="{BASE}/{x["slug"]}.html"><div class="body"><h3>{esc(x["title"])}</h3><span class="meta">{esc(x["date"])} · {x["readMins"]} min</span></div></a>' for x in related) + "</div>"
+    faq_blocks = [b for b in a["body"] if "faq" in b]
     schema = {
         "@context": "https://schema.org", "@type": "NewsArticle" if a["category"] == "ai-news" else "Article",
         "headline": a["title"], "description": a["excerpt"], "datePublished": a["date"] + "T09:00:00+05:00",
         "dateModified": a["date"] + "T09:00:00+05:00", "mainEntityOfPage": url,
-        "author": {"@type": "Person", "name": "The AI Post Staff"},
-        "publisher": {"@type": "Organization", "name": "The AI Post", "url": BASE},
-        "articleSection": c["label"], "wordCount": len(a["body"]) * 90}
+        "image": f"{BASE}/covers/{a['slug']}.jpg",
+        "author": {"@type": "Person", "name": "Muhammad Umar", "url": "https://www.linkedin.com/in/umar-jutt",
+                   "sameAs": ["https://github.com/omiijutt120", "https://www.linkedin.com/in/umar-jutt"]},
+        "publisher": {"@type": "Organization", "name": "The AI Post", "url": BASE,
+                      "logo": {"@type": "ImageObject", "url": "https://aitoolspak.tech/logo.png"}},
+        "articleSection": c["label"], "wordCount": len(a["body"]) * 90,
+        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".post h1", ".post .lede", ".post p:first-of-type"]}}
+    if faq_blocks:
+        schema["@graph"] = [{"@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": ans}}
+            for b in faq_blocks for q, ans in b["faq"]]}]
     bread = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": BASE + "/"},
         {"@type": "ListItem", "position": 2, "name": c["label"], "item": f'{BASE}/{c["key"]}/'},
@@ -138,7 +153,7 @@ def article_page(a):
 <article class="post">
   <span class="tag">{c['icon']} {c['label']}</span>
   <h1>{esc(a['title'])}</h1>
-  <div class="meta">📅 {a['date']} · <span id="readTime"></span> · By The AI Post Staff</div>
+  <div class="meta">📅 {a['date']} · <span id="readTime"></span> · By <a href="{BASE}/authors/muhammad-umar.html" rel="author">Muhammad Umar</a></div>
   <div class="cover">{cover_img(a)}</div>
   {toc}
   {body_blocks(a)}
@@ -146,7 +161,7 @@ def article_page(a):
     <button id="copyLink">🔗 Copy link</button>
     <button id="twShare">🐦 Share on X</button>
   </div>
-  <div class="author"><div class="av">AI</div><div><b>The AI Post Staff</b><p>Independent coverage of AI news, tools and tutorials. We build AI systems for real businesses and write about what we learn.</p></div></div>
+  <div class="author"><div class="av">MU</div><div><b><a href="{BASE}/authors/muhammad-umar.html" rel="author">Muhammad Umar</a></b><p>Founder of AI Tools Pak. BS Artificial Intelligence student building AI agents, voice systems and automation for real businesses. <a href="{BASE}/about.html">Read the editorial policy</a>.</p></div></div>
   <h3 style="font-family:var(--serif);font-size:21px">📚 Related reading</h3>
   {rel}
 </article>
@@ -174,8 +189,14 @@ def index_page():
     news_grid = '<div class="grid news">' + "".join(card(a) for a in news) + "</div>" if news else ""
     feat = '<div class="grid">' + "".join(card(a, big=(i == 0)) for i, a in enumerate(featured + rest)) + "</div>"
     topics = "".join(f'<a class="topic" href="{BASE}/{c["key"]}/">{c["icon"]} {c["label"]}</a>' for c in CATS)
-    schema = {"@context": "https://schema.org", "@type": "WebSite", "name": "The AI Post", "url": url,
-              "potentialAction": {"@type": "SearchAction", "target": url + "?q={search_term_string}", "query-input": "required name=search_term_string"}}
+    schema = {"@context": "https://schema.org", "@graph": [
+        {"@type": "WebSite", "name": "The AI Post", "url": url,
+         "potentialAction": {"@type": "SearchAction", "target": url + "?q={search_term_string}", "query-input": "required name=search_term_string"}},
+        {"@type": "CollectionPage", "name": "The AI Post — AI News, Tutorials, Comparisons & Tools", "url": url,
+         "isPartOf": {"@type": "WebSite", "name": "The AI Post", "url": url}},
+        {"@type": "ItemList", "name": "Latest AI articles", "url": url,
+         "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{BASE}/{a['slug']}.html",
+                              "name": a["title"]} for i, a in enumerate(ARTS[:25])]}]}
     pg = head("The AI Post — AI News, Tutorials, Comparisons & Tools, Daily", SITE["tagline"], url, schema) + header() + f"""
 <section class="hero"><div class="container">
   <span class="kicker">⚡ Daily AI publication</span>
@@ -219,7 +240,7 @@ def rss():
 
 def news_sitemap():
     news = [a for a in ARTS if a["category"] == "ai-news"]
-    urls = "".join(f"""<url><loc>{BASE}/{a['slug']}.html</loc><news:news><news:publication><news:name>The AI Post</news:name><news:language>en</news:language></news:publication><news:publication_date>{a['date']}</news:publication_date><news:title>{esc(a['title'])}</news:title></news:news></url>""" for a in news)
+    urls = "".join(f"""<url><loc>{BASE}/{a['slug']}.html</loc><news:news><news:publication><news:name>The AI Post</news:name><news:language>en</news:language></news:publication><news:publication_date>{a['date']}T09:00:00+05:00</news:publication_date><news:title>{esc(a['title'])}</news:title></news:news></url>""" for a in news)
     open(os.path.join(POST, "sitemap-news.xml"), "w").write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">{urls}</urlset>')
 
 def main_sitemap_and_llms():
@@ -246,6 +267,24 @@ def main_sitemap_and_llms():
     l += section
     open(ll, "w").write(l)
 
+def author_page():
+    url = f"{BASE}/authors/muhammad-umar.html"
+    schema = {"@context": "https://schema.org", "@type": "Person", "name": "Muhammad Umar",
+              "url": url, "jobTitle": "Founder, AI Tools Pak",
+              "sameAs": ["https://github.com/omiijutt120", "https://www.linkedin.com/in/umar-jutt", WA],
+              "knowsAbout": ["Artificial Intelligence", "Machine Learning", "NLP", "AI agents", "automation"]}
+    arts = "".join(f'<li><a href="{BASE}/{a["slug"]}.html">{esc(a["title"])}</a> <span class="meta">· {a["date"]}</span></li>' for a in sorted(ARTS, key=lambda x: x["date"], reverse=True))
+    pg = head("Muhammad Umar — Author, The AI Post", "Muhammad Umar is the founder of AI Tools Pak and writes AI news, tutorials and comparisons for The AI Post.", url, schema) + header() + f"""
+<div class="container" style="padding-top:34px">
+  <div class="sec-head"><h2>✍️ Muhammad Umar</h2></div>
+  <p>Founder of <a href="https://aitoolspak.tech">AI Tools Pak</a> — cheap AI subscriptions in Pakistan (PKR prices, WhatsApp support). BS Artificial Intelligence student building AI agents, voice systems and workflow automation for real businesses.</p>
+  <p>Links: <a href="https://github.com/omiijutt120" rel="me">GitHub</a> · <a href="https://www.linkedin.com/in/umar-jutt" rel="me">LinkedIn</a> · <a href="{WA}">WhatsApp</a></p>
+  <div class="sec-head" style="margin-top:28px"><h3>📝 Articles by Muhammad Umar</h3></div>
+  <ul>{arts}</ul>
+</div>""" + footer()
+    os.makedirs(os.path.join(POST, "authors"), exist_ok=True)
+    open(os.path.join(POST, "authors", "muhammad-umar.html"), "w").write(pg)
+
 if __name__ == "__main__":
     built = []
     for a in ARTS:
@@ -253,8 +292,9 @@ if __name__ == "__main__":
     for c in CATS:
         category_page(c)
     index_page()
+    author_page()
     search_index()
     rss()
     news_sitemap()
     main_sitemap_and_llms()
-    print(f"built {len(built)} articles, {len(CATS)} categories, index, search, rss, news-sitemap")
+    print(f"built {len(built)} articles, {len(CATS)} categories, index, author, search, rss, news-sitemap")
