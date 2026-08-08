@@ -674,7 +674,7 @@ index = index.replace(/<section class="section" id="product-guides"[\s\S]*?<\/se
           <h2>Dedicated buying guides for every AI subscription.</h2>
         </div>
         <div class="link-grid">
-${products.map((product) => `          <a class="glass-panel link-card" href="${product.guideUrl}"><strong>${escapeHtml(product.name)} Pakistan</strong><span class="card-price">${product.compareAtPricePkr ? `<del>PKR ${product.compareAtPricePkr.toLocaleString("en-PK")}</del> ` : ""}PKR ${product.sellingPricePkr.toLocaleString("en-PK")}${product.discountPercent ? ` <em class="card-off">${product.discountPercent}% OFF</em>` : ""}</span><span>Price, plan, activation, safety checks and FAQs.</span></a>`).join("\n")}
+${products.map((product) => `          <a class="glass-panel link-card" href="${product.guideUrl}"><strong>${escapeHtml(product.name)} Pakistan</strong><span class="card-price">${product.compareAtPricePkr ? `<del>PKR ${product.compareAtPricePkr.toLocaleString("en-PK")}</del> ` : ""}PKR ${product.sellingPricePkr.toLocaleString("en-PK")}${product.discountPercent ? ` <em class="card-off">${product.discountPercent}% OFF</em>` : ""}</span><span>Price, plan, activation, safety checks and FAQs.</span><span class="card-buy">Buy on WhatsApp →</span></a>`).join("\n")}
         </div>
       </section>`);
 

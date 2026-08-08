@@ -460,6 +460,33 @@ svg {
   vertical-align: middle;
 }
 
+.link-card .card-buy {
+  display: inline-block;
+  margin-top: .6rem;
+  padding: .35rem .8rem;
+  border-radius: .35rem;
+  background: var(--accent);
+  color: #fff;
+  font: 600 .8rem "IBM Plex Mono", monospace;
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.link-card:hover .card-buy {
+  transform: translateX(2px);
+  filter: brightness(1.1);
+}
+
+.request-wa {
+  margin-left: .5rem;
+  white-space: nowrap;
+  background: #16a34a;
+  border-color: #16a34a;
+}
+
+.request-wa:hover {
+  filter: brightness(1.08);
+}
+
 .brand-copy {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
