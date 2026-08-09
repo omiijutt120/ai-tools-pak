@@ -2,7 +2,20 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const skip = new Set([".git", ".deploy-ai-tools-pak", "node_modules"]);
+const skip = new Set([
+  ".git",
+  ".deploy-ai-tools-pak",
+  ".agents",
+  ".claude",
+  "claude-seo",
+  "audit-input-2026-07-19",
+  "audit-site",
+  "aitoolspak.tech-audit",
+  "fixed-v2-work",
+  "release-fixed-v3-deploy",
+  "release-fixed-v3-source",
+  "node_modules"
+]);
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
