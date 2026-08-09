@@ -1,5 +1,7 @@
 # AI Tools Pak
 
+For a fuller factual guide to the site and canonical pages, see: https://aitoolspak.tech/llms-full.txt
+
 AI Tools Pak is a Pakistan-focused catalog for AI tool subscriptions and social media services with PKR pricing, WhatsApp order support, buyer safety checks, refund terms and delivery information.
 
 ## Core Pages
