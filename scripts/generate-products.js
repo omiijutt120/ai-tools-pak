@@ -34,6 +34,8 @@ const PRODUCT_ROUTE_BY_SLUG = {
 };
 const STATIC_SITEMAP_PATHS = [
   "",
+  "agents.md",
+  "llms.txt",
   "canva-pro-pakistan/",
   "veo-3-pakistan/",
   "capcut-pro-pakistan/",
@@ -668,7 +670,7 @@ fs.writeFileSync(
 let index = fs.readFileSync(indexPath, "utf8");
 index = index.replace(/<span><strong[^>]*>[^<]+<\/strong>\s*(?:AI\s*)?tools listed<\/span>/, `<span><strong data-product-count>${products.length}</strong> AI tools listed</span>`);
 index = index.replace(/<ul class="noscript-products">[\s\S]*?<\/ul>/, `<ul class="noscript-products">\n${products.map((product) => `            <li>${product.name} - PKR ${product.sellingPricePkr.toLocaleString("en-PK")}</li>`).join("\n")}\n          </ul>`);
-index = index.replace(/<section class="section" id="product-guides"[\s\S]*?<\/section>/, `<section class="section" id="product-guides" aria-label="Main AI tool product pages">
+index = index.replace(/<section class="section" id="product-guides"[\s\S]*?<\/section>\s*<section class="section" id="quick-order"[\s\S]*?<\/section>/, `<section class="section" id="product-guides" aria-label="Main AI tool product pages">
         <div class="section-heading">
           <p class="eyebrow">Product pages</p>
           <h2>Dedicated buying guides for every AI subscription.</h2>
@@ -676,6 +678,16 @@ index = index.replace(/<section class="section" id="product-guides"[\s\S]*?<\/se
         <div class="link-grid">
 ${products.map((product) => `          <a class="glass-panel link-card" href="${product.guideUrl}"><strong>${escapeHtml(product.name)} Pakistan</strong><span class="card-price">${product.compareAtPricePkr ? `<del>PKR ${product.compareAtPricePkr.toLocaleString("en-PK")}</del> ` : ""}PKR ${product.sellingPricePkr.toLocaleString("en-PK")}${product.discountPercent ? ` <em class="card-off">${product.discountPercent}% OFF</em>` : ""}</span><span>Price, plan, activation, safety checks and FAQs.</span><span class="card-buy">Buy on WhatsApp →</span></a>`).join("\n")}
         </div>
+      </section>
+      <section class="section" id="quick-order" aria-label="Quick WhatsApp order list">
+        <div class="section-heading">
+          <p class="eyebrow">Fast ordering</p>
+          <h2>Order AI tools on WhatsApp.</h2>
+          <p>Pick a tool, tap the WhatsApp button — a pre-filled order message opens instantly. No form, no wait.</p>
+        </div>
+        <ul class="quick-order-list">
+${products.map((product) => `          <li class="glass-panel quick-order-row"><a class="quick-order-name" href="${product.guideUrl}">${escapeHtml(product.name)} Pakistan</a><span class="quick-order-price">PKR ${product.sellingPricePkr.toLocaleString("en-PK")}${product.discountPercent ? ` <em class="card-off">${product.discountPercent}% OFF</em>` : ""}</span><a class="button quick-order-wa" target="_blank" rel="noopener noreferrer" href="https://wa.me/923714549245?text=${encodeURIComponent(`Hi AI Tools Pak, I want to order ${product.name} (PKR ${product.sellingPricePkr.toLocaleString("en-PK")}). Please confirm availability and delivery time.`)}">Order on WhatsApp →</a></li>`).join("\n")}
+        </ul>
       </section>`);
 
 const itemList = {

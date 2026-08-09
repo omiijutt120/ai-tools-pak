@@ -476,6 +476,50 @@ svg {
   filter: brightness(1.1);
 }
 
+.quick-order-list {
+  display: grid;
+  gap: .5rem;
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.quick-order-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: .75rem;
+  border-radius: .5rem;
+  padding: .65rem .9rem;
+}
+
+.quick-order-name {
+  color: var(--ink);
+  font-weight: 600;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.quick-order-price {
+  color: var(--muted);
+  font: 500 .95rem "IBM Plex Mono", monospace;
+  white-space: nowrap;
+}
+
+.quick-order-wa {
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .quick-order-row {
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  }
+  .quick-order-wa {
+    text-align: center;
+  }
+}
+
 .request-wa {
   margin-left: .5rem;
   white-space: nowrap;

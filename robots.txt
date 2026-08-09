@@ -3,8 +3,13 @@ Allow: /
 Disallow: /scripts/
 Disallow: /data/
 Disallow: /*.csv$
-Disallow: /*.md$
 Disallow: /*.log$
+
+# agents.md and llms*.txt are GEO resources for AI crawlers — always allowed.
+Allow: /agents.md$
+Allow: /llms.txt$
+Allow: /llms-full.txt$
+Disallow: /*.md$
 
 # AI / LLM crawlers: full access so ChatGPT, Claude, Perplexity and AI
 # search engines can read the site and cite it in answers (GEO).
