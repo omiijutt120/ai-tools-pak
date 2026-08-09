@@ -7,6 +7,8 @@ const skip = new Set([
   ".deploy-ai-tools-pak",
   ".agents",
   ".claude",
+  "ai-income-lab",
+  "ai-post",
   "claude-seo",
   "audit-input-2026-07-19",
   "audit-site",
@@ -22,7 +24,7 @@ function walk(dir) {
     if (skip.has(entry.name) || entry.name.startsWith(".chrome-")) return [];
     if (/-dom\.html$/.test(entry.name) || /runtime-.*\.html$/.test(entry.name)) return [];
     const full = path.join(dir, entry.name);
-    return entry.isDirectory() ? walk(full) : (entry.name.endsWith(".html") ? [full] : []);
+    return entry.isDirectory() ? walk(full) : (entry.name.endsWith(".html") && !entry.name.startsWith("_") ? [full] : []);
   });
 }
 
@@ -36,7 +38,8 @@ function stripTags(html) {
 
 function localTarget(file, href) {
   if (!href || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:")) return null;
-  const [rawPath, hash = ""] = href.split("#");
+  const [rawPathWithQuery, hash = ""] = href.split("#");
+  const rawPath = rawPathWithQuery.split("?")[0];
   const targetPath = rawPath || path.basename(file);
   let resolved = targetPath.startsWith("/")
     ? path.join(root, targetPath.slice(1))
