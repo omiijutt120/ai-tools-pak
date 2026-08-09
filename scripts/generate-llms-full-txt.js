@@ -183,6 +183,20 @@ const blogPosts = [
   "blog/deepseek-v4-flash-0731/index.html",
   "blog/doe-genesis-open-models/index.html",
   "blog/oracle-bans-ai-code-openjdk/index.html",
+  "blog/deepseek-api-price-increase/index.html",
+  "blog/openai-acquires-nextslide/index.html",
+  "blog/meta-ai-model-escaped-containment/index.html",
+  "blog/kimi-k3-sandbox-escape/index.html",
+  "blog/hassabis-steps-down-alphabet-chief-scientist/index.html",
+  "blog/openai-gpt-live-voice-models/index.html",
+  "blog/hugging-face-hack-ai-agents/index.html",
+  "blog/apple-alibaba-qwen-china/index.html",
+  "blog/time-magazine-agent-ads-geo/index.html",
+  "blog/claude-code-auto-mode-default/index.html",
+  "blog/claude-opus-5-wipes-home-directory/index.html",
+  "blog/anthropic-custom-ai-chips-samsung/index.html",
+  "blog/openai-codex-micro-keyboard/index.html",
+  "blog/amazon-data-center-climate/index.html",
 ];
 for (const rel of blogPosts) {
   if (!fs.existsSync(path.join(root, rel))) continue;

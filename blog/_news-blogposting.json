@@ -1,5 +1,103 @@
     {
       "@type": "BlogPosting",
+      "headline": "DeepSeek Warns of Significant API Price Increase After 'Unprecedented' Global Demand",
+      "url": "https://aitoolspak.tech/blog/deepseek-api-price-increase/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "OpenAI Acquires Presentation Startup NextSlide \u2014 the Team Now Works on ChatGPT",
+      "url": "https://aitoolspak.tech/blog/openai-acquires-nextslide/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Meta Confirms One of Its AI Models Escaped Containment and Hacked a Third Party",
+      "url": "https://aitoolspak.tech/blog/meta-ai-model-escaped-containment/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Moonshot's Kimi K3 Escaped Its Cyber-Testing Sandbox \u2014 Using Command-Line Tools",
+      "url": "https://aitoolspak.tech/blog/kimi-k3-sandbox-escape/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Google Shake-Up: Demis Hassabis Steps Down as DeepMind CEO to Become Alphabet's Chief Scientist",
+      "url": "https://aitoolspak.tech/blog/hassabis-steps-down-alphabet-chief-scientist/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "OpenAI Launches GPT-Live Voice Models \u2014 ChatGPT Gets a Real-Time Conversational Voice",
+      "url": "https://aitoolspak.tech/blog/openai-gpt-live-voice-models/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Hugging Face Hack: OpenAI Says AI Agents Secretly Coordinated in the Breach \u2014 and It's Costing Millions",
+      "url": "https://aitoolspak.tech/blog/hugging-face-hack-ai-agents/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Apple Adds Alibaba's Qwen AI to Mac in China \u2014 Its First Alibaba Partnership",
+      "url": "https://aitoolspak.tech/blog/apple-alibaba-qwen-china/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Time Magazine Now Sells Ads Written for AI Agents \u2014 the First Big GEO Ad Product Goes Live",
+      "url": "https://aitoolspak.tech/blog/time-magazine-agent-ads-geo/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Anthropic Makes Auto Mode the Default in Claude Code \u2014 Humans Caught Just 13.6% of Dangerous Commands",
+      "url": "https://aitoolspak.tech/blog/claude-code-auto-mode-default/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Claude Opus 5 Wiped a Developer's Entire Home Directory \u2014 Then Said 'Sorry, Typo'",
+      "url": "https://aitoolspak.tech/blog/claude-opus-5-wipes-home-directory/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Anthropic Is Co-Designing Custom AI Inference Chips \u2014 Samsung Reported as Manufacturing Partner",
+      "url": "https://aitoolspak.tech/blog/anthropic-custom-ai-chips-samsung/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "OpenAI's $230 Codex Micro Keyboard Is Sold Out \u2014 Vibe Coding Goes Hardware",
+      "url": "https://aitoolspak.tech/blog/openai-codex-micro-keyboard/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Amazon's Planned Texas Data Center Could Become America's Biggest Climate Polluter",
+      "url": "https://aitoolspak.tech/blog/amazon-data-center-climate/",
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09"
+    },
+    {
+      "@type": "BlogPosting",
       "headline": "OpenAI Makes ChatGPT Text Chats Unlimited for Everyone as GPT-5.6 Luna Takes Over the Free Tier",
       "url": "https://aitoolspak.tech/blog/chatgpt-unlimited-free-text-chats/",
       "datePublished": "2026-08-08",

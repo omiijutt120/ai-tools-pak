@@ -15,8 +15,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = json.load(open(os.path.join(ROOT, "data", "news-articles.json")))
 ARTS = DATA["articles"]
 BASE = "https://aitoolspak.tech"
-PUB = datetime.date.today().isoformat()
-PUB_LABEL = datetime.date.today().strftime("%B %-d, %Y")
+def pub_label(iso):
+    return datetime.date.fromisoformat(iso).strftime("%B %-d, %Y")
 
 def esc(s): return html.escape(s, quote=True)
 
@@ -97,6 +97,11 @@ def head(title, desc, url, schema):
         s += '    <script type="application/ld+json">' + json.dumps(sch, ensure_ascii=False) + "</script>\n"
     return s
 
+def md_plain(s):
+    # strip markdown link syntax and emphasis for plain-text contexts (JSON-LD)
+    s = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", s)
+    return s.replace("**", "").replace("*", "")
+
 def blocks_html(blocks):
     out = []
     for b in blocks:
@@ -166,7 +171,7 @@ def page(a):
     }
     faq_schema = {"@context": "https://schema.org", "@type": "FAQPage",
                   "mainEntity": [{"@type": "Question", "name": item["q"],
-                                  "acceptedAnswer": {"@type": "Answer", "text": item["a"]}} for item in faq]}
+                                  "acceptedAnswer": {"@type": "Answer", "text": md_plain(item["a"])}} for item in faq]}
     return (head(a["title"], a["meta"], url, [article_schema, web_schema, faq_schema])
             + header()
             + f"""<main>
@@ -174,7 +179,7 @@ def page(a):
         <p class="page-kicker">AI News</p>
         <h1>{esc(a['title'])}</h1>
         <p class="hero-copy">{md(a['hero'])}</p>
-        <p class="date-note">Published: {PUB_LABEL}, 2026. News date: {esc(a['newsDate'])}. Reviewed by AI Tools Pak Editorial.</p>
+        <p class="date-note">Published: {pub_label(a['date'])}. News date: {esc(a['newsDate'])}. Reviewed by AI Tools Pak Editorial.</p>
       </section>
       <section class="page-layout">
         <article class="glass-panel page-card article-body">
@@ -261,7 +266,7 @@ def main():
         cards.append(f"""            <li class="post-card">
               <h3><a href="{slug}/">{esc(a['title'])}</a></h3>
               <p>{esc(a['meta'])}</p>
-              <p class="date-note">Published: {PUB_LABEL}, 2026. News date: {esc(a['newsDate'])}.</p>
+              <p class="date-note">Published: {pub_label(a['date'])}. News date: {esc(a['newsDate'])}.</p>
             </li>""")
         blogposting.append(f"""    {{
       "@type": "BlogPosting",
