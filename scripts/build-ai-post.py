@@ -251,13 +251,10 @@ def main_sitemap_and_llms():
         f"{BASE}/terms.html", f"{BASE}/cookie-policy.html", f"{BASE}/editorial-policy.html"]
     urls_xml = "".join(f'\n  <url>\n    <loc>{u}</loc>\n    <lastmod>2026-08-07</lastmod>\n  </url>' for u in urls)
     s = open(sm).read()
-    marker = "https://aitoolspak.tech/ai-post/"
-    i = s.find(marker)
-    if i == -1:
-        s = s.replace("</urlset>", urls_xml + "\n</urlset>")
-    else:
-        block_start = s.rfind("  <url>", 0, i)
-        s = s[:block_start].rstrip() + "\n" + urls_xml + "\n</urlset>"
+    # Drop any previously-generated ai-post <url> blocks, then append the fresh
+    # block before </urlset>. Other entries (products, blog, news) are untouched.
+    s = re.sub(r'\n  <url>\n    <loc>' + re.escape(BASE) + r'/[^<]*</loc>\n    <lastmod>[^<]*</lastmod>\n  </url>', "", s)
+    s = s.replace("</urlset>", urls_xml + "\n</urlset>")
     open(sm, "w").write(s)
     ll = os.path.join(repo, "llms.txt")
     l = open(ll).read()

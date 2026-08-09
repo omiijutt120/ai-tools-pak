@@ -188,5 +188,11 @@ lines.push("Support hours: 11:00 AM to 11:00 PM Pakistan time");
 lines.push("");
 
 const out = lines.join("\n");
-fs.writeFileSync(path.join(root, "llms.txt"), out, "utf8");
-console.log(`llms.txt written: ${products.length} products, ${out.split("\n").length} lines`);
+// Preserve the "## The AI Post" section appended by scripts/build-ai-post.py so
+// regenerating llms.txt never drops it (keeps this generator idempotent).
+const llmsPath = path.join(root, "llms.txt");
+const existingLlms = fs.existsSync(llmsPath) ? fs.readFileSync(llmsPath, "utf8") : "";
+const aiPostSection = existingLlms.match(/\n## The AI Post \(AI publication\)[\s\S]*$/);
+const final = aiPostSection ? out.replace(/\s*$/, "\n") + aiPostSection[0] : out;
+fs.writeFileSync(llmsPath, final, "utf8");
+console.log(`llms.txt written: ${products.length} products, ${final.split("\n").length} lines`);

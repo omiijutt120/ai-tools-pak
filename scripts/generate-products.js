@@ -724,13 +724,30 @@ const productGraph = {
 index = updateCatalogJsonLd(index, itemList, productGraph);
 fs.writeFileSync(indexPath, index, "utf8");
 
-const sitemapPaths = [...new Set([...STATIC_SITEMAP_PATHS, ...products.map((product) => product.guideUrl)])].sort();
+// Merge sitemap: keep URLs added by other pipelines (ai-post, news articles,
+// manual entries) so regenerating products never drops them, and preserve each
+// existing URL's lastmod so freshness signals survive regeneration.
+const existingSitemap = fs.existsSync(sitemapPath) ? fs.readFileSync(sitemapPath, "utf8") : "";
+const existingByLoc = new Map(
+  [...existingSitemap.matchAll(/<url>\s*<loc>(https:\/\/[^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)]
+    .map((m) => [m[1], m[2]])
+);
+const basePaths = [...new Set([...STATIC_SITEMAP_PATHS, ...products.map((product) => product.guideUrl)])];
+const baseLocs = new Set(basePaths.map((urlPath) => `${SITE_URL}/${urlPath}`));
+const extraPaths = [...existingByLoc.keys()]
+  .filter((loc) => !baseLocs.has(loc))
+  .map((loc) => loc.replace(`${SITE_URL}/`, ""));
+const sitemapPaths = [...new Set([...basePaths, ...extraPaths])].sort();
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapPaths.map((urlPath) => `  <url>
-    <loc>${SITE_URL}/${urlPath}</loc>
-    <lastmod>${LAST_VERIFIED}</lastmod>
-  </url>`).join("\n")}
+${sitemapPaths.map((urlPath) => {
+  const loc = `${SITE_URL}/${urlPath}`;
+  const lastmod = existingByLoc.get(loc) || LAST_VERIFIED;
+  return `  <url>
+    <loc>${loc}</loc>
+    <lastmod>${lastmod}</lastmod>
+  </url>`;
+}).join("\n")}
 </urlset>
 `;
 fs.writeFileSync(sitemapPath, sitemap, "utf8");
