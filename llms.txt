@@ -163,11 +163,14 @@ WhatsApp support: +92 371 454 9245
 Email: support@aitoolspak.com
 Support hours: 11:00 AM to 11:00 PM Pakistan time
 
+
 ## The AI Post (AI publication)
 
 The AI Post covers AI news, tutorials, comparisons, reviews and free tools. Articles are original and practical.
 
 - Home: https://aitoolspak.tech/ai-post/
+- OpenAI Pauses Astra Model Over Critical Cybersecurity Risk — First Time a Frontier Lab Has Halted Development Mid-Flight: https://aitoolspak.tech/ai-post/openai-pauses-astra-critical-cyber-risk.html
+- How to Build a Production AI Agent Stack in 2026: The Complete Architecture (Free Tier Edition): https://aitoolspak.tech/ai-post/how-to-build-production-ai-agent-stack-2026.html
 - WhatsApp Launches Calling API for Businesses: Inbound Calls Free, AI Agents Ready: https://aitoolspak.tech/ai-post/whatsapp-calling-api-for-businesses.html
 - DeepSeek V4's Free API Tier Is Real — and Developers Are Building With It: https://aitoolspak.tech/ai-post/deepseek-v4-free-api-for-developers.html
 - How to Make Money with AI in 2026: 9 Real Income Paths, Ranked: https://aitoolspak.tech/ai-post/how-to-make-money-with-ai-2026.html
