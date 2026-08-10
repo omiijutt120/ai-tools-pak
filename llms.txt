@@ -1,7 +1,5 @@
 # AI Tools Pak
 
-For a fuller factual guide to the site and canonical pages, see: https://aitoolspak.tech/llms-full.txt
-
 AI Tools Pak is a Pakistan-focused catalog for AI tool subscriptions and social media services with PKR pricing, WhatsApp order support, buyer safety checks, refund terms and delivery information.
 
 ## Core Pages
@@ -186,3 +184,5 @@ The AI Post covers AI news, tutorials, comparisons, reviews and free tools. Arti
 - 13 Free AI Tools That Are Actually Free in 2026 (No Card Required): https://aitoolspak.tech/ai-post/free-ai-tools-that-are-actually-free-2026.html
 - AMD Acquires Taalas to Bake AI Models Into Silicon — Inference Gets a Hardware Reset: https://aitoolspak.tech/ai-post/amd-acquires-taalas-inference-silicon.html
 - Cloud LLM APIs vs Local Inference in 2026: Which One Should Your Agent Run On?: https://aitoolspak.tech/ai-post/cloud-llm-api-vs-local-inference.html
+- Runway vs Kling vs Veo 3 vs Pika: Which AI Video Generator Should You Actually Pay For?: https://aitoolspak.tech/ai-post/runway-vs-kling-vs-veo3-vs-pika-2026.html
+- Google NotebookLM Review: Still the Best Free AI Research Tool in 2026?: https://aitoolspak.tech/ai-post/google-notebooklm-review-2026.html
