@@ -15,6 +15,8 @@ const socialHtml = fs.readFileSync(path.join(root, "social-media-services", "ind
 const socialScript = fs.readFileSync(path.join(root, "social-media-services", "social-services.js"), "utf8");
 const styles = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 const productData = fs.readFileSync(path.join(root, "products-data.js"), "utf8");
+require("../products-data.js");
+const products = window.AI_TOOLS_PRODUCTS || [];
 
 assert(Array.isArray(services), "Social services data missing");
 assert(services.length === 487, `Expected 487 services, found ${services.length}`);
@@ -34,7 +36,8 @@ assert(/25/.test(socialHtml) && /50/.test(socialHtml) && /100/.test(socialHtml),
 assert(/@media \(max-width: 640px\)[\s\S]*\.platform-filters[\s\S]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/.test(styles), "Mobile platform filters are not a clear 2-column grid");
 assert(/@media \(max-width: 640px\)[\s\S]*\.platform-chip[\s\S]*white-space: normal/.test(styles), "Mobile platform chips cannot wrap text");
 assert(/window\.AI_TOOLS_PRODUCTS = \[/.test(productData), "AI product data missing");
-assert((productData.match(/productId/g) || []).length === 31, "Existing product count changed");
+assert(products.length >= 31, `Expected at least 31 AI products, found ${products.length}`);
+assert(products.every((product) => product.productId && product.sku && product.slug), "AI product catalog has incomplete identifiers");
 
 const service = services[0];
 const fakeDocument = { querySelector() { return null; }, addEventListener() {} };

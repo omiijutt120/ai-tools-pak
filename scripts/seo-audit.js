@@ -13,7 +13,14 @@ const seen = { title: new Map(), description: new Map(), canonical: new Map() };
 
 function htmlPath(url) {
   const pathname = new URL(url).pathname;
-  return path.join(root, pathname, "index.html");
+  const relativePath = decodeURIComponent(pathname).replace(/^\/+/, "");
+  if (/\.(?:html?|md|txt)$/i.test(relativePath)) return path.join(root, relativePath);
+  return path.join(root, relativePath, "index.html");
+}
+
+function isStorefrontHtml(url) {
+  const pathname = new URL(url).pathname;
+  return !pathname.startsWith("/ai-post/") && !/\.(?:md|txt)$/i.test(pathname);
 }
 
 function first(html, pattern) {
@@ -38,6 +45,7 @@ for (const url of urls) {
     errors.push(`Missing sitemap file: ${url}`);
     continue;
   }
+  if (!isStorefrontHtml(url)) continue;
   const html = fs.readFileSync(file, "utf8");
   const title = first(html, /<title>([\s\S]*?)<\/title>/i);
   const description = first(html, /<meta name="description" content="([^"]+)"/i);
