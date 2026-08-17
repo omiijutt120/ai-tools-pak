@@ -112,7 +112,7 @@ def body_blocks(a):
                 tr = "".join("<tr>" + "".join(f"<td>{esc(x)}</td>" for x in row) + "</tr>" for row in v["rows"])
                 out.append(f'<table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>')
             elif k == "cta":
-                out.append(f'<div class="cta-box"><h3>🤖 Get it built for your business</h3><p>{esc(v)}</p><a href="{WA}" target="_blank" rel="noopener">💬 Chat on WhatsApp</a></div>')
+                out.append(f'<div class="cta-box"><h3>Get it built for your business</h3><p>{esc(v)}</p><a href="{WA}" target="_blank" rel="noopener">Chat on WhatsApp</a></div>')
             elif k == "faq":
                 items = "".join(
                     f'<details><summary>{esc(q)}</summary><p>{esc(ans)}</p></details>'

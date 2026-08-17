@@ -147,6 +147,21 @@ lines.push(`- Perplexity Pro price in Pakistan (PKR): ${SITE_URL}/blog/perplexit
 lines.push(`- QuillBot Premium price in Pakistan (PKR): ${SITE_URL}/blog/quillbot-premium-price-pakistan/`);
 lines.push(`- How to automate WhatsApp with AI in Pakistan: ${SITE_URL}/blog/how-to-automate-whatsapp-with-ai-pakistan/`);
 lines.push("");
+lines.push("## AI Income Lab");
+lines.push("");
+lines.push("The AI Income Lab provides practical guides and case studies on making money with AI, building AI agencies, and AI-powered side hustles. All content is original and based on real-world experience.");
+lines.push("");
+lines.push(`- Home: ${SITE_URL}/ai-income-lab/`);
+lines.push(`- About: ${SITE_URL}/ai-income-lab/about.html`);
+lines.push(`- AI Tools That Save Small Business Money: ${SITE_URL}/ai-income-lab/ai-tools-that-save-small-business-money.html`);
+lines.push(`- Build AI Voice Agent for Business: ${SITE_URL}/ai-income-lab/build-ai-voice-agent-business.html`);
+lines.push(`- ChatGPT Side Hustles That Pay: ${SITE_URL}/ai-income-lab/chatgpt-side-hustles.html`);
+lines.push(`- Contact: ${SITE_URL}/ai-income-lab/contact.html`);
+lines.push(`- How to Make Money with AI Tools in Pakistan: ${SITE_URL}/ai-income-lab/how-to-make-money-with-ai-2026.html`);
+lines.push(`- Privacy Policy: ${SITE_URL}/ai-income-lab/privacy-policy.html`);
+lines.push(`- Start AI Automation Agency: ${SITE_URL}/ai-income-lab/start-ai-automation-agency.html`);
+
+lines.push("");
 lines.push("## Latest AI News");
 lines.push("");
 lines.push(`- ChatGPT unlimited free text chats + GPT-5.6 Luna: ${SITE_URL}/blog/chatgpt-unlimited-free-text-chats/`);

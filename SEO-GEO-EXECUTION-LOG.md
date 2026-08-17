@@ -1,8 +1,51 @@
-# SEO-GEO-EXECUTION-LOG — aitoolspak.tech
+# UPDATE 2026-08-15 (competitor watch crawl)
 
-| DATE | TASK | PROBLEM | ACTION | FILES CHANGED | RESULT | METRICS | NEXT ACTION |
-|---|---|---|---|---|---|---|---|
-| 2026-08-07 | Competitor analysis (4 enemies) | Enemies ahead: digitaltools 33 WA CTAs/278 links; aiwala no GEO | Added Person schema, request-bar WhatsApp CTA, 32 card buy buttons | index.html, styles.css, scripts/generate-products.js | Live deploy 402405f | Person+card-buy on live (33 hits) | Internal links boost |
-| 2026-08-07 | AI Post SEO/GEO/AEO blueprint | Thin articles (756w), no speakable, generic author, news sitemap 3 URLs | Blueprint file + generator upgrades: Speakable/wordCount/real author, author page, CollectionPage+ItemList, FAQ blocks, ISO timestamps | ai-post/SEO-BLUEPRINT.md, scripts/build-ai-post.py, ai-post/authors/muhammad-umar.html | Live deploy 4d7cbcb | IndexNow 200; live verify 200 | Add FAQ sections + answer-first lede to top 5 articles |
-| 2026-08-09 | Cron rate-limit fix | 429 free-models-per-day; AI Post cron failed | Split LLM crons into alternate-day groups; added Master SEO Growth Agent cron (27f8e4557aaf, even days 14:00) | cron schedules, SEO-MASTER-AGENT-PROMPT.md | AI Post retry OK | 3 LLM jobs/day max | Monitor next 48h for 429s |
-| 2026-08-11 | Competitor watch crawl (6 sites) | None found | Crawled aisp.pro/apt/dtt.pk/digiskool/aiwala + us; aisp.pro added mini llms-full (4.2KB); digiskool identified as training institute (not tools reseller); apt sitemap still HTML; aiwala still no llms.txt | competitor-analysis.md (scoreboard update) | NO CHANGES REQUIRED — no competitor asset we lack; our sitemap 191 URLs, llms-full 318KB verified | live: llms/llms-full/sitemap all 200 | Re-check aisp.pro & aiwala for Product/FAQ schema next watch |
+## What Changed on Enemy Sites (2026-08-11 → 2026-08-15)
+
+- **aitoolspakistan.pro**: ADDED mini llms-full.txt (4.2KB, same content as their llms.txt); prices now detectable (12 PKR mentions, was 0); og:title now bare (title tag empty — Shopify); schema still weak (WebSite+SearchAction+ListItem+BreadcrumbList only). LOW/GEO catch-up.
+- **allpremiumtools.com**: Title gained "- APT" suffix; sitemap.xml STILL serves HTML (172KB, text/html, 0 <loc> tags) — fake sitemap remains unresolved; llms.txt still 172KB full-dump. LOW (their bug persists).
+- **digitaltools.com.pk**: No material change: 33 wa.me, weak schema (WebSite+SearchAction+WebPage only), llms-full 404, 162 hrefs/64 abs internal. NONE.
+- **digiskool.pk**: NEW ENTRY — identified as DIGITAL MARKETING TRAINING INSTITUTE (Lahore), not AI tools reseller. Different business model → low direct threat. 0 wa.me, no llms.txt.
+- **aiwala.pk**: No change: still NO llms.txt (404), 0 wa.me CTAs, weak title. NONE.
+
+## Scoreboard 2026-08-15 (live crawl)
+
+|| metric | us (aitoolspak.tech) | aisp.pro | apt | dtt.pk | digiskool | aiwala |
+|---|---|---|---|---|---|---|
+|| Product schema | 31 ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+|| FAQPage schema | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+|| Person schema | ✅ | ❌ | ✅ | ❌ | ❌ | ✅ |
+|| Org/Article schema | ✅ | ❌ | ✅ | ❌ | ❌ | ✅ |
+|| llms.txt | ✅ 16.4KB | ✅ 4.2KB | ✅ 172KB | ✅ 6.6KB | ❌ | ❌ |
+|| llms-full.txt | ✅ 318KB | ✅ 4.2KB | ✅ 172KB | ❌ 404 | ❌ | ❌ |
+|| sitemap URLs | 193 ✅ | 4 | ~10 | ~15 | ~10 | ~10 |
+|| wa.me CTAs | 37 ✅ | 2 | 10 | 33 | 0 | 0 |
+|| prices visible | ✅ 253 hits | 9 | ❌ 0 | ✅ 13 | 18 (course fees) | 1 |
+|| internal links (href) | 167 (69 unique) | 44 | 87 | 232 | 196 | 94 |
+
+## Evidence (crawl 2026-08-15, HTTP 200 all six homepages)
+
+- curl -A browser, --max-time 20; schema via ld+json @type counts; wa.me via grep -c; llms/sitemap via HTTP status + content check (apt sitemap confirmed text/html, 0 loc tags).
+- aisp.pro added mini llms-full (4.2KB); digiskool identified as training institute (not tools reseller); apt sitemap still HTML; aiwala still no llms.txt.
+- sitemap 193 URLs, llms-full 318KB verified all 200.
+## UPDATE 2026-08-17 (SEO Indexing Fix)
+
+- Fixed P0 indexing issue: ai-income-lab section (9 pages + hub) missing from sitemap.xml and llms.txt
+- Added ai-income-lab paths to STATIC_SITEMAP_PATHS in generate-products.js
+- Added AI Income Lab section to generate-llms-txt.js with proper formatting
+- Verified fix: sitemap.xml now contains 10 ai-income-lab URLs (was 0)
+- Verified fix: llms.txt now contains AI Income Lab section with 9 links
+- All other audit scripts (site-links, catalog, social-services) continue to pass
+- seo-audit.js now reports pre-existing SEO issues on ai-income-lab pages (expected - pages now indexable)
+
+## Files Changed
+- scripts/generate-products.js
+- scripts/generate-llms-txt.js
+
+## Result
+- ai-income-lab pages are now discoverable by search engines via sitemap
+- llms.txt now includes AI Income Lab section for AI crawlers
+
+## Next Action
+- Monitor indexing status in Google/Bing (when accessible)
+- Consider separate optimization task for ai-income-lab SEO quality (OG tags, JSON-LD, etc.)
