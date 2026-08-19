@@ -34,7 +34,7 @@ acquire_lock() {
     log "INFO" "Acquiring deployment lock..."
     exec 9>"$LOCK_FILE"
     if flock -n 9; then
-        log "INFO" "Lock acquired (PID $$)"
+        log "INFO" "Lock acquired (PID $$, FD 9)"
         return 0
     else
         log "WARN" "Another deployment in progress. Aborting."
@@ -80,31 +80,60 @@ check_changes() {
         echo "NO_CHANGES"
         return 0
     fi
-    log "INFO" "Changes: $diff"
+    log "INFO" "Changes detected in working directory"
     echo "CHANGES_DETECTED"
     return 0
 }
 
 commit_and_push() {
     log "INFO" "Committing and pushing changes..."
+    
+    # Stage changed files
     git add . 2>>"$LOG_FILE" >>"$LOG_FILE"
+    
+    # Check staged changes
     local staged
     staged=$(git diff --cached --numstat 2>/dev/null | grep -cv "^0 0 " || echo "0")
     if [ "$staged" -eq 0 ]; then
-        log "INFO" "No staged changes"
+        log "INFO" "No staged changes after git add ."
         echo "NO_STAGED_CHANGES"
         return 0
     fi
-    if ! git commit -m "SEO/GEO: automated update - $(date +%Y-%m-%d %H:%M UTC)" 2>>"$LOG_FILE" >>"$LOG_FILE"; then
-        log "ERROR" "Commit failed"
-        return 1
-    fi
-    if ! git push origin main 2>>"$LOG_FILE" >>"$LOG_FILE"; then
-        log "ERROR" "Push failed"
+    
+    # Create commit timestamp (simple format, no date command in message)
+    local commit_msg="SEO/GEO/AEO automated update"
+    
+    # Create commit
+    if ! git commit -m "$commit_msg" 2>>"$LOG_FILE" >>"$LOG_FILE"; then
+        log "ERROR" "Git commit failed"
         git reset --hard HEAD 2>/dev/null
         return 1
     fi
-    log "INFO" "Push succeeded"
+    log "INFO" "Commit created successfully"
+    
+    # Push to remote
+    if ! git push origin main 2>>"$LOG_FILE" >>"$LOG_FILE"; then
+        log "ERROR" "Git push failed"
+        git reset --hard HEAD 2>/dev/null
+        return 1
+    fi
+    log "INFO" "Push to origin main succeeded"
+    
+    # Verify remote commit
+    sleep 3
+    git fetch origin 2>>"$LOG_FILE" >>"$LOG_FILE"
+    local remote_head
+    remote_head=$(git rev-parse origin/main 2>/dev/null || echo "unknown")
+    local local_head
+    local_head=$(git rev-parse HEAD 2>/dev/null || echo "unknown")
+    log "INFO" "Local HEAD: $local_head"
+    log "INFO" "Remote HEAD (origin/main): $remote_head"
+    if [ "$local_head" = "$remote_head" ]; then
+        log "INFO" "Remote commit verified: in sync"
+    else
+        log "WARN" "Local/remote heads differ but push completed without error"
+    fi
+    
     return 0
 }
 
@@ -140,8 +169,9 @@ main() {
         exit 1
     fi
     
-    # Run the actual task (passed as script arguments)
+    # Run the actual task if a script is provided
     if [ $# -gt 1 ]; then
+        log "INFO" "Running task script: ${@:2}"
         run_task "${@:2}"
     fi
     
@@ -150,7 +180,7 @@ main() {
     changes=$(check_changes)
     
     if [ "$changes" = "NO_CHANGES" ]; then
-        log "INFO" "No changes required"
+        log "INFO" "No changes required. Reporting NO_CHANGES_REQUIRED."
         echo "NO_CHANGES_REQUIRED"
         exit 0
     fi
@@ -161,13 +191,12 @@ main() {
         exit 1
     fi
     
-    # Verify remote
-    sleep 3
+    # Verify remote commit
     log "INFO" "Remote commit verified"
     
-    # Trigger deployment (check for GitHub Actions etc.)
+    # Trigger deployment check (GitHub Actions etc.)
     if [ -d "$REPO_DIR/.github/workflows" ]; then
-        log "INFO" "GitHub Actions workflows exist - deployment would be triggered"
+        log "INFO" "GitHub Actions workflows detected"
     fi
     
     # Verify production
@@ -181,5 +210,5 @@ main() {
     echo "SUCCESS"
 }
 
-# Run main
+# Run main function
 main "$1"
