@@ -1,6 +1,6 @@
 # Backlink authority report — baseline
 
-**Report date:** 2026-08-19  
+**Report date:** 2026-08-19
 **Scope:** Ethical backlink infrastructure and first research seed list.
 
 ## Verified baseline
