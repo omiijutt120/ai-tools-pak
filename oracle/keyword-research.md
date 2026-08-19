@@ -1,3 +1,69 @@
+## 2026-08-19
+|
+ 
+K
+e
+y
+w
+o
+r
+d
+ 
+|
+ 
+I
+n
+t
+e
+n
+t
+ 
+|
+ 
+M
+a
+p
+p
+e
+d
+ 
+T
+a
+r
+g
+e
+t
+ 
+|
+|
+ 
+-
+-
+-
+ 
+|
+ 
+-
+-
+-
+ 
+|
+ 
+-
+-
+-
+ 
+|
+| chatgpt plus price in pakistan | transactional | /blog/chatgpt-plus-price-pakistan/ |
+| canva pro cost in pkr | transactional | /blog/canva-pro-price-pakistan/ |
+| best ai tools pakistan 2026 | informational | gap (best-ai-tools-pakistan-2026) |
+| veo 3 price in pakistan | transactional | /blog/veo-3-price-pakistan/ |
+| cheap api credits pakistan | transactional | gap (cheap-api-credits-pakistan) |
+| claude api credits pakistan | transactional | /blog/claude-api-credits-pakistan/ |
+| grok subscription price pakistan | transactional | /blog/grok-price-pakistan/ |
+| ai tools for freelancers pakistan | informational | /blog/best-ai-tools-freelancers-pakistan/ |
+| ai subscription debit card pakistan | transactional | /blog/pay-ai-tools-debit-card-pakistan/ |
+| gemini pro price pakistan | transactional | /blog/gemini-pro-price-pakistan/ |
 # Keyword Research — AI Tools Pak
 
 Daily research log of high-value search phrases for Pakistani searchers, with intent and the target page (existing or gap). API-credits keywords are the site's orders focus (see `oracle/api-credits-growth-strategy.md`) and are flagged **[API]** — gaps in this cluster get first priority in the content backlog.

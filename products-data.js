@@ -926,7 +926,7 @@ window.AI_TOOLS_PRODUCTS = [
     "requiresSupplierConfirmation": false,
     "initials": "RM",
     "guideUrl": "runway-ml-max-pakistan/"
-  }
+  },
 
   {
     "productId": "veo-3-ultra-extension",
@@ -1449,7 +1449,7 @@ window.AI_TOOLS_PRODUCTS = [
     "requiresSupplierConfirmation": false,
     "initials": "GP",
     "guideUrl": "gamma-pro-1-year-pakistan/"
-  }
+  },
 
   {
     "productId": "canva-pro-edu-1-year",
