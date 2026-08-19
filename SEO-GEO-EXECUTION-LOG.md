@@ -49,3 +49,60 @@
 ## Next Action
 - Monitor indexing status in Google/Bing (when accessible)
 - Consider separate optimization task for ai-income-lab SEO quality (OG tags, JSON-LD, etc.)
+
+
+---
+UPDATE 2026-08-18 (autonomous SEO operator)
+
+## Website Health
+- Homepage: 200 OK
+- sitemap.xml: 200 OK (191 URLs including ai-income-lab)
+- robots.txt: 200 OK
+- llms.txt: 200 OK (184 lines, AI Income Lab section present)
+- llms-full.txt: 200 OK (5543 lines, 318KB)
+- All product/service pages: 200 OK
+
+## Indexing Status
+- ai-income-lab: 10 URLs in sitemap.xml (was 0 before 2026-08-17 fix)
+- AI Income Lab section present in llms.txt (9 links)
+- All ai-income-lab pages now indexable (P0 indexing fix from 2026-08-17 implemented)
+
+## Search Performance
+- DDG ranks: chatgpt_plus rank 2 (blog), rank 7 (product) - monitor
+- claude_pro rank 8 - stable
+- gemini_pro unverifiable (DDG captcha throttling)
+- Social service prices tracked but throttled
+
+## Top Opportunities
+1. **ai-income-lab SEO quality** - Pages are now indexable but have missing og:description, og:image, twitter:card on individual pages; no JSON-LD on contact.html and privacy-policy.html (addressed in this run)
+2. **social-services-data.js 358KB > 100KB** - Persistent performance flag; consider optimization
+3. **GSC verification** - Not available on machine (owner action required)
+
+## Changes Made
+- `ai-income-lab/contact.html`: Added Open Graph meta tags (og:title, og:description, og:type, og:url, og:image, twitter:card) and JSON-LD FAQPage schema
+- `ai-income-lab/privacy-policy.html`: Added Open Graph meta tags (og:title, og:description, og:type, og:url, og:image, twitter:card) and JSON-LD WebPage schema
+- Git commit: "SEO: add Open Graph schema and JSON-LD to ai-income-lab contact & privacy pages"
+- Git push: origin main + origin main:master
+- IndexNow submission: /ai-income-lab/contact.html and /ai-income-lab/privacy-policy.html
+
+## Changes Not Made
+- Did not reorganize sitemap.xml (pre-existing change from generate-products.js, not my intentional change)
+- Did not modify llms.txt (pre-existing change from generate-llms-txt.js, not my intentional change)
+- Did not touch payment/checkout/auth pages (per safety rules)
+- Did not change models/providers/config (owner-managed, free models only)
+- Did not make any competitor-copying changes or churn pages to mirror competitor structure (per master prompt §19, §25 — evidence does not justify random daily changes)
+
+## Git
+- Branch: main (ahead of origin/main by 1 commit)
+- Commit: d0a53db SEO: add Open Graph schema and JSON-LD to ai-income-lab contact & privacy pages
+- Push: origin main + origin main:master verified via deployments API (200)
+
+## Risks
+- Low risk: changes are additive (adding meta tags and schema, not modifying existing content structure)
+- Rollback possible by reverting commit d0a53db
+- No payment/checkout/auth changes
+
+## Monitoring
+- Metric to improve: ai-income-lab page CTR in search results and social shares
+- When: Check after next Google crawl (typically 3-7 days)
+- Also monitor: IndexNow submission confirmation, DDG rank stability, social-services-data.js size
