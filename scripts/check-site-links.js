@@ -2,29 +2,14 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const skip = new Set([
-  ".git",
-  ".deploy-ai-tools-pak",
-  ".agents",
-  ".claude",
-  "ai-income-lab",
-  "ai-post",
-  "claude-seo",
-  "audit-input-2026-07-19",
-  "audit-site",
-  "aitoolspak.tech-audit",
-  "fixed-v2-work",
-  "release-fixed-v3-deploy",
-  "release-fixed-v3-source",
-  "node_modules"
-]);
+const skip = new Set([".git", ".deploy-ai-tools-pak", "node_modules", "ai-income-lab", "ai-post"]);
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     if (skip.has(entry.name) || entry.name.startsWith(".chrome-")) return [];
-    if (/-dom\.html$/.test(entry.name) || /runtime-.*\.html$/.test(entry.name)) return [];
+    if (/-dom\.html$/.test(entry.name) || /runtime-.*\.html$/.test(entry.name) || entry.name.startsWith("_")) return [];
     const full = path.join(dir, entry.name);
-    return entry.isDirectory() ? walk(full) : (entry.name.endsWith(".html") && !entry.name.startsWith("_") ? [full] : []);
+    return entry.isDirectory() ? walk(full) : (entry.name.endsWith(".html") ? [full] : []);
   });
 }
 
@@ -38,9 +23,8 @@ function stripTags(html) {
 
 function localTarget(file, href) {
   if (!href || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:")) return null;
-  const [rawPathWithQuery, hash = ""] = href.split("#");
-  const rawPath = rawPathWithQuery.split("?")[0];
-  const targetPath = rawPath || path.basename(file);
+  const [rawPath, hash = ""] = href.split("#");
+  const targetPath = rawPath.split("?")[0] || path.basename(file);
   let resolved = targetPath.startsWith("/")
     ? path.join(root, targetPath.slice(1))
     : path.resolve(path.dirname(file), targetPath);

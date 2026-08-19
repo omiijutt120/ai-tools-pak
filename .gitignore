@@ -36,3 +36,5 @@ seo-*-dom.html
 home-runtime-*
 claude-seo/
 __pycache__/
+
+.deploy.lock

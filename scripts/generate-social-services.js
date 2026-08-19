@@ -92,9 +92,16 @@ function writeCsv(filePath, rows) {
   fs.writeFileSync(filePath, `${lines.join("\n")}\n`, "utf8");
 }
 
-function normalizeText(value) {
+function replaceAffordableTerms(value) {
   return String(value || "")
     .normalize("NFKC")
+    .replace(/\bcheapest\b/gi, "most affordable")
+    .replace(/\bcheaper\b/gi, "more affordable")
+    .replace(/\bcheap\b/gi, "affordable");
+}
+
+function normalizeText(value) {
+  return replaceAffordableTerms(value)
     .replace(/tik\s*tok/gi, "TikTok")
     .replace(/100\s*k/gi, "100K")
     .replace(/\p{Extended_Pictographic}/gu, " ")
@@ -158,7 +165,7 @@ let sourceMode = "packed-unpriced";
 if (headers.includes("rate_pkr") && headers.includes("service_name")) {
   sourceMode = "priced-pkr";
   for (const row of sourceRows) {
-    const serviceName = String(row.service_name || "").trim();
+    const serviceName = replaceAffordableTerms(row.service_name).trim();
     if (!serviceName || serviceName === "No service") {
       placeholders += 1;
       continue;
@@ -197,7 +204,7 @@ if (headers.includes("rate_pkr") && headers.includes("service_name")) {
   for (const row of sourceRows) {
     for (const slot of slots) {
       const sourceId = String(row[slot.id] || "").trim();
-      const serviceName = String(row[slot.name] || "").trim();
+      const serviceName = replaceAffordableTerms(row[slot.name]).trim();
       if (!sourceId && !serviceName) continue;
       if (!serviceName || serviceName === "No service") {
         placeholders += 1;

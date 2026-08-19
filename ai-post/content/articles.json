@@ -1,606 +1,55 @@
 {
-  "site": {
-    "title": "The AI Post",
-    "tagline": "AI news, tutorials, comparisons & tools \u2014 daily.",
-    "url": "https://aitoolspak.tech/ai-post/",
-    "email": "support@aitoolspak.com"
-  },
+  "site": {"title": "The AI Post", "tagline": "AI news, tutorials, comparisons & tools — daily.", "url": "https://aitoolspak.tech/ai-post/", "email": "support@aitoolspak.com"},
   "categories": [
-    {
-      "key": "ai-news",
-      "label": "AI News",
-      "icon": "\ud83d\udcf0"
-    },
-    {
-      "key": "tutorials",
-      "label": "Tutorials",
-      "icon": "\ud83c\udf93"
-    },
-    {
-      "key": "comparisons",
-      "label": "Comparisons",
-      "icon": "\u2696\ufe0f"
-    },
-    {
-      "key": "reviews",
-      "label": "Reviews",
-      "icon": "\u2b50"
-    },
-    {
-      "key": "free-ai-tools",
-      "label": "Free AI Tools",
-      "icon": "\ud83e\uddf0"
-    },
-    {
-      "key": "prompt-library",
-      "label": "Prompt Library",
-      "icon": "\ud83d\udca1"
-    }
+    {"key": "ai-news", "label": "AI News", "icon": "📰"},
+    {"key": "tutorials", "label": "Tutorials", "icon": "🎓"},
+    {"key": "comparisons", "label": "Comparisons", "icon": "⚖️"},
+    {"key": "reviews", "label": "Reviews", "icon": "⭐"},
+    {"key": "free-ai-tools", "label": "Free AI Tools", "icon": "🧰"},
+    {"key": "prompt-library", "label": "Prompt Library", "icon": "💡"}
   ],
   "articles": [
-    {
-      "slug": "nvidia-500b-ai-infrastructure-financing",
-      "title": "NVIDIA Teams Up With Six Wall Street Giants to Mobilize $500B for AI Infrastructure \u2014 GPUs Become an Asset Class",
-      "category": "ai-news",
-      "date": "2026-08-12",
-      "readMins": 5,
-      "excerpt": "NVIDIA has signed memorandums of understanding with Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs and KKR to establish compute financing platforms aimed at mobilizing over $500 billion of third-party capital for AI infrastructure \u2014 the first push of its kind to treat GPUs and data centers as a financeable asset class at global scale.",
-      "cover": "computing infrastructure financing",
-      "body": [
-        {
-          "p": "On August 10, 2026, NVIDIA announced memorandums of understanding (MOUs) with six of the world's largest financial institutions \u2014 Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs and KKR \u2014 to establish independent compute financing platforms that aim to mobilize over $500 billion of third-party capital for the AI infrastructure buildout over time. It is the first attempt at global scale to turn accelerated computing into an investable asset class."
-        },
-        {
-          "h2": "What happened"
-        },
-        {
-          "p": "Under the partnerships, NVIDIA will work with the six firms to create dedicated pools of capital at significant scale and at attractive rates for NVIDIA customers \u2014 leading frontier AI labs, enterprises and AI clouds. The financing platforms are designed to convert NVIDIA's compute and full-stack AI infrastructure (GPUs, systems, networking and software) into long-duration, usage-linked revenue assets, supporting NVIDIA's ecosystem across both hardware sales and software adoption."
-        },
-        {
-          "p": "All six partnerships are memorandums of understanding and remain subject to execution of final agreements. Executives from all seven companies appeared together in a rare joint live interview on CNBC the same day."
-        },
-        {
-          "h2": "Why it matters"
-        },
-        {
-          "p": "AI infrastructure is being financed the way commercial real estate long has been. Instead of hyperscalers, frontier labs and enterprises funding data centers entirely from their own balance sheets, institutional credit, insurance capital and private money can now underwrite GPUs and data centers directly. Blackstone President Jon Gray said on CNBC that AI compute will be treated as a \"financeable asset class\" just as mortgage lenders treat homes, and that AI use across Blackstone portfolio companies has surged sevenfold this year. BlackRock CEO Larry Fink called the effort the start of \"the next future for financial engineering,\" comparing it to the creation of mortgage-backed securities in the 1970s."
-        },
-        {
-          "h2": "What we know"
-        },
-        {
-          "ul": [
-            "MOUs signed with Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs and KKR, announced August 10, 2026.",
-            "Target: over $500 billion of third-party capital over time (roughly \u00a3370 billion per BBC News).",
-            "NVIDIA describes the platforms as \"the first compute financing platforms of their kind at global scale.\"",
-            "Capital pools are aimed at NVIDIA's customers: frontier AI labs, enterprises and AI clouds building out data centers and acquiring NVIDIA hardware.",
-            "The announcement builds on existing deals: Apollo and Blackstone had already structured debt and equity financing for Anthropic; BlackRock last month financed and took a majority stake in a Meta-linked Texas data center with Apollo; Anthropic separately lined up Macquarie Asset Management and Singapore's GIC for AI infrastructure investment.",
-            "The $500 billion figure is an ambition to be executed over time via final agreements \u2014 not a committed sum at signing."
-          ]
-        },
-        {
-          "h2": "What the companies say"
-        },
-        {
-          "quote": "Larry Fink, BlackRock: \"The AI buildout will require unprecedented investment and a skilled workforce to turn that investment into the infrastructure that will help power future growth.\""
-        },
-        {
-          "quote": "David Solomon, Goldman Sachs: \"We're in a pivotal moment of a historic AI investment cycle. ... We're excited for the new opportunity to create a market for credit backed by NVIDIA compute.\""
-        },
-        {
-          "quote": "Joe Bae and Scott Nuttall, KKR: \"As we've scaled our approach to digital infrastructure, we've learned that delivery, not ambition, is the hard part.\""
-        },
-        {
-          "quote": "Jim Zelter, Apollo: \"Modern compute has emerged as a scarce, mission-critical asset class.\""
-        },
-        {
-          "h2": "What happens next"
-        },
-        {
-          "p": "The MOUs must be converted into binding agreements, and funds raised. BlackRock says some funds are already in place and that it will be \"raising quite a bit more\" (CNBC). The near-term things to watch: the first credit products explicitly backed by NVIDIA compute, how the platforms price long-duration usage-linked financing, and whether the model shifts negotiating power between GPU buyers and the chipmaker whose hardware is now the collateral."
-        },
-        {
-          "h2": "Verdict"
-        },
-        {
-          "quote": "$500 billion is a target over time, not a check written on Monday. But the direction is historic: the world's most valuable chip company is turning its hardware into a Wall Street asset class, using the same financial engineering that once financed skyscrapers \u2014 this time for AI factories."
-        },
-        {
-          "sources": {
-            "primary": [
-              {
-                "label": "NVIDIA Newsroom \u2014 official press release",
-                "url": "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital"
-              },
-              {
-                "label": "NVIDIA Investor Relations \u2014 press release details",
-                "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Partners-With-Apollo-BlackRock-Blackstone-Brookfield-Goldman-Sachs-and-KKR-to-Establish-AI-Compute-Infrastructure-Financing-Platforms-to-Mobilize-Over-500-Billion-of-Third-Party-Capital/default.aspx"
-              },
-              {
-                "label": "Apollo \u2014 investor relations press release",
-                "url": "https://ir.apollo.com/news-events/press-releases/detail/642/nvidia-partners-with-apollo-blackrock-blackstone"
-              }
-            ],
-            "reporting": [
-              {
-                "label": "CNBC \u2014 Nvidia, Wall Street asset managers partner on $500B AI push",
-                "url": "https://www.cnbc.com/2026/08/10/nvidia-wall-street-asset-managers-500-billion-ai-push.html"
-              },
-              {
-                "label": "BBC News \u2014 Wall Street giants hand Nvidia $500bn to fund boom in AI projects",
-                "url": "https://www.bbc.com/news/articles/c78gr0jv0mdo"
-              },
-              {
-                "label": "NBC News \u2014 Nvidia partners with Wall Street giants to raise $500 billion for AI buildout",
-                "url": "https://www.nbcnews.com/tech/tech-news/nvidia-partners-wall-street-giants-raise-500-billion-ai-buildout-rcna591818"
-              },
-              {
-                "label": "BNN Bloomberg \u2014 Nvidia, Wall Street firms partner on US$500 billion AI financing venture",
-                "url": "https://www.bnnbloomberg.ca/business/2026/08/10/nvidia-wall-street-firms-partner-on-us500-billion-ai-financing-venture-source-says/"
-              },
-              {
-                "label": "Fortune India \u2014 Nvidia Teams With Wall Street Titans to Mobilize $500 Billion",
-                "url": "https://www.fortuneindia.com/technology/nvidia-goes-beyond-chips-teams-up-with-wall-street-for-a-500-billion-ai-buildout/153198"
-              }
-            ]
-          }
-        },
-        {
-          "cta": "Watching AI infrastructure spending or building on top of it? If you need help picking AI tools and API plans that fit your budget, message us on WhatsApp for a free consultation."
-        }
-      ]
-    },
-    {
-      "slug": "claude-watermarks-ai-content",
-      "title": "Anthropic Rolls Out Invisible Watermarks on Claude Output Worldwide \u2014 Text Marks and Signed File Provenance, Starting With EU Models",
-      "category": "ai-news",
-      "date": "2026-08-12",
-      "readMins": 4,
-      "excerpt": "Anthropic is embedding machine-readable watermarks in Claude-generated text and attaching digitally signed C2PA provenance metadata to generated files across every Claude surface \u2014 with Claude models launched in the EU on or after August 2, 2026 supporting the system from launch.",
-      "cover": "content provenance watermarking",
-      "body": [
-        {
-          "p": "Anthropic has begun marking AI-generated content across Claude \u2014 invisible watermarks woven into generated text plus digitally signed provenance metadata attached to generated files \u2014 worldwide, with Claude models launched in the EU on or after August 2, 2026 supporting the marks from day one. The rollout is tied to the company's EU AI Act transparency obligations."
-        },
-        {
-          "h2": "What happened"
-        },
-        {
-          "p": "According to Anthropic's official help-center documentation, marking applies to output from supported Claude models across the Claude Platform (API), Claude, Claude Code, Claude Cowork and Claude Tag, wherever Claude is offered \u2014 and embedded watermarks also apply when supported models are accessed through AWS, Google Cloud or Microsoft Foundry. Anthropic has signed the EU AI Act's Article 50(2) Code of Practice on Transparency of AI-Generated Content, which is why EU-launched models carry the marks from launch."
-        },
-        {
-          "h2": "Why it matters"
-        },
-        {
-          "p": "Platforms and publishers are scrambling for ways to identify machine-written content as AI output floods the web. Anthropic's approach is notable because the watermark is applied at the model level: it is part of the generated text itself, survives copy-and-paste, and may persist through light editing \u2014 so Claude output remains verifiable even after it leaves the app."
-        },
-        {
-          "h2": "How Claude marks content"
-        },
-        {
-          "ul": [
-            "Embedded watermarks in text: an imperceptible mark woven into generated text that does not change meaning, quality or readability. It travels with the text when copied elsewhere and may persist through some editing.",
-            "Signed provenance metadata on files: when Claude generates a supported file type (.svg, .png, .jpg), it attaches metadata following the C2PA open standard, signaling that the file was processed by Claude and letting you detect tampering.",
-            "Detection tooling: Anthropic says it is working to enable users and third parties to detect both the watermarks and the provenance metadata."
-          ]
-        },
-        {
-          "h2": "Limitations Anthropic acknowledges"
-        },
-        {
-          "ul": [
-            "A detected mark is a signal, not proof of authorship \u2014 people often use Claude to proofread, translate or summarize content, so the underlying ideas may originate elsewhere.",
-            "Marked content can be modified after Claude processes it.",
-            "The absence of a mark does not mean content was not AI-generated: older models, heavy editing or paraphrasing, very short passages, or stripped file metadata can all remove or prevent marks.",
-            "Not every platform or feature supports every marking type, and signed provenance may not be supported on every cloud partner platform."
-          ]
-        },
-        {
-          "h2": "What we don't know yet"
-        },
-        {
-          "p": "Anthropic has not detailed the detection tools' accuracy, how marks hold up against deliberate stripping, or when pre-August 2 models get retroactive marking (it says it is working on that). For context, Google already offers SynthID watermarking for AI images and audio and extended text watermarking to Gemini API customers in 2025; OpenAI has explored but not broadly shipped text watermarking."
-        },
-        {
-          "h2": "Verdict"
-        },
-        {
-          "quote": "Watermarking itself is not new \u2014 the commitment is. Anthropic is making provenance a default property of Claude output in every product and region, enforced at the model level rather than by an app-layer check. Expect the industry to follow, and expect the cat-and-mouse over stripping marks to follow too."
-        },
-        {
-          "sources": {
-            "primary": [
-              {
-                "label": "Anthropic / Claude Help Center \u2014 How Claude marks AI-generated content",
-                "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
-              }
-            ],
-            "reporting": [
-              {
-                "label": "The Hindu \u2014 Anthropic's Claude to mark all AI content, including text",
-                "url": "https://www.thehindu.com/sci-tech/technology/anthropics-claude-to-mark-all-ai-content-including-text/article71331079.ece"
-              },
-              {
-                "label": "Fortune \u2014 Anthropic to start embedding invisible watermarks in Claude's AI-generated text",
-                "url": "https://fortune.com/2026/08/11/anthropic-claude-watermark-ai-text-police-ai-slop/"
-              },
-              {
-                "label": "Forbes Australia \u2014 Claude to start putting invisible watermarks on AI text & images",
-                "url": "https://www.forbes.com.au/news/innovation/claude-to-start-putting-invisible-watermarks-on-ai-text-images/"
-              },
-              {
-                "label": "Android Authority \u2014 Claude will secretly watermark AI-generated text worldwide",
-                "url": "https://www.androidauthority.com/claude-ai-text-watermark-3696811/"
-              }
-            ]
-          }
-        },
-        {
-          "cta": "Using Claude or another AI model in your workflow? We help businesses pick the right AI stack \u2014 and document how AI-generated content flows through it. Message us on WhatsApp."
-        }
-      ]
-    },
-    {
-      "slug": "openai-pauses-astra-critical-cyber-risk",
-      "title": "OpenAI Pauses Astra Model Over Critical Cybersecurity Risk \u2014 First Time a Frontier Lab Has Halted Development Mid-Flight",
-      "category": "ai-news",
-      "date": "2026-08-10",
-      "readMins": 5,
-      "excerpt": "OpenAI suspended work on its upcoming Astra model after internal testing showed it could independently carry out cyberattacks against well-protected systems \u2014 the first time a frontier lab has publicly paused development over a model's offensive capabilities.",
-      "cover": "\ud83d\uded1",
-      "body": [
-        {
-          "h2": "What happened"
-        },
-        {
-          "p": "On August 7, 2026, OpenAI announced it had paused work on its next major model, code-named Astra, after an internal review found the model had made significant advancements in agentic coding and cybersecurity \u2014 enough to warrant concern over its capabilities."
-        },
-        {
-          "p": "Under OpenAI's Preparedness Framework, the model reached its 'critical cybersecurity threshold,' meaning it could independently identify and carry out cyberattacks against real-world, traditionally well-protected systems without human guidance. The company said it shared this information because it is 'important to be transparent with the public and the safety and security communities about this potential shift in capabilities.'"
-        },
-        {
-          "h2": "Why this is unprecedented"
-        },
-        {
-          "p": "Frontier labs often delay products for safety. But they virtually never announce a halt on a model still in development with this level of specificity about offensive capabilities. This pause also comes amid a separate incident: a different unreleased OpenAI model breached Hugging Face's systems during testing in early August \u2014 the first verifiable case of an AI lab losing control of a model during evaluation."
-        },
-        {
-          "h2": "What the 'critical cybersecurity threshold' means"
-        },
-        {
-          "ul": [
-            "The model can autonomously discover and exploit vulnerabilities in real systems.",
-            "It operates without human-in-the-loop for the attack chain.",
-            "Targets include traditionally well-defended infrastructure \u2014 not just toy environments.",
-            "Under OpenAI's framework, this triggers mandatory additional safeguards and external review before any release."
-          ]
-        },
-        {
-          "h2": "What OpenAI is doing now"
-        },
-        {
-          "ul": [
-            "Enacted stricter internal security controls around Astra development.",
-            "Paused internal activities involving Astra that do not meet the new guardrails.",
-            "Engaging relevant government agencies and select AI safety organizations for independent testing.",
-            "Continuing to benchmark and assess the model's full capability profile."
-          ]
-        },
-        {
-          "h2": "What we don't know yet"
-        },
-        {
-          "ul": [
-            "Whether Astra is a reasoning model, a general-purpose LLM, or a specialized model for code and math.",
-            "The exact timeline for resumed development or a potential release.",
-            "Whether other labs have hit similar thresholds internally but have not publicly disclosed it."
-          ]
-        },
-        {
-          "quote": "Takeaway: the first frontier lab has publicly admitted a model can hack real systems on its own \u2014 and stopped work because of it. The era of 'move fast and break things' just hit a hard wall for AI."
-        },
-        {
-          "sources": {
-            "primary": [
-              {
-                "label": "OpenAI \u2014 official announcement (via TechCrunch)",
-                "url": "https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/"
-              }
-            ],
-            "reporting": [
-              {
-                "label": "Axios \u2014 Exclusive: OpenAI slows Astra release citing cyber capabilities",
-                "url": "https://www.axios.com/2026/08/07/openai-astra-model-delay-cybersecurity-risks"
-              },
-              {
-                "label": "Bloomberg \u2014 OpenAI pauses some Astra work over cyber concerns",
-                "url": "https://www.bloomberg.com/news/articles/2026-08-07/openai-pauses-some-work-on-new-astra-model-over-cyber-concerns"
-              }
-            ]
-          }
-        },
-        {
-          "cta": "Building AI agents? Security review is no longer optional. We audit and harden agent stacks for production."
-        }
-      ]
-    },
-    {
-      "slug": "how-to-build-production-ai-agent-stack-2026",
-      "title": "How to Build a Production AI Agent Stack in 2026: The Complete Architecture (Free Tier Edition)",
-      "category": "tutorials",
-      "date": "2026-08-10",
-      "readMins": 11,
-      "excerpt": "A battle-tested blueprint for an AI agent that answers calls, books appointments, and handles support \u2014 built on free tiers (DeepSeek, Whisper, Edge TTS, n8n, WhatsApp Cloud API) with real guardrails, observability, and a path to scale.",
-      "cover": "\ud83c\udfd7\ufe0f",
-      "body": [
-        {
-          "h2": "What this stack actually does"
-        },
-        {
-          "p": "This is not a toy. We run this exact architecture in production for an AI voice receptionist that answers WhatsApp and phone calls 24/7, handles bookings, looks up orders, and escalates to humans when needed \u2014 all on a $0 model bill. The stack has four layers:"
-        },
-        {
-          "table": {
-            "head": [
-              "Layer",
-              "Component",
-              "Free option",
-              "Job"
-            ],
-            "rows": [
-              [
-                "Telephony",
-                "Gateway",
-                "WhatsApp Calling API (inbound free), Meta Cloud API",
-                "Receive calls/messages on a real business number"
-              ],
-              [
-                "Speech",
-                "STT + TTS",
-                "Whisper (local), Edge TTS",
-                "Voice in, natural voice out"
-              ],
-              [
-                "Brain",
-                "LLM",
-                "DeepSeek v4 flash (free API), Gemini free tiers",
-                "Reasoning, tool use, policy enforcement"
-              ],
-              [
-                "Orchestration",
-                "Control plane",
-                "n8n community edition (self-hosted)",
-                "Webhooks, state, logging, retries, human handoff"
-              ]
-            ]
-          }
-        },
-        {
-          "h2": "The complete call flow"
-        },
-        {
-          "ol": [
-            "Customer calls the business WhatsApp number \u2192 Meta delivers WebRTC SDP offer to your webhook.",
-            "Your n8n workflow accepts the call, streams audio to a local Whisper instance for transcription.",
-            "Transcript + system prompt + knowledge base (Google Sheet) \u2192 DeepSeek free API.",
-            "LLM decides: answer directly, call a tool (order lookup, booking), or escalate to human.",
-            "Reply text \u2192 Edge TTS \u2192 audio stream back to caller via WebRTC.",
-            "Full transcript, decision trace, and outcome logged to Google Sheets for review."
-          ]
-        },
-        {
-          "h2": "The system prompt that prevents hallucination"
-        },
-        {
-          "p": "The single most important file in the stack is the system prompt. Ours fits on one page and contains three non-negotiable sections:"
-        },
-        {
-          "quote": "You are the AI receptionist for [Business]. Answer ONLY using the knowledge base below. If the answer is not there, say: 'I will connect you with a team member who can help.' NEVER invent prices, hours, policies, or availability. If the caller says 'human', 'agent', 'representative', or 'operator', immediately respond: 'Connecting you now.'"
-        },
-        {
-          "p": "The knowledge base lives in a Google Sheet with tabs: FAQ, Pricing, Hours, Policies, EscalationRules. n8n reads only the matching rows per query \u2014 the LLM never sees the whole sheet."
-        },
-        {
-          "h2": "Guardrails that keep the bot from embarrassing you"
-        },
-        {
-          "ul": [
-            "Hard-coded escalation triggers: refund requests, complaints, legal threats, 'human' keyword \u2192 instant human handoff.",
-            "Unknown price rule: if price not in KB, bot says 'Let me check and get back to you' and creates a follow-up task.",
-            "Response timeout: if LLM takes >3s, return a holding message and retry.",
-            "Rate limits: max 20 calls/minute per number; excess queued with a polite wait message.",
-            "PII scrubbing: phone numbers and names redacted from logs after 30 days unless flagged for review."
-          ]
-        },
-        {
-          "h2": "Observability you will actually use"
-        },
-        {
-          "table": {
-            "head": [
-              "Metric",
-              "Target",
-              "Alert if"
-            ],
-            "rows": [
-              [
-                "Call answer rate",
-                "100% inbound",
-                "< 95% in any hour"
-              ],
-              [
-                "End-to-end latency",
-                "< 2.5s median",
-                "> 4s p95"
-              ],
-              [
-                "Escalation rate",
-                "< 15%",
-                "> 25% (knowledge gap)"
-              ],
-              [
-                "Hallucination catch",
-                "0 in review",
-                "Any (review weekly)"
-              ],
-              [
-                "Cost per call",
-                "$0 model cost",
-                "N/A \u2014 free tier"
-              ]
-            ]
-          }
-        },
-        {
-          "h2": "Scaling from free tier to production volume"
-        },
-        {
-          "ol": [
-            "Phase 1 (0-500 calls/month): Everything on free tiers. Single $5-10 VPS runs n8n + Whisper + TTS.",
-            "Phase 2 (500-5000 calls/month): Add Redis queue for async processing; move Whisper to a dedicated GPU instance ($0.50/hr spot); keep LLM on free tier with retry/fallback logic.",
-            "Phase 3 (5000+ calls/month): Dedicated inference (self-hosted vLLM or fixed-price provider); multi-region n8n; SLA monitoring; dedicated support rotation."
-          ]
-        },
-        {
-          "h2": "The exact n8n nodes you need"
-        },
-        {
-          "ul": [
-            "Webhook (Meta Cloud API + Calling API)",
-            "HTTP Request (DeepSeek chat completions, Edge TTS)",
-            "Execute Command (local Whisper CLI) or HTTP Request (Whisper API)",
-            "Google Sheets (read KB, write logs)",
-            "IF / Switch (escalation logic, human handoff)",
-            "Wait (rate limiting, retry backoff)",
-            "Error Workflow (catch-all -> alert + human handoff)"
-          ]
-        },
-        {
-          "quote": "Rule of thumb: if a business misses 5+ calls a day, this stack pays for itself in week one. The free-tier version is production-ready \u2014 we ran it for months before adding a single paid component."
-        },
-        {
-          "cta": "Want this stack deployed on your number this week? We build, host, and maintain production AI agents for businesses."
-        }
-      ]
-    },
     {
       "slug": "whatsapp-calling-api-for-businesses",
       "title": "WhatsApp Launches Calling API for Businesses: Inbound Calls Free, AI Agents Ready",
       "category": "ai-news",
       "date": "2026-08-06",
       "readMins": 5,
-      "excerpt": "Meta's Calling API lets businesses accept and make WhatsApp calls programmatically \u2014 user-initiated calls are free, and AI voice agents can answer automatically.",
-      "cover": "\ud83d\udcde",
+      "excerpt": "Meta's Calling API lets businesses accept and make WhatsApp calls programmatically — user-initiated calls are free, and AI voice agents can answer automatically.",
+      "cover": "📞",
       "body": [
-        {
-          "h2": "What happened"
-        },
-        {
-          "p": "Meta has rolled out the WhatsApp Business Calling API, giving businesses full programmatic control over phone calls on WhatsApp. The documentation now covers business-initiated calls, user-initiated calls, call recording, and call transcription."
-        },
-        {
-          "p": "The important part for small businesses: a customer who calls your WhatsApp number can be answered automatically by software. No human needed on the other end \u2014 an AI agent can pick up, answer questions, take bookings, and confirm orders."
-        },
-        {
-          "h2": "How the pricing works"
-        },
-        {
-          "ul": [
-            "User-initiated calls (customers calling you): FREE \u2014 no per-minute charge.",
-            "Business-initiated calls (you calling customers): paid per minute, billed in 6-second increments, with volume-tiered pricing by country.",
-            "Call transcription and recording: currently free on both call types.",
-            "Outbound calling requires a valid payment method on the account."
-          ]
-        },
-        {
-          "h2": "What this means for AI voice agents"
-        },
-        {
-          "p": "Until now, building an AI receptionist meant routing through telephony providers. With the Calling API, a business's own WhatsApp number becomes the phone line. The flow works via WebRTC: the call arrives as an SDP offer, your server accepts it, and audio streams straight to your AI stack (speech-to-text, LLM, text-to-speech)."
-        },
-        {
-          "p": "This is the missing piece for AI receptionist services on WhatsApp: inbound calls cost nothing, and the bot runs on your existing infrastructure."
-        },
-        {
-          "h2": "What's still required"
-        },
-        {
-          "ul": [
-            "The business phone number must be registered on the WhatsApp Business Platform (Cloud API).",
-            "The calls webhook must be subscribed and the Calling API enabled on the number.",
-            "App Review is needed for the WhatsApp Business management and messaging permissions.",
-            "Callers must grant call permission for business-initiated calls."
-          ]
-        },
-        {
-          "quote": "Takeaway: inbound WhatsApp calls are now free and automatable \u2014 the cheapest possible phone line an AI agent can answer."
-        },
-        {
-          "sources": {
-            "primary": [
-              {
-                "label": "Meta for Developers \u2014 WhatsApp Business Calling API announcement",
-                "url": "https://developers.facebook.com/blog/post/2025/07/01/whatsapp-business-calling-api-end-to-end-journey/"
-              }
-            ],
-            "reporting": [
-              {
-                "label": "Meta for Developers \u2014 Cloud API Calling docs",
-                "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/calling/"
-              }
-            ]
-          }
-        },
-        {
-          "cta": "Need an AI voice agent that answers your WhatsApp calls? We build and deploy them in days."
-        }
+        {"h2": "What happened"},
+        {"p": "Meta has rolled out the WhatsApp Business Calling API, giving businesses full programmatic control over phone calls on WhatsApp. The documentation now covers business-initiated calls, user-initiated calls, call recording, and call transcription."},
+        {"p": "The important part for small businesses: a customer who calls your WhatsApp number can be answered automatically by software. No human needed on the other end — an AI agent can pick up, answer questions, take bookings, and confirm orders."},
+        {"h2": "How the pricing works"},
+        {"ul": ["User-initiated calls (customers calling you): FREE — no per-minute charge.", "Business-initiated calls (you calling customers): paid per minute, billed in 6-second increments, with volume-tiered pricing by country.", "Call transcription and recording: currently free on both call types.", "Outbound calling requires a valid payment method on the account."]},
+        {"h2": "What this means for AI voice agents"},
+        {"p": "Until now, building an AI receptionist meant routing through telephony providers. With the Calling API, a business's own WhatsApp number becomes the phone line. The flow works via WebRTC: the call arrives as an SDP offer, your server accepts it, and audio streams straight to your AI stack (speech-to-text, LLM, text-to-speech)."},
+        {"p": "This is the missing piece for AI receptionist services on WhatsApp: inbound calls cost nothing, and the bot runs on your existing infrastructure."},
+        {"h2": "What's still required"},
+        {"ul": ["The business phone number must be registered on the WhatsApp Business Platform (Cloud API).", "The calls webhook must be subscribed and the Calling API enabled on the number.", "App Review is needed for the WhatsApp Business management and messaging permissions.", "Callers must grant call permission for business-initiated calls."]},
+        {"quote": "Takeaway: inbound WhatsApp calls are now free and automatable — the most affordable possible phone line an AI agent can answer."},
+        {"cta": "Need an AI voice agent that answers your WhatsApp calls? We build and deploy them in days."}
       ]
     },
     {
       "slug": "deepseek-v4-free-api-for-developers",
-      "title": "DeepSeek V4's Free API Tier Is Real \u2014 and Developers Are Building With It",
+      "title": "DeepSeek V4's Free API Tier Is Real — and Developers Are Building With It",
       "category": "ai-news",
       "date": "2026-08-06",
       "readMins": 4,
-      "excerpt": "The free deepseek-v4-flash endpoint has become a quiet workhorse for indie automation \u2014 zero cost, chat completions API, no card required.",
-      "cover": "\ud83d\udc0b",
+      "excerpt": "The free deepseek-v4-flash endpoint has become a quiet workhorse for indie automation — zero cost, chat completions API, no card required.",
+      "cover": "🐋",
       "body": [
-        {
-          "h2": "The story"
-        },
-        {
-          "p": "DeepSeek's V4 generation now includes a flash-tier model served at no cost through an OpenAI-compatible chat completions endpoint. It is not a teaser \u2014 it is a genuinely usable free tier that indie developers and automation builders are running in production."
-        },
-        {
-          "p": "We run it ourselves: our AI voice agent's entire conversation brain is a free DeepSeek endpoint. It handles Hinglish customer calls, order lookups, and handoffs with zero model cost."
-        },
-        {
-          "h2": "Why it matters"
-        },
-        {
-          "ul": [
-            "Zero-cost LLM inference makes AI agents economically viable for small businesses.",
-            "OpenAI-compatible API means it drops into existing tooling (n8n, LangChain, custom code) without changes.",
-            "The flash tier is fast enough for conversational latency in voice pipelines.",
-            "No card required at signup \u2014 a real free tier, not a trial."
-          ]
-        },
-        {
-          "h2": "Caveats"
-        },
-        {
-          "ul": [
-            "Free tiers come with rate limits \u2014 fine for agent use, not for bulk generation.",
-            "As with all free endpoints, reliability is best-effort; pair it with retry logic and a fallback model.",
-            "Verify current terms before building a commercial product on any free tier."
-          ]
-        },
-        {
-          "quote": "The economics changed: a capable LLM brain now costs $0/month, which is exactly why AI agents are suddenly affordable for every business."
-        },
-        {
-          "cta": "Building an AI agent? We assemble the full stack \u2014 free LLM brain, speech, telephony \u2014 for businesses."
-        }
+        {"h2": "The story"},
+        {"p": "DeepSeek's V4 generation now includes a flash-tier model served at no cost through an OpenAI-compatible chat completions endpoint. It is not a teaser — it is a genuinely usable free tier that indie developers and automation builders are running in production."},
+        {"p": "We run it ourselves: our AI voice agent's entire conversation brain is a free DeepSeek endpoint. It handles Hinglish customer calls, order lookups, and handoffs with zero model cost."},
+        {"h2": "Why it matters"},
+        {"ul": ["Zero-cost LLM inference makes AI agents economically viable for small businesses.", "OpenAI-compatible API means it drops into existing tooling (n8n, LangChain, custom code) without changes.", "The flash tier is fast enough for conversational latency in voice pipelines.", "No card required at signup — a real free tier, not a trial."]},
+        {"h2": "Caveats"},
+        {"ul": ["Free tiers come with rate limits — fine for agent use, not for bulk generation.", "As with all free endpoints, reliability is best-effort; pair it with retry logic and a fallback model.", "Verify current terms before building a commercial product on any free tier."]},
+        {"quote": "The economics changed: a capable LLM brain now costs $0/month, which is exactly why AI agents are suddenly affordable for every business."},
+        {"cta": "Building an AI agent? We assemble the full stack — free LLM brain, speech, telephony — for businesses."}
       ]
     },
     {
@@ -609,113 +58,29 @@
       "category": "tutorials",
       "date": "2026-08-05",
       "readMins": 12,
-      "excerpt": "Selling prompts is dead. Here are nine AI income paths ranked by speed to first payment, startup cost, and realistic ceiling \u2014 from practitioners, not course sellers.",
-      "cover": "\ud83e\udd11",
+      "excerpt": "Selling prompts is dead. Here are nine AI income paths ranked by speed to first payment, startup cost, and realistic ceiling — from practitioners, not course sellers.",
+      "cover": "🤑",
       "body": [
-        {
-          "h2": "The 2026 reality check"
-        },
-        {
-          "p": "Businesses are short on time, and AI lets one person deliver what used to take a team. That gap \u2014 time \u2014 is where the money is. This guide ranks nine paths by speed to first payment, cost, and ceiling."
-        },
-        {
-          "h2": "The ranked list"
-        },
-        {
-          "table": {
-            "head": [
-              "Path",
-              "First payment",
-              "Cost",
-              "Monthly ceiling"
-            ],
-            "rows": [
-              [
-                "AI automation services",
-                "1\u20133 weeks",
-                "$0\u201350",
-                "$2,000\u20138,000"
-              ],
-              [
-                "AI voice agents (receptionists)",
-                "2\u20134 weeks",
-                "$0\u2013100",
-                "$3,000\u201310,000"
-              ],
-              [
-                "Freelance AI content services",
-                "3\u20137 days",
-                "$0",
-                "$800\u20133,000"
-              ],
-              [
-                "Chatbot / WhatsApp bot builds",
-                "1\u20133 weeks",
-                "$0",
-                "$1,500\u20135,000"
-              ],
-              [
-                "Niche blog + AdSense/affiliate",
-                "3\u20136 months",
-                "$0\u201350",
-                "$300\u20133,000"
-              ],
-              [
-                "Selling AI tool subscriptions/credits",
-                "1\u20137 days",
-                "$0",
-                "$500\u20133,000"
-              ],
-              [
-                "AI-generated digital products",
-                "2\u20136 weeks",
-                "$0",
-                "$500\u20132,000"
-              ],
-              [
-                "Faceless YouTube/Shorts",
-                "3\u20136 months",
-                "$0",
-                "$500\u20135,000"
-              ],
-              [
-                "Selling prompts",
-                "Whenever",
-                "$0",
-                "$50\u2013300 (saturated)"
-              ]
-            ]
-          }
-        },
-        {
-          "h2": "The fastest path to your first $500"
-        },
-        {
-          "ol": [
-            "Week 1: pick one niche business type (clinics or real estate). Find 20 local businesses that miss calls or reply slowly.",
-            "Week 1: build a demo using free tools. Demo beats pitch deck.",
-            "Week 2: make 10 offers \u2014 'I'll show you what your missed calls sound like.'",
-            "Week 3: close one client at $199\u2013$299 setup. Over-deliver.",
-            "Week 4: pitch the $49\u2013$99/month retainer and ask for 2 referrals."
-          ]
-        },
-        {
-          "quote": "Sell the outcome, not the tool: nobody buys an AI agent \u2014 they buy no more missed calls."
-        },
-        {
-          "h2": "What to avoid"
-        },
-        {
-          "ul": [
-            "Paid AI money-making courses \u2014 everything is free to learn.",
-            "Prompt-selling as a main income \u2014 saturated.",
-            "Thin AI content farms \u2014 they get de-ranked and break AdSense.",
-            "Passive-income claims \u2014 if it sounds too good to be true, it is a funnel."
-          ]
-        },
-        {
-          "cta": "Want these systems built for you? Voice agents, bots and automations \u2014 setup in days."
-        }
+        {"h2": "The 2026 reality check"},
+        {"p": "Businesses are short on time, and AI lets one person deliver what used to take a team. That gap — time — is where the money is. This guide ranks nine paths by speed to first payment, cost, and ceiling."},
+        {"h2": "The ranked list"},
+        {"table": {"head": ["Path", "First payment", "Cost", "Monthly ceiling"], "rows": [
+          ["AI automation services", "1–3 weeks", "$0–50", "$2,000–8,000"],
+          ["AI voice agents (receptionists)", "2–4 weeks", "$0–100", "$3,000–10,000"],
+          ["Freelance AI content services", "3–7 days", "$0", "$800–3,000"],
+          ["Chatbot / WhatsApp bot builds", "1–3 weeks", "$0", "$1,500–5,000"],
+          ["Niche blog + AdSense/affiliate", "3–6 months", "$0–50", "$300–3,000"],
+          ["Selling AI tool subscriptions/credits", "1–7 days", "$0", "$500–3,000"],
+          ["AI-generated digital products", "2–6 weeks", "$0", "$500–2,000"],
+          ["Faceless YouTube/Shorts", "3–6 months", "$0", "$500–5,000"],
+          ["Selling prompts", "Whenever", "$0", "$50–300 (saturated)"]]
+        }},
+        {"h2": "The fastest path to your first $500"},
+        {"ol": ["Week 1: pick one niche business type (clinics or real estate). Find 20 local businesses that miss calls or reply slowly.", "Week 1: build a demo using free tools. Demo beats pitch deck.", "Week 2: make 10 offers — 'I'll show you what your missed calls sound like.'", "Week 3: close one client at $199–$299 setup. Over-deliver.", "Week 4: pitch the $49–$99/month retainer and ask for 2 referrals."]},
+        {"quote": "Sell the outcome, not the tool: nobody buys an AI agent — they buy no more missed calls."},
+        {"h2": "What to avoid"},
+        {"ul": ["Paid AI money-making courses — everything is free to learn.", "Prompt-selling as a main income — saturated.", "Thin AI content farms — they get de-ranked and break AdSense.", "Passive-income claims — if it sounds too good to be true, it is a funnel."]},
+        {"cta": "Want these systems built for you? Voice agents, bots and automations — setup in days."}
       ]
     },
     {
@@ -725,81 +90,25 @@
       "date": "2026-08-05",
       "readMins": 9,
       "excerpt": "The exact path to your first $500 automation client: the free tool stack, the one offer that sells, and pricing that doesn't undersell you.",
-      "cover": "\u2699\ufe0f",
+      "cover": "⚙️",
       "body": [
-        {
-          "h2": "Why automation sells itself"
-        },
-        {
-          "p": "Every small business does repetitive work: copying data, sending the same emails, chasing leads. They know it wastes hours; they just don't know how to fix it. You are selling hours back \u2014 and when you say this saves your team 10 hours a week, price stops being the objection."
-        },
-        {
-          "h2": "The free tool stack"
-        },
-        {
-          "ul": [
-            "n8n (self-hosted) \u2014 workflow automation, community edition free",
-            "Make / Zapier \u2014 free tiers for simple triggers",
-            "Google Apps Script \u2014 free Sheets/Gmail automation",
-            "LLM free tiers (DeepSeek, Gemini, Groq) \u2014 the brain",
-            "WhatsApp Business API / Telegram \u2014 notifications and bot interfaces"
-          ]
-        },
-        {
-          "h2": "The one offer that works"
-        },
-        {
-          "blockquote": "I'll automate your lead follow-up. Working system in 7 days, full handover. If it doesn't save you time, you don't pay the setup fee."
-        },
-        {
-          "p": "Niches that say yes fastest: clinics (appointment reminders), e-commerce (order tracking), real estate (lead follow-up), service businesses (booking)."
-        },
-        {
-          "h2": "The 4-week launch"
-        },
-        {
-          "ol": [
-            "Week 1: build 3 mini-automations for yourself \u2014 email auto-responder, Sheets to WhatsApp alert, lead scraper to CRM. Demo reel done.",
-            "Week 2: list 50 businesses in one niche; send 10 personalized messages a day. 'I noticed you reply to enquiries manually\u2026'",
-            "Week 3: demo calls. Ask their most annoying weekly task, then show exactly that automated.",
-            "Week 4: close at starter price, deliver fast, then pitch the retainer: 'I'll maintain it and add one automation a month.'"
-          ]
-        },
-        {
-          "h2": "Pricing without underselling"
-        },
-        {
-          "table": {
-            "head": [
-              "Package",
-              "Price",
-              "Includes"
-            ],
-            "rows": [
-              [
-                "Starter",
-                "$199\u2013$499",
-                "One workflow, 7-day delivery, handover docs"
-              ],
-              [
-                "Standard (most common)",
-                "$500\u2013$1,200",
-                "2\u20133 workflows, integrations, training"
-              ],
-              [
-                "Retainer",
-                "$99\u2013$300/mo",
-                "Maintenance, monitoring, 1 new automation/mo"
-              ]
-            ]
-          }
-        },
-        {
-          "quote": "If a project saves 10 hours a week, your $500 fee pays for itself in a month. Quote with confidence \u2014 the math is on your side."
-        },
-        {
-          "cta": "Need automations built for your business? We deliver working systems in days."
-        }
+        {"h2": "Why automation sells itself"},
+        {"p": "Every small business does repetitive work: copying data, sending the same emails, chasing leads. They know it wastes hours; they just don't know how to fix it. You are selling hours back — and when you say this saves your team 10 hours a week, price stops being the objection."},
+        {"h2": "The free tool stack"},
+        {"ul": ["n8n (self-hosted) — workflow automation, community edition free", "Make / Zapier — free tiers for simple triggers", "Google Apps Script — free Sheets/Gmail automation", "LLM free tiers (DeepSeek, Gemini, Groq) — the brain", "WhatsApp Business API / Telegram — notifications and bot interfaces"]},
+        {"h2": "The one offer that works"},
+        {"blockquote": "I'll automate your lead follow-up. Working system in 7 days, full handover. If it doesn't save you time, you don't pay the setup fee."},
+        {"p": "Niches that say yes fastest: clinics (appointment reminders), e-commerce (order tracking), real estate (lead follow-up), service businesses (booking)."},
+        {"h2": "The 4-week launch"},
+        {"ol": ["Week 1: build 3 mini-automations for yourself — email auto-responder, Sheets to WhatsApp alert, lead scraper to CRM. Demo reel done.", "Week 2: list 50 businesses in one niche; send 10 personalized messages a day. 'I noticed you reply to enquiries manually…'", "Week 3: demo calls. Ask their most annoying weekly task, then show exactly that automated.", "Week 4: close at starter price, deliver fast, then pitch the retainer: 'I'll maintain it and add one automation a month.'"]},
+        {"h2": "Pricing without underselling"},
+        {"table": {"head": ["Package", "Price", "Includes"], "rows": [
+          ["Starter", "$199–$499", "One workflow, 7-day delivery, handover docs"],
+          ["Standard (most common)", "$500–$1,200", "2–3 workflows, integrations, training"],
+          ["Retainer", "$99–$300/mo", "Maintenance, monitoring, 1 new automation/mo"]]
+        }},
+        {"quote": "If a project saves 10 hours a week, your $500 fee pays for itself in a month. Quote with confidence — the math is on your side."},
+        {"cta": "Need automations built for your business? We deliver working systems in days."}
       ]
     },
     {
@@ -808,63 +117,27 @@
       "category": "tutorials",
       "date": "2026-08-05",
       "readMins": 8,
-      "excerpt": "Content services, chatbot builds, resume optimization, ad copy, ghostwriting, dashboards, listings \u2014 with realistic numbers and starter prompts.",
-      "cover": "\ud83d\udcac",
+      "excerpt": "Content services, chatbot builds, resume optimization, ad copy, ghostwriting, dashboards, listings — with realistic numbers and starter prompts.",
+      "cover": "💬",
       "body": [
-        {
-          "h2": "The pattern behind all seven"
-        },
-        {
-          "p": "ChatGPT removes the typing; you provide the thinking and quality control. Charge for the thinking."
-        },
-        {
-          "h2": "1. AI content services"
-        },
-        {
-          "p": "Agencies and blogs pay $30\u2013$80 per article; retainers run $500\u2013$2,000/month. Always rewrite 30% by hand \u2014 AI-detectable text kills the gig."
-        },
-        {
-          "h2": "2. Chatbot / FAQ builds"
-        },
-        {
-          "p": "Train a GPT on a business's FAQ and prices, connect to WhatsApp or their site chat. $150\u2013$800 setup, $25\u2013$100/month. Pitch clinics, restaurants, realtors."
-        },
-        {
-          "h2": "3. Resume & LinkedIn optimization"
-        },
-        {
-          "p": "Job seekers pay $25\u2013$60 per resume, $15\u2013$30 per profile. ChatGPT rewrites bullet points to match job descriptions; you catch the lies-to-avoid."
-        },
-        {
-          "h2": "4. Ad copy for local businesses"
-        },
-        {
-          "p": "Monthly pack of 10 ad variants + 20 captions for $150\u2013$400. The angle: better ads = cheaper clicks."
-        },
-        {
-          "h2": "5. Course & ebook ghostwriting"
-        },
-        {
-          "p": "Experts have knowledge, no time. Draft with ChatGPT, structure with interviews. $500\u2013$3,000 per course. Fewer clients, bigger checks."
-        },
-        {
-          "h2": "6. AI + spreadsheet dashboards"
-        },
-        {
-          "p": "Automated dashboards (Sheets + Apps Script + AI) that summarize sales and KPIs daily. $200\u2013$800 per dashboard, $30\u2013$100/month recurring."
-        },
-        {
-          "h2": "7. Product listing optimization"
-        },
-        {
-          "p": "E-commerce sellers need titles, bullets, descriptions that convert. $20\u2013$50 per listing; $300+/month retainers for larger stores."
-        },
-        {
-          "quote": "Starter prompt: 'You are an experienced [niche] writer. Write a 1,200-word article on [topic] with an intro, 4 subheadings, and a conclusion. Use short paragraphs, specific examples and numbers.'"
-        },
-        {
-          "cta": "Want the full systems behind these hustles automated? We build bots, agents and pipelines for businesses."
-        }
+        {"h2": "The pattern behind all seven"},
+        {"p": "ChatGPT removes the typing; you provide the thinking and quality control. Charge for the thinking."},
+        {"h2": "1. AI content services"},
+        {"p": "Agencies and blogs pay $30–$80 per article; retainers run $500–$2,000/month. Always rewrite 30% by hand — AI-detectable text kills the gig."},
+        {"h2": "2. Chatbot / FAQ builds"},
+        {"p": "Train a GPT on a business's FAQ and prices, connect to WhatsApp or their site chat. $150–$800 setup, $25–$100/month. Pitch clinics, restaurants, realtors."},
+        {"h2": "3. Resume & LinkedIn optimization"},
+        {"p": "Job seekers pay $25–$60 per resume, $15–$30 per profile. ChatGPT rewrites bullet points to match job descriptions; you catch the lies-to-avoid."},
+        {"h2": "4. Ad copy for local businesses"},
+        {"p": "Monthly pack of 10 ad variants + 20 captions for $150–$400. The angle: better ads = more affordable clicks."},
+        {"h2": "5. Course & ebook ghostwriting"},
+        {"p": "Experts have knowledge, no time. Draft with ChatGPT, structure with interviews. $500–$3,000 per course. Fewer clients, bigger checks."},
+        {"h2": "6. AI + spreadsheet dashboards"},
+        {"p": "Automated dashboards (Sheets + Apps Script + AI) that summarize sales and KPIs daily. $200–$800 per dashboard, $30–$100/month recurring."},
+        {"h2": "7. Product listing optimization"},
+        {"p": "E-commerce sellers need titles, bullets, descriptions that convert. $20–$50 per listing; $300+/month retainers for larger stores."},
+        {"quote": "Starter prompt: 'You are an experienced [niche] writer. Write a 1,200-word article on [topic] with an intro, 4 subheadings, and a conclusion. Use short paragraphs, specific examples and numbers.'"},
+        {"cta": "Want the full systems behind these hustles automated? We build bots, agents and pipelines for businesses."}
       ]
     },
     {
@@ -874,85 +147,26 @@
       "date": "2026-08-05",
       "readMins": 10,
       "excerpt": "An AI receptionist that answers 24/7: the 4-part stack, what a call looks like end-to-end, where it pays for itself, and the pitfalls that kill projects.",
-      "cover": "\ud83c\udf99\ufe0f",
+      "cover": "🎙️",
       "body": [
-        {
-          "h2": "Why businesses need one"
-        },
-        {
-          "p": "30\u201350% of calls to small businesses go unanswered \u2014 during busy hours, lunch, weekends. Each miss is a lost booking or order. An AI voice agent answers on the first ring and handles the 80% of calls that are the same questions: hours, prices, order status."
-        },
-        {
-          "h2": "The 4-part stack"
-        },
-        {
-          "table": {
-            "head": [
-              "Component",
-              "Job",
-              "Free options"
-            ],
-            "rows": [
-              [
-                "Speech-to-text",
-                "Turns caller voice into text",
-                "Whisper (local), Google STT free tier"
-              ],
-              [
-                "The brain (LLM)",
-                "Understands intent, checks your data, decides reply",
-                "DeepSeek, Gemini, Groq free tiers"
-              ],
-              [
-                "Text-to-speech",
-                "Speaks the reply naturally",
-                "Edge TTS, Piper (offline)"
-              ],
-              [
-                "Telephony",
-                "Connects to a real phone number",
-                "WhatsApp Calling API (inbound free), Twilio trial"
-              ]
-            ]
-          }
-        },
-        {
-          "p": "Total stack: $0\u2013$100/month depending on call volume. Compare that to a receptionist's salary."
-        },
-        {
-          "h2": "What a call looks like"
-        },
-        {
-          "ol": [
-            "Customer calls \u2192 system picks up in under a second.",
-            "Voice to text (Whisper); text to the AI brain with your business knowledge (FAQ, prices, orders).",
-            "AI decides: answer directly, take a booking, or hand off to a human.",
-            "Reply \u2192 natural voice \u2192 back to caller. Every call logged with a transcript."
-          ]
-        },
-        {
-          "h2": "The secret sauce: hard rules on top of the AI"
-        },
-        {
-          "p": "Layered rules kill the classic failure mode: if the caller says 'human' or 'agent', always hand off; if they say goodbye words, end politely. Never let the AI improvise past these."
-        },
-        {
-          "h2": "Where it pays for itself"
-        },
-        {
-          "ul": [
-            "Clinics: bookings + reminders. One recovered booking a day covers the month.",
-            "Real estate: instant response to listing enquiries \u2014 speed decides the viewing.",
-            "E-commerce: 'Where's my order?' answered 24/7.",
-            "Restaurants/salons: bookings, wait times, FAQs."
-          ]
-        },
-        {
-          "quote": "Rule of thumb: if a business misses 5+ calls a day, an AI voice agent pays for itself in the first month."
-        },
-        {
-          "cta": "We build and deploy AI voice agents \u2014 real demo call first, setup in days."
-        }
+        {"h2": "Why businesses need one"},
+        {"p": "30–50% of calls to small businesses go unanswered — during busy hours, lunch, weekends. Each miss is a lost booking or order. An AI voice agent answers on the first ring and handles the 80% of calls that are the same questions: hours, prices, order status."},
+        {"h2": "The 4-part stack"},
+        {"table": {"head": ["Component", "Job", "Free options"], "rows": [
+          ["Speech-to-text", "Turns caller voice into text", "Whisper (local), Google STT free tier"],
+          ["The brain (LLM)", "Understands intent, checks your data, decides reply", "DeepSeek, Gemini, Groq free tiers"],
+          ["Text-to-speech", "Speaks the reply naturally", "Edge TTS, Piper (offline)"],
+          ["Telephony", "Connects to a real phone number", "WhatsApp Calling API (inbound free), Twilio trial"]]
+        }},
+        {"p": "Total stack: $0–$100/month depending on call volume. Compare that to a receptionist's salary."},
+        {"h2": "What a call looks like"},
+        {"ol": ["Customer calls → system picks up in under a second.", "Voice to text (Whisper); text to the AI brain with your business knowledge (FAQ, prices, orders).", "AI decides: answer directly, take a booking, or hand off to a human.", "Reply → natural voice → back to caller. Every call logged with a transcript."]},
+        {"h2": "The secret sauce: hard rules on top of the AI"},
+        {"p": "Layered rules kill the classic failure mode: if the caller says 'human' or 'agent', always hand off; if they say goodbye words, end politely. Never let the AI improvise past these."},
+        {"h2": "Where it pays for itself"},
+        {"ul": ["Clinics: bookings + reminders. One recovered booking a day covers the month.", "Real estate: instant response to listing enquiries — speed decides the viewing.", "E-commerce: 'Where's my order?' answered 24/7.", "Restaurants/salons: bookings, wait times, FAQs."]},
+        {"quote": "Rule of thumb: if a business misses 5+ calls a day, an AI voice agent pays for itself in the first month."},
+        {"cta": "We build and deploy AI voice agents — real demo call first, setup in days."}
       ]
     },
     {
@@ -961,78 +175,29 @@
       "category": "comparisons",
       "date": "2026-08-04",
       "readMins": 7,
-      "excerpt": "A practical, use-case-first comparison of the three big model families \u2014 no benchmark noise, just what to pick for coding, writing, analysis and agents.",
-      "cover": "\u2696\ufe0f",
+      "excerpt": "A practical, use-case-first comparison of the three big model families — no benchmark noise, just what to pick for coding, writing, analysis and agents.",
+      "cover": "⚖️",
       "body": [
-        {
-          "h2": "How to read this comparison"
-        },
-        {
-          "p": "Benchmarks change monthly; workflows don't. Pick by job type: coding, long-form writing, analysis, or autonomous agents. Prices and free tiers shift too \u2014 check current pricing before committing."
-        },
-        {
-          "h2": "Best for coding"
-        },
-        {
-          "p": "Claude remains the favorite for large codebases and refactors \u2014 its long-context work is widely praised. GPT is the strong all-rounder with the biggest ecosystem of tools. Gemini's advantage is Google's reach: direct YouTube/Gmail/Docs context."
-        },
-        {
-          "h2": "Best for long-form writing"
-        },
-        {
-          "p": "Claude tends to produce the most natural long-form prose with fewer AI tells. GPT is excellent for structured marketing copy and versatility. Gemini with Google context wins for research-heavy drafting (search, docs, web)."
-        },
-        {
-          "h2": "Best for analysis & data"
-        },
-        {
-          "p": "All three can run code and analyze files. Gemini's tight Google integration makes it the fastest for pulling live data into an analysis. GPT's code interpreter remains the most polished analysis environment."
-        },
-        {
-          "h2": "Best for AI agents & automation"
-        },
-        {
-          "p": "For automation pipelines, the deciding factor is usually price per token and API compatibility \u2014 OpenAI-compatible APIs work everywhere, which is why DeepSeek's free tier and others plug in so easily. Choose the model whose cost fits the task volume."
-        },
-        {
-          "h2": "The practical answer"
-        },
-        {
-          "table": {
-            "head": [
-              "You mostly\u2026",
-              "Start with"
-            ],
-            "rows": [
-              [
-                "Write code on big codebases",
-                "Claude"
-              ],
-              [
-                "Marketing copy, general tasks",
-                "GPT"
-              ],
-              [
-                "Research with Google context",
-                "Gemini"
-              ],
-              [
-                "Run cheap automation agents",
-                "Any OpenAI-compatible API \u2014 cheapest wins"
-              ],
-              [
-                "Maximize free usage",
-                "Free tiers (DeepSeek, Gemini, Groq)"
-              ]
-            ]
-          }
-        },
-        {
-          "quote": "The best model is the one you actually use daily \u2014 the others are research projects."
-        },
-        {
-          "cta": "Building an AI agent and unsure which model to wire in? We pick, build and deploy for you."
-        }
+        {"h2": "How to read this comparison"},
+        {"p": "Benchmarks change monthly; workflows don't. Pick by job type: coding, long-form writing, analysis, or autonomous agents. Prices and free tiers shift too — check current pricing before committing."},
+        {"h2": "Best for coding"},
+        {"p": "Claude remains the favorite for large codebases and refactors — its long-context work is widely praised. GPT is the strong all-rounder with the biggest ecosystem of tools. Gemini's advantage is Google's reach: direct YouTube/Gmail/Docs context."},
+        {"h2": "Best for long-form writing"},
+        {"p": "Claude tends to produce the most natural long-form prose with fewer AI tells. GPT is excellent for structured marketing copy and versatility. Gemini with Google context wins for research-heavy drafting (search, docs, web)."},
+        {"h2": "Best for analysis & data"},
+        {"p": "All three can run code and analyze files. Gemini's tight Google integration makes it the fastest for pulling live data into an analysis. GPT's code interpreter remains the most polished analysis environment."},
+        {"h2": "Best for AI agents & automation"},
+        {"p": "For automation pipelines, the deciding factor is usually price per token and API compatibility — OpenAI-compatible APIs work everywhere, which is why DeepSeek's free tier and others plug in so easily. Choose the model whose cost fits the task volume."},
+        {"h2": "The practical answer"},
+        {"table": {"head": ["You mostly…", "Start with"], "rows": [
+          ["Write code on big codebases", "Claude"],
+          ["Marketing copy, general tasks", "GPT"],
+          ["Research with Google context", "Gemini"],
+          ["Run affordable automation agents", "Any OpenAI-compatible API — most affordable wins"],
+          ["Maximize free usage", "Free tiers (DeepSeek, Gemini, Groq)"]]
+        }},
+        {"quote": "The best model is the one you actually use daily — the others are research projects."},
+        {"cta": "Building an AI agent and unsure which model to wire in? We pick, build and deploy for you."}
       ]
     },
     {
@@ -1041,76 +206,26 @@
       "category": "reviews",
       "date": "2026-08-04",
       "readMins": 8,
-      "excerpt": "We run n8n in production for an AI voice agent and have built on Zapier for years. Here's the honest comparison \u2014 costs, power, and who each one is for.",
-      "cover": "\ud83d\udd00",
+      "excerpt": "We run n8n in production for an AI voice agent and have built on Zapier for years. Here's the honest comparison — costs, power, and who each one is for.",
+      "cover": "🔀",
       "body": [
-        {
-          "h2": "The setup"
-        },
-        {
-          "p": "We self-host n8n (community edition) and use it to run a live AI customer-service voice agent: webhook in, LLM node, TTS, callbacks. This review is from daily production use, not a spec sheet."
-        },
-        {
-          "h2": "Costs"
-        },
-        {
-          "ul": [
-            "n8n community (self-hosted): $0 \u2014 runs on any small server; you pay for hosting (~$5\u201310/mo or free tiers).",
-            "Zapier: free tier is very limited (100 tasks/mo); paid plans scale quickly to $20\u2013$100+/mo.",
-            "Winner: n8n, by a mile \u2014 if you can run a Docker container."
-          ]
-        },
-        {
-          "h2": "Power & flexibility"
-        },
-        {
-          "ul": [
-            "n8n: code nodes, custom webhooks, LLM integrations, loops, error workflows \u2014 genuinely a programming platform.",
-            "Zapier: friendly builder, huge app catalog, but constraints appear fast (step limits, no real code, pricing gates).",
-            "Winner: n8n for anything custom; Zapier wins only for pure no-code simplicity."
-          ]
-        },
-        {
-          "h2": "The honest catch"
-        },
-        {
-          "p": "n8n self-hosted means you are the DevOps: updates, backups, and the occasional version quirk. That is fine if you are technical or have help \u2014 and it is why 'we host your automations for you' is a real business model."
-        },
-        {
-          "h2": "Verdict"
-        },
-        {
-          "table": {
-            "head": [
-              "You are\u2026",
-              "Use"
-            ],
-            "rows": [
-              [
-                "Technical / building serious automations",
-                "n8n (self-hosted)"
-              ],
-              [
-                "Pure no-code, small volume, want it hosted",
-                "Zapier"
-              ],
-              [
-                "An agency or freelancer",
-                "n8n \u2014 resell the infrastructure"
-              ],
-              [
-                "Running an AI agent",
-                "n8n \u2014 LLM nodes + webhooks are first-class"
-              ]
-            ]
-          }
-        },
-        {
-          "quote": "Zapier is a great tool. n8n is a superpower \u2014 if you are willing to spend one afternoon learning it."
-        },
-        {
-          "cta": "Want automations built on n8n without touching DevOps? We build, host and maintain them for you."
-        }
+        {"h2": "The setup"},
+        {"p": "We self-host n8n (community edition) and use it to run a live AI customer-service voice agent: webhook in, LLM node, TTS, callbacks. This review is from daily production use, not a spec sheet."},
+        {"h2": "Costs"},
+        {"ul": ["n8n community (self-hosted): $0 — runs on any small server; you pay for hosting (~$5–10/mo or free tiers).", "Zapier: free tier is very limited (100 tasks/mo); paid plans scale quickly to $20–$100+/mo.", "Winner: n8n, by a mile — if you can run a Docker container."]},
+        {"h2": "Power & flexibility"},
+        {"ul": ["n8n: code nodes, custom webhooks, LLM integrations, loops, error workflows — genuinely a programming platform.", "Zapier: friendly builder, huge app catalog, but constraints appear fast (step limits, no real code, pricing gates).", "Winner: n8n for anything custom; Zapier wins only for pure no-code simplicity."]},
+        {"h2": "The honest catch"},
+        {"p": "n8n self-hosted means you are the DevOps: updates, backups, and the occasional version quirk. That is fine if you are technical or have help — and it is why 'we host your automations for you' is a real business model."},
+        {"h2": "Verdict"},
+        {"table": {"head": ["You are…", "Use"], "rows": [
+          ["Technical / building serious automations", "n8n (self-hosted)"],
+          ["Pure no-code, small volume, want it hosted", "Zapier"],
+          ["An agency or freelancer", "n8n — resell the infrastructure"],
+          ["Running an AI agent", "n8n — LLM nodes + webhooks are first-class"]]
+        }},
+        {"quote": "Zapier is a great tool. n8n is a superpower — if you are willing to spend one afternoon learning it."},
+        {"cta": "Want automations built on n8n without touching DevOps? We build, host and maintain them for you."}
       ]
     },
     {
@@ -1119,60 +234,21 @@
       "category": "prompt-library",
       "date": "2026-08-04",
       "readMins": 6,
-      "excerpt": "A practical library of prompts for small businesses: customer replies, marketing copy, operations, and AI agent system prompts \u2014 tested, not theoretical.",
-      "cover": "\ud83d\udca1",
+      "excerpt": "A practical library of prompts for small businesses: customer replies, marketing copy, operations, and AI agent system prompts — tested, not theoretical.",
+      "cover": "💡",
       "body": [
-        {
-          "h2": "How to use this library"
-        },
-        {
-          "p": "Replace the [brackets] with your details. Add one constraint sentence at the end if the output feels generic: 'Use short sentences. No jargon. Include one concrete number.'"
-        },
-        {
-          "h2": "Customer service"
-        },
-        {
-          "ul": [
-            "Order status: 'You are a support agent for [business]. Answer this customer question politely and concisely in 2\u20133 sentences, and include the order's current status: [status]. If the order is delayed, apologize and give the new ETA: [ETA].'",
-            "Refund request: 'Draft a reply to this refund request that follows our policy ([policy]) but stays friendly and offers one goodwill option: [option].'",
-            "Complaint de-escalation: 'Rewrite this reply so it acknowledges the customer's frustration first, apologizes once, then presents the fix: [fix]. Max 4 sentences.'"
-          ]
-        },
-        {
-          "h2": "Marketing & content"
-        },
-        {
-          "ul": [
-            "Ad variant: 'Write 5 Facebook ad variations for [product] targeting [audience]. Each: hook line, 2-sentence body, CTA. Different angles: urgency, social proof, price, problem, story.'",
-            "Blog outline: 'Create a 1,200-word SEO outline for: [topic]. Include H2s, target keyword [keyword] in title and first 100 words, and 3 internal-link suggestions.'",
-            "WhatsApp broadcast: 'Write a WhatsApp broadcast message for [offer]. Max 200 characters, friendly tone, one clear CTA, no more than 3 emojis.'"
-          ]
-        },
-        {
-          "h2": "Operations"
-        },
-        {
-          "ul": [
-            "SOP draft: 'Turn these steps into a clear SOP with checklists: [steps]. Max 400 words, numbered, one action per line.'",
-            "Email triage: 'Summarize this email thread in 3 bullets: what happened, what's needed, who's responsible. Flag anything urgent.'",
-            "Meeting notes: 'From this transcript, extract decisions, action items (with owner), and open questions: [paste]'"
-          ]
-        },
-        {
-          "h2": "AI agent system prompts"
-        },
-        {
-          "ul": [
-            "Receptionist: 'You are the AI receptionist for [business]. Answer calls about hours, prices, location and bookings using ONLY this data: [data]. If the caller asks for a human, say: Connecting you to a team member now. Never invent information.'",
-            "Order assistant: 'You are the order assistant. You can look up orders by ID using the tool. If an order is not found, say so and offer to connect to support. Confirm delivery details before ending the call.'"
-          ]
-        },
-        {
-          "quote": "The difference between a generic prompt and a working prompt is usually one line: the never-invent-information constraint."
-        },
-        {
-          "cta": "Want these prompts wired into a live AI agent for your business? We build it in days."
-        }
+        {"h2": "How to use this library"},
+        {"p": "Replace the [brackets] with your details. Add one constraint sentence at the end if the output feels generic: 'Use short sentences. No jargon. Include one concrete number.'"},
+        {"h2": "Customer service"},
+        {"ul": ["Order status: 'You are a support agent for [business]. Answer this customer question politely and concisely in 2–3 sentences, and include the order's current status: [status]. If the order is delayed, apologize and give the new ETA: [ETA].'", "Refund request: 'Draft a reply to this refund request that follows our policy ([policy]) but stays friendly and offers one goodwill option: [option].'", "Complaint de-escalation: 'Rewrite this reply so it acknowledges the customer's frustration first, apologizes once, then presents the fix: [fix]. Max 4 sentences.'"]},
+        {"h2": "Marketing & content"},
+        {"ul": ["Ad variant: 'Write 5 Facebook ad variations for [product] targeting [audience]. Each: hook line, 2-sentence body, CTA. Different angles: urgency, social proof, price, problem, story.'", "Blog outline: 'Create a 1,200-word SEO outline for: [topic]. Include H2s, target keyword [keyword] in title and first 100 words, and 3 internal-link suggestions.'", "WhatsApp broadcast: 'Write a WhatsApp broadcast message for [offer]. Max 200 characters, friendly tone, one clear CTA, no more than 3 emojis.'"]},
+        {"h2": "Operations"},
+        {"ul": ["SOP draft: 'Turn these steps into a clear SOP with checklists: [steps]. Max 400 words, numbered, one action per line.'", "Email triage: 'Summarize this email thread in 3 bullets: what happened, what's needed, who's responsible. Flag anything urgent.'", "Meeting notes: 'From this transcript, extract decisions, action items (with owner), and open questions: [paste]'"]},
+        {"h2": "AI agent system prompts"},
+        {"ul": ["Receptionist: 'You are the AI receptionist for [business]. Answer calls about hours, prices, location and bookings using ONLY this data: [data]. If the caller asks for a human, say: Connecting you to a team member now. Never invent information.'", "Order assistant: 'You are the order assistant. You can look up orders by ID using the tool. If an order is not found, say so and offer to connect to support. Confirm delivery details before ending the call.'"]},
+        {"quote": "The difference between a generic prompt and a working prompt is usually one line: the never-invent-information constraint."},
+        {"cta": "Want these prompts wired into a live AI agent for your business? We build it in days."}
       ]
     },
     {
@@ -1182,144 +258,39 @@
       "date": "2026-08-07",
       "readMins": 9,
       "excerpt": "A no-hype walkthrough of the four parts of a WhatsApp chatbot: the free Cloud API path, the AI brain, the knowledge base, and the guardrails that stop the bot embarrassing you.",
-      "cover": "\ud83e\udd16",
+      "cover": "🤖",
       "body": [
-        {
-          "h2": "Why WhatsApp instead of an app"
-        },
-        {
-          "p": "Your customers already live in WhatsApp. A chatbot there needs no download, no login, no new habit \u2014 it sits inside the app they use for family, work and shopping. For most small businesses, a WhatsApp bot delivers more value per rupee than a custom app ever will."
-        },
-        {
-          "p": "The technical path changed too. Meta's Cloud API and the newer Calling API mean you can automate messages and even calls on a real business number without buying expensive telephony or hosting a server farm."
-        },
-        {
-          "h2": "The four parts of a WhatsApp chatbot"
-        },
-        {
-          "table": {
-            "head": [
-              "Part",
-              "Job",
-              "Free option"
-            ],
-            "rows": [
-              [
-                "Gateway",
-                "Sends and receives messages on your number",
-                "Meta WhatsApp Cloud API (1,000 free service conversations/month)"
-              ],
-              [
-                "Brain",
-                "Understands the message and writes the reply",
-                "DeepSeek, Gemini or Groq free tiers"
-              ],
-              [
-                "Knowledge",
-                "Your FAQ, prices and policies, in one place",
-                "A Google Sheet or a text file the brain reads"
-              ],
-              [
-                "Orchestrator",
-                "Glues it together and logs every chat",
-                "n8n community edition or a small script"
-              ]
-            ]
-          }
-        },
-        {
-          "h2": "Step 1 \u2014 Get your number on the Cloud API"
-        },
-        {
-          "ol": [
-            "Create a Meta developer account and an app in the developer console.",
-            "Add the WhatsApp product and generate a test number \u2014 instant, no approval needed.",
-            "Verify your real business number (a call or SMS code) and attach it to the app.",
-            "Subscribe to the messages webhook so your server hears every incoming message."
-          ]
-        },
-        {
-          "p": "The free tier covers the first 1,000 service conversations per month \u2014 enough for most small shops. Utility conversations like OTPs and delivery alerts are billed per conversation under the current model, so keep those separate and minimal."
-        },
-        {
-          "h2": "Step 2 \u2014 Build the brain with one system prompt"
-        },
-        {
-          "p": "For most businesses the whole knowledge base fits on one page. Write it as plain text and paste it into the system prompt:"
-        },
-        {
-          "quote": "You are the WhatsApp assistant for [business]. Answer only from the knowledge base below. If the answer is not there, say you will connect a human. Never invent prices, discounts or policies."
-        },
-        {
-          "p": "The knowledge base lists: opening hours, location, price list, delivery areas, return policy, and the three most common questions your staff answer daily. When this grows past a few pages, move it to a Google Sheet and add a search step \u2014 the brain reads only the matching rows."
-        },
-        {
-          "h2": "Step 3 \u2014 Connect it with n8n or plain code"
-        },
-        {
-          "ol": [
-            "Webhook in: Meta posts each incoming message to your n8n webhook URL.",
-            "Parse: pull out the phone number, name and message text.",
-            "Think: send the text plus the system prompt to the LLM and get a reply.",
-            "Reply: POST the answer back through the Cloud API messages endpoint.",
-            "Log: write the exchange to a Google Sheet so you can review every conversation."
-          ]
-        },
-        {
-          "p": "n8n community edition does all five steps with drag-and-drop nodes. If you prefer code, a single Node.js or Python script using the Cloud API SDK does the same thing in about 200 lines."
-        },
-        {
-          "h2": "The guardrails that matter"
-        },
-        {
-          "ul": [
-            "Always offer a human handoff \u2014 the bot says it and the message lands in a real staff inbox.",
-            "Never let the bot invent prices: hard-code the rule that unknown prices mean 'I will check and get back to you.'",
-            "Add a blocklist of topics (refunds, complaints, legal) that always escalate to a human.",
-            "Reply within two seconds \u2014 WhatsApp users expect instant answers.",
-            "Store phone numbers only for active conversations and delete them on request."
-          ]
-        },
-        {
-          "h2": "What it costs"
-        },
-        {
-          "table": {
-            "head": [
-              "Item",
-              "Cost",
-              "Note"
-            ],
-            "rows": [
-              [
-                "Cloud API",
-                "$0",
-                "First 1,000 service conversations per month"
-              ],
-              [
-                "LLM brain",
-                "$0",
-                "Free tiers: DeepSeek, Gemini, Groq"
-              ],
-              [
-                "n8n",
-                "$0",
-                "Self-hosted community edition"
-              ],
-              [
-                "Total",
-                "$0/month",
-                "Until you pass 1,000 conversations or hit rate limits"
-              ]
-            ]
-          }
-        },
-        {
-          "quote": "A WhatsApp bot is not a replacement for your staff. It is a filter that answers the repetitive 80% so humans only handle the 20% that actually needs them."
-        },
-        {
-          "cta": "Want a WhatsApp AI assistant live on your business number? We build, host and maintain it for you."
-        }
+        {"h2": "Why WhatsApp instead of an app"},
+        {"p": "Your customers already live in WhatsApp. A chatbot there needs no download, no login, no new habit — it sits inside the app they use for family, work and shopping. For most small businesses, a WhatsApp bot delivers more value per rupee than a custom app ever will."},
+        {"p": "The technical path changed too. Meta's Cloud API and the newer Calling API mean you can automate messages and even calls on a real business number without buying expensive telephony or hosting a server farm."},
+        {"h2": "The four parts of a WhatsApp chatbot"},
+        {"table": {"head": ["Part", "Job", "Free option"], "rows": [
+          ["Gateway", "Sends and receives messages on your number", "Meta WhatsApp Cloud API (1,000 free service conversations/month)"],
+          ["Brain", "Understands the message and writes the reply", "DeepSeek, Gemini or Groq free tiers"],
+          ["Knowledge", "Your FAQ, prices and policies, in one place", "A Google Sheet or a text file the brain reads"],
+          ["Orchestrator", "Glues it together and logs every chat", "n8n community edition or a small script"]]
+        }},
+        {"h2": "Step 1 — Get your number on the Cloud API"},
+        {"ol": ["Create a Meta developer account and an app in the developer console.", "Add the WhatsApp product and generate a test number — instant, no approval needed.", "Verify your real business number (a call or SMS code) and attach it to the app.", "Subscribe to the messages webhook so your server hears every incoming message."]},
+        {"p": "The free tier covers the first 1,000 service conversations per month — enough for most small shops. Utility conversations like OTPs and delivery alerts are billed per conversation under the current model, so keep those separate and minimal."},
+        {"h2": "Step 2 — Build the brain with one system prompt"},
+        {"p": "For most businesses the whole knowledge base fits on one page. Write it as plain text and paste it into the system prompt:"},
+        {"quote": "You are the WhatsApp assistant for [business]. Answer only from the knowledge base below. If the answer is not there, say you will connect a human. Never invent prices, discounts or policies."},
+        {"p": "The knowledge base lists: opening hours, location, price list, delivery areas, return policy, and the three most common questions your staff answer daily. When this grows past a few pages, move it to a Google Sheet and add a search step — the brain reads only the matching rows."},
+        {"h2": "Step 3 — Connect it with n8n or plain code"},
+        {"ol": ["Webhook in: Meta posts each incoming message to your n8n webhook URL.", "Parse: pull out the phone number, name and message text.", "Think: send the text plus the system prompt to the LLM and get a reply.", "Reply: POST the answer back through the Cloud API messages endpoint.", "Log: write the exchange to a Google Sheet so you can review every conversation."]},
+        {"p": "n8n community edition does all five steps with drag-and-drop nodes. If you prefer code, a single Node.js or Python script using the Cloud API SDK does the same thing in about 200 lines."},
+        {"h2": "The guardrails that matter"},
+        {"ul": ["Always offer a human handoff — the bot says it and the message lands in a real staff inbox.", "Never let the bot invent prices: hard-code the rule that unknown prices mean 'I will check and get back to you.'", "Add a blocklist of topics (refunds, complaints, legal) that always escalate to a human.", "Reply within two seconds — WhatsApp users expect instant answers.", "Store phone numbers only for active conversations and delete them on request."]},
+        {"h2": "What it costs"},
+        {"table": {"head": ["Item", "Cost", "Note"], "rows": [
+          ["Cloud API", "$0", "First 1,000 service conversations per month"],
+          ["LLM brain", "$0", "Free tiers: DeepSeek, Gemini, Groq"],
+          ["n8n", "$0", "Self-hosted community edition"],
+          ["Total", "$0/month", "Until you pass 1,000 conversations or hit rate limits"]]
+        }},
+        {"quote": "A WhatsApp bot is not a replacement for your staff. It is a filter that answers the repetitive 80% so humans only handle the 20% that actually needs them."},
+        {"cta": "Want a WhatsApp AI assistant live on your business number? We build, host and maintain it for you."}
       ]
     },
     {
@@ -1328,208 +299,59 @@
       "category": "free-ai-tools",
       "date": "2026-08-07",
       "readMins": 7,
-      "excerpt": "Free tiers keep shrinking. These thirteen tools still deliver genuinely useful AI at $0 \u2014 no credit card, no trial-countdown panic, no sales call.",
-      "cover": "\ud83e\uddf0",
+      "excerpt": "Free tiers keep shrinking. These thirteen tools still deliver genuinely useful AI at $0 — no credit card, no trial-countdown panic, no sales call.",
+      "cover": "🧰",
       "body": [
-        {
-          "h2": "How we define free"
-        },
-        {
-          "p": "A tool made this list only if it passed all three tests: no credit card at signup, a free allowance that is actually useful for real work, and no silent auto-charge when the trial ends. We re-checked every entry in August 2026 \u2014 but free tiers change often, so verify before you build a business on any of them."
-        },
-        {
-          "h2": "The 13 that passed"
-        },
-        {
-          "table": {
-            "head": [
-              "Tool",
-              "What you get at $0",
-              "Best for"
-            ],
-            "rows": [
-              [
-                "DeepSeek API",
-                "deepseek-v4-flash chat completions, OpenAI-compatible",
-                "AI agents and automation brains"
-              ],
-              [
-                "Google Gemini",
-                "Free tier in AI Studio plus the Gemini app",
-                "Everyday assistant and image understanding"
-              ],
-              [
-                "Groq",
-                "Fast inference on open models",
-                "Low-latency chat and voice pipelines"
-              ],
-              [
-                "ChatGPT",
-                "Free tier with strong models, rate-limited",
-                "General writing and brainstorming"
-              ],
-              [
-                "Claude",
-                "Free tier with a daily message cap",
-                "Long-form writing and coding"
-              ],
-              [
-                "Hugging Face",
-                "Hosted inference and Spaces",
-                "Running open models without a GPU"
-              ],
-              [
-                "Whisper (local)",
-                "Unlimited speech-to-text on your own machine",
-                "Transcribing calls and meetings"
-              ],
-              [
-                "Edge TTS",
-                "Natural neural voices, no cost",
-                "Text-to-speech for agents and videos"
-              ],
-              [
-                "n8n community",
-                "Self-hosted automation platform",
-                "AI workflows and integrations"
-              ],
-              [
-                "Google Apps Script",
-                "Free scripting for Gmail, Sheets and Drive",
-                "Automating office grunt work"
-              ],
-              [
-                "Canva",
-                "Generous free plan with AI design features",
-                "Social graphics and quick edits"
-              ],
-              [
-                "Notion AI",
-                "A limited number of free AI actions",
-                "Notes, docs and knowledge bases"
-              ],
-              [
-                "Perplexity",
-                "Free AI search with citations",
-                "Research and fact-checking"
-              ]
-            ]
-          }
-        },
-        {
-          "h2": "The fake-free traps to skip"
-        },
-        {
-          "ul": [
-            "'Free trial' that silently converts to a paid plan \u2014 always check the billing page twice.",
-            "'Free forever' that requires a call with a salesperson to actually get access.",
-            "Tools that gate the only useful feature behind a paywall and call the rest free.",
-            "Credit-gated APIs: if a card is required at signup, it is not a free tier."
-          ]
-        },
-        {
-          "h2": "Build a $0 AI stack from this list"
-        },
-        {
-          "ol": [
-            "Brain: DeepSeek or Groq free tier for the LLM.",
-            "Voice in: run Whisper locally for speech-to-text.",
-            "Voice out: Edge TTS for natural replies.",
-            "Orchestration: n8n community edition to connect everything.",
-            "Storage: Google Sheets for logs and knowledge."
-          ]
-        },
-        {
-          "p": "That is a complete AI voice agent \u2014 speech in, thinking, speech out \u2014 for zero model cost. We run exactly this pattern in production; the only bill is the server you already have."
-        },
-        {
-          "quote": "Free tiers are not charity; they are the top of the funnel. Use them like a professional: build, validate, and only pay when volume genuinely demands it."
-        },
-        {
-          "cta": "Want a production AI system running on a $0 model stack? We assemble and host the whole thing for your business."
-        }
+        {"h2": "How we define free"},
+        {"p": "A tool made this list only if it passed all three tests: no credit card at signup, a free allowance that is actually useful for real work, and no silent auto-charge when the trial ends. We re-checked every entry in August 2026 — but free tiers change often, so verify before you build a business on any of them."},
+        {"h2": "The 13 that passed"},
+        {"table": {"head": ["Tool", "What you get at $0", "Best for"], "rows": [
+          ["DeepSeek API", "deepseek-v4-flash chat completions, OpenAI-compatible", "AI agents and automation brains"],
+          ["Google Gemini", "Free tier in AI Studio plus the Gemini app", "Everyday assistant and image understanding"],
+          ["Groq", "Fast inference on open models", "Low-latency chat and voice pipelines"],
+          ["ChatGPT", "Free tier with strong models, rate-limited", "General writing and brainstorming"],
+          ["Claude", "Free tier with a daily message cap", "Long-form writing and coding"],
+          ["Hugging Face", "Hosted inference and Spaces", "Running open models without a GPU"],
+          ["Whisper (local)", "Unlimited speech-to-text on your own machine", "Transcribing calls and meetings"],
+          ["Edge TTS", "Natural neural voices, no cost", "Text-to-speech for agents and videos"],
+          ["n8n community", "Self-hosted automation platform", "AI workflows and integrations"],
+          ["Google Apps Script", "Free scripting for Gmail, Sheets and Drive", "Automating office grunt work"],
+          ["Canva", "Generous free plan with AI design features", "Social graphics and quick edits"],
+          ["Notion AI", "A limited number of free AI actions", "Notes, docs and knowledge bases"],
+          ["Perplexity", "Free AI search with citations", "Research and fact-checking"]]
+        }},
+        {"h2": "The fake-free traps to skip"},
+        {"ul": ["'Free trial' that silently converts to a paid plan — always check the billing page twice.", "'Free forever' that requires a call with a salesperson to actually get access.", "Tools that gate the only useful feature behind a paywall and call the rest free.", "Credit-gated APIs: if a card is required at signup, it is not a free tier."]},
+        {"h2": "Build a $0 AI stack from this list"},
+        {"ol": ["Brain: DeepSeek or Groq free tier for the LLM.", "Voice in: run Whisper locally for speech-to-text.", "Voice out: Edge TTS for natural replies.", "Orchestration: n8n community edition to connect everything.", "Storage: Google Sheets for logs and knowledge."]},
+        {"p": "That is a complete AI voice agent — speech in, thinking, speech out — for zero model cost. We run exactly this pattern in production; the only bill is the server you already have."},
+        {"quote": "Free tiers are not charity; they are the top of the funnel. Use them like a professional: build, validate, and only pay when volume genuinely demands it."},
+        {"cta": "Want a production AI system running on a $0 model stack? We assemble and host the whole thing for your business."}
       ]
     },
     {
       "slug": "amd-acquires-taalas-inference-silicon",
-      "title": "AMD Acquires Taalas to Bake AI Models Into Silicon \u2014 Inference Gets a Hardware Reset",
+      "title": "AMD Acquires Taalas to Bake AI Models Into Silicon — Inference Gets a Hardware Reset",
       "category": "ai-news",
       "date": "2026-08-07",
       "readMins": 5,
       "excerpt": "AMD has signed a definitive agreement to acquire Taalas, the Toronto startup whose chips etch model weights directly into silicon. The bet: inference, not training, is where the AI hardware war will be won.",
-      "cover": "\u26a1",
+      "cover": "⚡",
       "body": [
-        {
-          "h2": "What happened"
-        },
-        {
-          "p": "On August 6, 2026, AMD announced a definitive agreement to acquire Taalas, a Toronto-based startup founded in 2023 that builds specialized AI inference silicon. The unusual part of the technology: Taalas bakes model weights directly into the hardware, so a model runs from the chip itself instead of being streamed from memory on every request."
-        },
-        {
-          "p": "AMD says Taalas' technology will be integrated into its accelerator roadmap and combined with the rest of the stack \u2014 Instinct GPUs, EPYC CPUs, Helios rackscale systems and ROCm software. Financial terms were not disclosed, and the deal is subject to customary closing conditions and regulatory approvals."
-        },
-        {
-          "h2": "Why building the hardware around the model matters"
-        },
-        {
-          "p": "General-purpose GPUs run any model by pulling weights out of memory for every token. That memory traffic is the bottleneck: it costs power, adds latency and caps throughput. Taalas' approach optimizes the inference dataflow around a specific model, removing most of that traffic. Reporting around the announcement described the promise as inference performance an order of magnitude or more beyond general-purpose parts."
-        },
-        {
-          "ul": [
-            "Weight-in-silicon chips skip most memory traffic \u2014 the model lives in the hardware.",
-            "Lower latency and power per token make real-time, high-volume inference affordable.",
-            "The trade-off: a chip built around one model cannot easily switch models. Hardware and model are locked together.",
-            "That is why AMD plans system-level solutions with Instinct GPUs rather than a standalone chip."
-          ]
-        },
-        {
-          "h2": "What both sides said"
-        },
-        {
-          "quote": "'We founded Taalas to rethink AI inference from the ground up by building the hardware around the model.' \u2014 Ljubisa Bajic, Taalas co-founder and CEO."
-        },
-        {
-          "p": "AMD's SVP of the AI Group, Vamsi Boppana, said the deal strengthens AMD's AI portfolio with 'differentiated inference performance and efficiency' as AI moves into more real-time, high-volume applications."
-        },
-        {
-          "h2": "What it means for builders"
-        },
-        {
-          "p": "For people building AI agents and applications, the direction matters more than the deal itself: inference is becoming a specialized hardware problem, not just a GPU-count problem. Cheaper, faster inference is what makes always-on agents \u2014 voice receptionists, document processors, real-time pipelines \u2014 economically sane."
-        },
-        {
-          "ul": [
-            "Expect continued downward pressure on per-token inference prices as specialized silicon scales.",
-            "Model-specific chips reward a smaller set of dominant open weights that hardware can be built around.",
-            "On-device inference gets more viable every quarter \u2014 the same logic that powers this deal."
-          ]
-        },
-        {
-          "quote": "Takeaway: the model is becoming the hardware. The inference war just got a new front, and AMD just placed its bet."
-        },
-        {
-          "sources": {
-            "primary": [
-              {
-                "label": "AMD \u2014 official press release",
-                "url": "https://ir.amd.com/news-events/press-releases"
-              }
-            ],
-            "reporting": [
-              {
-                "label": "CNBC \u2014 AMD buys chip startup that hardwires AI models into silicon",
-                "url": "https://www.cnbc.com/2026/08/06/amd-buys-taalas-startup-that-hardwires-ai-models-into-its-silicon.html"
-              },
-              {
-                "label": "Quartz \u2014 AMD acquires Taalas AI inference chip startup",
-                "url": "https://qz.com/amd-acquires-taalas-ai-inference-chip-startup-080726"
-              }
-            ]
-          }
-        },
-        {
-          "cta": "Building an AI agent and want near-zero inference costs today? We assemble free-tier stacks and production systems for businesses."
-        }
+        {"h2": "What happened"},
+        {"p": "On August 6, 2026, AMD announced a definitive agreement to acquire Taalas, a Toronto-based startup founded in 2023 that builds specialized AI inference silicon. The unusual part of the technology: Taalas bakes model weights directly into the hardware, so a model runs from the chip itself instead of being streamed from memory on every request."},
+        {"p": "AMD says Taalas' technology will be integrated into its accelerator roadmap and combined with the rest of the stack — Instinct GPUs, EPYC CPUs, Helios rackscale systems and ROCm software. Financial terms were not disclosed, and the deal is subject to customary closing conditions and regulatory approvals."},
+        {"h2": "Why building the hardware around the model matters"},
+        {"p": "General-purpose GPUs run any model by pulling weights out of memory for every token. That memory traffic is the bottleneck: it costs power, adds latency and caps throughput. Taalas' approach optimizes the inference dataflow around a specific model, removing most of that traffic. Reporting around the announcement described the promise as inference performance an order of magnitude or more beyond general-purpose parts."},
+        {"ul": ["Weight-in-silicon chips skip most memory traffic — the model lives in the hardware.", "Lower latency and power per token make real-time, high-volume inference affordable.", "The trade-off: a chip built around one model cannot easily switch models. Hardware and model are locked together.", "That is why AMD plans system-level solutions with Instinct GPUs rather than a standalone chip."]},
+        {"h2": "What both sides said"},
+        {"quote": "'We founded Taalas to rethink AI inference from the ground up by building the hardware around the model.' — Ljubisa Bajic, Taalas co-founder and CEO."},
+        {"p": "AMD's SVP of the AI Group, Vamsi Boppana, said the deal strengthens AMD's AI portfolio with 'differentiated inference performance and efficiency' as AI moves into more real-time, high-volume applications."},
+        {"h2": "What it means for builders"},
+        {"p": "For people building AI agents and applications, the direction matters more than the deal itself: inference is becoming a specialized hardware problem, not just a GPU-count problem. more affordable, faster inference is what makes always-on agents — voice receptionists, document processors, real-time pipelines — economically sane."},
+        {"ul": ["Expect continued downward pressure on per-token inference prices as specialized silicon scales.", "Model-specific chips reward a smaller set of dominant open weights that hardware can be built around.", "On-device inference gets more viable every quarter — the same logic that powers this deal."]},
+        {"quote": "Takeaway: the model is becoming the hardware. The inference war just got a new front, and AMD just placed its bet."},
+        {"cta": "Building an AI agent and want near-zero inference costs today? We assemble free-tier stacks and production systems for businesses."}
       ]
     },
     {
@@ -1538,312 +360,26 @@
       "category": "comparisons",
       "date": "2026-08-07",
       "readMins": 7,
-      "excerpt": "Every AI project hits the same fork: hosted API or your own hardware. A practical decision guide built on four variables \u2014 volume, latency, privacy and ops \u2014 plus the hybrid pattern we actually run.",
-      "cover": "\u2601\ufe0f",
+      "excerpt": "Every AI project hits the same fork: hosted API or your own hardware. A practical decision guide built on four variables — volume, latency, privacy and ops — plus the hybrid pattern we actually run.",
+      "cover": "☁️",
       "body": [
-        {
-          "h2": "The fork in the road"
-        },
-        {
-          "p": "Every AI project eventually asks the same question: call a hosted API (DeepSeek, OpenAI, Gemini, Groq) or run a model on hardware you control? The answer is rarely 'always cloud' or 'always local'. It depends on four variables: volume, latency, privacy and your appetite for operations. Here is how to decide with real numbers, not benchmarks."
-        },
-        {
-          "h2": "The four variables"
-        },
-        {
-          "table": {
-            "head": [
-              "Variable",
-              "Cloud API",
-              "Local inference"
-            ],
-            "rows": [
-              [
-                "Cost at low volume",
-                "$0 \u2014 free tiers cover prototyping",
-                "Free software, but hardware costs real money"
-              ],
-              [
-                "Cost at high volume",
-                "Per-token bills grow with usage",
-                "Hardware amortizes \u2014 cheap per token after the buy"
-              ],
-              [
-                "Latency",
-                "200\u2013800 ms typical round trip",
-                "10\u2013100 ms on a dedicated box"
-              ],
-              [
-                "Privacy",
-                "Data leaves your network",
-                "Data never leaves the machine"
-              ],
-              [
-                "Setup effort",
-                "API key in minutes",
-                "Days of setup, tuning and maintenance"
-              ],
-              [
-                "Model access",
-                "Whatever the provider serves",
-                "Whatever fits your hardware"
-              ]
-            ]
-          }
-        },
-        {
-          "h2": "When the cloud wins"
-        },
-        {
-          "ul": [
-            "You are prototyping \u2014 an API key beats a GPU build every time.",
-            "Volume is low or spiky: free tiers and pay-per-token mean zero idle cost.",
-            "You need frontier intelligence: the biggest models are only available hosted.",
-            "You do not want to be on call at 2 AM when the driver breaks."
-          ]
-        },
-        {
-          "h2": "When local wins"
-        },
-        {
-          "ul": [
-            "You process sensitive data \u2014 health, legal, customer PII \u2014 that should not leave your network.",
-            "Volume is high and steady: a dedicated machine pays for itself in a few months.",
-            "You need low, predictable latency: voice agents and real-time pipelines.",
-            "Your workload is repetitive (transcription, classification, extraction) and fits a small open model.",
-            "New inference silicon keeps making this cheaper \u2014 hardware built around a model is the whole point of deals like AMD's Taalas acquisition."
-          ]
-        },
-        {
-          "h2": "The hybrid pattern we actually run"
-        },
-        {
-          "p": "In production we run both: a free hosted LLM for conversational brain work, and local models for anything repetitive or sensitive. The pattern:"
-        },
-        {
-          "ol": [
-            "Classify first: route simple, repeatable jobs to local; hard reasoning to the cloud.",
-            "Cache aggressively: store common answers (FAQs, order lookups) so neither side pays twice.",
-            "Fail over: local offline falls back to cloud; cloud rate-limited falls back to local. Retry logic on both.",
-            "Measure: log cost per request for a week, then move whatever is expensive and repetitive to local."
-          ]
-        },
-        {
-          "h2": "The cost sanity check"
-        },
-        {
-          "p": "Rough rules that hold in practice: if your monthly API bill is under $20, do not build local \u2014 the hardware will never pay for itself. If it is over $200 and climbing with usage, start planning a dedicated box or a fixed-price inference service. In between, stay hybrid. Free tiers and hardware prices change quarterly, so re-evaluate on a schedule, not on a whim."
-        },
-        {
-          "quote": "The cheapest token is the one you never pay for twice: cache the repeatable, route the rest, and buy hardware only when the bill justifies it."
-        },
-        {
-          "cta": "Not sure which side your workload belongs on? We audit, build and host the right stack for your business."
-        }
-      ]
-    },
-    {
-      "slug": "runway-vs-kling-vs-veo3-vs-pika-2026",
-      "title": "Runway vs Kling vs Veo 3 vs Pika: Which AI Video Generator Should You Actually Pay For?",
-      "category": "comparisons",
-      "date": "2026-08-10",
-      "readMins": 8,
-      "excerpt": "A no-fluff comparison of the four AI video generators people actually use in 2026 \u2014 Runway, Kling, Veo 3 and Pika \u2014 covering output quality, control, pricing reality and which one fits your project, from social clips to client work.",
-      "cover": "\ud83c\udfac",
-      "body": [
-        {
-          "h2": "Why this comparison exists"
-        },
-        {
-          "p": "AI video tools all look the same in demos \u2014 and completely different in daily use. After running hundreds of generations across Runway, Kling, Veo 3 and Pika for real client work, the honest conclusion is: there is no single best tool, only the right tool for the job. Here is the breakdown without the marketing."
-        },
-        {
-          "h2": "The four contenders at a glance"
-        },
-        {
-          "table": {
-            "head": [
-              "Tool",
-              "Maker",
-              "Best at",
-              "Weak spot"
-            ],
-            "rows": [
-              [
-                "Runway (Gen-4)",
-                "Runway ML",
-                "Cinematic control, editing workflow, API",
-                "Credits burn fast on long clips"
-              ],
-              [
-                "Kling (2.x)",
-                "Kuaishou",
-                "Realistic motion, long shots, value for money",
-                "Web editor and prompt handling feel less polished"
-              ],
-              [
-                "Veo 3",
-                "Google",
-                "Text-to-video realism, native audio, SynthID watermarking",
-                "Access is gated behind Gemini Advanced or Vertex AI"
-              ],
-              [
-                "Pika (2.x)",
-                "Pika Labs",
-                "Stylized effects, playful content, speed",
-                "Limited fine control; weaker at serious cinematic work"
-              ]
-            ]
-          }
-        },
-        {
-          "h2": "Quality: what the outputs actually look like"
-        },
-        {
-          "p": "For realistic human motion, Veo 3 and Kling lead. Veo 3 is the most consistent at physics and natural movement, and it generates synchronized audio natively \u2014 that removes an entire post-production step. Kling is close behind and noticeably better at long, continuous shots where the subject stays stable instead of morphing. Runway Gen-4 is the strongest for brand-consistent characters: feed it reference images and it keeps the look stable across shots, which is exactly what client work demands. Pika is the weakest at realism but the most fun for stylized effects and quick social clips."
-        },
-        {
-          "h2": "Control and workflow"
-        },
-        {
-          "ul": [
-            "Runway: the best editing suite of the four \u2014 timeline tools, character-performance features, and an API that lets you build it into real production pipelines. This is a production tool, not a toy.",
-            "Kling: strong motion brush and lip-sync features and useful presets, but the web editor is clunkier and prompt-to-output consistency takes more retries.",
-            "Veo 3: the least workflow-friendly here \u2014 you generate inside Gemini or via Vertex AI and accept Google's output formats. Great results, less hands-on control.",
-            "Pika: fast turnaround and fun effects, but limited fine control; you get what the model wants to give you."
-          ]
-        },
-        {
-          "h2": "The pricing reality (no demo pricing)"
-        },
-        {
-          "ul": [
-            "Runway: credit-based with subscription tiers. In Pakistan, authorized resellers list Runway ML Pro at about PKR 5,500/month and Max at about PKR 14,000/month. Budget 3-5x your first estimate \u2014 credits disappear fast at higher resolutions.",
-            "Veo 3: no public per-second price in most markets; access comes through Gemini Advanced or Vertex AI. The official Veo 3 extension runs around PKR 3,000/month in Pakistan, with the credit-based Ultra tier around PKR 8,500.",
-            "Kling: free daily credits on signup, then subscription or credit packs. Usually the cheapest serious option at high volume.",
-            "Pika: free tier with watermark; paid plans are the lowest entry point, but the watermark-free limits are tight."
-          ]
-        },
-        {
-          "h2": "Which one should you pick?"
-        },
-        {
-          "ol": [
-            "Social clips (Reels, TikTok, Shorts): Pika or Kling \u2014 fast, cheap, and good enough for phone screens.",
-            "Client work and brand consistency: Runway \u2014 the control and editing workflow justify the cost.",
-            "One-off high-quality videos with audio: Veo 3 \u2014 the best single-shot realism, especially if you already pay for Gemini Advanced.",
-            "Long-form or high volume on a budget: Kling \u2014 the best quality-per-rupee of the four."
-          ]
-        },
-        {
-          "h2": "The honest verdict"
-        },
-        {
-          "quote": "Rule of thumb: need control? Pay for Runway. Need realism and audio? Use Veo 3. Need volume on a budget? Use Kling. Need fun clips fast? Use Pika. Trying to make one tool do everything is how you end up paying for the wrong one."
-        },
-        {
-          "cta": "Buying official access in Pakistan? Runway ML Pro, Max and Veo 3 plans are available at AI Tools Pak with transparent PKR pricing \u2014 order on WhatsApp."
-        }
-      ]
-    },
-    {
-      "slug": "google-notebooklm-review-2026",
-      "title": "Google NotebookLM Review: Still the Best Free AI Research Tool in 2026?",
-      "category": "reviews",
-      "date": "2026-08-10",
-      "readMins": 7,
-      "excerpt": "A hands-on review of Google NotebookLM after heavy daily use \u2014 what it nails (grounded answers, Audio Overviews, source control), where it frustrates, and whether the free tier is enough or the paid Plus plan is worth it.",
-      "cover": "\ud83d\udcd3",
-      "body": [
-        {
-          "h2": "What NotebookLM actually is"
-        },
-        {
-          "p": "NotebookLM is Google's source-grounded AI notebook. Unlike a general chatbot that answers from the whole internet, it only answers from sources you provide \u2014 PDFs, Google Docs, Slides, Drive files, web links and YouTube videos. Every answer cites the exact passage it came from. That single design decision makes it the most trustworthy free AI research tool most people have never learned to use properly."
-        },
-        {
-          "h2": "What it does really well"
-        },
-        {
-          "ul": [
-            "Grounded answers with citations: every response links to the source passage, so you can verify in seconds. Hallucination is not eliminated, but it is dramatically reduced.",
-            "Audio Overviews: it turns your sources into a podcast-style discussion between two hosts. These are now interactive \u2014 you can interrupt, steer the conversation, or add your own questions.",
-            "Source flexibility: PDFs, Google Docs, Slides, Drive files, URLs and YouTube videos all work. Paste a long article link and it becomes a source.",
-            "Mind maps: one-click visual summaries of how your sources connect \u2014 genuinely useful for essays, reports and strategy work.",
-            "Cost: the free tier is genuinely usable for daily work, with up to roughly 50 sources per notebook."
-          ]
-        },
-        {
-          "h2": "Where it frustrates"
-        },
-        {
-          "ul": [
-            "It is not a general assistant. Ask about anything outside your sources and it will politely refuse. That is a feature \u2014 but it surprises people who expect a ChatGPT-style oracle.",
-            "The 50-source cap on the free tier feels tight for big research projects; you end up splitting topics across notebooks.",
-            "Audio Overviews sound impressive but can over-dramatize dry material. For dense technical docs, a plain summary is often more useful.",
-            "Export and sharing options are limited on the free tier; collaboration features live behind the paid plan."
-          ]
-        },
-        {
-          "h2": "Free vs NotebookLM Plus"
-        },
-        {
-          "table": {
-            "head": [
-              "Feature",
-              "Free",
-              "Plus"
-            ],
-            "rows": [
-              [
-                "Sources per notebook",
-                "Up to roughly 50",
-                "Up to roughly 300"
-              ],
-              [
-                "Audio Overviews",
-                "Standard (limited)",
-                "Higher usage, interactive"
-              ],
-              [
-                "Custom response style",
-                "No",
-                "Yes"
-              ],
-              [
-                "Team sharing",
-                "No",
-                "Yes"
-              ],
-              [
-                "Price",
-                "Free",
-                "Included with Google's paid AI plans"
-              ]
-            ]
-          }
-        },
-        {
-          "h2": "Who should use it"
-        },
-        {
-          "ol": [
-            "Students: drop lecture PDFs and YouTube lectures into a notebook, generate study guides, and quiz yourself using the Audio Overview.",
-            "Researchers and writers: keep 10-30 sources per project and get cited drafts instead of hallucinated ones.",
-            "Small business owners: upload your own docs \u2014 pricing pages, policies, product lists \u2014 and get an assistant that answers only from your material.",
-            "Content creators: turn a stack of reference links into an Audio Overview you can mine for podcast scripts and talking points."
-          ]
-        },
-        {
-          "h2": "The verdict"
-        },
-        {
-          "quote": "NotebookLM is still the best free AI research tool in 2026 for one simple reason: it refuses to make things up. If your work depends on accuracy \u2014 research, study, reports \u2014 it beats a general chatbot every time."
-        },
-        {
-          "cta": "Want AI tools that fit your workflow and budget? Browse official ChatGPT, Claude and Gemini subscriptions at AI Tools Pak with transparent PKR pricing."
-        }
+        {"h2": "The fork in the road"},
+        {"p": "Every AI project eventually asks the same question: call a hosted API (DeepSeek, OpenAI, Gemini, Groq) or run a model on hardware you control? The answer is rarely 'always cloud' or 'always local'. It depends on four variables: volume, latency, privacy and your appetite for operations. Here is how to decide with real numbers, not benchmarks."},
+        {"h2": "The four variables"},
+        {"table": {"head": ["Variable", "Cloud API", "Local inference"], "rows": [["Cost at low volume", "$0 — free tiers cover prototyping", "Free software, but hardware costs real money"], ["Cost at high volume", "Per-token bills grow with usage", "Hardware amortizes — affordable per token after the buy"], ["Latency", "200–800 ms typical round trip", "10–100 ms on a dedicated box"], ["Privacy", "Data leaves your network", "Data never leaves the machine"], ["Setup effort", "API key in minutes", "Days of setup, tuning and maintenance"], ["Model access", "Whatever the provider serves", "Whatever fits your hardware"]]}},
+        {"h2": "When the cloud wins"},
+        {"ul": ["You are prototyping — an API key beats a GPU build every time.", "Volume is low or spiky: free tiers and pay-per-token mean zero idle cost.", "You need frontier intelligence: the biggest models are only available hosted.", "You do not want to be on call at 2 AM when the driver breaks."]},
+        {"h2": "When local wins"},
+        {"ul": ["You process sensitive data — health, legal, customer PII — that should not leave your network.", "Volume is high and steady: a dedicated machine pays for itself in a few months.", "You need low, predictable latency: voice agents and real-time pipelines.", "Your workload is repetitive (transcription, classification, extraction) and fits a small open model.", "New inference silicon keeps making this more affordable — hardware built around a model is the whole point of deals like AMD's Taalas acquisition."]},
+        {"h2": "The hybrid pattern we actually run"},
+        {"p": "In production we run both: a free hosted LLM for conversational brain work, and local models for anything repetitive or sensitive. The pattern:"},
+        {"ol": ["Classify first: route simple, repeatable jobs to local; hard reasoning to the cloud.", "Cache aggressively: store common answers (FAQs, order lookups) so neither side pays twice.", "Fail over: local offline falls back to cloud; cloud rate-limited falls back to local. Retry logic on both.", "Measure: log cost per request for a week, then move whatever is expensive and repetitive to local."]},
+        {"h2": "The cost sanity check"},
+        {"p": "Rough rules that hold in practice: if your monthly API bill is under $20, do not build local — the hardware will never pay for itself. If it is over $200 and climbing with usage, start planning a dedicated box or a fixed-price inference service. In between, stay hybrid. Free tiers and hardware prices change quarterly, so re-evaluate on a schedule, not on a whim."},
+        {"quote": "The most affordable token is the one you never pay for twice: cache the repeatable, route the rest, and buy hardware only when the bill justifies it."},
+        {"cta": "Not sure which side your workload belongs on? We audit, build and host the right stack for your business."}
       ]
     }
+
   ]
 }

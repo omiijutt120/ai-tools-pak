@@ -13,14 +13,8 @@ const seen = { title: new Map(), description: new Map(), canonical: new Map() };
 
 function htmlPath(url) {
   const pathname = new URL(url).pathname;
-  const relativePath = decodeURIComponent(pathname).replace(/^\/+/, "");
-  if (/\.(?:html?|md|txt)$/i.test(relativePath)) return path.join(root, relativePath);
-  return path.join(root, relativePath, "index.html");
-}
-
-function isStorefrontHtml(url) {
-  const pathname = new URL(url).pathname;
-  return !pathname.startsWith("/ai-post/") && !/\.(?:md|txt)$/i.test(pathname);
+  if (/\.(?:html|md|txt)$/i.test(pathname)) return path.join(root, pathname);
+  return path.join(root, pathname, "index.html");
 }
 
 function first(html, pattern) {
@@ -45,7 +39,8 @@ for (const url of urls) {
     errors.push(`Missing sitemap file: ${url}`);
     continue;
   }
-  if (!isStorefrontHtml(url)) continue;
+  if (/\.(?:md|txt)$/i.test(new URL(url).pathname)) continue;
+  if (url.includes("/ai-post/")) continue;
   const html = fs.readFileSync(file, "utf8");
   const title = first(html, /<title>([\s\S]*?)<\/title>/i);
   const description = first(html, /<meta name="description" content="([^"]+)"/i);

@@ -20,7 +20,7 @@ Search (SEO/GEO) → `/enterprise-ai-api-credits/` landing page → WhatsApp quo
 6. **Speed** — same-day quote promise; respond fast during 11:00-23:00 PKT.
 
 ## 4. SEO keyword clusters (tracked daily in the 8 AM SERP audit)
-Primary: `ai api credits pakistan`, `buy openai api credits pakistan`, `openai api credits price pakistan`, `claude api credits pakistan`, `gpt api pakistan`, `cheap api credits pakistan`, `ai api key pakistan`, `api credits wholesale pakistan`.
+Primary: `ai api credits pakistan`, `buy openai api credits pakistan`, `openai api credits price pakistan`, `claude api credits pakistan`, `gpt api pakistan`, `affordable api credits pakistan`, `ai api key pakistan`, `api credits wholesale pakistan`.
 Long-tail content: how to buy API credits in Pakistan (published), API pricing guide (published), OpenAI vs Claude API for Pakistani devs (next), API credits for chatbots/SaaS (pipeline).
 
 ## 5. Content cluster (blogs that feed the landing page)

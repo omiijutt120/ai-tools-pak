@@ -19,43 +19,61 @@ AI Tools Pak is a Pakistan-focused catalog for AI tool subscriptions and social 
 
 Current selling prices in PKR from the AI Tools Pak catalog, per plan duration.
 
+- Gemini Pro — 18 Months: PKR 800 (18 months) - https://aitoolspak.tech/gemini-pro-pakistan/
 - ChatGPT Plus: PKR 2,200 (1 month) - https://aitoolspak.tech/chatgpt-plus-pakistan/
+- Veo 3 Extension — 30 Days: PKR 2,100 (30 days) - https://aitoolspak.tech/veo-3-extension-pakistan/
+- ElevenLabs Creator — 130K Credits: PKR 3,300 (1 month) - https://aitoolspak.tech/elevenlabs-creator-pakistan/
+- Lovable Pro — 1 Month: PKR 1,600 (1 month) - https://aitoolspak.tech/lovable-ai-pro-pakistan/
 - Claude Pro: PKR 5,500 (1 month) - https://aitoolspak.tech/claude-pro-pakistan/
-- Gemini Pro: PKR 900 (18 months) - https://aitoolspak.tech/gemini-pro-pakistan/
-- ElevenLabs Creator - Private: PKR 3,300 (1 month) - https://aitoolspak.tech/elevenlabs-creator-pakistan/
 - Runway ML Pro: PKR 5,500 (1 month) - https://aitoolspak.tech/runway-ml-pakistan/
 - Leonardo AI: PKR 2,200 (1 month) - https://aitoolspak.tech/leonardo-ai-pakistan/
 - Grammarly Premium: PKR 1,000 (1 month) - https://aitoolspak.tech/grammarly-premium-pakistan/
 - QuillBot: PKR 479 (1 month) - https://aitoolspak.tech/quillbot-premium-pakistan/
-- Lovable AI Pro - Private: PKR 1,500 (1 month) - https://aitoolspak.tech/lovable-ai-pro-pakistan/
 - HeyGen AI: PKR 7,400 (1 month) - https://aitoolspak.tech/heygen-ai-pakistan/
+- SuperGrok: PKR 2,500 (1–3 months) - https://aitoolspak.tech/supergrok-pakistan/
+- Google AI Ultra Plan: PKR 1,764 (1 month) - https://aitoolspak.tech/google-ai-ultra-pakistan/
+- Netflix Premium 4K — 1 Month: PKR 400 (1 month) - https://aitoolspak.tech/netflix-pakistan/
+- CapCut Pro — 1 Month: PKR 900 (1 month) - https://aitoolspak.tech/capcut-pro-pakistan/
+- Claude 20X Max Plan: PKR 45,000 (1 month) - https://aitoolspak.tech/claude-20x-max-pakistan/
+- Veo 3 Ultra – Official Paid Invite: PKR 8,500 (Credit-based) - https://aitoolspak.tech/veo-3-ultra-pakistan/
+- Prime Video: PKR 400 (1 month) - https://aitoolspak.tech/prime-video-pakistan/
+- Helium 10 Platinum: PKR 2,500 (1 month) - https://aitoolspak.tech/helium-10-platinum-pakistan/
+- Helium 10 Diamond: PKR 4,500 (1 month) - https://aitoolspak.tech/helium-10-diamond-pakistan/
+- Runway ML Max: PKR 14,000 (1 month) - https://aitoolspak.tech/runway-ml-max-pakistan/
+- Canva Pro: PKR 900 (1 month) - https://aitoolspak.tech/canva-pro-pakistan/
+- Leonardo AI Essential — 8,500 Credits: PKR 1,900 (null month(s)) - https://aitoolspak.tech/leonardo-ai-essential-8500-credits-pakistan/
+- NordVPN — 3 Months: PKR 1,800 (3 months) - https://aitoolspak.tech/nordvpn-3-months-pakistan/
+- Surfshark VPN — 2 Months: PKR 800 (2 months) - https://aitoolspak.tech/surfshark-vpn-2-months-pakistan/
+- YouTube Premium — 3 Months: PKR 1,200 (3 months) - https://aitoolspak.tech/youtube-premium-3-months-pakistan/
+- Canva Pro Edu — 1 Year Invite: PKR 900 (1 year) - https://aitoolspak.tech/canva-pro-edu-1-year-pakistan/
+- Replit Core — $40 Credits: PKR 3,200 (null month(s)) - https://aitoolspak.tech/replit-core-40-credits-pakistan/
+- Figma Pro — 2 Years Private: PKR 3,000 (2 years) - https://aitoolspak.tech/figma-pro-2-years-private-pakistan/
+- Notion Business — 3 Months: PKR 2,200 (3 months) - https://aitoolspak.tech/notion-business-3-months-pakistan/
+- ChatGPT Plus — Apple Paid Account: PKR 2,300 (Confirm before ordering) - https://aitoolspak.tech/chatgpt-plus-apple-account-pakistan/
+- Adobe Creative — 2 Months: PKR 1,700 (2 months) - https://aitoolspak.tech/adobe-creative-2-months-pakistan/
+- Windows 11 Pro — Official License Key: PKR 1,900 (null month(s)) - https://aitoolspak.tech/windows-11-pro-license-key-pakistan/
+- LinkedIn Premium — 2 Months: PKR 1,500 (2 months) - https://aitoolspak.tech/linkedin-premium-2-months-pakistan/
+- Replit Core — 1 Year: PKR 12,000 (1 year) - https://aitoolspak.tech/replit-core-1-year-pakistan/
+- n8n Starter — 1 Year: PKR 7,000 (1 year) - https://aitoolspak.tech/n8n-starter-1-year-pakistan/
+- Manus AI Pro — 1 Year: PKR 13,000 (1 year) - https://aitoolspak.tech/manus-ai-pro-1-year-pakistan/
+- Adobe Creative — 1 Year: PKR 25,000 (1 year) - https://aitoolspak.tech/adobe-creative-1-year-pakistan/
+- Gamma Pro — 1 Year: PKR 23,000 (1 year) - https://aitoolspak.tech/gamma-pro-1-year-pakistan/
 - Ideogram AI Plus: PKR 1,500 (1 month) - https://aitoolspak.tech/ideogram-ai-plus-pakistan/
 - Success.ai Starter Leads: PKR 2,400 (1 month) - https://aitoolspak.tech/success-ai-starter-pakistan/
 - vidIQ: PKR 2,159 (1 month) - https://aitoolspak.tech/vidiq-pakistan/
 - PlayHT: PKR 3,960 (1 month) - https://aitoolspak.tech/playht-pakistan/
-- SuperGrok: PKR 2,500 (1–3 months) - https://aitoolspak.tech/supergrok-pakistan/
 - WordAI: PKR 600 (1 month) - https://aitoolspak.tech/wordai-pakistan/
 - Jasper AI: PKR 600 (1 month) - https://aitoolspak.tech/jasper-ai-pakistan/
-- Google AI Ultra Plan: PKR 1,764 (1 month) - https://aitoolspak.tech/google-ai-ultra-pakistan/
 - Hailuo AI: PKR 2,040 (1 month) - https://aitoolspak.tech/hailuo-ai-pakistan/
-- Netflix: PKR 500 (1 month) - https://aitoolspak.tech/netflix-pakistan/
-- CapCut Pro: PKR 900 (1 month) - https://aitoolspak.tech/capcut-pro-pakistan/
-- Veo 3 Extension: PKR 3,000 (1 month) - https://aitoolspak.tech/veo-3-extension-pakistan/
-- Claude 20X Max Plan: PKR 45,000 (1 month) - https://aitoolspak.tech/claude-20x-max-pakistan/
-- Veo 3 Ultra – Official Paid Invite: PKR 8,500 (Credit-based) - https://aitoolspak.tech/veo-3-ultra-pakistan/
 - Dzine Master: PKR 5,000 (1 month) - https://aitoolspak.tech/dzine-master-pakistan/
 - Storyblocks Unlimited: PKR 4,000 (1 month) - https://aitoolspak.tech/storyblocks-unlimited-pakistan/
-- Prime Video: PKR 400 (1 month) - https://aitoolspak.tech/prime-video-pakistan/
 - Coursera Premium: PKR 1,000 (1 month) - https://aitoolspak.tech/coursera-premium-pakistan/
-- Helium 10 Platinum: PKR 2,500 (1 month) - https://aitoolspak.tech/helium-10-platinum-pakistan/
-- Helium 10 Diamond: PKR 4,500 (1 month) - https://aitoolspak.tech/helium-10-diamond-pakistan/
 - SEMrush Pro: PKR 1,500 (1 month) - https://aitoolspak.tech/semrush-pro-pakistan/
-- Runway ML Max: PKR 14,000 (1 month) - https://aitoolspak.tech/runway-ml-max-pakistan/
 
 ## Main Guides
 
 - ChatGPT Plus price in Pakistan: https://aitoolspak.tech/blog/chatgpt-plus-price-pakistan/
-- Cheap AI subscriptions in Pakistan (PKR prices): https://aitoolspak.tech/blog/find-cheap-ai-subscriptions-pakistan/
+- affordable AI subscriptions in Pakistan (PKR prices): https://aitoolspak.tech/blog/find-cheap-ai-subscriptions-pakistan/
 - Where to buy AI tools in Pakistan (safe sellers): https://aitoolspak.tech/blog/where-to-buy-ai-tools-pakistan/
 - Claude Pro vs ChatGPT Plus for Pakistani students: https://aitoolspak.tech/blog/claude-pro-vs-chatgpt-plus-pakistani-students/
 - Best AI tools for freelancers in Pakistan: https://aitoolspak.tech/blog/best-ai-tools-freelancers-pakistan/
@@ -87,7 +105,7 @@ Current selling prices in PKR from the AI Tools Pak catalog, per plan duration.
 - Veo 3 price in Pakistan (PKR): https://aitoolspak.tech/blog/veo-3-price-pakistan/
 - CapCut Pro price in Pakistan (PKR): https://aitoolspak.tech/blog/capcut-pro-price-pakistan/
 - Best AI tools for small businesses in Pakistan: https://aitoolspak.tech/blog/ai-tools-for-businesses-pakistan/
-- Cheap AI API credits in Pakistan (PKR): https://aitoolspak.tech/blog/cheap-ai-api-credits-pakistan/
+- affordable AI API credits in Pakistan (PKR): https://aitoolspak.tech/blog/cheap-ai-api-credits-pakistan/
 - Claude API credits in Pakistan (PKR): https://aitoolspak.tech/blog/claude-api-credits-pakistan/
 - Claude vs Gemini in Pakistan: https://aitoolspak.tech/blog/claude-vs-gemini-pakistan/
 - AI automation for small businesses in Pakistan: https://aitoolspak.tech/blog/ai-automation-for-small-business-pakistan/
@@ -123,20 +141,6 @@ Current selling prices in PKR from the AI Tools Pak catalog, per plan duration.
 - Perplexity Pro price in Pakistan (PKR): https://aitoolspak.tech/blog/perplexity-pro-price-pakistan/
 - QuillBot Premium price in Pakistan (PKR): https://aitoolspak.tech/blog/quillbot-premium-price-pakistan/
 - How to automate WhatsApp with AI in Pakistan: https://aitoolspak.tech/blog/how-to-automate-whatsapp-with-ai-pakistan/
-
-## AI Income Lab
-
-The AI Income Lab provides practical guides and case studies on making money with AI, building AI agencies, and AI-powered side hustles. All content is original and based on real-world experience.
-
-- Home: https://aitoolspak.tech/ai-income-lab/
-- About: https://aitoolspak.tech/ai-income-lab/about.html
-- AI Tools That Save Small Business Money: https://aitoolspak.tech/ai-income-lab/ai-tools-that-save-small-business-money.html
-- Build AI Voice Agent for Business: https://aitoolspak.tech/ai-income-lab/build-ai-voice-agent-business.html
-- ChatGPT Side Hustles That Pay: https://aitoolspak.tech/ai-income-lab/chatgpt-side-hustles.html
-- Contact: https://aitoolspak.tech/ai-income-lab/contact.html
-- How to Make Money with AI Tools in Pakistan: https://aitoolspak.tech/ai-income-lab/how-to-make-money-with-ai-2026.html
-- Privacy Policy: https://aitoolspak.tech/ai-income-lab/privacy-policy.html
-- Start AI Automation Agency: https://aitoolspak.tech/ai-income-lab/start-ai-automation-agency.html
 
 ## Latest AI News
 
@@ -182,10 +186,6 @@ Support hours: 11:00 AM to 11:00 PM Pakistan time
 The AI Post covers AI news, tutorials, comparisons, reviews and free tools. Articles are original and practical.
 
 - Home: https://aitoolspak.tech/ai-post/
-- NVIDIA Teams Up With Six Wall Street Giants to Mobilize $500B for AI Infrastructure — GPUs Become an Asset Class: https://aitoolspak.tech/ai-post/nvidia-500b-ai-infrastructure-financing.html
-- Anthropic Rolls Out Invisible Watermarks on Claude Output Worldwide — Text Marks and Signed File Provenance, Starting With EU Models: https://aitoolspak.tech/ai-post/claude-watermarks-ai-content.html
-- OpenAI Pauses Astra Model Over Critical Cybersecurity Risk — First Time a Frontier Lab Has Halted Development Mid-Flight: https://aitoolspak.tech/ai-post/openai-pauses-astra-critical-cyber-risk.html
-- How to Build a Production AI Agent Stack in 2026: The Complete Architecture (Free Tier Edition): https://aitoolspak.tech/ai-post/how-to-build-production-ai-agent-stack-2026.html
 - WhatsApp Launches Calling API for Businesses: Inbound Calls Free, AI Agents Ready: https://aitoolspak.tech/ai-post/whatsapp-calling-api-for-businesses.html
 - DeepSeek V4's Free API Tier Is Real — and Developers Are Building With It: https://aitoolspak.tech/ai-post/deepseek-v4-free-api-for-developers.html
 - How to Make Money with AI in 2026: 9 Real Income Paths, Ranked: https://aitoolspak.tech/ai-post/how-to-make-money-with-ai-2026.html
@@ -199,5 +199,3 @@ The AI Post covers AI news, tutorials, comparisons, reviews and free tools. Arti
 - 13 Free AI Tools That Are Actually Free in 2026 (No Card Required): https://aitoolspak.tech/ai-post/free-ai-tools-that-are-actually-free-2026.html
 - AMD Acquires Taalas to Bake AI Models Into Silicon — Inference Gets a Hardware Reset: https://aitoolspak.tech/ai-post/amd-acquires-taalas-inference-silicon.html
 - Cloud LLM APIs vs Local Inference in 2026: Which One Should Your Agent Run On?: https://aitoolspak.tech/ai-post/cloud-llm-api-vs-local-inference.html
-- Runway vs Kling vs Veo 3 vs Pika: Which AI Video Generator Should You Actually Pay For?: https://aitoolspak.tech/ai-post/runway-vs-kling-vs-veo3-vs-pika-2026.html
-- Google NotebookLM Review: Still the Best Free AI Research Tool in 2026?: https://aitoolspak.tech/ai-post/google-notebooklm-review-2026.html

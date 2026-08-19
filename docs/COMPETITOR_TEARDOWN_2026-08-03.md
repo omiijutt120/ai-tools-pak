@@ -30,7 +30,7 @@ Live data collected for the 3 owners' biggest rivals. Facts from raw fetched HTM
 
 ## Gap: aitoolspak.tech (mine, baseline)
 
-- Home: `Cheap AI Tools Pakistan | AI Tools Sale & PKR Prices` + strong PKR/offer meta.
+- Home: `affordable AI Tools Pakistan | AI Tools Sale & PKR Prices` + strong PKR/offer meta.
 - Product: per-product `/{slug}-pakistan/` with **Offer + Product + FAQPage + HowTo** and visible PKR, last-verified date, buyer-safety checks.
 - Homepage schema graph: Organization, WebSite, ItemList, Product, Offer, FAQPage, Breadcrumb, MerchantReturnPolicy, ShippingDetails, ContactPoint, SearchAction.
 - Blog: Article schema. llms.txt: present with 34 PKR price lines.
