@@ -45,6 +45,7 @@ const STATIC_SITEMAP_PATHS = [
   "delivery-policy/",
   "frequently-asked-questions/",
   "enterprise-ai-api-credits/",
+  "ai-subscription-price-index-pakistan/",
   "blog/chatgpt-plus-price-pakistan/",
   "blog/canva-pro-price-pakistan/",
   "blog/claude-pro-vs-chatgpt-plus-pakistani-students/",

@@ -4,6 +4,7 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const commands = [
   ["node", ["scripts/generate-products.js"]],
+  ["node", ["scripts/generate-price-index.js"]],
   ["node", ["scripts/generate-social-services.js"]],
   ["node", ["scripts/generate-llms-txt.js"]],
   ["node", ["scripts/generate-llms-full-txt.js"]],
@@ -12,9 +13,12 @@ const commands = [
   ["node", ["scripts/check-social-services.js"]],
   ["node", ["scripts/check-site-links.js"]],
   ["node", ["scripts/seo-audit.js"]],
+  ["node", ["scripts/check-backlinks.js"]],
   ["node", ["--check", "script.js"]],
   ["node", ["--check", "social-media-services/social-services.js"]],
-  ["node", ["--check", "scripts/generate-products.js"]]
+  ["node", ["--check", "scripts/generate-products.js"]],
+  ["node", ["--check", "scripts/generate-price-index.js"]],
+  ["node", ["--check", "scripts/check-backlinks.js"]]
 ];
 
 for (const [command, args] of commands) {
