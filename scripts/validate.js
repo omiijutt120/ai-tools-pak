@@ -16,6 +16,7 @@ const commands = [
   ["node", ["scripts/check-social-services.js"]],
   ["node", ["scripts/check-site-links.js"]],
   ["node", ["scripts/seo-audit.js"]],
+  ["node", ["scripts/check-ads-txt.js"]],
   ["node", ["scripts/full-seo-audit.js"]],
   ["node", ["scripts/check-backlinks.js"]],
   ["node", ["--check", "script.js"]],
@@ -26,7 +27,8 @@ const commands = [
   ["node", ["--check", "scripts/check-indexation.js"]],
   ["node", ["--check", "scripts/enhance-ai-post-static.js"]],
   ["node", ["--check", "scripts/score-product-genericness.js"]],
-  ["node", ["--check", "scripts/check-backlinks.js"]]
+  ["node", ["--check", "scripts/check-backlinks.js"]],
+  ["node", ["--check", "scripts/check-ads-txt.js"]]
 ];
 
 for (const [command, args] of commands) {
