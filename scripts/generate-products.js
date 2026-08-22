@@ -625,7 +625,7 @@ function productPageHtml(product, related) {
             <ul>
               <li><a href="../${categoryGuide(product)}">Read a relevant AI tools guide</a></li>
               <li><a href="../blog/choose-ai-subscription-safely/">How to choose an AI subscription safely</a></li>
-              ${relatedLinks}${comparisonLinks(product) ? `\n              ${comparisonLinks(product)}` : ""}
+${relatedLinks || comparisonLinks(product) ? `              ${relatedLinks}${comparisonLinks(product) ? `\n              ${comparisonLinks(product)}` : ""}` : ""}
             </ul>
           </article>
         </div>
