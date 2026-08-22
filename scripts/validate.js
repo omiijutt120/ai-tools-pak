@@ -5,6 +5,7 @@ const root = path.resolve(__dirname, "..");
 const commands = [
   ["node", ["scripts/generate-products.js"]],
   ["node", ["scripts/generate-comparisons.js"]],
+  ["node", ["scripts/enhance-ai-post-static.js"]],
   ["node", ["scripts/generate-price-index.js"]],
   ["node", ["scripts/generate-social-services.js"]],
   ["node", ["scripts/generate-llms-txt.js"]],
@@ -15,6 +16,7 @@ const commands = [
   ["node", ["scripts/check-social-services.js"]],
   ["node", ["scripts/check-site-links.js"]],
   ["node", ["scripts/seo-audit.js"]],
+  ["node", ["scripts/full-seo-audit.js"]],
   ["node", ["scripts/check-backlinks.js"]],
   ["node", ["--check", "script.js"]],
   ["node", ["--check", "social-media-services/social-services.js"]],
@@ -22,6 +24,7 @@ const commands = [
   ["node", ["--check", "scripts/generate-price-index.js"]],
   ["node", ["--check", "scripts/generate-comparisons.js"]],
   ["node", ["--check", "scripts/check-indexation.js"]],
+  ["node", ["--check", "scripts/enhance-ai-post-static.js"]],
   ["node", ["--check", "scripts/score-product-genericness.js"]],
   ["node", ["--check", "scripts/check-backlinks.js"]]
 ];

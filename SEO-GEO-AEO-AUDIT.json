@@ -1,0 +1,795 @@
+{
+  "summary": {
+    "observed": "2026-08-22",
+    "sitemapUrls": 222,
+    "htmlPagesAudited": 220,
+    "byType": {
+      "utility": 37,
+      "product": 51,
+      "income-lab": 9,
+      "blog": 114,
+      "comparison": 8,
+      "social": 1
+    },
+    "totalInternalLinks": 3224,
+    "averageInternalLinksPerPage": 14.7,
+    "orphanPages": 0,
+    "unreachablePages": 0,
+    "maxClickDepth": 2,
+    "issuesBySeverity": {
+      "P2": 154
+    }
+  },
+  "issues": [
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-automation-services/",
+      "issue": "title length 96"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-automation-services/",
+      "issue": "meta description length 213"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-income-lab/",
+      "issue": "title length 78"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-income-lab/about.html",
+      "issue": "title length 21"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-income-lab/about.html",
+      "issue": "meta description length 77"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-income-lab/build-ai-voice-agent-business.html",
+      "issue": "title length 89"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-income-lab/contact.html",
+      "issue": "title length 23"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-income-lab/contact.html",
+      "issue": "meta description length 67"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-income-lab/how-to-make-money-with-ai-2026.html",
+      "issue": "title length 73"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-income-lab/privacy-policy.html",
+      "issue": "meta description length 82"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-income-lab/start-ai-automation-agency.html",
+      "issue": "title length 76"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/",
+      "issue": "meta description length 52"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/about.html",
+      "issue": "title length 17"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/about.html",
+      "issue": "meta description length 58"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/ai-news/",
+      "issue": "title length 21"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/ai-news/",
+      "issue": "meta description length 38"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/amd-acquires-taalas-inference-silicon.html",
+      "issue": "title length 84"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/amd-acquires-taalas-inference-silicon.html",
+      "issue": "meta description length 206"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/build-ai-voice-agent-for-business.html",
+      "issue": "title length 73"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/build-whatsapp-ai-chatbot-business.html",
+      "issue": "title length 67"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/build-whatsapp-ai-chatbot-business.html",
+      "issue": "meta description length 176"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/cloud-llm-api-vs-local-inference.html",
+      "issue": "title length 78"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/cloud-llm-api-vs-local-inference.html",
+      "issue": "meta description length 198"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/comparisons/",
+      "issue": "title length 25"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/comparisons/",
+      "issue": "meta description length 42"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/contact.html",
+      "issue": "title length 19"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/contact.html",
+      "issue": "meta description length 60"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/cookie-policy.html",
+      "issue": "title length 27"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/cookie-policy.html",
+      "issue": "meta description length 68"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/deepseek-v4-free-api-for-developers.html",
+      "issue": "title length 73"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/editorial-policy.html",
+      "issue": "meta description length 71"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/free-ai-tools-that-are-actually-free-2026.html",
+      "issue": "title length 66"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/free-ai-tools/",
+      "issue": "title length 27"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/free-ai-tools/",
+      "issue": "meta description length 44"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/how-to-make-money-with-ai-2026.html",
+      "issue": "meta description length 166"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/openai-slows-training-august-2026.html",
+      "issue": "title length 73"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/openai-slows-training-august-2026.html",
+      "issue": "meta description length 322"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/privacy-policy.html",
+      "issue": "title length 28"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/privacy-policy.html",
+      "issue": "meta description length 69"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/prompt-library/",
+      "issue": "title length 28"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/prompt-library/",
+      "issue": "meta description length 45"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/reviews/",
+      "issue": "title length 21"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/reviews/",
+      "issue": "meta description length 38"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/terms.html",
+      "issue": "title length 26"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/terms.html",
+      "issue": "meta description length 67"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/tutorials/",
+      "issue": "title length 23"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/tutorials/",
+      "issue": "meta description length 40"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/whatsapp-calling-api-for-businesses.html",
+      "issue": "title length 81"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/ai-post/whatsapp-calling-api-for-businesses.html",
+      "issue": "meta description length 166"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/ai-tools-affiliate-program/",
+      "issue": "meta description length 26"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/ai-tools-pakistan-complete-guide/",
+      "issue": "title length 90"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/ai-tools-pakistan-complete-guide/",
+      "issue": "meta description length 226"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/airbnb-ai-60-percent-faster/",
+      "issue": "title length 91"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/amazon-data-center-climate/",
+      "issue": "title length 97"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/amazon-data-center-climate/",
+      "issue": "meta description length 175"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/anthropic-custom-ai-chips-samsung/",
+      "issue": "title length 110"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/anthropic-custom-ai-chips-samsung/",
+      "issue": "meta description length 180"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/api-credits-wholesale-pakistan/",
+      "issue": "title length 90"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/apple-alibaba-qwen-china/",
+      "issue": "title length 91"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/apple-alibaba-qwen-china/",
+      "issue": "meta description length 195"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/best-ai-agents-2026/",
+      "issue": "title length 82"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/best-ai-chatbots-for-students/",
+      "issue": "title length 84"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/best-ai-design-tools-2026/",
+      "issue": "title length 81"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/best-ai-tools-for-ecommerce-pakistan/",
+      "issue": "title length 77"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/best-ai-tools-for-social-media-pakistan/",
+      "issue": "title length 74"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/best-ai-tools-for-teachers-pakistan/",
+      "issue": "title length 81"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/best-ai-tools-for-teachers-pakistan/",
+      "issue": "meta description length 166"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/best-ai-tools-for-whatsapp-business-pakistan/",
+      "issue": "title length 69"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/best-ai-tools-freelancers-pakistan/",
+      "issue": "meta description length 101"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/best-free-ai-tools-pakistan/",
+      "issue": "title length 83"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/buy-openai-api-credits-pakistan/",
+      "issue": "title length 69"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/canva-pro-vs-photoshop/",
+      "issue": "title length 69"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/chatgpt-plus-price-pakistan/",
+      "issue": "meta description length 108"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/chatgpt-unlimited-free-text-chats/",
+      "issue": "title length 110"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/cheap-ai-api-credits-pakistan/",
+      "issue": "title length 72"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/claude-api-credits-pakistan/",
+      "issue": "meta description length 46"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/claude-code-auto-mode-default/",
+      "issue": "title length 116"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/claude-opus-5-wipes-home-directory/",
+      "issue": "title length 94"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/claude-opus-5-wipes-home-directory/",
+      "issue": "meta description length 195"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/claude-pro-vs-chatgpt-plus-pakistani-students/",
+      "issue": "meta description length 98"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/claude-vs-gemini-pakistan/",
+      "issue": "title length 66"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/cloudflare-kitesurf-ai-browser/",
+      "issue": "title length 112"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/coursera-premium-price-pakistan/",
+      "issue": "meta description length 169"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/deepseek-api-price-increase/",
+      "issue": "title length 97"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/deepseek-api-price-increase/",
+      "issue": "meta description length 187"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/deepseek-api-price-pakistan/",
+      "issue": "title length 81"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/deepseek-v4-flash-0731/",
+      "issue": "title length 106"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/deepseek-vs-chatgpt/",
+      "issue": "title length 97"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/doe-genesis-open-models/",
+      "issue": "title length 103"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/doe-genesis-open-models/",
+      "issue": "meta description length 167"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/elevenlabs-price-pakistan/",
+      "issue": "title length 79"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/elevenlabs-vs-playht/",
+      "issue": "title length 80"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/find-cheap-ai-subscriptions-pakistan/",
+      "issue": "title length 82"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/find-cheap-ai-subscriptions-pakistan/",
+      "issue": "meta description length 190"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/free-vs-paid-ai-tools/",
+      "issue": "meta description length 105"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/gemini-pro-vs-google-ai-ultra/",
+      "issue": "title length 84"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/gemini-vs-gpt-5/",
+      "issue": "title length 97"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/github-copilot-price-pakistan/",
+      "issue": "title length 82"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/google-maps-agentic-ordering/",
+      "issue": "title length 99"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/google-maps-agentic-ordering/",
+      "issue": "meta description length 166"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/gpt-5-vs-claude-sonnet/",
+      "issue": "title length 95"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/grok-vs-chatgpt-vs-gemini/",
+      "issue": "title length 68"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/hassabis-steps-down-alphabet-chief-scientist/",
+      "issue": "title length 110"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/hassabis-steps-down-alphabet-chief-scientist/",
+      "issue": "meta description length 173"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/heygen-vs-synthesia/",
+      "issue": "title length 84"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/how-to-automate-whatsapp-with-ai-pakistan/",
+      "issue": "title length 72"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/how-to-build-n8n-automations-pakistan/",
+      "issue": "title length 88"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/how-to-buy-ai-api-credits-pakistan/",
+      "issue": "title length 78"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/how-to-buy-ai-api-credits-pakistan/",
+      "issue": "meta description length 202"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/how-to-earn-money-with-ai-pakistan/",
+      "issue": "title length 80"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/hugging-face-hack-ai-agents/",
+      "issue": "title length 118"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/hugging-face-hack-ai-agents/",
+      "issue": "meta description length 175"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/ideogram-vs-midjourney/",
+      "issue": "title length 82"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/jasper-price-pakistan/",
+      "issue": "title length 76"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/kimi-k3-sandbox-escape/",
+      "issue": "title length 94"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/kimi-k3-sandbox-escape/",
+      "issue": "meta description length 178"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/malachyte-spotify-ai-ecommerce/",
+      "issue": "title length 105"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/meta-ai-model-escaped-containment/",
+      "issue": "title length 94"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/meta-ai-model-escaped-containment/",
+      "issue": "meta description length 166"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/meta-muse-code/",
+      "issue": "title length 104"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/midjourney-price-pakistan/",
+      "issue": "title length 80"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/midjourney-vs-dalle/",
+      "issue": "title length 101"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/mirendil-google-cloud-100m/",
+      "issue": "title length 90"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/omilia-67m-voice-support/",
+      "issue": "title length 91"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/openai-acquires-nextslide/",
+      "issue": "title length 93"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/openai-astra-security-pause/",
+      "issue": "title length 101"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/openai-codex-micro-keyboard/",
+      "issue": "title length 89"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/openai-codex-micro-keyboard/",
+      "issue": "meta description length 175"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/openai-gpt-live-voice-models/",
+      "issue": "title length 100"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/openai-gpt-live-voice-models/",
+      "issue": "meta description length 190"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/openai-smart-speaker-price/",
+      "issue": "title length 115"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/oracle-bans-ai-code-openjdk/",
+      "issue": "title length 102"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/pay-ai-tools-debit-card-pakistan/",
+      "issue": "title length 68"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/perplexity-pro-price-pakistan/",
+      "issue": "title length 80"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/perplexity-vs-chatgpt-search/",
+      "issue": "title length 96"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/quillbot-premium-price-pakistan/",
+      "issue": "title length 82"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/rippling-ai-spend-console/",
+      "issue": "title length 102"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/semrush-vs-ahrefs/",
+      "issue": "title length 66"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/suno-audio-watermarking/",
+      "issue": "title length 82"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/time-magazine-agent-ads-geo/",
+      "issue": "title length 105"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/time-magazine-agent-ads-geo/",
+      "issue": "meta description length 178"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/top-20-ai-tools-2026/",
+      "issue": "title length 96"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/blog/where-to-buy-ai-tools-pakistan/",
+      "issue": "title length 77"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/chatgpt-plus-apple-account-pakistan/",
+      "issue": "title length 66"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/contact-us/",
+      "issue": "meta description length 109"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/elevenlabs-creator-pakistan/",
+      "issue": "title length 66"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/enterprise-ai-api-credits/",
+      "issue": "title length 72"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/leonardo-ai-essential-8500-credits-pakistan/",
+      "issue": "title length 70"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/privacy-policy/",
+      "issue": "title length 29"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/privacy-policy/",
+      "issue": "meta description length 106"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/refund-policy/",
+      "issue": "title length 28"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/social-media-services/",
+      "issue": "meta description length 184"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/veo-3-ultra-pakistan/",
+      "issue": "title length 67"
+    },
+    {
+      "severity": "P2",
+      "url": "https://aitoolspak.tech/windows-11-pro-license-key-pakistan/",
+      "issue": "title length 70"
+    }
+  ]
+}

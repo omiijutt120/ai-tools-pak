@@ -62,13 +62,13 @@ const STATIC_SITEMAP_PATHS = [
   "ai-income-lab/chatgpt-side-hustles.html",
   "ai-income-lab/contact.html",
   "ai-income-lab/how-to-make-money-with-ai-2026.html",
-  "ai-income-lab/index.html",
   "ai-income-lab/privacy-policy.html",
   "ai-income-lab/start-ai-automation-agency.html",
   "delivery-policy/",
   "frequently-asked-questions/",
   "enterprise-ai-api-credits/",
   "ai-subscription-price-index-pakistan/",
+  "blog/",
   "blog/chatgpt-plus-price-pakistan/",
   "blog/canva-pro-price-pakistan/",
   "blog/claude-pro-vs-chatgpt-plus-pakistani-students/",
@@ -191,7 +191,7 @@ const RETIRED_PRODUCT_REDIRECTS = {
   "elevenlabs-130k-credits-pakistan/": "elevenlabs-creator-pakistan/",
   "lovable-pro-1-month-pakistan/": "lovable-ai-pro-pakistan/"
 };
-const RETIRED_SITEMAP_PATHS = new Set(Object.keys(RETIRED_PRODUCT_REDIRECTS));
+const RETIRED_SITEMAP_PATHS = new Set([...Object.keys(RETIRED_PRODUCT_REDIRECTS), "ai-income-lab/index.html"]);
 
 const required = [
   "product_id",

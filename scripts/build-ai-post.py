@@ -51,16 +51,17 @@ def head(title, desc, url, schema=None, canonical=None, og_img=None):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="{esc(canonical or url)}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{esc(url)}">
-<meta property="og:image" content="{esc(og_img) if og_img else ''}">
+<meta property="og:image" content="{esc(og_img) if og_img else 'https://aitoolspak.tech/og-image.png'}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(desc)}">
-<meta name="twitter:image" content="{esc(og_img) if og_img else ''}">
+<meta name="twitter:image" content="{esc(og_img) if og_img else 'https://aitoolspak.tech/og-image.png'}">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700;8..60,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{BASE}/assets/style.css">
 """
@@ -173,9 +174,13 @@ def category_page(c):
     arts = [a for a in ARTS if a["category"] == c["key"]]
     url = f'{BASE}/{c["key"]}/'
     cards = '<div class="grid">' + "".join(card(a) for a in arts) + "</div>"
-    pg = head(f"{c['label']} — The AI Post", f"All {c['label'].lower()} articles from The AI Post.", url) + header(c["key"]) + f"""
+    schema = {"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{c['label']} — The AI Post", "url": url,
+              "isPartOf": {"@type": "WebSite", "name": "The AI Post", "url": BASE + "/"},
+              "mainEntity": {"@type": "ItemList", "numberOfItems": len(arts), "itemListElement": [
+                  {"@type": "ListItem", "position": i + 1, "name": a["title"], "url": f'{BASE}/{a["slug"]}.html'} for i, a in enumerate(arts)]}}
+    pg = head(f"{c['label']} — The AI Post", f"All {c['label'].lower()} articles from The AI Post.", url, schema) + header(c["key"]) + f"""
 <div class="container" style="padding-top:34px">
-  <div class="sec-head"><h2>{c['icon']} {c['label']}</h2><span style="font-size:13px;color:var(--muted)">{len(arts)} articles</span></div>
+  <div class="sec-head"><h1>{c['icon']} {c['label']}</h1><span style="font-size:13px;color:var(--muted)">{len(arts)} articles</span></div>
   {cards}
 </div>""" + footer()
     os.makedirs(os.path.join(POST, c["key"]), exist_ok=True)
@@ -273,7 +278,7 @@ def author_page():
     arts = "".join(f'<li><a href="{BASE}/{a["slug"]}.html">{esc(a["title"])}</a> <span class="meta">· {a["date"]}</span></li>' for a in sorted(ARTS, key=lambda x: x["date"], reverse=True))
     pg = head("Muhammad Umar — Author, The AI Post", "Muhammad Umar is the founder of AI Tools Pak and writes AI news, tutorials and comparisons for The AI Post.", url, schema) + header() + f"""
 <div class="container" style="padding-top:34px">
-  <div class="sec-head"><h2>✍️ Muhammad Umar</h2></div>
+  <div class="sec-head"><h1>✍️ Muhammad Umar</h1></div>
   <p>Founder of <a href="https://aitoolspak.tech">AI Tools Pak</a> — cheap AI subscriptions in Pakistan (PKR prices, WhatsApp support). BS Artificial Intelligence student building AI agents, voice systems and workflow automation for real businesses.</p>
   <p>Links: <a href="https://github.com/omiijutt120" rel="me">GitHub</a> · <a href="https://www.linkedin.com/in/umar-jutt" rel="me">LinkedIn</a> · <a href="{WA}">WhatsApp</a></p>
   <div class="sec-head" style="margin-top:28px"><h3>📝 Articles by Muhammad Umar</h3></div>

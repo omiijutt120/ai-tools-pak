@@ -132,3 +132,13 @@ UPDATE 2026-08-18 (autonomous SEO operator)
 - Metric to improve: ai-income-lab page CTR in search results and social shares
 - When: Check after next Google crawl (typically 3-7 days)
 - Also monitor: IndexNow submission confirmation, DDG rank stability, social-services-data.js size
+
+## 2026-08-22 — Full SEO/GEO/AEO portfolio audit and remediation
+
+- Audited 222 sitemap URLs and 220 local HTML pages with the new repeatable `scripts/full-seo-audit.js`.
+- Reached 0 P0/P1 issues, 0 orphan pages, 0 unreachable sitemap pages and maximum click depth 2.
+- Added missing AI Post and AI Income Lab OG, Twitter, referrer and structured metadata; corrected category/author heading hierarchy.
+- Connected the blog, Coursera guide, AI Post, Income Lab and price-index discovery paths; retired the duplicate Income Lab index-form sitemap URL.
+- Reframed unsupported Income Lab performance and earnings claims as measurable or illustrative, with no guaranteed outcomes.
+- Added `SEO-GEO-AEO-FULL-AUDIT-2026-08-22.md` and machine-readable `SEO-GEO-AEO-AUDIT.json`.
+- Core Web Vitals, Search Console index coverage, external backlink universe and AI referral conversions remain owner-data dependencies and are explicitly reported as N/A rather than estimated.
