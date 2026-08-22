@@ -9,6 +9,18 @@ const sitemapPath = path.join(root, "sitemap.xml");
 const SITE_URL = "https://aitoolspak.tech";
 const LAST_VERIFIED = "2026-08-19";
 const DISPLAY_DATE = "August 19, 2026";
+const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION || "";
+const BING_SITE_VERIFICATION = process.env.BING_SITE_VERIFICATION || "";
+const COMPARISON_GUIDES = [
+  { path: "comparisons/chatgpt-plus-vs-claude-pro-pakistan/", slugs: ["chatgpt-plus", "claude-ai"], title: "ChatGPT Plus vs Claude Pro in Pakistan" },
+  { path: "comparisons/chatgpt-plus-vs-gemini-pro-pakistan/", slugs: ["chatgpt-plus", "gemini-pro"], title: "ChatGPT Plus vs Gemini Pro in Pakistan" },
+  { path: "comparisons/claude-pro-vs-gemini-pro-pakistan/", slugs: ["claude-ai", "gemini-pro"], title: "Claude Pro vs Gemini Pro in Pakistan" },
+  { path: "comparisons/grammarly-vs-quillbot-vs-wordai-pakistan/", slugs: ["grammarly-pro", "quillbot", "wordai"], title: "Grammarly vs QuillBot vs WordAI in Pakistan" },
+  { path: "comparisons/canva-vs-leonardo-vs-ideogram-pakistan/", slugs: ["canva-pro", "leonardo-ai", "ideogram-ai-plus-private"], title: "Canva Pro vs Leonardo AI vs Ideogram AI Plus" },
+  { path: "comparisons/capcut-pro-vs-runway-ml-pakistan/", slugs: ["capcut-pro", "runway-ml-unlimited-generations"], title: "CapCut Pro vs Runway ML in Pakistan" },
+  { path: "comparisons/elevenlabs-vs-playht-pakistan/", slugs: ["elevenlabs-creator-private", "playht"], title: "ElevenLabs vs PlayHT in Pakistan" },
+  { path: "comparisons/helium10-vs-semrush-vs-vidiq-pakistan/", slugs: ["helium-10-platinum", "semrush-pro", "vidiq"], title: "Helium 10 vs SEMrush Pro vs vidIQ" }
+];
 const PRODUCT_ROUTE_BY_SLUG = {
   "chatgpt-plus": "chatgpt-plus-pakistan/",
   "claude-ai": "claude-pro-pakistan/",
@@ -34,6 +46,7 @@ const PRODUCT_ROUTE_BY_SLUG = {
 };
 const STATIC_SITEMAP_PATHS = [
   "",
+  ...COMPARISON_GUIDES.map((guide) => guide.path),
   "agents.md",
   "llms.txt",
   "social-media-services/",
@@ -362,6 +375,46 @@ function featureList(product) {
   return product.keyFeatures.split(";").map((feature) => feature.trim()).filter(Boolean);
 }
 
+function verificationMeta() {
+  return [
+    GOOGLE_SITE_VERIFICATION && `<meta name="google-site-verification" content="${escapeHtml(GOOGLE_SITE_VERIFICATION)}">`,
+    BING_SITE_VERIFICATION && `<meta name="msvalidate.01" content="${escapeHtml(BING_SITE_VERIFICATION)}">`
+  ].filter(Boolean).join("\n    ");
+}
+
+function cardDifferentiator(product) {
+  const features = featureList(product).slice(0, 2).join(" and ");
+  const limit = product.creditsOrUsageLimit && !/^\d+ month access$/i.test(product.creditsOrUsageLimit)
+    ? product.creditsOrUsageLimit
+    : features;
+  return `${product.subscriptionDuration} ${product.planTier}; ${limit || product.accessType}.`;
+}
+
+function priorityOpening(product) {
+  const specific = {
+    "chatgpt-plus": "writing, study, coding and brainstorming",
+    "claude-ai": "long writing, research, summaries and code review",
+    "gemini-pro": "Google AI writing, productivity and research",
+    "canva-pro": "templates, brand tools and content creation",
+    "elevenlabs-creator-private": "AI voice work with a defined credit allowance",
+    "heygen-ai": "avatar videos, presentations and text-to-video work",
+    "capcut-pro": "short-video editing, effects and AI captions",
+    "grammarly-pro": "grammar, proofreading, rewriting and clarity",
+    "semrush-pro": "keyword research, SEO audits and competitor analysis",
+    "runway-ml-unlimited-generations": "AI video generation and editing"
+  };
+  const workflow = specific[product.slug];
+  if (!workflow) return "";
+  return `For buyers in Pakistan, choosing ${product.name} for ${workflow} can be easier than completing the international payment: cards may be declined and foreign-currency charges can make the final PKR cost unclear. AI Tools Pak lists this ${product.subscriptionDuration} ${product.planTier} at PKR ${product.sellingPricePkr.toLocaleString("en-PK")} with ${product.accessType.toLowerCase()} and ${product.creditsOrUsageLimit.toLowerCase()}. Before payment, WhatsApp support confirms availability, the exact access model, activation steps and refund condition in writing. You are not asked for your email password. The catalog identifies the relevant features as ${featureList(product).join(", ").toLowerCase()}, so use those concrete details to compare the plan with another tool rather than treating every paid subscription as interchangeable. Check which account receives access, whether the duration matches your project, and what usage limit applies. Compare those confirmed details with your workflow and provider limits before ordering; a familiar product name alone does not tell you whether the plan, credits or access method fit your needs.`;
+}
+
+function comparisonLinks(product) {
+  return COMPARISON_GUIDES
+    .filter((guide) => guide.slugs.includes(product.slug))
+    .map((guide) => `<li><a href="../${guide.path}">${escapeHtml(guide.title)}</a></li>`)
+    .join("\n              ");
+}
+
 function metaDescription(product) {
   return `Check ${product.name} price in Pakistan, PKR ${product.sellingPricePkr.toLocaleString("en-PK")} listing, ${product.accessType.toLowerCase()}, ${product.subscriptionDuration.toLowerCase()} and safe WhatsApp activation details.`;
 }
@@ -470,7 +523,7 @@ function productPageHtml(product, related) {
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}">
     <meta name="author" content="AI Tools Pak Editorial">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    ${verificationMeta() ? `${verificationMeta()}\n    ` : ""}<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://www.gstatic.com; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#202a36">
@@ -516,7 +569,7 @@ function productPageHtml(product, related) {
           </article>
           <article class="glass-panel page-card">
             <h2>Product overview</h2>
-            <p>${escapeHtml(product.fullDescription)}</p>
+            ${priorityOpening(product) ? `<p>${escapeHtml(priorityOpening(product))}</p>\n            ` : ""}<p>${escapeHtml(product.fullDescription)}</p>
             <p>${escapeHtml(product.name)} is shown with PKR pricing, access notes and safety checks for buyers in Pakistan. The page avoids official-partner claims and focuses on what a buyer should verify before paying.</p>
             <p>For buyers searching ${escapeHtml(product.name)} price in Pakistan, this guide keeps plan duration, device notes, delivery expectations and refund limits on one page so the comparison is easier before ordering.</p>
             ${official}
@@ -572,7 +625,7 @@ function productPageHtml(product, related) {
             <ul>
               <li><a href="../${categoryGuide(product)}">Read a relevant AI tools guide</a></li>
               <li><a href="../blog/choose-ai-subscription-safely/">How to choose an AI subscription safely</a></li>
-              ${relatedLinks}
+              ${relatedLinks}${comparisonLinks(product) ? `\n              ${comparisonLinks(product)}` : ""}
             </ul>
           </article>
         </div>
@@ -742,6 +795,8 @@ fs.writeFileSync(
 );
 
 let index = fs.readFileSync(indexPath, "utf8");
+index = index.replace(/\s*<meta name="(?:google-site-verification|msvalidate\.01)"[^>]*>/g, "");
+if (verificationMeta()) index = index.replace(/(<meta name="author"[^>]*>)/, `$1\n    ${verificationMeta()}`);
 index = index.replace(/<span><strong[^>]*>[^<]+<\/strong>\s*(?:AI\s*)?tools listed<\/span>/, `<span><strong data-product-count>${products.length}</strong> AI tools listed</span>`);
 index = index.replace(/<ul class="noscript-products">[\s\S]*?<\/ul>/, `<ul class="noscript-products">\n${products.map((product) => `            <li>${product.name} - PKR ${product.sellingPricePkr.toLocaleString("en-PK")}</li>`).join("\n")}\n          </ul>`);
 index = index.replace(/<section class="section" id="product-guides"[\s\S]*?<\/section>\s*<section class="section" id="quick-order"[\s\S]*?<\/section>/, `<section class="section" id="product-guides" aria-label="Main AI tool product pages">
@@ -750,7 +805,7 @@ index = index.replace(/<section class="section" id="product-guides"[\s\S]*?<\/se
           <h2>Dedicated buying guides for every AI subscription.</h2>
         </div>
         <div class="link-grid">
-${products.map((product) => `          <a class="glass-panel link-card" href="${product.guideUrl}"><strong>${escapeHtml(product.name)} Pakistan</strong><span class="card-price">${product.compareAtPricePkr ? `<del>PKR ${product.compareAtPricePkr.toLocaleString("en-PK")}</del> ` : ""}PKR ${product.sellingPricePkr.toLocaleString("en-PK")}${product.discountPercent ? ` <em class="card-off">${product.discountPercent}% OFF</em>` : ""}</span><span>Price, plan, activation, safety checks and FAQs.</span><span class="card-buy">Buy on WhatsApp →</span></a>`).join("\n")}
+${products.map((product) => `          <a class="glass-panel link-card" href="${product.guideUrl}"><strong>${escapeHtml(product.name)} Pakistan</strong><span class="card-price">${product.compareAtPricePkr ? `<del>PKR ${product.compareAtPricePkr.toLocaleString("en-PK")}</del> ` : ""}PKR ${product.sellingPricePkr.toLocaleString("en-PK")}${product.discountPercent ? ` <em class="card-off">${product.discountPercent}% OFF</em>` : ""}</span><span>${escapeHtml(cardDifferentiator(product))}</span><span class="card-buy">Buy on WhatsApp →</span></a>`).join("\n")}
         </div>
       </section>
       <section class="section" id="quick-order" aria-label="Quick WhatsApp order list">

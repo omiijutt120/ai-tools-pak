@@ -209,6 +209,21 @@ for (const rel of blogPosts) {
   out.push("");
 }
 
+out.push("## Product Comparisons (Full Text)");
+out.push("");
+const comparisonRoot = path.join(root, "comparisons");
+if (fs.existsSync(comparisonRoot)) {
+  for (const slug of fs.readdirSync(comparisonRoot).sort()) {
+    const rel = `comparisons/${slug}/index.html`;
+    if (!fs.existsSync(path.join(root, rel))) continue;
+    out.push(`### ${slug.replace(/-/g, " ")}`);
+    out.push(pageMainText(rel, 5000));
+    out.push("");
+    out.push(`Source: ${SITE_URL}/comparisons/${slug}/`);
+    out.push("");
+  }
+}
+
 out.push("## Utility Pages");
 out.push("");
 for (const rel of [

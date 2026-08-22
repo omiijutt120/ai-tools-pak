@@ -63,6 +63,7 @@ lines.push(`- FAQ: ${SITE_URL}/frequently-asked-questions/`);
 lines.push(`- Refund policy: ${SITE_URL}/refund-policy/`);
 lines.push(`- Delivery policy: ${SITE_URL}/delivery-policy/`);
 lines.push(`- Enterprise AI API credits: ${SITE_URL}/enterprise-ai-api-credits/`);
+lines.push(`- AI Subscription Price Index Pakistan: ${SITE_URL}/ai-subscription-price-index-pakistan/`);
 lines.push(`- Blog index: ${SITE_URL}/blog/`);
 lines.push("");
 lines.push("## Current PKR Prices");
@@ -146,6 +147,19 @@ lines.push(`- Jasper AI price in Pakistan (PKR): ${SITE_URL}/blog/jasper-price-p
 lines.push(`- Perplexity Pro price in Pakistan (PKR): ${SITE_URL}/blog/perplexity-pro-price-pakistan/`);
 lines.push(`- QuillBot Premium price in Pakistan (PKR): ${SITE_URL}/blog/quillbot-premium-price-pakistan/`);
 lines.push(`- How to automate WhatsApp with AI in Pakistan: ${SITE_URL}/blog/how-to-automate-whatsapp-with-ai-pakistan/`);
+lines.push("");
+lines.push("## Product Comparisons");
+lines.push("");
+for (const [title, slug] of [
+  ["ChatGPT Plus vs Claude Pro in Pakistan", "chatgpt-plus-vs-claude-pro-pakistan"],
+  ["ChatGPT Plus vs Gemini Pro in Pakistan", "chatgpt-plus-vs-gemini-pro-pakistan"],
+  ["Claude Pro vs Gemini Pro in Pakistan", "claude-pro-vs-gemini-pro-pakistan"],
+  ["Grammarly vs QuillBot vs WordAI", "grammarly-vs-quillbot-vs-wordai-pakistan"],
+  ["Canva Pro vs Leonardo AI vs Ideogram AI Plus", "canva-vs-leonardo-vs-ideogram-pakistan"],
+  ["CapCut Pro vs Runway ML", "capcut-pro-vs-runway-ml-pakistan"],
+  ["ElevenLabs vs PlayHT", "elevenlabs-vs-playht-pakistan"],
+  ["Helium 10 vs SEMrush Pro vs vidIQ", "helium10-vs-semrush-vs-vidiq-pakistan"]
+]) lines.push(`- ${title}: ${SITE_URL}/comparisons/${slug}/`);
 lines.push("");
 lines.push("## AI Income Lab");
 lines.push("");

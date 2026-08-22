@@ -13,6 +13,7 @@ AI Tools Pak is a Pakistan-focused catalog for AI tool subscriptions and social 
 - Refund policy: https://aitoolspak.tech/refund-policy/
 - Delivery policy: https://aitoolspak.tech/delivery-policy/
 - Enterprise AI API credits: https://aitoolspak.tech/enterprise-ai-api-credits/
+- AI Subscription Price Index Pakistan: https://aitoolspak.tech/ai-subscription-price-index-pakistan/
 - Blog index: https://aitoolspak.tech/blog/
 
 ## Current PKR Prices
@@ -141,6 +142,17 @@ Current selling prices in PKR from the AI Tools Pak catalog, per plan duration.
 - Perplexity Pro price in Pakistan (PKR): https://aitoolspak.tech/blog/perplexity-pro-price-pakistan/
 - QuillBot Premium price in Pakistan (PKR): https://aitoolspak.tech/blog/quillbot-premium-price-pakistan/
 - How to automate WhatsApp with AI in Pakistan: https://aitoolspak.tech/blog/how-to-automate-whatsapp-with-ai-pakistan/
+
+## Product Comparisons
+
+- ChatGPT Plus vs Claude Pro in Pakistan: https://aitoolspak.tech/comparisons/chatgpt-plus-vs-claude-pro-pakistan/
+- ChatGPT Plus vs Gemini Pro in Pakistan: https://aitoolspak.tech/comparisons/chatgpt-plus-vs-gemini-pro-pakistan/
+- Claude Pro vs Gemini Pro in Pakistan: https://aitoolspak.tech/comparisons/claude-pro-vs-gemini-pro-pakistan/
+- Grammarly vs QuillBot vs WordAI: https://aitoolspak.tech/comparisons/grammarly-vs-quillbot-vs-wordai-pakistan/
+- Canva Pro vs Leonardo AI vs Ideogram AI Plus: https://aitoolspak.tech/comparisons/canva-vs-leonardo-vs-ideogram-pakistan/
+- CapCut Pro vs Runway ML: https://aitoolspak.tech/comparisons/capcut-pro-vs-runway-ml-pakistan/
+- ElevenLabs vs PlayHT: https://aitoolspak.tech/comparisons/elevenlabs-vs-playht-pakistan/
+- Helium 10 vs SEMrush Pro vs vidIQ: https://aitoolspak.tech/comparisons/helium10-vs-semrush-vs-vidiq-pakistan/
 
 ## AI Income Lab
 

@@ -4,10 +4,12 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const commands = [
   ["node", ["scripts/generate-products.js"]],
+  ["node", ["scripts/generate-comparisons.js"]],
   ["node", ["scripts/generate-price-index.js"]],
   ["node", ["scripts/generate-social-services.js"]],
   ["node", ["scripts/generate-llms-txt.js"]],
   ["node", ["scripts/generate-llms-full-txt.js"]],
+  ["node", ["scripts/score-product-genericness.js"]],
   ["node", ["scripts/check-product-pipeline.js"]],
   ["node", ["scripts/check-catalog.js"]],
   ["node", ["scripts/check-social-services.js"]],
@@ -18,6 +20,9 @@ const commands = [
   ["node", ["--check", "social-media-services/social-services.js"]],
   ["node", ["--check", "scripts/generate-products.js"]],
   ["node", ["--check", "scripts/generate-price-index.js"]],
+  ["node", ["--check", "scripts/generate-comparisons.js"]],
+  ["node", ["--check", "scripts/check-indexation.js"]],
+  ["node", ["--check", "scripts/score-product-genericness.js"]],
   ["node", ["--check", "scripts/check-backlinks.js"]]
 ];
 

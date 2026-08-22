@@ -1,3 +1,29 @@
+# UPDATE 2026-08-22 (execution brief P0–P2)
+
+## What changed
+
+- Added `scripts/check-indexation.js`, which joins a manually downloaded Google Search Console Pages CSV to every sitemap URL and writes `GSC-INDEXATION-STATUS.csv` with indexed, crawled-not-indexed, discovered-not-crawled, excluded and missing-export groups.
+- Added optional `GOOGLE_SITE_VERIFICATION` and `BING_SITE_VERIFICATION` propagation to the homepage and every generated product page. No token was invented; both values remain owner-supplied in `.env.example`.
+- Rebuilt the 10 priority product openings around Pakistan-specific payment friction, product workflow, PKR pricing, WhatsApp pre-payment confirmation and the no-password rule. Existing specs, tables and FAQs remain intact.
+- Replaced the repeated homepage product-card sentence with a differentiator generated from each catalog row's duration, tier, usage limit and features.
+- Added `scripts/score-product-genericness.js` and generated `PRODUCT-GENERICNESS-SCORE.csv`; all 50 generated product pages score at least 6/10.
+- Added eight comparison pages under `/comparisons/`, generated only from catalog data, with backlinks from every included product page.
+- Added comparison discovery to `sitemap.xml`, `llms.txt` and `llms-full.txt` and added the comparison/indexation scripts to the validation pipeline.
+- Added `SEO/DIRECTORY-SUBMISSION-ASSET.md` for legitimate manual directory outreach. No links or submissions were fabricated.
+
+## Tests
+
+- Passed: `check-catalog.js`, `check-social-services.js`, `check-site-links.js`, JavaScript syntax checks, comparison generation and genericness audit (50 products; 0 below 6).
+- `seo-audit.js` still reports the pre-existing `ai-income-lab` Open Graph/schema issues and duplicate `/ai-income-lab/index.html` sitemap entry documented in the prior run. These are P3 technical-polish items and were not changed before owner confirmation of P0 manual verification.
+
+## Owner actions / next
+
+1. Verify the domain in Google Search Console and Bing Webmaster Tools, then submit `https://aitoolspak.tech/sitemap.xml` in both.
+2. If using HTML meta verification, run product generation with the real `GOOGLE_SITE_VERIFICATION` and `BING_SITE_VERIFICATION` values; DNS verification needs no HTML token.
+3. Download the GSC Pages export weekly and run `node scripts/check-indexation.js path/to/export.csv`.
+4. Manually submit eligible pages to legitimate directories using `SEO/DIRECTORY-SUBMISSION-ASSET.md`.
+5. After P0 confirmation, address the existing `ai-income-lab` P3 audit findings.
+
 # UPDATE 2026-08-15 (competitor watch crawl)
 
 ## What Changed on Enemy Sites (2026-08-11 → 2026-08-15)
