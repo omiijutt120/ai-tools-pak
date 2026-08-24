@@ -7,8 +7,8 @@ const dataPath = path.join(root, "products-data.js");
 const indexPath = path.join(root, "index.html");
 const sitemapPath = path.join(root, "sitemap.xml");
 const SITE_URL = "https://aitoolspak.tech";
-const LAST_VERIFIED = "2026-08-19";
-const DISPLAY_DATE = "August 19, 2026";
+const LAST_VERIFIED = "2026-07-26";
+const DISPLAY_DATE = "July 26, 2026";
 const PRODUCT_ROUTE_BY_SLUG = {
   "chatgpt-plus": "chatgpt-plus-pakistan/",
   "claude-ai": "claude-pro-pakistan/",
@@ -36,26 +36,19 @@ const STATIC_SITEMAP_PATHS = [
   "",
   "agents.md",
   "llms.txt",
+  "canva-pro-pakistan/",
+  "veo-3-pakistan/",
+  "capcut-pro-pakistan/",
+  "grok-subscription-pakistan/",
   "social-media-services/",
   "about-us/",
   "contact-us/",
   "privacy-policy/",
   "terms-and-conditions/",
   "refund-policy/",
-  "ai-income-lab/",
-  "ai-income-lab/about.html",
-  "ai-income-lab/ai-tools-that-save-small-business-money.html",
-  "ai-income-lab/build-ai-voice-agent-business.html",
-  "ai-income-lab/chatgpt-side-hustles.html",
-  "ai-income-lab/contact.html",
-  "ai-income-lab/how-to-make-money-with-ai-2026.html",
-  "ai-income-lab/index.html",
-  "ai-income-lab/privacy-policy.html",
-  "ai-income-lab/start-ai-automation-agency.html",
   "delivery-policy/",
   "frequently-asked-questions/",
   "enterprise-ai-api-credits/",
-  "ai-subscription-price-index-pakistan/",
   "blog/chatgpt-plus-price-pakistan/",
   "blog/canva-pro-price-pakistan/",
   "blog/claude-pro-vs-chatgpt-plus-pakistani-students/",
@@ -171,14 +164,6 @@ const STATIC_SITEMAP_PATHS = [
   "blog/doe-genesis-open-models/",
   "blog/oracle-bans-ai-code-openjdk/"
 ];
-const RETIRED_PRODUCT_REDIRECTS = {
-  "veo-3-pakistan/": "veo-3-extension-pakistan/",
-  "grok-subscription-pakistan/": "supergrok-pakistan/",
-  "veo-3-ultra-extension-pakistan/": "veo-3-extension-pakistan/",
-  "elevenlabs-130k-credits-pakistan/": "elevenlabs-creator-pakistan/",
-  "lovable-pro-1-month-pakistan/": "lovable-ai-pro-pakistan/"
-};
-const RETIRED_SITEMAP_PATHS = new Set(Object.keys(RETIRED_PRODUCT_REDIRECTS));
 
 const required = [
   "product_id",
@@ -611,27 +596,6 @@ function productPageHtml(product, related) {
 `;
 }
 
-function redirectPageHtml(destination) {
-  const canonical = `${SITE_URL}/${destination}`;
-  return `<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="robots" content="noindex,follow">
-    <meta http-equiv="refresh" content="0; url=../${destination}">
-    <link rel="canonical" href="${canonical}">
-    <title>AI Tools Pak</title>
-  </head>
-  <body>
-    <p>This guide has moved. <a href="../${destination}">Continue to the current guide</a>.</p>
-  </body>
-</html>
-`;
-}
-
 function updateCatalogJsonLd(html, itemList, productGraph) {
   return html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (match, raw) => {
     try {
@@ -681,11 +645,8 @@ if (errors.length) throw new Error(errors.join("\n"));
 
 const products = records.map((row) => {
   const basePricePkr = Number(row.price_pkr);
-  const sellingPricePkr = Math.round(basePricePkr);
+  const sellingPricePkr = Math.round(basePricePkr * 1.2);
   const compareAtPricePkr = numberOrNull(row.compare_at_price_pkr);
-  const discountPercent = compareAtPricePkr && compareAtPricePkr > sellingPricePkr
-    ? Math.round(((compareAtPricePkr - sellingPricePkr) / compareAtPricePkr) * 100)
-    : null;
   return {
     productId: row.product_id,
     sku: row.sku,
@@ -705,7 +666,7 @@ const products = records.map((row) => {
     basePricePkr,
     sellingPricePkr,
     compareAtPricePkr,
-    discountPercent,
+    discountPercent: numberOrNull(row.discount_percent),
     imageUrl: row.image_url,
     imageAltText: row.image_alt_text,
     sourceProductUrl: row.source_product_url,
@@ -718,7 +679,7 @@ const products = records.map((row) => {
 });
 
 console.log(`valid products imported: ${products.length}`);
-if (products.length < 1) throw new Error("No products found in CSV — aborting generation.");
+if (products.length !== 32) throw new Error(`Expected 32 products, found ${products.length}`);
 
 for (const product of products) {
   const dir = path.join(root, product.guideUrl);
@@ -727,12 +688,6 @@ for (const product of products) {
     .filter((item) => item.slug !== product.slug && item.category === product.category)
     .slice(0, 3);
   fs.writeFileSync(path.join(dir, "index.html"), productPageHtml(product, related), "utf8");
-}
-
-for (const [legacyPath, destination] of Object.entries(RETIRED_PRODUCT_REDIRECTS)) {
-  const dir = path.join(root, legacyPath);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, "index.html"), redirectPageHtml(destination), "utf8");
 }
 
 fs.writeFileSync(
@@ -811,9 +766,7 @@ const baseLocs = new Set(basePaths.map((urlPath) => `${SITE_URL}/${urlPath}`));
 const extraPaths = [...existingByLoc.keys()]
   .filter((loc) => !baseLocs.has(loc))
   .map((loc) => loc.replace(`${SITE_URL}/`, ""));
-const sitemapPaths = [...new Set([...basePaths, ...extraPaths])]
-  .filter((urlPath) => !RETIRED_SITEMAP_PATHS.has(urlPath))
-  .sort();
+const sitemapPaths = [...new Set([...basePaths, ...extraPaths])].sort();
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapPaths.map((urlPath) => {

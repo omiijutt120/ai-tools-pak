@@ -202,7 +202,7 @@ for (const rel of blogPosts) {
   if (!fs.existsSync(path.join(root, rel))) continue;
   const slug = rel.replace("blog/", "").replace("/index.html", "");
   const text = pageMainText(rel, 3500);
-  out.push(`### ${slug.replace(/-/g, " ").replace(/\bcheap\b/gi, "affordable")}`);
+  out.push(`### ${slug.replace(/-/g, " ")}`);
   out.push(text.replace(/^# /, ""));
   out.push("");
   out.push(`Source: ${SITE_URL}/blog/${slug}/`);

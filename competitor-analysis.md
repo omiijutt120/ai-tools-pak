@@ -51,3 +51,40 @@
 2. Title hook: allpremium's "Upto 90% OFF" style — we have OFF badges already
 3. exact-match domain: aitoolspakistan.pro owns "ai tools pakistan" — need authority/backlinks/time
 4. Monitor: daily cron 5c73fb34fc89 does this automatically at 06:00
+
+---
+
+# UPDATE 2026-08-11 (competitor watch cron crawl)
+
+## What changed on enemy sites (vs 2026-08-07 baseline)
+| site | change | severity |
+|---|---|---|
+| aitoolspakistan.pro | ADDED llms-full.txt (200, text/markdown, 4.2KB — same content as their llms.txt, mini not full dump); prices now detectable (9 PKR mentions, was 0); og:title now bare "ai tools pakistan" (title tag itself empty — Shopify). Schema still weak: WebSite+SearchAction+ListItem+BreadcrumbList only | LOW/GEO catch-up |
+| allpremiumtools.com | Title gained "- APT" suffix; sitemap.xml STILL serves HTML (172KB, text/html, 0 `<loc>`) — fake sitemap unresolved; llms.txt still 172KB full-dump | LOW (their bug persists) |
+| digitaltools.com.pk | No material change: 33 wa.me, weak schema (WebSite+SearchAction+WebPage only), llms-full 404, 232 hrefs/60 abs internal | NONE |
+| aiwala.pk | No change: still NO llms.txt (404), 0 wa.me CTAs, weak title | NONE |
+| digiskool.pk | NEW ENTRY — not previously analyzed! It is a DIGITAL MARKETING TRAINING INSTITUTE (Lahore), not an AI-tools reseller: "Digital Marketing Institute in Lahore | DigiSkool", 36×"Digital Marketing"/26×"courses" vs 11×ChatGPT. Template schema (Org/Person/Article), 0 wa.me, no llms.txt. Different business model → low direct threat to a tools store | INFO (scope clarification) |
+
+## Scoreboard 2026-08-11 (live crawl)
+| metric | us | aisp.pro | apt | dtt.pk | digiskool | aiwala |
+|---|---|---|---|---|---|---|
+| Product schema | 31 ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| FAQPage schema | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Person schema | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ |
+| Org/Article schema | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ |
+| llms.txt | ✅ 16.4KB | ✅ 4.2KB | ✅ 172KB | ✅ 6.6KB | ❌ | ❌ |
+| llms-full.txt | ✅ 318KB | ✅ 4.2KB (new) | ✅ 172KB | ❌ 404 | ❌ | ❌ |
+| sitemap URLs | 191 ✅ | ~10 | ❌ (HTML!) | ~15 | ~10 | ~10 |
+| wa.me CTAs | 37 ✅ | 2 | 10 | 33 | 0 | 0 |
+| prices visible | ✅ 253 hits | 9 | ❌ 0 | ✅ 13 | 18 (course fees) | 1 |
+| internal links (href) | 167 (69 unique product/blog URLs) | 44 | 87 | 232 | 196 | 94 |
+
+## Gap verdict: NO CHANGES REQUIRED
+- No schema type exists on competitors that we lack. We alone have Product×31 + FAQPage + ItemList + BreaadcrumbList + MerchantReturnPolicy + Offer routing.
+- aisp.pro's llms-full addition closed a GEO gap on THEIR side; ours is 318KB vs their 4.2KB — no catch-up needed from us.
+- digitaltools still leads raw href count (232 vs 167) — known backlog item (blog↔product cross-links), not a new gap; our DOM-rendered cards add more links post-JS.
+- No broken robots/sitemap issue on our side (sitemap 191 URLs, llms 200s all verified).
+- Nothing copied, no churn. Next watch: check if aisp.pro/aiwala add Product/FAQ schema.
+
+## Evidence (crawl 2026-08-11, HTTP 200 all six homepages)
+- curl -A browser, --max-time 20; schema via ld+json @type counts; wa.me via grep -c; llms/sitemap via HTTP status + content check (apt sitemap confirmed text/html, 0 loc tags).

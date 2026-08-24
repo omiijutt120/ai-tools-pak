@@ -160,7 +160,7 @@ const howToChoose = `          <article class="glass-panel page-card">
             <ol class="steps">
               <li><strong>What will you use it for?</strong> Writing, coding, voice, video, design or research — different tools specialise in different work.</li>
               <li><strong>Which features do you need?</strong> Check the "Key features" and "Credits / usage" fields on each product page.</li>
-              <li><strong>What is your budget?</strong> Use the full price index (most affordable to most expensive) to shortlist plans you can afford in PKR.</li>
+              <li><strong>What is your budget?</strong> Use the full price index (cheapest to most expensive) to shortlist plans you can afford in PKR.</li>
               <li><strong>Private or business use?</strong> Individuals need a subscription; teams building software should ask about AI API credits.</li>
             </ol>
             <p>If you are still unsure, message AI Tools Pak on WhatsApp with your goal and budget and we will recommend a match — and confirm the current PKR price before you pay.</p>
@@ -279,7 +279,7 @@ for (const [t, d] of glossary) {
 // ---- 9) Large FAQ ------------------------------------------------------------
 const faqs = [
   ["How do I buy AI tools in Pakistan from AI Tools Pak?", "Browse the directory above, open any product page to see the full plan details, then order on WhatsApp. Confirm the current PKR price, duration, access model and delivery estimate before payment."],
-  ["What is the best affordable AI tool subscription in Pakistan?", "It depends on your need. ChatGPT Plus is a strong all-round assistant. Claude Pro suits long writing and research. For design, Canva Pro is the popular choice. Use the full price index below to compare every tool from lowest to highest PKR price."],
+  ["What is the best cheap AI tool subscription in Pakistan?", "It depends on your need. ChatGPT Plus is a strong all-round assistant. Claude Pro suits long writing and research. For design, Canva Pro is the popular choice. Use the full price index below to compare every tool from lowest to highest PKR price."],
   ["Are the listed AI Tools Pak prices in PKR?", "Yes. Every product page shows the current PKR price, and this directory repeats them. Exchange-rate movements can change prices, so always confirm the exact final amount on WhatsApp before paying."],
   ["Do you sell AI subscriptions with private access?", "Many of our plans are private access with your own credentials, delivered by WhatsApp activation. Each product page states its access type and delivery method."],
   ["Can I buy AI API credits instead of a subscription?", "Yes. If you are a developer or business building your own AI application, AI Tools Pak supplies bulk AI API credits for OpenAI, Claude, Gemini, DeepSeek, Grok, Llama and Qwen at wholesale pricing."],
@@ -290,12 +290,12 @@ const faqs = [
   ["What are your support hours?", "Support runs from 11:00 AM to 11:00 PM Pakistan time, every day, on WhatsApp."],
   ["Is it safe to buy AI tools online in Pakistan?", "Buy from sellers who confirm the price, duration and access model in writing before payment, keep the conversation as proof, and never share your email password. See the safety checklist below."],
   ["What payment methods do you accept?", "Payment details are confirmed on WhatsApp after the order is agreed, with the amount fixed in PKR."],
-  ["Can I compare all tools by price?", "Yes — the full price index below ranks every tool from lowest to highest PKR price, so you can find the most affordable AI subscription in Pakistan at a glance."],
+  ["Can I compare all tools by price?", "Yes — the full price index below ranks every tool from lowest to highest PKR price, so you can find the cheapest AI subscription in Pakistan at a glance."],
   ["Do you sell social media services too?", "Yes. AI Tools Pak also runs 487 priced social media services (Instagram, TikTok, YouTube, Facebook and more). See the social media services page for the full menu."],
   ["What is the difference between a subscription and API credits?", "A subscription gives you access to a consumer app (like ChatGPT Plus) for a fixed period. API credits give your own software the ability to call AI models directly, billed by usage."],
   ["Are you official resellers of OpenAI, Anthropic or Google?", "No. AI Tools Pak does not claim official partnership or authorization from OpenAI, Anthropic, Google, Meta, Alibaba or other owners unless written authorization exists. Product names belong to their owners."],
   ["Which AI assistant is best for students in Pakistan?", "For study, writing and exam prep, ChatGPT Plus is the most balanced all-round assistant. Claude Pro is a strong alternative for long essays and careful research. Compare both on their product pages."],
-  ["What is the most affordable AI tool on this page?", "Use the full price index below — it ranks all 31 tools from lowest to highest PKR price, so the most affordable option is visible at a glance."],
+  ["What is the cheapest AI tool on this page?", "Use the full price index below — it ranks all 31 tools from lowest to highest PKR price, so the cheapest option is visible at a glance."],
   ["Can I buy more than one tool at once?", "Yes. Order each tool on WhatsApp, or send one message listing several tools for a combined quote and one delivery conversation."],
   ["Do you offer student discounts?", "Prices and any offers are confirmed on WhatsApp at order time. Mention your use case and we will confirm the current rate."],
   ["What happens if I have trouble with my plan after delivery?", "Contact us on WhatsApp during support hours (11:00 AM – 11:00 PM PKT) with your order details. Keep your written order confirmation for reference."],
@@ -314,7 +314,7 @@ const blogGuides = [
   ["chatgpt-plus-price-pakistan", "ChatGPT Plus Price in Pakistan"],
   ["claude-pro-vs-chatgpt-plus-pakistani-students", "Claude vs ChatGPT for Students"],
   ["where-to-buy-ai-tools-pakistan", "Where to Buy AI Tools in Pakistan"],
-  ["find-cheap-ai-subscriptions-pakistan", "affordable AI Subscriptions in Pakistan"],
+  ["find-cheap-ai-subscriptions-pakistan", "Cheap AI Subscriptions in Pakistan"],
   ["canva-pro-price-pakistan", "Canva Pro Price in Pakistan"],
   ["choose-ai-subscription-safely", "How to Choose an AI Subscription Safely"],
   ["free-vs-paid-ai-tools", "Free vs Paid AI Tools"],
@@ -443,7 +443,7 @@ ${asstTable}                </tbody>
           </article>
 ${voiceSnapshot}${codingSnapshot}
           <article class="glass-panel page-card">
-            <h2>Full price index: all ${products.length} AI tools from most affordable to most expensive</h2>
+            <h2>Full price index: all ${products.length} AI tools from cheapest to most expensive</h2>
             <p>Compare every AI tool sold in Pakistan by AI Tools Pak, ranked from the lowest PKR price to the highest.</p>
             <div class="table-scroll">
               <table class="comparison-table">

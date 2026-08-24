@@ -17,10 +17,10 @@ def slugify(s): return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 def header(active=""):
     def _link(c):
         on = ' class="on"' if active == c["key"] else ""
-        return f'<a href="{BASE}/{c["key"]}/"{on}>{c["icon"]} {c["label"]}</a>'
+        return f'<a href="{BASE}/{c["key"]}/"{on}>{c["label"]}</a>'
     links = "".join(_link(c) for c in CATS)
     return f"""<header><div class="container nav">
-  <a class="logo" href="{BASE}/"><span class="dot"></span>The AI Post</a>
+  <a class="logo" href="{BASE}/"><span class="dot"></span><span class="logo-txt">THE&nbsp;AI&nbsp;POST</span></a>
   <nav class="nav-links">{links}</nav>
   <div class="nav-right">
     <button id="searchBtn">🔍 <span style="color:var(--muted)">Search…</span></button>
@@ -68,17 +68,17 @@ def head(title, desc, url, schema=None, canonical=None, og_img=None):
     return s + "</head>\n<body>\n"
 
 def card(a, big=False):
-    c = CAT_BY_KEY.get(a["category"], {"label":"Article","icon":"📄"})
+    c = CAT_BY_KEY.get(a["category"], {"label": "Article"})
     cls = "card big-card" if big else "card"
     img = cover_img(a)
     return f"""<a class="{cls}" href="{BASE}/{a['slug']}.html">
-  <div class="thumb"><span class="tag">{c['icon']} {c['label']}</span>{img}</div>
+  <div class="thumb"><span class="tag">{c['label']}</span>{img}</div>
   <div class="body"><h3>{esc(a['title'])}</h3><p>{esc(a['excerpt'])}</p>
-  <span class="meta">📅 {a['date']} · 📖 {a['readMins']} min</span></div></a>"""
+  <span class="meta"><span class="date">{a['date']}</span><span class="sep">·</span><span class="rt">📖 {a['readMins']} min read</span></span></div></a>"""
 
 import os as _os
 def cover_img(a, alt=None):
-    """Prefer generated JPG cover; fall back to SVG art; else emoji."""
+    """Prefer generated JPG cover; fall back to SVG art; else gradient editorial block."""
     jpg = _os.path.join(POST, "covers", a["slug"] + ".jpg")
     svg = _os.path.join(POST, "covers", a["slug"] + ".svg")
     alt = alt or a["title"]
@@ -89,7 +89,7 @@ def cover_img(a, alt=None):
     if _os.path.exists(svg):
         return (f'<img class="timg" src="{BASE}/covers/{a["slug"]}.svg" '
                 f'alt="{esc(alt)}" width="1200" height="630" loading="lazy">')
-    return f'<span style="font-size:52px">{a["cover"]}</span>'
+    return '<div class="timg art"><span>AI</span></div>'
 
 def body_blocks(a):
     out = []
@@ -119,6 +119,15 @@ def body_blocks(a):
                     for q, ans in v
                 )
                 out.append(f'<h2 id="faq">Frequently asked questions</h2><div class="faq">{items}</div>')
+            elif k == "sources":
+                # v = {"primary": [{"label":..., "url":...}], "reporting": [...]}
+                prim = "".join(f'<li><a href="{esc(s["url"])}" rel="nofollow noopener" target="_blank">{esc(s["label"])}</a></li>' for s in v.get("primary", []))
+                rep = "".join(f'<li><a href="{esc(s["url"])}" rel="nofollow noopener" target="_blank">{esc(s["label"])}</a></li>' for s in v.get("reporting", []))
+                out.append(
+                    '<div class="src-box"><h2>Sources</h2>'
+                    + ('<h3>Primary source</h3><ul class="src">' + prim + "</ul>" if prim else "")
+                    + ('<h3>Additional reporting</h3><ul class="src">' + rep + "</ul>" if rep else "")
+                    + "</div>")
     return "\n".join(out)
 
 def article_page(a):
@@ -128,7 +137,11 @@ def article_page(a):
     toc = '<div class="toc" id="toc"></div>' if h2s else ""
     related = [x for x in ARTS if x["slug"] != a["slug"]]
     related = sorted(related, key=lambda x: (x["category"] == a["category"], x["date"]), reverse=True)[:3]
-    rel = '<div class="related">' + "".join(f'<a class="card" href="{BASE}/{x["slug"]}.html"><div class="body"><h3>{esc(x["title"])}</h3><span class="meta">{esc(x["date"])} · {x["readMins"]} min</span></div></a>' for x in related) + "</div>"
+    rel = '<div class="related">' + "".join(
+        f'<a class="rel-card" href="{BASE}/{x["slug"]}.html"><div class="rel-thumb">{cover_img(x)}</div>'
+        f'<div class="rel-body"><span class="cat">{CAT_BY_KEY.get(x["category"], {"label":"AI News"})["label"]}</span>'
+        f'<h4>{esc(x["title"])}</h4><span class="meta"><span class="date">{x["date"]}</span><span class="sep">·</span><span class="rt">📖 {x["readMins"]} min</span></span></div></a>'
+        for x in related) + "</div>"
     faq_blocks = [b for b in a["body"] if "faq" in b]
     schema = {
         "@context": "https://schema.org", "@type": "NewsArticle" if a["category"] == "ai-news" else "Article",
@@ -151,18 +164,18 @@ def article_page(a):
         {"@type": "ListItem", "position": 3, "name": a["title"], "item": url}]}
     pg = head(a["title"], a["excerpt"], url, [schema, bread], og_img=f"{BASE}/covers/{a['slug']}.jpg") + header(c["key"]) + f"""
 <article class="post">
-  <span class="tag">{c['icon']} {c['label']}</span>
+  <span class="tag">{c['label']}</span>
   <h1>{esc(a['title'])}</h1>
-  <div class="meta">📅 {a['date']} · <span id="readTime"></span> · By <a href="{BASE}/authors/muhammad-umar.html" rel="author">Muhammad Umar</a></div>
+  <div class="meta"><span>By <a href="{BASE}/authors/muhammad-umar.html" rel="author">The AI Post</a></span><span class="sep">·</span><span class="date">{a['date']}</span><span class="sep">·</span><span class="rt">📖 {a['readMins']} min read</span></div>
   <div class="cover">{cover_img(a)}</div>
   {toc}
   {body_blocks(a)}
   <div class="share">
     <button id="copyLink">🔗 Copy link</button>
-    <button id="twShare">🐦 Share on X</button>
+    <button id="twShare">𝕏 Share on X</button>
   </div>
-  <div class="author"><div class="av">MU</div><div><b><a href="{BASE}/authors/muhammad-umar.html" rel="author">Muhammad Umar</a></b><p>Founder of AI Tools Pak. BS Artificial Intelligence student building AI agents, voice systems and automation for real businesses. <a href="{BASE}/about.html">Read the editorial policy</a>.</p></div></div>
-  <h3 style="font-family:var(--serif);font-size:21px">📚 Related reading</h3>
+  <div class="author"><div class="av">AP</div><div><b><a href="{BASE}/authors/muhammad-umar.html" rel="author">The AI Post</a></b><p>Independent AI &amp; technology publication — research and verification driven. <a href="{BASE}/editorial-policy.html">Read the editorial policy</a>.</p></div></div>
+  <h3 class="rel-head">Related reading</h3>
   {rel}
 </article>
 """ + footer()
@@ -183,12 +196,33 @@ def category_page(c):
 
 def index_page():
     url = BASE + "/"
-    news = [a for a in ARTS if a["category"] == "ai-news"][:2]
-    featured = ARTS[:1]
-    rest = ARTS[1:]
-    news_grid = '<div class="grid news">' + "".join(card(a) for a in news) + "</div>" if news else ""
-    feat = '<div class="grid">' + "".join(card(a, big=(i == 0)) for i, a in enumerate(featured + rest)) + "</div>"
-    topics = "".join(f'<a class="topic" href="{BASE}/{c["key"]}/">{c["icon"]} {c["label"]}</a>' for c in CATS)
+    arts = ARTS
+    top = arts[0]
+    secondary = arts[1:5]
+    latest = arts[5:17]
+    rest = arts[17:]
+    tc = CAT_BY_KEY.get(top["category"], {"label": "AI News", "key": "ai-news"})
+    top_img = cover_img(top)
+    sec = "".join(
+        f'<a class="side-item" href="{BASE}/{a["slug"]}.html">'
+        f'<div class="side-thumb">{cover_img(a)}</div>'
+        f'<div class="side-body"><span class="cat">{CAT_BY_KEY.get(a["category"], {"label":"AI News"})["label"]}</span>'
+        f'<h3>{esc(a["title"])}</h3><span class="meta"><span class="date">{a["date"]}</span>'
+        f'<span class="sep">·</span><span class="rt">📖 {a["readMins"]} min</span></span></div></a>'
+        for a in secondary)
+    latest_items = "".join(
+        f'<a class="feed-item" href="{BASE}/{a["slug"]}.html">'
+        f'<div class="feed-thumb">{cover_img(a)}</div>'
+        f'<div class="feed-body"><span class="cat">{CAT_BY_KEY.get(a["category"], {"label":"AI News"})["label"]}</span>'
+        f'<h3>{esc(a["title"])}</h3><p>{esc(a["excerpt"])}</p>'
+        f'<span class="meta"><span class="date">{a["date"]}</span><span class="sep">·</span><span class="rt">📖 {a["readMins"]} min</span></span></div></a>'
+        for a in latest)
+    rest_items = "".join(card(a) for a in rest) if rest else ""
+    hubs = "".join(
+        f'<a class="hub" href="{BASE}/{c["key"]}/"><b>{c["label"]}</b><span>Articles</span></a>'
+        for c in CATS)
+    # Latest news ticker: top 5 headlines
+    ticker = "".join(f'<span class="tick"><b>•</b><a href="{BASE}/{a["slug"]}.html">{esc(a["title"])}</a></span>' for a in arts[:5])
     schema = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebSite", "name": "The AI Post", "url": url,
          "potentialAction": {"@type": "SearchAction", "target": url + "?q={search_term_string}", "query-input": "required name=search_term_string"}},
@@ -196,29 +230,27 @@ def index_page():
          "isPartOf": {"@type": "WebSite", "name": "The AI Post", "url": url}},
         {"@type": "ItemList", "name": "Latest AI articles", "url": url,
          "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{BASE}/{a['slug']}.html",
-                              "name": a["title"]} for i, a in enumerate(ARTS[:25])]}]}
+                              "name": a["title"]} for i, a in enumerate(arts[:25])]}]}
     pg = head("The AI Post — AI News, Tutorials, Comparisons & Tools, Daily", SITE["tagline"], url, schema) + header() + f"""
-<section class="hero"><div class="container">
-  <span class="kicker">⚡ Daily AI publication</span>
-  <h1>AI news, tutorials &amp; tools — <b>without the hype.</b></h1>
-  <p>Fresh AI news, hands-on tutorials, honest comparisons and free tools. Written by people who actually build AI systems.</p>
-  <div class="hero-actions">
-    <a class="btn blue" href="{BASE}/{ARTS[0]['slug']}.html">📰 Read today's top story</a>
-    <a class="btn ghost" href="{BASE}/free-ai-tools/">🧰 Free AI tools</a>
-  </div>
-  <div class="hero-strip">
-    <div><b>{len(ARTS)}+</b>Articles</div>
-    <div><b>6</b>Categories</div>
-    <div><b>Daily</b>Updates</div>
-    <div><b>100%</b>Original content</div>
-  </div>
+<div class="breaking-bar"><div class="container"><span class="brk-label">LATEST</span><div class="ticker">{ticker}</div></div></div>
+<section class="lead"><div class="container lead-grid">
+  <a class="lead-main" href="{BASE}/{top['slug']}.html">
+    <div class="lead-thumb">{top_img}</div>
+    <div class="lead-body">
+      <span class="cat">{tc['label']}</span>
+      <h1>{esc(top['title'])}</h1>
+      <p>{esc(top['excerpt'])}</p>
+      <span class="meta"><span class="date">{top['date']}</span><span class="sep">·</span><span class="rt">📖 {top['readMins']} min read</span></span>
+    </div>
+  </a>
+  <div class="lead-side">{sec}</div>
 </div></section>
 <div class="container">
-  <section><div class="sec-head"><h2>📰 Latest news</h2><a href="{BASE}/ai-news/">All news →</a></div>{news_grid}</section>
-  <section><div class="sec-head"><h2>🔥 All articles</h2></div>{feat}</section>
-  <section><div class="sec-head"><h2>🧩 Categories</h2></div><div class="topics">{topics}</div></section>
+  <section class="feed-sec"><div class="sec-head"><h2>Latest AI news</h2><a href="{BASE}/ai-news/">All news →</a></div>
+    <div class="feed">{latest_items}</div></section>
+  <section class="hub-sec"><div class="sec-head"><h2>Explore</h2></div><div class="hubs">{hubs}</div></section>
   <section class="newsletter">
-    <h2>📬 The AI Post newsletter</h2>
+    <h2>Get the AI stories that actually matter</h2>
     <p>One email a week: the 3 AI stories that matter + one tool worth trying. No spam.</p>
     <form onsubmit="nlSub(event)"><input type="email" id="nlEmail" placeholder="you@email.com" required><button type="submit">Subscribe</button></form>
   </section>

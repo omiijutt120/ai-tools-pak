@@ -27,16 +27,16 @@
         ]
       },
       {
-        "h2": "Why it matters: affordable tokens were subsidizing the price war",
+        "h2": "Why it matters: cheap tokens were subsidizing the price war",
         "blocks": [
           {
             "p": "DeepSeek's aggressive pricing has been a gift to developers in emerging markets, where every dollar of API spend matters. In Pakistan, a large share of indie SaaS products, automation agencies and freelance coding workflows route through DeepSeek models precisely because they cost a fraction of the US alternatives. A meaningful price increase changes the unit economics of those products overnight."
           },
           {
-            "p": "It also changes the competitive picture. If DeepSeek prices rise toward GPT-5.6 or Claude levels, the value argument for switching back to OpenAI or Anthropic gets stronger - those labs offer richer tooling, more reliable uptime and better support. The market may converge on 'affordable enough' rather than 'most affordable.'"
+            "p": "It also changes the competitive picture. If DeepSeek prices rise toward GPT-5.6 or Claude levels, the value argument for switching back to OpenAI or Anthropic gets stronger - those labs offer richer tooling, more reliable uptime and better support. The market may converge on 'cheap enough' rather than 'cheapest.'"
           },
           {
-            "p": "For buyers, the practical play is not to panic - it is to lock in current rates where possible, diversify across providers so no single vendor holds your margins hostage, and re-benchmark your workloads. A model that made sense at one price may not make sense at another, and the reverse is also true: some workloads can move to even more affordable open-weight models hosted locally or on smaller providers."
+            "p": "For buyers, the practical play is not to panic - it is to lock in current rates where possible, diversify across providers so no single vendor holds your margins hostage, and re-benchmark your workloads. A model that made sense at one price may not make sense at another, and the reverse is also true: some workloads can move to even cheaper open-weight models hosted locally or on smaller providers."
           }
         ]
       },
@@ -44,10 +44,10 @@
         "h2": "What it means for Pakistan",
         "blocks": [
           {
-            "p": "Pakistani developers and agencies that buy API credits in bulk should treat this as a buying signal, not just news. If you run sustained production workloads on DeepSeek, top up credits before new rates take effect, and ask your credit supplier how rate changes pass through. Most importantly, build a routing layer in your code so you can switch models per task - a [affordable API credits strategy](https://aitoolspak.tech/blog/cheap-ai-api-credits-pakistan/) that insulates you from any single vendor's pricing decisions."
+            "p": "Pakistani developers and agencies that buy API credits in bulk should treat this as a buying signal, not just news. If you run sustained production workloads on DeepSeek, top up credits before new rates take effect, and ask your credit supplier how rate changes pass through. Most importantly, build a routing layer in your code so you can switch models per task - a [cheap API credits strategy](https://aitoolspak.tech/blog/cheap-ai-api-credits-pakistan/) that insulates you from any single vendor's pricing decisions."
           },
           {
-            "p": "The longer-term lesson is that 'affordable' is a strategy, not a law of physics. When a provider builds its business on undercutting the market, prices eventually normalize. Buyers who plan for that day - by diversifying across [OpenAI](https://aitoolspak.tech/blog/buy-openai-api-credits-pakistan/), [Claude](https://aitoolspak.tech/blog/claude-api-credits-pakistan/) and DeepSeek credits and negotiating volume rates - are the ones who keep their margins when the price war ends."
+            "p": "The longer-term lesson is that 'cheap' is a strategy, not a law of physics. When a provider builds its business on undercutting the market, prices eventually normalize. Buyers who plan for that day - by diversifying across [OpenAI](https://aitoolspak.tech/blog/buy-openai-api-credits-pakistan/), [Claude](https://aitoolspak.tech/blog/claude-api-credits-pakistan/) and DeepSeek credits and negotiating volume rates - are the ones who keep their margins when the price war ends."
           },
           {
             "p": "For a full breakdown of what DeepSeek's earlier models cost in PKR and how the V4 Flash family changed the market, see our [DeepSeek API price guide for Pakistan](https://aitoolspak.tech/blog/deepseek-api-price-pakistan/)."
