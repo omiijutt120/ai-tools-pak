@@ -29,3 +29,38 @@ Metrics labelled **Measured** were fetched from the live site, repository, searc
 
 - Verify Google Search Console and Bing Webmaster Tools, submit the sitemap, and export Pages/URL Inspection data for the sampled product URLs.
 - Decide whether Canva should be restored to `data/products.csv` with verified price/duration/access fields; only then generate the catalog-backed Canva comparison.
+
+## Verification-first follow-up (v2)
+
+Observation date: 2026-08-24. Site type: Pakistan-focused catalog/store. Internal-linking mode used for structure review. Metrics below are measured unless explicitly labelled otherwise.
+
+### Regression diagnosis and repair
+
+- Git history confirmed the earlier generator used the meta description as the opening. Commit `a23d4e2` moved this to a `problemStatement()` map inside generator code, but ChatGPT, Claude and Gemini still focused on free-tier/workflow limits instead of Pakistan payment friction.
+- Narrative openings now live in `data/product-intros.json`, separate from price/date/link generation. The generator refuses to build a catalog product without an editorial intro, and `check-catalog.js` verifies a Pakistan-specific intro exists and survives in every generated page.
+- All 32 generated product pages now have a deliberately stored Pakistan buyer-context opening. The standalone Canva Pro guide was updated separately because it is not backed by the current verified catalog.
+
+### Full validation and crawl findings
+
+- Catalog: 32 products; homepage banner, rendered guide count and dataset count match; old generic teaser has zero matches.
+- Internal linking: 32 generated product pages have 3–37 inbound links and 3–37 contextual inbound links. No generated product orphan was found. The lowest measured pages are Runway ML Max and Storyblocks Unlimited at three contextual inlinks each.
+- Crawl/on-page: 190 HTML files passed internal-link/button checks. 200 sitemap URLs passed title, description, canonical, schema and product-link validation.
+- GEO/AEO: `robots.txt`, `llms.txt` and `llms-full.txt` are crawlable. The `llms-full.txt` generator no longer truncates blog and policy pages mid-sentence; output grew from about 310.5 KB to 489.0 KB and now includes each product's Pakistan buyer context.
+- Monetization: `/ads.txt` returns the exact Google publisher record and the local validator passes.
+- Security/transport: sampled live pages returned HTTPS 200 and HSTS. Content-Security-Policy, X-Content-Type-Options and X-Frame-Options were not observed in GitHub Pages responses; this is a platform/header limitation to monitor, not a safe repo-only content fix.
+- Core Web Vitals: N/A in this run because the PageSpeed Insights endpoint returned HTTP 429. No performance score is invented.
+- Backlinks: all tracked prospects remain `LOST_OR_UNVERIFIED` in the dry-run checker. No backlink claim or tracker write was fabricated.
+
+### Skill diagnostics
+
+- Technical SEO: crawl/index primitives pass locally; live response and robots/sitemap availability pass. Field CWV remains unmeasured because PSI was rate-limited.
+- On-page SEO: sampled templates have unique title, description, one H1, canonical, structured data, answer-first copy, descriptive links and image metadata; the repository-wide audit enforces the same pattern.
+- Site structure: no generated product orphan; structure score is 100/100 under the skill's measured formula (no orphan, no zero-contextual-inlink product, and no important product deeper than three clicks detected by the available crawl).
+- GEO: machine-readable resources and answer-first product facts are present. AI citation surfacing is not claimed; it depends on external crawl/index refresh.
+- CORE-EEAT: `NOT_SCORED` for the site-wide portfolio because an 80-item typed audit requires one stable artifact and complete evidence. No publish verdict or fabricated total is reported.
+
+### Remaining external/owner-controlled items
+
+- Search Console URL inspection and real Google index coverage require the owner's GSC access.
+- PageSpeed/CrUX field data should be rechecked after the API quota clears.
+- Canva remains outside `data/products.csv`; its static guide does not represent a verified current store listing. Restore it to the catalog only after price, duration, access and availability are verified.

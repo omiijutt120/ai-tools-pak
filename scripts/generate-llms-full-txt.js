@@ -27,6 +27,7 @@ if (!arrMatch) {
   process.exit(1);
 }
 const products = JSON.parse(arrMatch[1]);
+const productIntros = JSON.parse(read("data/product-intros.json"));
 
 // --- plain-text extraction from an HTML file ------------------------------
 function htmlToText(html, maxChars) {
@@ -106,6 +107,7 @@ for (const p of products) {
   out.push(`- Category: ${p.category} | Access: ${p.accessType} | Delivery: ${p.deliveryMethod}`);
   out.push(`- Key features: ${p.keyFeatures}`);
   out.push(`- Description: ${p.shortDescription} ${p.fullDescription}`);
+  out.push(`- Pakistan buyer context: ${productIntros[p.slug]}`);
   out.push(`- URL: ${url}`);
   out.push("");
 }
@@ -201,7 +203,7 @@ const blogPosts = [
 for (const rel of blogPosts) {
   if (!fs.existsSync(path.join(root, rel))) continue;
   const slug = rel.replace("blog/", "").replace("/index.html", "");
-  const text = pageMainText(rel, 3500);
+  const text = pageMainText(rel);
   out.push(`### ${slug.replace(/-/g, " ")}`);
   out.push(text.replace(/^# /, ""));
   out.push("");
@@ -218,9 +220,9 @@ for (const rel of [
   "refund-policy/index.html",
 ]) {
   const slug = rel.replace("/index.html", "");
-  const text = pageMainText(rel, 1200);
+  const text = pageMainText(rel);
   out.push(`### ${slug.replace(/-/g, " ")}`);
-  out.push(text.replace(/^# /, "").split("\n").slice(0, 12).join("\n"));
+  out.push(text.replace(/^# /, ""));
   out.push("");
   out.push(`Source: ${SITE_URL}/${slug}/`);
   out.push("");

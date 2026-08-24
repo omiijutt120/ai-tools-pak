@@ -81,6 +81,7 @@ const searchInput = elements.get("#searchInput");
 const fullCatalogHtml = productGrid.innerHTML;
 const homeHtml = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
 const stylesHtml = fs.readFileSync(path.join(__dirname, "..", "styles.css"), "utf8");
+const productIntros = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "product-intros.json"), "utf8"));
 const expected = [
   ["chatgpt-plus", "ChatGPT Plus", 2200, "1 month"],
   ["claude-ai", "Claude Pro", 5500, "1 month"],
@@ -110,6 +111,15 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 const productCount = products.length;
 const displayedCount = Number(homeHtml.match(/data-product-count>(\d+)</)?.[1]);
 const guideSection = homeHtml.match(/<section class="section" id="product-guides"[\s\S]*?<\/section>/)?.[0] || "";
@@ -118,6 +128,13 @@ assert(productCount >= expected.length, `Expected at least ${expected.length} pr
 assert(displayedCount === guideCount, `Homepage count mismatch: banner ${displayedCount}, guide cards ${guideCount}`);
 assert(guideCount === productCount, `Homepage guide count mismatch: ${guideCount} cards, ${productCount} products`);
 assert(!guideSection.includes("Price, plan, activation, safety checks and FAQs."), "Generic product-guide teaser regression detected");
+assert(Object.keys(productIntros).length === productCount, `Editorial intro count mismatch: ${Object.keys(productIntros).length} intros, ${productCount} products`);
+for (const product of products) {
+  const intro = productIntros[product.slug];
+  assert(intro && /Pakistan/i.test(intro), `Missing Pakistan-specific editorial intro for ${product.slug}`);
+  const pagePath = path.join(__dirname, "..", product.guideUrl, "index.html");
+  assert(fs.readFileSync(pagePath, "utf8").includes(escapeHtml(intro)), `Generated page does not preserve editorial intro for ${product.slug}`);
+}
 assert((productGrid.innerHTML.match(/class="glass-panel product-card"/g) || []).length === productCount, `Expected ${productCount} rendered product cards`);
 assert((categoryGrid.innerHTML.match(/class="glass-panel category-card"/g) || []).length === new Set(products.map((product) => product.category)).size, "Category buttons do not match CSV categories");
 assert(homeHtml.indexOf('id="social-media-services"') < homeHtml.indexOf('id="catalog"'), "Social media services promo must appear above tools catalog");

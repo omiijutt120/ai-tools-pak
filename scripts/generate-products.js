@@ -4,11 +4,13 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const csvPath = path.join(root, "data", "products.csv");
 const catalogMetaPath = path.join(root, "data", "catalog-meta.json");
+const productIntrosPath = path.join(root, "data", "product-intros.json");
 const dataPath = path.join(root, "products-data.js");
 const indexPath = path.join(root, "index.html");
 const sitemapPath = path.join(root, "sitemap.xml");
 const SITE_URL = "https://aitoolspak.tech";
 const catalogMeta = JSON.parse(fs.readFileSync(catalogMetaPath, "utf8"));
+const productIntros = JSON.parse(fs.readFileSync(productIntrosPath, "utf8"));
 if (!/^\d{4}-\d{2}-\d{2}$/.test(catalogMeta.last_verified || "")) throw new Error("Invalid data/catalog-meta.json last_verified date");
 const LAST_VERIFIED = catalogMeta.last_verified;
 const DISPLAY_DATE = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${LAST_VERIFIED}T00:00:00Z`));
@@ -394,19 +396,9 @@ function metaDescription(product) {
 }
 
 function problemStatement(product) {
-  const statements = {
-    "chatgpt-plus": "If free-tier limits interrupt long writing, research or coding sessions, compare this one-month ChatGPT Plus listing and its access terms before paying.",
-    "claude-ai": "If long documents, careful rewriting or code review outgrow free limits, compare this one-month Claude Pro listing and its access terms before paying.",
-    "gemini-pro": "If you need longer-term Google AI access for research and productivity, check this 18-month Gemini Pro listing and its access model before paying.",
-    "elevenlabs-creator-private": "If client voiceovers need more generation capacity than free tiers provide, check the 130K-credit allowance and private-access terms before paying.",
-    "heygen-ai": "If recording presenters slows your video workflow, compare HeyGen avatar-video access, plan duration and delivery terms before paying.",
-    "capcut-pro": "If free editing limits block premium effects or faster short-video production, compare this CapCut Pro plan and its activation terms before paying.",
-    "grammarly-pro": "If free writing checks miss advanced rewrites and consistency controls, compare this Grammarly Premium plan and access terms before paying.",
-    "semrush-pro": "If manual keyword and competitor research is slowing campaign work, compare this SEMrush Pro listing, limits and access terms before paying.",
-    "runway-ml-unlimited-generations": "If AI video experiments consume free credits too quickly, compare this Runway ML plan's 2,250-credit allowance and private-access terms before paying.",
-    "runway-ml-max": "If high-volume AI video work needs more monthly generations, compare this Runway Max plan's 9,500-credit allowance and rollover terms before paying."
-  };
-  return statements[product.slug] || `If ${product.creditsOrUsageLimit.toLowerCase()} fits your workflow, compare this ${product.subscriptionDuration.toLowerCase()} ${product.planTier.toLowerCase()} and its ${product.accessType.toLowerCase()} terms before paying.`;
+  const intro = productIntros[product.slug];
+  if (!intro) throw new Error(`Missing editorial product intro for ${product.slug}`);
+  return intro;
 }
 
 function productPageHtml(product, related) {

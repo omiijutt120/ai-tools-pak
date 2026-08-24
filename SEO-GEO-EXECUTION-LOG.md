@@ -15,3 +15,15 @@
 - Restored seven catalog-backed comparison pages and product-to-comparison links. Canva comparison remains blocked because Canva is absent from the current product dataset.
 - Restored the root AdSense `ads.txt` record and validation guard after the latest forced remote history removed it and returned the live URL to 404.
 - Detailed evidence: `MASTER-AUDIT-2026-08-24.md`.
+
+## 2026-08-24 — Verification-first v2 repair
+
+- Root cause: generated openings were coupled to `scripts/generate-products.js`; previous regeneration replaced narrative buyer-problem copy. Openings are now stored in `data/product-intros.json`, while the generator only injects them alongside data-driven price/date/link fields.
+- Guardrail: generation fails when an intro is missing; `check-catalog.js` requires exactly one Pakistan-specific intro per catalog product and verifies the escaped text exists in its generated HTML.
+- Local generated evidence: ChatGPT opens with `Pakistani buyers can face international-card declines and foreign-currency markup...`; Claude opens with `Pakistani buyers can face international-card declines and foreign-currency charges...`; Gemini opens with `Pakistani buyers comparing Google AI access may face international-card and currency-conversion friction...`.
+- Homepage evidence before this deployment: live banner was `32 AI tools listed`; the generated guide section contains 32 products; the old teaser had zero matches; sampled teasers included `1 month · Plus plan · Advanced AI assistant`, `18 months · Pro plan · Google AI access`, and `1 month · Creator plan · 300K+ credits`.
+- Trust evidence before this deployment: live homepage showed `Activation issue support under agreed warranty`; generated product pages showed `Activation issue support applies under the warranty agreed before payment`; policy source says `After access is delivered, support will first help resolve product or activation issues under the agreed warranty.`
+- Internal-link evidence: all 32 generated products have contextual inbound links; measured range is 3–37. Priority pages retain comparison/contextual links. Canva's static guide now links to the refund policy and Canva-vs-Photoshop guide.
+- GEO repair: `llms-full.txt` no longer cuts page text at fixed character limits and now includes product-level Pakistan buyer context.
+- Validation: `node scripts/validate.js` passed end-to-end: 32 products, 487 social services, 190 HTML files, 200 sitemap URLs, ads.txt, backlinks dry-run, and syntax checks.
+- Live post-deployment evidence: pending deployment; append only after the deployed URLs return the new text.
