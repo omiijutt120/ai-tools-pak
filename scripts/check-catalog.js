@@ -111,7 +111,13 @@ function assert(condition, message) {
 }
 
 const productCount = products.length;
+const displayedCount = Number(homeHtml.match(/data-product-count>(\d+)</)?.[1]);
+const guideSection = homeHtml.match(/<section class="section" id="product-guides"[\s\S]*?<\/section>/)?.[0] || "";
+const guideCount = (guideSection.match(/class="glass-panel link-card"/g) || []).length;
 assert(productCount >= expected.length, `Expected at least ${expected.length} products, found ${productCount}`);
+assert(displayedCount === guideCount, `Homepage count mismatch: banner ${displayedCount}, guide cards ${guideCount}`);
+assert(guideCount === productCount, `Homepage guide count mismatch: ${guideCount} cards, ${productCount} products`);
+assert(!guideSection.includes("Price, plan, activation, safety checks and FAQs."), "Generic product-guide teaser regression detected");
 assert((productGrid.innerHTML.match(/class="glass-panel product-card"/g) || []).length === productCount, `Expected ${productCount} rendered product cards`);
 assert((categoryGrid.innerHTML.match(/class="glass-panel category-card"/g) || []).length === new Set(products.map((product) => product.category)).size, "Category buttons do not match CSV categories");
 assert(homeHtml.indexOf('id="social-media-services"') < homeHtml.indexOf('id="catalog"'), "Social media services promo must appear above tools catalog");

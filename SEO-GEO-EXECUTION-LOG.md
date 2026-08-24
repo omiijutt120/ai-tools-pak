@@ -6,3 +6,12 @@
 | 2026-08-07 | AI Post SEO/GEO/AEO blueprint | Thin articles (756w), no speakable, generic author, news sitemap 3 URLs | Blueprint file + generator upgrades: Speakable/wordCount/real author, author page, CollectionPage+ItemList, FAQ blocks, ISO timestamps | ai-post/SEO-BLUEPRINT.md, scripts/build-ai-post.py, ai-post/authors/muhammad-umar.html | Live deploy 4d7cbcb | IndexNow 200; live verify 200 | Add FAQ sections + answer-first lede to top 5 articles |
 | 2026-08-09 | Cron rate-limit fix | 429 free-models-per-day; AI Post cron failed | Split LLM crons into alternate-day groups; added Master SEO Growth Agent cron (27f8e4557aaf, even days 14:00) | cron schedules, SEO-MASTER-AGENT-PROMPT.md | AI Post retry OK | 3 LLM jobs/day max | Monitor next 48h for 429s |
 | 2026-08-11 | Competitor watch crawl (6 sites) | None found | Crawled aisp.pro/apt/dtt.pk/digiskool/aiwala + us; aisp.pro added mini llms-full (4.2KB); digiskool identified as training institute (not tools reseller); apt sitemap still HTML; aiwala still no llms.txt | competitor-analysis.md (scoreboard update) | NO CHANGES REQUIRED — no competitor asset we lack; our sitemap 191 URLs, llms-full 318KB verified | live: llms/llms-full/sitemap all 200 | Re-check aisp.pro & aiwala for Product/FAQ schema next watch |
+## 2026-08-24 — Master audit re-check and confirmed fixes
+
+- Re-audited live homepage, three product pages, two blog pages, four indexation queries, current competitors, local validators and GitHub Actions before editing.
+- Found 32/32 duplicated homepage guide teasers; count itself matched at 32/32.
+- Fixed remote CI failures caused by an invalid Lovable `.png` reference and a duplicate nested Gemini API blog page with broken relative paths.
+- Added data-sourced 2026-08-24 catalog verification metadata, product sitemap lastmod updates, inlink reporting, dynamic card differentiators, count regression assertions, problem-specific product openings and policy-exact warranty messaging.
+- Restored seven catalog-backed comparison pages and product-to-comparison links. Canva comparison remains blocked because Canva is absent from the current product dataset.
+- Restored the root AdSense `ads.txt` record and validation guard after the latest forced remote history removed it and returned the live URL to 404.
+- Detailed evidence: `MASTER-AUDIT-2026-08-24.md`.
