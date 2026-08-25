@@ -251,7 +251,7 @@ window.AI_TOOLS_PRODUCTS = [
     "sellingPricePkr": 1500,
     "compareAtPricePkr": 2000,
     "discountPercent": 25,
-    "imageUrl": "/assets/product-icons/lovable-ai-pro-private.png",
+    "imageUrl": "/assets/product-icons/lovable-ai-pro-private.jpg",
     "imageAltText": "Lovable AI Pro subscription plan available in Pakistan",
     "sourceProductUrl": "https://lovable.dev",
     "sourceRatingCount": 0,

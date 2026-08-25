@@ -3,12 +3,17 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const csvPath = path.join(root, "data", "products.csv");
+const catalogMetaPath = path.join(root, "data", "catalog-meta.json");
+const productIntrosPath = path.join(root, "data", "product-intros.json");
 const dataPath = path.join(root, "products-data.js");
 const indexPath = path.join(root, "index.html");
 const sitemapPath = path.join(root, "sitemap.xml");
 const SITE_URL = "https://aitoolspak.tech";
-const LAST_VERIFIED = "2026-07-26";
-const DISPLAY_DATE = "July 26, 2026";
+const catalogMeta = JSON.parse(fs.readFileSync(catalogMetaPath, "utf8"));
+const productIntros = JSON.parse(fs.readFileSync(productIntrosPath, "utf8"));
+if (!/^\d{4}-\d{2}-\d{2}$/.test(catalogMeta.last_verified || "")) throw new Error("Invalid data/catalog-meta.json last_verified date");
+const LAST_VERIFIED = catalogMeta.last_verified;
+const DISPLAY_DATE = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${LAST_VERIFIED}T00:00:00Z`));
 const PRODUCT_ROUTE_BY_SLUG = {
   "chatgpt-plus": "chatgpt-plus-pakistan/",
   "claude-ai": "claude-pro-pakistan/",
@@ -89,6 +94,13 @@ const STATIC_SITEMAP_PATHS = [
   "blog/ai-tools-affiliate-program/",
   "blog/how-to-buy-ai-api-credits-pakistan/",
   "ai-automation-services/",
+  "comparisons/chatgpt-plus-vs-claude-pro-pakistan/",
+  "comparisons/chatgpt-plus-vs-gemini-pro-pakistan/",
+  "comparisons/claude-pro-vs-gemini-pro-pakistan/",
+  "comparisons/grammarly-vs-quillbot-vs-wordai-pakistan/",
+  "comparisons/capcut-pro-vs-runway-ml-pakistan/",
+  "comparisons/elevenlabs-vs-playht-pakistan/",
+  "comparisons/helium10-vs-semrush-vs-vidiq-pakistan/",
   "blog/grok-price-pakistan/",
   "blog/gemini-pro-price-pakistan/",
   "blog/chatgpt-free-vs-plus-pakistan/",
@@ -347,8 +359,46 @@ function featureList(product) {
   return product.keyFeatures.split(";").map((feature) => feature.trim()).filter(Boolean);
 }
 
+function cardDifferentiator(product) {
+  const parts = [product.subscriptionDuration, product.planTier, product.creditsOrUsageLimit]
+    .map((value) => String(value || "").trim())
+    .filter(Boolean)
+    .filter((value, index, values) => values.findIndex((other) => other.toLowerCase() === value.toLowerCase()) === index);
+  const full = parts.join(" · ");
+  return full.length <= 68 ? full : `${full.slice(0, 65).replace(/\s+\S*$/, "")}…`;
+}
+
+function comparisonGuide(product) {
+  const routes = {
+    "chatgpt-plus": ["comparisons/chatgpt-plus-vs-claude-pro-pakistan/", "ChatGPT Plus vs Claude Pro"],
+    "claude-ai": ["comparisons/chatgpt-plus-vs-claude-pro-pakistan/", "Claude Pro vs ChatGPT Plus"],
+    "gemini-pro": ["comparisons/chatgpt-plus-vs-gemini-pro-pakistan/", "ChatGPT Plus vs Gemini Pro"],
+    "grammarly-pro": ["comparisons/grammarly-vs-quillbot-vs-wordai-pakistan/", "Grammarly vs QuillBot vs WordAI"],
+    "quillbot": ["comparisons/grammarly-vs-quillbot-vs-wordai-pakistan/", "QuillBot vs Grammarly vs WordAI"],
+    "wordai": ["comparisons/grammarly-vs-quillbot-vs-wordai-pakistan/", "WordAI vs Grammarly vs QuillBot"],
+    "elevenlabs-creator-private": ["comparisons/elevenlabs-vs-playht-pakistan/", "ElevenLabs vs PlayHT"],
+    "playht": ["comparisons/elevenlabs-vs-playht-pakistan/", "PlayHT vs ElevenLabs"],
+    "capcut-pro": ["comparisons/capcut-pro-vs-runway-ml-pakistan/", "CapCut Pro vs Runway ML"],
+    "runway-ml-unlimited-generations": ["comparisons/capcut-pro-vs-runway-ml-pakistan/", "Runway ML vs CapCut Pro"],
+    "runway-ml-max": ["comparisons/capcut-pro-vs-runway-ml-pakistan/", "Compare Runway ML and CapCut Pro"],
+    "leonardo-ai": ["blog/best-ai-design-tools-2026/", "Compare AI image and design tools"],
+    "ideogram-ai-plus-private": ["blog/best-ai-design-tools-2026/", "Compare AI image and design tools"],
+    "semrush-pro": ["comparisons/helium10-vs-semrush-vs-vidiq-pakistan/", "Helium 10 vs SEMrush Pro vs vidIQ"],
+    "vidiq": ["comparisons/helium10-vs-semrush-vs-vidiq-pakistan/", "vidIQ vs SEMrush Pro vs Helium 10"],
+    "helium-10-platinum": ["comparisons/helium10-vs-semrush-vs-vidiq-pakistan/", "Helium 10 vs SEMrush Pro vs vidIQ"],
+    "helium-10-diamond": ["comparisons/helium10-vs-semrush-vs-vidiq-pakistan/", "Helium 10 vs SEMrush Pro vs vidIQ"]
+  };
+  return routes[product.slug] || ["ai-subscription-price-index-pakistan/", "Compare current AI subscription prices"];
+}
+
 function metaDescription(product) {
   return `Check ${product.name} price in Pakistan, PKR ${product.sellingPricePkr.toLocaleString("en-PK")} listing, ${product.accessType.toLowerCase()}, ${product.subscriptionDuration.toLowerCase()} and safe WhatsApp activation details.`;
+}
+
+function problemStatement(product) {
+  const intro = productIntros[product.slug];
+  if (!intro) throw new Error(`Missing editorial product intro for ${product.slug}`);
+  return intro;
 }
 
 function productPageHtml(product, related) {
@@ -360,6 +410,8 @@ function productPageHtml(product, related) {
   const compareAt = product.compareAtPricePkr ? product.compareAtPricePkr.toLocaleString("en-PK") : null;
   const discount = product.discountPercent ? `${product.discountPercent}%` : null;
   const features = featureList(product);
+  const comparison = comparisonGuide(product);
+  const comparisonLink = `<p class="source-list"><a href="../${comparison[0]}">${escapeHtml(comparison[1])}</a> before choosing this plan.</p>`;
   const relatedLinks = related.map((item) => `<li><a href="../${item.guideUrl}">${escapeHtml(item.name)} price in Pakistan</a></li>`).join("");
   const official = product.sourceProductUrl
     ? `<p class="source-list">Official source: <a href="${escapeHtml(product.sourceProductUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(product.sourceProductTitle)}</a>. Checked on ${DISPLAY_DATE}.</p>`
@@ -489,7 +541,7 @@ function productPageHtml(product, related) {
       <section class="page-hero product-hero">
         <p class="page-kicker">${escapeHtml(product.category)}</p>
         <h1>${escapeHtml(slugLabel(product))}</h1>
-        <p class="hero-copy">${escapeHtml(description)}</p>
+        <p class="hero-copy">${escapeHtml(problemStatement(product))}</p>
         <p class="date-note">Published: July 14, 2026. Last updated: ${DISPLAY_DATE}. Last price verified: ${DISPLAY_DATE}.</p>
         <p class="byline-note">Reviewed by AI Tools Pak support team using visible plan details, current PKR pricing and buyer questions collected from WhatsApp enquiries.</p>
       </section>
@@ -498,6 +550,8 @@ function productPageHtml(product, related) {
           <article class="glass-panel page-card direct-answer-card" aria-labelledby="price-answer">
             <h2 id="price-answer">How much does ${escapeHtml(product.name)} cost in Pakistan?</h2>
             <p class="direct-answer">${escapeHtml(product.name)} is listed by AI Tools Pak at <strong>PKR ${price}</strong>${compareAt ? ` (original price <del>PKR ${compareAt}</del>, ${discount} off)` : ""}. It suits ${escapeHtml(audience(product))} who need ${escapeHtml(product.creditsOrUsageLimit.toLowerCase())}. Confirm current availability, ${escapeHtml(product.subscriptionDuration.toLowerCase())}, access model and support terms on WhatsApp before payment.</p>
+            <p class="source-list"><a href="../refund-policy/">Activation issue support applies under the warranty agreed before payment</a>; exclusions remain listed in the refund policy.</p>
+            ${comparisonLink}
           </article>
           <article class="glass-panel page-card">
             <h2>Product overview</h2>
@@ -705,7 +759,7 @@ index = index.replace(/<section class="section" id="product-guides"[\s\S]*?<\/se
           <h2>Dedicated buying guides for every AI subscription.</h2>
         </div>
         <div class="link-grid">
-${products.map((product) => `          <a class="glass-panel link-card" href="${product.guideUrl}"><strong>${escapeHtml(product.name)} Pakistan</strong><span class="card-price">${product.compareAtPricePkr ? `<del>PKR ${product.compareAtPricePkr.toLocaleString("en-PK")}</del> ` : ""}PKR ${product.sellingPricePkr.toLocaleString("en-PK")}${product.discountPercent ? ` <em class="card-off">${product.discountPercent}% OFF</em>` : ""}</span><span>Price, plan, activation, safety checks and FAQs.</span><span class="card-buy">Buy on WhatsApp →</span></a>`).join("\n")}
+${products.map((product) => `          <a class="glass-panel link-card" href="${product.guideUrl}"><strong>${escapeHtml(product.name)} Pakistan</strong><span class="card-price">${product.compareAtPricePkr ? `<del>PKR ${product.compareAtPricePkr.toLocaleString("en-PK")}</del> ` : ""}PKR ${product.sellingPricePkr.toLocaleString("en-PK")}${product.discountPercent ? ` <em class="card-off">${product.discountPercent}% OFF</em>` : ""}</span><span>${escapeHtml(cardDifferentiator(product))}</span><span class="card-buy">Buy on WhatsApp →</span></a>`).join("\n")}
         </div>
       </section>
       <section class="section" id="quick-order" aria-label="Quick WhatsApp order list">
@@ -771,7 +825,8 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapPaths.map((urlPath) => {
   const loc = `${SITE_URL}/${urlPath}`;
-  const lastmod = existingByLoc.get(loc) || LAST_VERIFIED;
+  const isProduct = products.some((product) => product.guideUrl === urlPath);
+  const lastmod = isProduct ? LAST_VERIFIED : (existingByLoc.get(loc) || LAST_VERIFIED);
   return `  <url>
     <loc>${loc}</loc>
     <lastmod>${lastmod}</lastmod>

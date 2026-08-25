@@ -51,6 +51,8 @@ function localTarget(file, href) {
 const htmlFiles = walk(root);
 const htmlCache = new Map(htmlFiles.map((file) => [file, fs.readFileSync(file, "utf8")]));
 const errors = [];
+const inboundSources = new Map();
+const contextualInboundSources = new Map();
 
 for (const [file, html] of htmlCache) {
   const rel = path.relative(root, file);
@@ -72,6 +74,16 @@ for (const [file, html] of htmlCache) {
     if (!fs.existsSync(target.resolved)) {
       errors.push(`${rel}: missing href target ${href}`);
       continue;
+    }
+    if (target.resolved.endsWith("index.html")) {
+      if (!inboundSources.has(target.resolved)) inboundSources.set(target.resolved, new Set());
+      inboundSources.get(target.resolved).add(file);
+      const mainStart = html.search(/<main\b/i);
+      const mainEnd = html.search(/<\/main>/i);
+      if (mainStart >= 0 && mainEnd > mainStart && match.index > mainStart && match.index < mainEnd) {
+        if (!contextualInboundSources.has(target.resolved)) contextualInboundSources.set(target.resolved, new Set());
+        contextualInboundSources.get(target.resolved).add(file);
+      }
     }
     if (target.hash) {
       const targetHtml = fs.readFileSync(target.resolved, "utf8");
@@ -106,4 +118,15 @@ for (const [file, html] of htmlCache) {
 }
 
 if (errors.length) throw new Error(errors.join("\n"));
+const homeHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const guideSection = homeHtml.match(/<section class="section" id="product-guides"[\s\S]*?<\/section>/)?.[0] || "";
+const productTargets = [...guideSection.matchAll(/href="([^"]+-pakistan\/)"/g)]
+  .map((match) => path.join(root, match[1], "index.html"))
+  .filter((file, index, files) => files.indexOf(file) === index && fs.existsSync(file));
+const inlinkReport = productTargets.map((file) => ({
+  url: `/${path.relative(root, path.dirname(file)).replace(/\\/g, "/")}/`,
+  inlinks: inboundSources.get(file)?.size || 0,
+  contextualInlinks: contextualInboundSources.get(file)?.size || 0
+})).sort((a, b) => a.inlinks - b.inlinks || a.url.localeCompare(b.url));
+console.log(`product inlinks: ${inlinkReport.map((item) => `${item.url}=${item.inlinks} (${item.contextualInlinks} contextual)`).join(", ")}`);
 console.log(`site links/buttons ok: ${htmlFiles.length} HTML files checked`);
