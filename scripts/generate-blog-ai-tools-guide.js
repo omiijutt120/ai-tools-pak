@@ -338,15 +338,6 @@ const itemList = {
     url: `${SITE_URL}/${p.guideUrl}`,
   })),
 };
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map(([n, a]) => ({
-    "@type": "Question",
-    name: n,
-    acceptedAnswer: { "@type": "Answer", text: a },
-  })),
-};
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -541,7 +532,6 @@ ${blogGuidesHtml}            </ul>
     <script type="application/ld+json">${JSON.stringify(articleSchema)}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
     <script type="application/ld+json">${JSON.stringify(itemList)}</script>
-    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
   </body>
 </html>
 `;

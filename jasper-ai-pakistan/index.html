@@ -193,6 +193,7 @@
       "@type": "Product",
       "@id": "https://aitoolspak.tech/jasper-ai-pakistan/#product",
       "name": "Jasper AI Subscription Pakistan",
+      "sku": "ATP-JASPER-AI",
       "description": "Check Jasper AI price in Pakistan, PKR 600 listing, private access, 1 month and safe WhatsApp activation details.",
       "image": "https://aitoolspak.tech/assets/product-icons/jasper-ai.png",
       "brand": {
@@ -210,42 +211,41 @@
         "priceCurrency": "PKR",
         "availability": "https://schema.org/LimitedAvailability",
         "seller": {
-          "@type": "Organization",
-          "name": "AI Tools Pak"
+          "@id": "https://aitoolspak.tech/#organization"
         },
         "url": "https://aitoolspak.tech/jasper-ai-pakistan/",
-        "itemCondition": "https://schema.org/NewCondition"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://aitoolspak.tech/jasper-ai-pakistan/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can the PKR price change?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The visible price is the listed AI Tools Pak price verified on August 24, 2026. Confirm the current quote on WhatsApp before payment."
-          }
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@id": "https://aitoolspak.tech/refund-policy/#digital-access-policy"
         },
-        {
-          "@type": "Question",
-          "name": "Is this access official?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No official partnership or authorization is claimed unless written authorization exists. Product names and trademarks belong to their owners."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What should I confirm before paying?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Confirm price, duration, activation method, access model, usage limits, support window and refund condition."
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          },
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
           }
         }
-      ]
+      }
     }
   ]
 }</script>

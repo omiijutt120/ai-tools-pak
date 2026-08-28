@@ -106,18 +106,6 @@ function schema(a) {
   "dateModified": "${a.publishedISO || TODAY_ISO}",
   "inLanguage": "en-PK"
 }`);
-  if (a.faq && a.faq.length) {
-    const mainEntity = a.faq.map((f) => `{
-      "@type": "Question",
-      "name": "${f.q.replace(/"/g, '\\"')}",
-      "acceptedAnswer": { "@type": "Answer", "text": "${f.a.replace(/"/g, '\\"').replace(/\n/g, " ")}" }
-    }`).join(",\n");
-    parts.push(`{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [${mainEntity}]
-}`);
-  }
   return parts.map((s) => `    <script type="application/ld+json">${s}</script>`).join("\n");
 }
 

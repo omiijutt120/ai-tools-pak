@@ -66,6 +66,9 @@ for (const url of urls) {
   if (/"@type"\s*:\s*"HowTo"/i.test(html)) {
     errors.push(`Unsupported HowTo rich-result schema present: ${url}`);
   }
+  if (/"@type"\s*:\s*"FAQPage"/i.test(html)) {
+    errors.push(`Commercial FAQPage schema present: ${url}`);
+  }
   if (!html.includes('type="application/ld+json"') && !url.includes("/privacy-policy/") && !url.includes("/terms-and-conditions/")) {
     errors.push(`No JSON-LD on important page: ${url}`);
   }

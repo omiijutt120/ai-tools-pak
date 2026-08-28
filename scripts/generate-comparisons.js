@@ -36,7 +36,40 @@ function page(guide, items) {
   const description = `Compare ${names} in Pakistan using catalog-sourced PKR price, duration, access, usage limits and workflow features.`;
   const rows = items.map((item) => `<tr><th scope="row"><a href="../../${item.guideUrl}">${esc(item.name)}</a></th><td>PKR ${item.sellingPricePkr.toLocaleString("en-PK")}</td><td>${esc(item.subscriptionDuration)}</td><td>${esc(item.accessType)}</td><td>${esc(item.creditsOrUsageLimit)}</td><td>${esc(item.keyFeatures)}</td></tr>`).join("\n");
   const picks = items.map((item) => `<section><h3>Choose ${esc(item.name)} if…</h3><p>${esc(recommendation(item))}</p><p><a href="../../${item.guideUrl}">Check ${esc(item.name)} price and ordering details</a></p></section>`).join("\n");
-  const schema = { "@context": "https://schema.org", "@type": "Article", headline: guide.title, description, dateModified: catalogMeta.last_verified, mainEntityOfPage: canonical, publisher: { "@type": "Organization", name: "AI Tools Pak", url: `${SITE}/` } };
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${canonical}#article`,
+        headline: guide.title,
+        description,
+        image: `${SITE}/og-image.png`,
+        datePublished: catalogMeta.last_verified,
+        dateModified: catalogMeta.last_verified,
+        mainEntityOfPage: { "@id": `${canonical}#webpage` },
+        author: { "@id": `${SITE}/#organization` },
+        publisher: { "@id": `${SITE}/#organization` }
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${canonical}#webpage`,
+        url: canonical,
+        name: guide.title,
+        isPartOf: { "@id": `${SITE}/#website` },
+        breadcrumb: { "@id": `${canonical}#breadcrumb` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonical}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+          { "@type": "ListItem", position: 2, name: "Comparisons", item: `${SITE}/comparisons/` },
+          { "@type": "ListItem", position: 3, name: guide.title, item: canonical }
+        ]
+      }
+    ]
+  };
   return `<!doctype html>
 <html lang="en-PK"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(guide.title)} | AI Tools Pak</title><meta name="description" content="${esc(description)}"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; form-action 'self'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="canonical" href="${canonical}"><link rel="stylesheet" href="../../styles.css"><meta property="og:type" content="article"><meta property="og:title" content="${esc(guide.title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${SITE}/og-image.png"><meta name="twitter:card" content="summary_large_image"></head>
 <body><header class="simple-header"><nav class="simple-nav" aria-label="Primary navigation"><a class="brand" href="../../"><img class="brand-logo" src="../../logo.png" alt="AI Tools Pak" width="32" height="32"><span>AI Tools Pak</span></a><div class="simple-links"><a href="../../#catalog">AI tools</a><a href="../../blog/">Blog</a><a href="../../about-us/">About</a><a href="../../contact-us/">Contact</a></div></nav></header>

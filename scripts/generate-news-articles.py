@@ -2,7 +2,7 @@
 """Generate AI-news article pages for the aitoolspak.tech blog from data/news-articles.json.
 
 Produces for each article:
-  - blog/<slug>/index.html  (full page: head/meta/canonical/OG + body + Article/WebPage/FAQPage JSON-LD)
+  - blog/<slug>/index.html  (full page: head/meta/canonical/OG + body + Article/WebPage JSON-LD)
   - blog/<slug>/cover.svg   (branded OG thumbnail, 1200x630)
 Also writes:
   - blog/_news-cards.html       (post-card <li> fragments, newest first, for blog index)
@@ -169,10 +169,7 @@ def page(a):
         "reviewedBy": {"@id": BASE + "/#organization"},
         "dateModified": a["date"], "inLanguage": "en-PK",
     }
-    faq_schema = {"@context": "https://schema.org", "@type": "FAQPage",
-                  "mainEntity": [{"@type": "Question", "name": item["q"],
-                                  "acceptedAnswer": {"@type": "Answer", "text": md_plain(item["a"])}} for item in faq]}
-    return (head(a["title"], a["meta"], url, [article_schema, web_schema, faq_schema])
+    return (head(a["title"], a["meta"], url, [article_schema, web_schema])
             + header()
             + f"""<main>
       <section class="page-hero">

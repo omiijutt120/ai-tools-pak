@@ -39,6 +39,29 @@ const PRODUCT_ROUTE_BY_SLUG = {
 };
 const STATIC_SITEMAP_PATHS = [
   "",
+  "blog/",
+  "comparisons/",
+  "ai-subscription-price-index-pakistan/",
+  "ai-phone-agent/",
+  "adobe-creative-1-year-pakistan/",
+  "adobe-creative-2-months-pakistan/",
+  "canva-pro-edu-1-year-pakistan/",
+  "chatgpt-plus-apple-account-pakistan/",
+  "figma-pro-2-years-private-pakistan/",
+  "gamma-pro-1-year-pakistan/",
+  "leonardo-ai-essential-8500-credits-pakistan/",
+  "linkedin-premium-2-months-pakistan/",
+  "manus-ai-pro-1-year-pakistan/",
+  "n8n-starter-1-year-pakistan/",
+  "nordvpn-3-months-pakistan/",
+  "notion-business-3-months-pakistan/",
+  "replit-core-1-year-pakistan/",
+  "replit-core-40-credits-pakistan/",
+  "surfshark-vpn-2-months-pakistan/",
+  "windows-11-pro-license-key-pakistan/",
+  "youtube-premium-3-months-pakistan/",
+  "blog/gemini-api-credits-pakistan/",
+  "ai-post/openai-slows-training-august-2026.html",
   "agents.md",
   "llms.txt",
   "canva-pro-pakistan/",
@@ -281,8 +304,7 @@ function offer(product) {
     priceCurrency: "PKR",
     availability: product.requiresSupplierConfirmation ? "https://schema.org/LimitedAvailability" : "https://schema.org/InStock",
     seller: {
-      "@type": "Organization",
-      name: "AI Tools Pak"
+      "@id": `${SITE_URL}/#organization`
     },
     url: `${SITE_URL}/${product.guideUrl}`,
     itemCondition: "https://schema.org/NewCondition",
@@ -416,33 +438,6 @@ function productPageHtml(product, related) {
   const official = product.sourceProductUrl
     ? `<p class="source-list">Official source: <a href="${escapeHtml(product.sourceProductUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(product.sourceProductTitle)}</a>. Checked on ${DISPLAY_DATE}.</p>`
     : "";
-  const productFaqs = [
-    {
-      "@type": "Question",
-      name: "Can the PKR price change?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: `Yes. The visible price is the listed AI Tools Pak price verified on ${DISPLAY_DATE}. Confirm the current quote on WhatsApp before payment.`
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Is this access official?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No official partnership or authorization is claimed unless written authorization exists. Product names and trademarks belong to their owners."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "What should I confirm before paying?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Confirm price, duration, activation method, access model, usage limits, support window and refund condition."
-      }
-    }
-  ];
-
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -475,26 +470,14 @@ function productPageHtml(product, related) {
         "@type": "Product",
         "@id": `${canonical}#product`,
         name: `${product.name} Subscription Pakistan`,
+        sku: product.sku,
         description,
         image,
         brand: { "@type": "Brand", name: product.sourceProductTitle },
         category: product.category,
         url: canonical,
         mainEntityOfPage: { "@id": `${canonical}#webpage` },
-        offers: {
-          "@type": "Offer",
-          price: product.sellingPricePkr,
-          priceCurrency: "PKR",
-          availability: product.requiresSupplierConfirmation ? "https://schema.org/LimitedAvailability" : "https://schema.org/InStock",
-          seller: { "@type": "Organization", name: "AI Tools Pak" },
-          url: canonical,
-          itemCondition: "https://schema.org/NewCondition"
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": `${canonical}#faq`,
-        mainEntity: productFaqs
+        offers: offer(product)
       }
     ]
   };

@@ -62,7 +62,7 @@ for (const p of platforms) {
   const minPkr = Math.min(...services.filter((s) => s.platform === p).map((s) => s.sellingRatePkr));
   assert(Math.abs(staticPrices[p] - minPkr) < 0.005, `Static min price for ${p} out of sync: HTML PKR ${staticPrices[p]} vs data PKR ${minPkr}`);
 }
-assert(/FAQPage/.test(socialHtml), "FAQPage schema missing on social media services page");
+assert(!/FAQPage/.test(socialHtml), "Commercial FAQPage schema should not be present");
 assert(/ItemList/.test(socialHtml), "ItemList schema missing on social media services page");
 assert(platforms.every((p) => socialHtml.includes(`id="platform-${p.toLowerCase()}"`)), "Platform anchor missing in price index");
 

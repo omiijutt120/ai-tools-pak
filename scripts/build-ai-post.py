@@ -142,7 +142,6 @@ def article_page(a):
         f'<div class="rel-body"><span class="cat">{CAT_BY_KEY.get(x["category"], {"label":"AI News"})["label"]}</span>'
         f'<h4>{esc(x["title"])}</h4><span class="meta"><span class="date">{x["date"]}</span><span class="sep">·</span><span class="rt">📖 {x["readMins"]} min</span></span></div></a>'
         for x in related) + "</div>"
-    faq_blocks = [b for b in a["body"] if "faq" in b]
     schema = {
         "@context": "https://schema.org", "@type": "NewsArticle" if a["category"] == "ai-news" else "Article",
         "headline": a["title"], "description": a["excerpt"], "datePublished": a["date"] + "T09:00:00+05:00",
@@ -154,10 +153,6 @@ def article_page(a):
                       "logo": {"@type": "ImageObject", "url": "https://aitoolspak.tech/logo.png"}},
         "articleSection": c["label"], "wordCount": len(a["body"]) * 90,
         "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".post h1", ".post .lede", ".post p:first-of-type"]}}
-    if faq_blocks:
-        schema["@graph"] = [{"@type": "FAQPage", "mainEntity": [
-            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": ans}}
-            for b in faq_blocks for q, ans in b["faq"]]}]
     bread = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": BASE + "/"},
         {"@type": "ListItem", "position": 2, "name": c["label"], "item": f'{BASE}/{c["key"]}/'},
@@ -166,7 +161,7 @@ def article_page(a):
 <article class="post">
   <span class="tag">{c['label']}</span>
   <h1>{esc(a['title'])}</h1>
-  <div class="meta"><span>By <a href="{BASE}/authors/muhammad-umar.html" rel="author">The AI Post</a></span><span class="sep">·</span><span class="date">{a['date']}</span><span class="sep">·</span><span class="rt">📖 {a['readMins']} min read</span></div>
+  <div class="meta"><span>By <a href="{BASE}/authors/muhammad-umar.html" rel="author">Muhammad Umar</a></span><span class="sep">·</span><span class="date">{a['date']}</span><span class="sep">·</span><span class="rt">📖 {a['readMins']} min read</span></div>
   <div class="cover">{cover_img(a)}</div>
   {toc}
   {body_blocks(a)}
@@ -174,7 +169,7 @@ def article_page(a):
     <button id="copyLink">🔗 Copy link</button>
     <button id="twShare">𝕏 Share on X</button>
   </div>
-  <div class="author"><div class="av">AP</div><div><b><a href="{BASE}/authors/muhammad-umar.html" rel="author">The AI Post</a></b><p>Independent AI &amp; technology publication — research and verification driven. <a href="{BASE}/editorial-policy.html">Read the editorial policy</a>.</p></div></div>
+  <div class="author"><div class="av">MU</div><div><b><a href="{BASE}/authors/muhammad-umar.html" rel="author">Muhammad Umar</a></b><p>Founder of AI Tools Pak and editor of The AI Post. <a href="{BASE}/editorial-policy.html">Read the editorial policy</a>.</p></div></div>
   <h3 class="rel-head">Related reading</h3>
   {rel}
 </article>
@@ -188,7 +183,7 @@ def category_page(c):
     cards = '<div class="grid">' + "".join(card(a) for a in arts) + "</div>"
     pg = head(f"{c['label']} — The AI Post", f"All {c['label'].lower()} articles from The AI Post.", url) + header(c["key"]) + f"""
 <div class="container" style="padding-top:34px">
-  <div class="sec-head"><h2>{c['icon']} {c['label']}</h2><span style="font-size:13px;color:var(--muted)">{len(arts)} articles</span></div>
+  <div class="sec-head"><h1>{c['icon']} {c['label']}</h1><span style="font-size:13px;color:var(--muted)">{len(arts)} articles</span></div>
   {cards}
 </div>""" + footer()
     os.makedirs(os.path.join(POST, c["key"]), exist_ok=True)
