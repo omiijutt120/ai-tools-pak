@@ -62,6 +62,16 @@ const STATIC_SITEMAP_PATHS = [
   "youtube-premium-3-months-pakistan/",
   "blog/gemini-api-credits-pakistan/",
   "ai-post/openai-slows-training-august-2026.html",
+  "ai-post/authors/muhammad-umar.html",
+  "ai-income-lab/",
+  "ai-income-lab/about.html",
+  "ai-income-lab/contact.html",
+  "ai-income-lab/privacy-policy.html",
+  "ai-income-lab/how-to-make-money-with-ai-2026.html",
+  "ai-income-lab/chatgpt-side-hustles.html",
+  "ai-income-lab/start-ai-automation-agency.html",
+  "ai-income-lab/build-ai-voice-agent-business.html",
+  "ai-income-lab/ai-tools-that-save-small-business-money.html",
   "agents.md",
   "llms.txt",
   "canva-pro-pakistan/",
@@ -356,11 +366,23 @@ function slugLabel(product) {
 }
 
 function categoryGuide(product) {
-  if (product.category === "AI Video") return "blog/best-ai-video-tools-pakistani-content-creators/";
-  if (product.category === "Marketing and Lead Generation") return "blog/best-ai-tools-freelancers-pakistan/";
-  if (product.category === "Writing and SEO") return "blog/free-vs-paid-ai-tools/";
-  if (product.category === "Entertainment") return "blog/free-vs-paid-ai-tools/";
-  return "blog/best-ai-tools-freelancers-pakistan/";
+  const exact = {
+    coursera: ["blog/coursera-premium-price-pakistan/", "Coursera Premium price and buying guide for Pakistan"],
+    elevenlabs: ["blog/elevenlabs-vs-playht/", "ElevenLabs vs PlayHT comparison"],
+    playht: ["blog/elevenlabs-vs-playht/", "ElevenLabs vs PlayHT comparison"],
+    semrush: ["blog/semrush-vs-ahrefs/", "SEMrush vs Ahrefs comparison"],
+    vidiq: ["blog/vidiq-vs-tubebuddy/", "vidIQ vs TubeBuddy comparison"],
+    "helium-10": ["blog/helium-10-free-vs-paid/", "Helium 10 free vs paid guide"],
+    "helium-10-starter": ["blog/helium-10-free-vs-paid/", "Helium 10 free vs paid guide"],
+    "runway-ml-max": ["blog/veo-3-vs-runway-vs-sora/", "Veo 3 vs Runway vs Sora comparison"],
+    storyblocks: ["blog/best-ai-video-tools-pakistani-content-creators/", "Best AI video tools for Pakistani creators"],
+    "google-ai-ultra-plan": ["blog/gemini-pro-vs-google-ai-ultra/", "Gemini Pro vs Google AI Ultra comparison"]
+  };
+  if (exact[product.slug]) return exact[product.slug];
+  if (product.category === "AI Video") return ["blog/best-ai-video-tools-pakistani-content-creators/", "Best AI video tools for Pakistani creators"];
+  if (product.category === "Writing and SEO") return ["blog/free-vs-paid-ai-tools/", "Free vs paid AI tools guide"];
+  if (product.category === "Entertainment") return ["blog/free-vs-paid-ai-tools/", "Free vs paid digital tools guide"];
+  return ["blog/best-ai-tools-freelancers-pakistan/", "Best AI tools for freelancers in Pakistan"];
 }
 
 function audience(product) {
@@ -435,6 +457,7 @@ function productPageHtml(product, related) {
   const comparison = comparisonGuide(product);
   const comparisonLink = `<p class="source-list"><a href="../${comparison[0]}">${escapeHtml(comparison[1])}</a> before choosing this plan.</p>`;
   const relatedLinks = related.map((item) => `<li><a href="../${item.guideUrl}">${escapeHtml(item.name)} price in Pakistan</a></li>`).join("");
+  const [guidePath, guideLabel] = categoryGuide(product);
   const official = product.sourceProductUrl
     ? `<p class="source-list">Official source: <a href="${escapeHtml(product.sourceProductUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(product.sourceProductTitle)}</a>. Checked on ${DISPLAY_DATE}.</p>`
     : "";
@@ -592,7 +615,7 @@ function productPageHtml(product, related) {
           <article class="glass-panel page-card">
             <h2>Related guides</h2>
             <ul>
-              <li><a href="../${categoryGuide(product)}">Read a relevant AI tools guide</a></li>
+              <li><a href="../${guidePath}">${escapeHtml(guideLabel)}</a></li>
               <li><a href="../blog/choose-ai-subscription-safely/">How to choose an AI subscription safely</a></li>
               ${relatedLinks}
             </ul>
@@ -637,11 +660,18 @@ function updateCatalogJsonLd(html, itemList, productGraph) {
   return html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (match, raw) => {
     try {
       const data = JSON.parse(raw);
-      if (!Array.isArray(data["@graph"])) return match;
-      const hasCatalogSchema = data["@graph"].some((item) => item["@type"] === "ItemList" || item["@type"] === "Product");
-      if (!hasCatalogSchema) return match;
-      const graph = data["@graph"].filter((item) => item["@type"] !== "ItemList" && item["@type"] !== "Product");
-      return `<script type="application/ld+json">\n${JSON.stringify({ ...data, "@graph": [...graph, itemList, ...productGraph["@graph"]] }, null, 2)}\n    </script>`;
+      const containers = Array.isArray(data) ? data : [data];
+      let updated = false;
+      const next = containers.map((container) => {
+        if (!Array.isArray(container?.["@graph"])) return container;
+        const hasCatalogSchema = container["@graph"].some((item) => item["@type"] === "ItemList" || item["@type"] === "Product");
+        if (!hasCatalogSchema) return container;
+        const graph = container["@graph"].filter((item) => item["@type"] !== "ItemList" && item["@type"] !== "Product");
+        updated = true;
+        return { ...container, "@graph": [...graph, itemList, ...productGraph["@graph"]] };
+      });
+      if (!updated) return match;
+      return `<script type="application/ld+json">\n${JSON.stringify(Array.isArray(data) ? next : next[0], null, 2)}\n    </script>`;
     } catch {
       return match;
     }
